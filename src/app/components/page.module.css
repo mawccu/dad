@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     mask-image: url('/medias/nn.svg');
-    mask-position: center 45%;
+    mask-position: 62.9% 45%;
     mask-repeat: no-repeat;
     mask-size: 80%;
 }
@@ -38,6 +38,7 @@
     font-size: 29px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 41px;
     margin-right: 20px;
 
@@ -46,8 +47,7 @@
 .navbar > div {
     font-size: 40px;
     margin-left: 20px;
+    margin-bottom: 10px;
     
-    align-items: center;
-
 }
 
