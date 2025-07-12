@@ -7,16 +7,17 @@ export function ProgressProvider({ children }) {
   const [items, setItems] = useState({
     heroImage: false,
     api: false,
-    heavyComponent: false,
-    
+    mask: false,
+    heavyComponent: false
   });
 
   const reportAsLoaded = (key) => {
     setItems((prev) => ({ ...prev, [key]: true }));
   };
-// keys = heroImage, api, heavyComponent
-// values = false, false, false
-  const progress = useMemo(() => {
+  // keys = heroImage, api, heavyComponent
+  // values = false, false, false
+
+  const progress = useMemo(() => { // so it saves the calculated data and doesn't calculate again on each re-render
     const total = Object.keys(items).length;
     const loaded = Object.values(items).filter(Boolean).length; // filters for truthy values
     return Math.round((loaded / total) * 100);

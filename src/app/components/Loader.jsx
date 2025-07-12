@@ -16,7 +16,7 @@ export default function Loader() {
         textContent: progress,
         duration: 0.8,
         ease: 'power3.out',
-        snap: { textContent: 1 },
+        snap: { textContent: 1 }, //sa7ee7 numbers
       });
     }
 
@@ -36,7 +36,7 @@ export default function Loader() {
         },
       });
 
-      tl.to(loaderRef.current, {
+      tl.to(loaderRef.current, { 
         yPercent: -100,
         ease: 'power4.inOut',
         duration: 1.2,
@@ -47,21 +47,18 @@ export default function Loader() {
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 bg-black text-white z-50 flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 bg-white text-black z-50 flex flex-col items-center justify-center overflow-hidden"
     >
       <div className="text-[4rem] sm:text-[6rem] font-bold tracking-tight leading-none" ref={percentRef}>
         0
       </div>
-
       <div className="w-[60%] h-[2px] bg-white bg-opacity-10 mt-6 relative overflow-hidden">
         <div
           ref={progressBarRef}
-          className="absolute top-0 left-0 h-full bg-white"
+          className="absolute top-0 left-0 h-full bg-black"
           style={{ width: '0%' }}
         />
       </div>
-
-      <div className="mt-4 text-xs opacity-40 tracking-widest uppercase">Preparing experience</div>
     </div>
   );
 }

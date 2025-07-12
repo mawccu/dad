@@ -1,8 +1,28 @@
 'use client';
-import HeroImage from './components/HeroImage';
 import Loader from './components/Loader';
 import { useEffect, useState } from 'react';
 import { useProgress } from './components/ProgressProvider';
+import Mask from './components/Mask';
+import Navbar from './components/Navbar'
+import Image from 'next/image';
+
+function MaskLoad(){
+  const { reportAsLoaded } = useProgress()
+
+  useEffect(() => {
+    reportAsLoaded('mask')
+  }, [])
+  return <Mask />
+}
+
+function ImageLoad(){
+  const { reportAsLoaded } = useProgress();
+
+  useEffect(() => {
+    reportAsLoaded('heroImage')
+  },[])
+  return <div></div>
+}
 
 function HeavyComponent() {
   const { reportAsLoaded } = useProgress();
@@ -13,7 +33,7 @@ function HeavyComponent() {
     }, 1500);
   }, []);
 
-  return <div className="p-4 bg-gray-200">Heavy Component Loaded</div>;
+  return <div></div>;
 }
 
 function APIComponent() {
@@ -25,24 +45,24 @@ function APIComponent() {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        reportAsLoaded('api');
+        reportAsLoaded('api'); //report back to the context
       })
-      .catch(() => reportAsLoaded('api'));
+      .catch(() => reportAsLoaded('api')); //report back to the context
   }, []);
 
-  return <div className="text-sm mt-2">API Done: {data?.datetime}</div>;
+  return <div></div>;
 }
 
 export default function Home() {
   return (
     <>
       <Loader />
-      <main className="p-10">
-        <h1 className="text-4xl font-bold">Obys-Style Page</h1>
-        <HeroImage />
-        <HeavyComponent />
-        <APIComponent />
-      </main>
+      <MaskLoad />
+      <HeavyComponent />
+      <APIComponent />
+      <ImageLoad />
+      <Navbar />
+      <Image src="/medias/officestudio.png" width="1920" height="1080" alt="Hero Image" />
     </>
   );
 }
