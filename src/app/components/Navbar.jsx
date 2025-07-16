@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import styles from './page.module.css'
 import Link  from 'next/link'; 
@@ -15,6 +16,7 @@ export default function Navbar(){
                 <li className="lis"><Link href="/">EN</Link></li>
             </ul>
         </nav>
-        // these are supposed to be <Link> arent they
+        // nextils or sm for the language switcher
+        // also, fix the navbar ul elements font weight, it should be a tad bit smaller
     )
 }

@@ -3,12 +3,53 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Kontora SemiBold'; /* You define the name you'll use in CSS */
+  font-family: 'Kontora SemiBold';
   src: url('/fonts/kontora-semibold.otf') format('opentype');
-   font-display: swap;
-  font-weight: 600; /* Define the weight */
+  font-display: swap;
+  font-weight: 600;
 }
 
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaThin.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaLight.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaRegular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaMedium.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaSemiBold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/fonts/LufgaExtraBold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 800;
+}
 body {
-  font-family: 'Kontora SemiBold', sans-serif;
+  font-family: 'Lufga', sans-serif;
 }

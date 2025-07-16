@@ -37,9 +37,9 @@ export default function Loader() {
       });
 
       tl.to(loaderRef.current, { 
-        yPercent: -100,
+        opacity: 0,
         ease: 'power4.inOut',
-        duration: 1.2,
+        duration: 2.2,
       });
     }
   }, [progress]);

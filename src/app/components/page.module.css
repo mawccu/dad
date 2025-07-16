@@ -30,24 +30,29 @@
     display: flex;
     background-color: white;
     justify-content: space-between;
-
+    position: sticky;
+    top: 0;
+    padding: 7.5px 20px;
+    align-items: center;
     
-}
+    width: 100%;
+    z-index: 1000;
+    
 
+}
 .navbar > ul {
-    font-size: 29px;
+    font-size: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 41px;
-    margin-right: 20px;
-
+    margin-right: 42px;
+    font-weight: 400;
 
 }
 .navbar > div {
     font-size: 40px;
     margin-left: 20px;
     margin-bottom: 10px;
-    
+    font-weight: 600;
 }
-

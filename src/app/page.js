@@ -5,6 +5,8 @@ import { useProgress } from './components/ProgressProvider';
 import Mask from './components/Mask';
 import Navbar from './components/Navbar'
 import Image from 'next/image';
+import Testimonials from './components/Testimonials'
+
 
 function MaskLoad(){
   const { reportAsLoaded } = useProgress()
@@ -62,7 +64,10 @@ export default function Home() {
       <APIComponent />
       <ImageLoad />
       <Navbar />
-      <Image src="/medias/officestudio.png" width="1920" height="1080" alt="Hero Image" />
+      <div className="h-[calc(100vh-85px)] w-full relative overflow-hidden">
+        <Image src="/medias/placeholder.png" width="1920" height="1080" alt="Hero Image" />
+      </div>
+      <Testimonials />
     </>
   );
 }
