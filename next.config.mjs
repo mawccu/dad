@@ -4,7 +4,6 @@
 const nextConfig = {
   images: {
     domains: ['via.placeholder.com'], // Add 'via.placeholder.com' here
-    // Or, if using remotePatterns (recommended for more detailed control):
      remotePatterns: [
        {
          protocol: 'https',

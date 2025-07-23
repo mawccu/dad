@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from 'react';
 import styles from './page.module.css';
 import { useProgress } from './ProgressProvider';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,8 +20,8 @@ export default function Mask(){
     let easedScrollProgress = 0;
 
     useEffect(() => {
-        requestAnimationFrame(animate) //It's a built-in browser function that tells the browser: "Hey, call this function 
-        // again before the next repaint"
+        requestAnimationFrame(animate) //It's a built-in browser function that tells the browser to call this function 
+        // again before the next repaint
     }, [])
 
     useEffect(() => {

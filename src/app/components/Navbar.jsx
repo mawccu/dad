@@ -6,13 +6,13 @@ import Link  from 'next/link';
 export default function Navbar(){
     return(
         <nav className={styles.navbar}>
-            <div>New Look</div>
+            <div><Link href="/">New Look</Link></div>
             <ul>
-                <li className="lis"><Link href="/">Services</Link></li>
-                <li className="lis"><Link href="/">Projects</Link></li>
-                <li className="lis"><Link href="/">About</Link></li>
-                <li className="lis"><Link href="/">Careers</Link></li>
-                <li className="lis"><Link href="/">Contact</Link></li>
+                <li className="lis"><Link href="/Services">Services</Link></li>
+                <li className="lis"><Link href="/Projects">Projects</Link></li>
+                <li className="lis"><Link href="/About">About</Link></li>
+                <li className="lis"><Link href="/Careers">Careers</Link></li>
+                <li className="lis"><Link href="/Contact">Contact</Link></li>
                 <li className="lis"><Link href="/">EN</Link></li>
             </ul>
         </nav>

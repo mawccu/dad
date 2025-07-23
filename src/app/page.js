@@ -68,6 +68,7 @@ export default function Home() {
         <Image src="/medias/placeholder.png" width="1920" height="1080" alt="Hero Image" />
       </div>
       <Testimonials />
+      
     </>
   );
 }

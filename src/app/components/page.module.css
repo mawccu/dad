@@ -49,7 +49,14 @@
     margin-right: 42px;
     font-weight: 400;
 
+
 }
+
+.navbar > ul > li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .navbar > div {
     font-size: 40px;
     margin-left: 20px;
