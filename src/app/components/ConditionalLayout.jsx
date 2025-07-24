@@ -2,9 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer';
-
-/*Making a seperate Conditional layout is genius, literally. */
+import StickyFooter from './StickyFooter';
 
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
@@ -21,7 +19,7 @@ export default function ConditionalLayout({ children }) {
             <main className="min-h-screen">
                 {children}
             </main>
-            <Footer />
+            <StickyFooter />
         </>
     );
 }

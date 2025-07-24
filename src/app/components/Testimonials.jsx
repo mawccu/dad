@@ -359,7 +359,7 @@ export default function Testimonials(){
             </div>
 
             <div>
-                <Footer />
+                
             </div>
         </>
     )

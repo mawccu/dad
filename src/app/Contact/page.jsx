@@ -8,7 +8,13 @@ function Contact({ onScheduleClick }) {
         setTimeout(() => {
             const formElement = document.getElementById('contact-form');
             if (formElement) {
-                formElement.scrollIntoView({ behavior: 'smooth' });
+                const elementPosition = formElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - 470;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         }, 100);
     };
@@ -74,7 +80,7 @@ const FormInput = ({ label, type= 'text', value, onChange, name }) => (
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="flex-grow bg-transparent border-b border-gray-400 focus:outline-none focus:border-black transition-colors resize-none
+                className="flex-grow bg-transparent border-b bordergray--400 focus:outline-none focus:border-black transition-colors resize-none
                  focus:text-gray-700 text-gray-300 overflow-hidden"
                 rows={1}
                 style={{ resize: 'none' }}
@@ -110,7 +116,6 @@ function ContactForm({ prefillType }) {
         phone: '',
     });
 
-    // Handle prefill when type changes
     React.useEffect(() => {
         if (prefillType && prefillTemplates[prefillType]) {
             setFormData(prev => ({

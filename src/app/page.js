@@ -6,7 +6,7 @@ import Mask from './components/Mask';
 import Navbar from './components/Navbar'
 import Image from 'next/image';
 import Testimonials from './components/Testimonials'
-
+import StickyFooter from './components/StickyFooter';
 
 function MaskLoad(){
   const { reportAsLoaded } = useProgress()
@@ -68,6 +68,7 @@ export default function Home() {
         <Image src="/medias/placeholder.png" width="1920" height="1080" alt="Hero Image" />
       </div>
       <Testimonials />
+      <StickyFooter />
       
     </>
   );
