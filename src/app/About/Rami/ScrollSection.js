@@ -1,26 +1,59 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-export default function ScrollSection() {
-  return(
-<Swiper slidesPerView={1.2} spaceBetween={20} centeredSlides>
-  <SwiperSlide>
-    <h3>2003–2005</h3>
-    <p>Abdoun Bridge PM<br />(Subcontractor: Jordan Sipes)</p>
-  </SwiperSlide>
-  <SwiperSlide>
-    <h3>2006–2007</h3>
-    <p>Mövenpick Dead Sea Hotel Lead<br />(New Look)</p>
-  </SwiperSlide>
-  <SwiperSlide>
-    <h3>Credentials</h3>
-    <a href="/letter.pdf" download>Download L&T Recommendation</a>
-  </SwiperSlide>
-  <SwiperSlide>
-    <h3>Get the CV</h3>
-    <a href="/rami-cv.pdf" download>Download Rami’s CV</a>
-  </SwiperSlide>
-</Swiper>
 
-  )
+function ScrollSection() {
+  const sectionRef = useRef(null);
+  const triggerRef = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const pin = gsap.fromTo(
+      sectionRef.current,
+      {
+        translateX: 0,
+      },
+      {
+        translateX: "-300vw",
+        ease: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top top",
+          end: "2000 top",
+          scrub: 0.6,
+          pin: true,
+        },
+      }
+    );
+    return () => {
+      pin.kill();
+    };
+  }, []);
+
+  return (
+    <section className="scroll-section-outer">
+
+      <div ref={triggerRef}>
+        <div ref={sectionRef} className="scroll-section-inner">
+          <div className="scroll-section">
+            <h3>Section 1</h3>
+          </div>
+          <div className="scroll-section">
+            <h3>Section 2</h3>
+          </div>
+          <div className="scroll-section">
+            <h3>Section 3</h3>
+          </div>
+          <div className="scroll-section">
+            <h3>Section 4</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
+
+export default ScrollSection;
