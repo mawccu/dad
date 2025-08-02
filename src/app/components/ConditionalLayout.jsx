@@ -7,10 +7,16 @@ import StickyFooter from './StickyFooter';
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
+    const isProjectsPage = pathname.startsWith('/Projects');
 
-    if (isHomePage) {
-        // Special layout for the home page, no footer or navbar here
-        return <>{children}</>;
+    if (isHomePage || isProjectsPage) {
+        // Special layout for the home page and projects page, no footer or navbar here
+        return (
+            <>
+                {children}
+                <StickyFooter />
+            </>
+        );
     }
 
     return (

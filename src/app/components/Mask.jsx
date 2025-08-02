@@ -13,6 +13,7 @@ export default function Mask(){
     const videoRef = useRef(null);
     const { progress } = useProgress();
     const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+    const animationFrameRef = useRef(null);
 
     const initialMaskSize = 1;
     const TargetMaskSize = 30.9 // mask end-result
@@ -20,17 +21,36 @@ export default function Mask(){
     let easedScrollProgress = 0;
 
     useEffect(() => {
-        requestAnimationFrame(animate) //It's a built-in browser function that tells the browser to call this function 
-        // again before the next repaint
-    }, [])
+        
+        const startAnimation = () => {
+            // Only start animation after component mounts and refs are available
+            if (stickyMask.current && container.current) {
+                animationFrameRef.current = requestAnimationFrame(animate);
+            }
+        };
+        
+        startAnimation();
+        
+        // Cleanup animation frame on unmount
+        return () => {
+            if (animationFrameRef.current) {
+                cancelAnimationFrame(animationFrameRef.current);
+            }
+        };
+    }, []) // Dependencies removed since we're checking refs inside
 
     useEffect(() => {
-        if(progress === 100) {
+        if(progress === 100 && videoRef.current) {
             videoRef.current.play().catch(console.error);
         }
-    })
+    }, [progress]) // Added progress as dependency
 
     const animate = () => {
+        // Add null checks before accessing refs
+        if (!stickyMask.current || !container.current) {
+            return;
+        }
+
         const maskSizeProgress = TargetMaskSize * getScrollProgress();
         stickyMask.current.style.webkitMaskSize = (initialMaskSize + maskSizeProgress) * 100 + '%';
         
@@ -40,28 +60,39 @@ export default function Mask(){
         }
         
         if(!isAnimationComplete) {
-            requestAnimationFrame(animate) // this ensures the mask size is updated 
-            // continuously with the scroll progress
+            animationFrameRef.current = requestAnimationFrame(animate) // Store the animation frame ID
         }
     }
     
     useEffect(() => {
-        if(isAnimationComplete) {
+        let scrollTriggerInstance = null;
+        
+        if(isAnimationComplete && container.current) {
             console.log("animation has completed")
-            ScrollTrigger.create({
-                trigger: container.current,
+            const containerElement = container.current; // Store reference
+            
+            scrollTriggerInstance = ScrollTrigger.create({
+                trigger: containerElement,
                 start: 'bottom top',
                 end: '+=1',
                 onEnter:() =>{
                     //console.log("The navbar is now the top of the user's screen.")
-                    container.current.style.display = 'none';
-                    
+                    if (containerElement && containerElement.style) {
+                        containerElement.style.display = 'none';
+                    }
                 },
                 onLeave: () => {
                     //console.log("navbar is now pinned.")
                 }
             })
         }
+        
+        // Clean up ScrollTrigger on unmount or when dependencies change
+        return () => {
+            if (scrollTriggerInstance) {
+                scrollTriggerInstance.kill();
+            }
+        };
     }, [isAnimationComplete])
 
     const getScrollProgress = () => {

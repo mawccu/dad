@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Typing Stream</title>
+</head>
+<body>
+  <h1>WebSocket Typing Effect</h1>
+  <input type="text" id="messageInput" placeholder="Type a message..." />
+  <button onclick="sendMessage()">Send</button>
+  <p><strong>Response:</strong> <span id="response"></span></p>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:8000/ws");
+    const responseSpan = document.getElementById("response");
+    let isBusy = false;
+
+    socket.onopen = function() {
+      console.log("WebSocket connection established.");
+    };
+
+    socket.onerror = function(error) {
+      console.error("WebSocket error:", error);
+    };
+
+    socket.onclose = function() {
+      console.log("WebSocket connection closed.");
+    };
+
+    socket.addEventListener("message", (event) => {
+      if (event.data === "__END__") {
+        isBusy = false;  // Reset busy state when the end marker is received
+      } else {
+        responseSpan.textContent += event.data;  // Append each letter
+      }
+    });
+
+    function sendMessage() {
+        if (isBusy) {
+            alert("Please wait for the current message to finish.");
+            return;
+        }
+
+        responseSpan.textContent = "";  // Clear previous output
+        if (socket.readyState === WebSocket.OPEN) {
+            isBusy = true;
+            socket.send(document.getElementById("messageInput").value);
+            document.getElementById("messageInput").value = "";
+        } else {
+            alert("WebSocket is not open. Please try again later.");
+        }
+    }
+  </script>
+</body>
+</html>
+
+  

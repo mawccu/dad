@@ -21,27 +21,27 @@ export default function Testimonials(){
         <>
             <div className="min-h-screen flex items-center justify-center px-8 pt-8">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h1 className="text-6xl font-bold text-gray-800 mb-4 leading-tight">
+                    <h1 className="text-3xl font-semibold text-gray-800 leading-tight">
                         Turning dreams into reality:
                     </h1>
                     
-                    <h2 className="text-4xl font-semibold text-gray-700 mb-12">
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-12">
                         With the expertise of the Project Manager behind the 
                         <span className="text-blue-600 font-bold underline decoration-2 underline-offset-4"> <br />Abdoun Bridge Project.</span>
                     </h2>
 
-                    <p className="text-2xl text-gray-800 leading-relaxed mb-8 text-center">
+                    <p className="text-1.5xl text-gray-800 leading-relaxed mb-8 text-center font-350">
                         Based in Amman, Jordan, we are a finishing company with a strong foothold in the Gulf region and a reputation for delivering real, tangible results.
                         Specializing in coatings, waterproofing, surface treatments, and painting, we ensure every project meets the highest standards and leaves a lasting impact.
                     </p>
                     
-                    <p className="text-2xl text-gray-800 leading-relaxed text-center mb-16">
+                    <p className="text-1.5xl text-gray-800 leading-relaxed text-center mb-16 font-350">
                         Led by <span className="font-semibold underline text-blue-700"><a href="#">Rami</a></span>, who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the
                         Gulf, we're committed to delivering uncompromising quality, ensuring precision and excellence in every task we undertake.
                     </p>
 
-                    <div className="">
-                    <p className="text-center pb-25 text-2xl text-gray-800"
+                    <div>
+                    <p className="text-center pb-25 text-1.5xl text-gray-800"
                         onClick={() => router.push("/projects")}
                     >
                     <strong className="underline cursor-pointer hover:text-gray-500 transition-colors">Discover our projects</strong>
@@ -55,7 +55,7 @@ export default function Testimonials(){
             <div className="flex justify-center items-center">
                 {/* First Image Container */}
                 <div className="w-[960px] h-[872px] relative overflow-hidden"
-                onMouseEnter={() => {
+                        onMouseEnter={() => {
                             setIsHovered(true);
                             gsap.to(imageRef1.current, {
                                 scale: 1.1,
@@ -74,11 +74,9 @@ export default function Testimonials(){
                 >
                     <Image
                         ref={imageRef1}
-                        src="/medias/placeholder.png"
+                        src="/medias/img1.jpg"
                         alt="Protective Coatings"
-                        width={960}
-                        height={1080}
-                        className="object-cover h-full w-full"
+                        fill={true}
                     />
 
                     {/* Text Overlay */}
@@ -124,16 +122,14 @@ export default function Testimonials(){
                         ref={imageRef2}
                         src="/medias/placeholder.png"
                         alt="Epoxy Solutions"
-                        width={960}
-                        height={1080}
-                        className="object-cover h-full w-full"
+                        fill={true}
                     />
 
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white">
                         <div className="text-center">
-                            <h3 className="text-5xl font-light tracking-wide mb-6">Epoxy Solutions</h3>
-                            <p className="text-3xl font-light">Advanced Epoxy systems for lasting durability</p>
+                            <h3 className="text-5xl font-light tracking-wide mb-6">Flooring Solutions</h3>
+                            <p className="text-3xl font-light">Advanced Flooring systems for lasting durability</p>
                         </div>
                     </div>
 
@@ -208,9 +204,7 @@ export default function Testimonials(){
                         ref={imageRef3}
                         src="/medias/placeholder.png"
                         alt="New Look Team"
-                        width={960}
-                        height={1080}
-                        className="object-cover h-full w-full"
+                        fill={true}
                     />
                     {/* Text Overlay */}
 
@@ -263,9 +257,7 @@ export default function Testimonials(){
                         ref={imageRef4}
                         src="/medias/placeholder.png"
                         alt="New Look Team"
-                        width={960}
-                        height={1080}
-                        className="object-cover h-full w-full"
+                        fill={true}
                     />
                     {/* Text Overlay */}
 
@@ -356,10 +348,6 @@ export default function Testimonials(){
             {/* Contact Form Section */}
             <div className="-py-24">
                 <ContactForm />
-            </div>
-
-            <div>
-                
             </div>
         </>
     )

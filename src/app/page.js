@@ -64,8 +64,14 @@ export default function Home() {
       <APIComponent />
       <ImageLoad />
       <Navbar />
-      <div className="h-[calc(100vh-85px)] w-full relative overflow-hidden">
-        <Image src="/medias/placeholder.png" width="1920" height="1080" alt="Hero Image" />
+      <div className="h-[calc(100vh-80px)] w-full relative">
+        <Image
+          src="/medias/img1.jpg"
+          fill={true}
+          alt="Hero Image"
+          className="object-cover"
+          priority={true} 
+        />
       </div>
       <Testimonials />
       <StickyFooter />

@@ -7,7 +7,8 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning="true">
       <body>
         <ProgressProvider>
-          <ConditionalLayout>{children}</ConditionalLayout>
+          <ConditionalLayout>{children}</ConditionalLayout> 
+          {/* <SmoothScrolling /> */}
         </ProgressProvider>
       </body>
     </html>

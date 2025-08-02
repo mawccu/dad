@@ -1,15 +1,12 @@
 'use client';
 import React from 'react';
-import GSAPImageSlider from './slider';
-import Scroll from './scroll'
 import App from './App';
-
+import HorizontalScroll from './HorizontalScroll'
 export default function Projects() {
   return (
     <>
-      <Scroll /> {/* Full width, no container constraints */}
-      
-      
+      <HorizontalScroll />
+      <App />
     </>
   );
 }
