@@ -11,6 +11,10 @@ export default function CustomFlooring() {
   const router = useRouter();
   const imageRef1 = useRef(null);
   const imageRef2 = useRef(null);
+  const imageRef3 = useRef(null);
+  const imageRef4 = useRef(null);
+  const imageRef5 = useRef(null);
+
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
@@ -91,27 +95,24 @@ export default function CustomFlooring() {
                 >
                     <Image
                         ref={imageRef1}
-                        src="/medias/img1.jpg"
+                        src="/medias/001.jpg"
                         alt="Protective Coatings"
                         fill={true}
+                        
                     />
 
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white">
                         <div className="text-center">
-                            <h3 className="text-5xl font-light tracking-wide mb-6">Protective Coatings</h3>
-                            <p className="text-3xl font-light">Redefining protection with advanced coating solutions</p>
-                        </div>
-                    </div>
-                    
-                    {/* Bottom text */}
-                    <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
-                        <div className="text-center">
-                            <p 
-                            className="text-3xl font-light underline underline-offset-4 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/protective-coatings")}
-                            >
-                                Protective Coatings Services</p>
+                            <h3 className="text-5xl font-light tracking-wide mb-12">Exceptional Expertise</h3>
+                            <ul className="text-2xl font-light list-disc list-inside">
+                              <li>Modern Villas</li>
+                              <li>Big box systems</li>
+                              <li>Residential Communities</li>
+                              <li>Private Homes</li>
+                              <li>Schools</li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -137,7 +138,7 @@ export default function CustomFlooring() {
                 >
                     <Image
                         ref={imageRef2}
-                        src="/medias/placeholder.png"
+                        src="/medias/floor2.jpg"
                         alt="Epoxy Solutions"
                         fill={true}
                     />
@@ -145,24 +146,97 @@ export default function CustomFlooring() {
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white">
                         <div className="text-center">
-                            <h3 className="text-5xl font-light tracking-wide mb-6">Flooring Solutions</h3>
-                            <p className="text-3xl font-light">Advanced Flooring systems for lasting durability</p>
+                            <p className="text-2xl font-light mb-8 text-gray-800">Anti-slip Systems</p>
+                            <p className="text-2xl font-light mb-8 text-gray-800">High-traffic areas</p>
+                            <p className="text-2xl font-light mb-8 text-gray-800">Decorative Epoxy</p>
                         </div>
                     </div>
 
-                    {/*Bottom text Second Image*/}
-                    <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
-                        <div className="text-center">
-                            <p 
-                            className="text-3xl font-light underline underline-offset-4 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/epoxy")}
-                            >
-                                Decorative Epoxy Services
-                            </p>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
+
+<div className="min-h-screen">
+        <div className="max-w-6xl mx-auto px-4 py-32 text-center">
+          <div>
+              <h2 className="text-4xl text-gray-1000 font-semibold mb-12">Selected Flooring Projects</h2>
+              <p className="text-2xl text-gray-900">Explore more of our carefully curated projects and experience our distinctive and bespoke approach</p>
+          </div>
+
+ {/**                        project cards like the storm one, movenpick, some random villa and the school thing, its fine if there's none just make up something or leave it, 2 projects minimum, have each one link to the project description, since its only a few projects in the whole website make a seperate page for each. then make the FAQ and then the free consultation area and then footer, consider if u should make a seperate FAQ for each service.
+ */}         
+
+         </div>
+
+          <div className="flex gap-6 mb-16 px-8 max-w-5xl ">
+          <div className="relative" 
+            onMouseEnter={() => {
+              setIsHovered(true)
+              gsap.to(imageRef2.current, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        ease: 'power2.out',
+                      })
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false)
+              gsap.to(imageRef2.current, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out',
+              })
+            }}
+          >
+            <Image
+              src="/medias/movenpick.jpg"
+              width={500}
+              height={240}
+              alt="Project Preview"
+              ref={imageRef2}
+              className="object-cover rounded-lg shadow-lg"
+                />
+
+              {/* Text Overlay 1*/}
+              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
+                  <p className="m-4 text-2xl">Mövenpick Hotels & Resorts</p>
+                  <p className="m-4 text-xl">Interior Kitchen Flooring</p>
+              </div>
+      </div>
+
+          <div className="relative" 
+           onMouseEnter={() => {
+                  setIsHovered(true);
+                  gsap.to(imageRef3.current, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: 'power2.out',
+                  })
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                  gsap.to(imageRef3.current, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out',
+                  })
+                }}
+          >
+            <Image
+              src="/medias/placeholder.png"
+              width={500}
+              height={240}
+              alt="Project Preview"
+              ref={imageRef3}
+                />
+
+              {/* Text Overlay 2*/}
+              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
+                  <p className="m-4 text-2xl">Safeway</p>
+                  <p className="m-4 text-xl">High-traffic Epoxy Flooring</p>
+              </div>
+        </div>
+      </div>
+</div>
     </>
   );
 }

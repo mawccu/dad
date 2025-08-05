@@ -53,6 +53,9 @@ module.exports = {
         '4xl': '2.25rem',
         '4.5xl': '2.625rem',    // Just an example of a larger custom size
       },
+      boxShadow: {
+        'text': '0 2px 5px rgba(0, 0, 0, 0.3',
+      }
     },
   },
   plugins: [],
