@@ -30,7 +30,6 @@ const Dropdown = React.forwardRef((props, ref) => {
         }}
       >
         <Link className={styles.link} href="/Services/SurfaceFinishing">Surface Finishing</Link>
-        <Link className={styles.link} href="/Services/Waterproofing">Waterproofing</Link>
         <Link className={styles.link} href="/Services/CustomFlooring">Custom Flooring</Link>
       </div>
     </div>
@@ -65,39 +64,9 @@ export default function Navbar() {
   const navbarRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [navbarBottom, setNavbarBottom] = useState('64px');
-  const [navbarHeight, setNavbarHeight] = useState(0); // Default height
   const [contentOffset, setContentOffset] = useState(0);
   const [servicesRect, setServicesRect] = useState(null);
 
-   useEffect(() => {
-  const updatePositions = () => {
-    if (navbarRef.current) {
-      // Get the height from the element's offsetHeight property
-      const currentNavbarHeight = navbarRef.current.offsetHeight;
-
-      // Log the height to the console 👈
-      console.log('Calculated Navbar Height (px):', currentNavbarHeight);
-
-      setNavbarHeight(currentNavbarHeight);
-
-      // ... rest of your logic
-      const navbarRect = navbarRef.current.getBoundingClientRect();
-      setNavbarBottom(`${navbarRect.bottom}px`);
-
-      if (servicesRef.current) {
-        const servicesRect = servicesRef.current.getBoundingClientRect();
-        setServicesRect(servicesRect);
-        const servicesCenter = servicesRect.left + (servicesRect.width / 2);
-        const viewportCenter = window.innerWidth / 2;
-        setContentOffset(servicesCenter - viewportCenter);
-      }
-    }
-  };
-  updatePositions();
-  
-  window.addEventListener('resize', updatePositions);
-  return () => window.removeEventListener('resize', updatePositions);
-}, []);
 
   useEffect(() => {
     const updatePositions = () => {
