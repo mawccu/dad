@@ -4,9 +4,9 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
+import FAQ from './faq'; // Import the FAQ component
 
-
-// 
+// Main component
 export default function CustomFlooring() {
   const router = useRouter();
   const imageRef1 = useRef(null);
@@ -168,8 +168,8 @@ export default function CustomFlooring() {
 
          </div>
 
-          <div className="flex gap-6 mb-16 px-8 max-w-5xl ">
-          <div className="relative" 
+          <div className="flex gap-6 mb-16 px-8 max-w-5xl">
+          <div className="relative w-[500px] h-[260px] overflow-hidden ml-8" 
             onMouseEnter={() => {
               setIsHovered(true)
               gsap.to(imageRef2.current, {
@@ -180,7 +180,7 @@ export default function CustomFlooring() {
             }}
             onMouseLeave={() => {
               setIsHovered(false)
-              gsap.to(imageRef2.current, {
+              gsap.to(imageRef3.current, {
                 scale: 1,
                 duration: 0.3,
                 ease: 'power2.out',
@@ -189,24 +189,23 @@ export default function CustomFlooring() {
           >
             <Image
               src="/medias/movenpick.jpg"
-              width={500}
-              height={240}
+              fill={true}
               alt="Project Preview"
               ref={imageRef2}
               className="object-cover rounded-lg shadow-lg"
                 />
 
               {/* Text Overlay 1*/}
-              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
-                  <p className="m-4 text-2xl">Mövenpick Hotels & Resorts</p>
-                  <p className="m-4 text-xl">Interior Kitchen Flooring</p>
+              <div className="absolute p-4 inset-0 flex items-center justify-between flex-col text-white">
+                  <p className="text-2xl">Mövenpick Hotels & Resorts</p>
+                  <p className="text-xl">Interior Kitchen Flooring</p>
               </div>
       </div>
 
-          <div className="relative" 
+          <div className="relative w-[500px] h-[260px] overflow-hidden" 
            onMouseEnter={() => {
                   setIsHovered(true);
-                  gsap.to(imageRef3.current, {
+                  gsap.to(imageRef4.current, {
                     scale: 1.05,
                     duration: 0.3,
                     ease: 'power2.out',
@@ -230,12 +229,17 @@ export default function CustomFlooring() {
                 />
 
               {/* Text Overlay 2*/}
-              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
-                  <p className="m-4 text-2xl">Safeway</p>
-                  <p className="m-4 text-xl">High-traffic Epoxy Flooring</p>
+              <div className="absolute inset-0 flex p-4 items-center justify-between flex-col text-white">
+                  <p className="text-2xl">Safeway</p>
+                  <p className="text-xl">High-traffic Epoxy Flooring</p>
               </div>
         </div>
       </div>
+</div>
+
+<div className='py-32 min-h-screen'>
+  FAQ
+  <FAQ />
 </div>
     </>
   );
