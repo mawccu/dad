@@ -68,7 +68,7 @@ export default function Mask(){
         let scrollTriggerInstance = null;
         
         if(isAnimationComplete && container.current) {
-            console.log("animation has completed")
+            //console.log("animation has completed")
             const containerElement = container.current; // Store reference
             
             scrollTriggerInstance = ScrollTrigger.create({

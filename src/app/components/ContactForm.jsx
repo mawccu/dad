@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 
-
 const FormInput = ({ label, type= 'text', value, onChange, name }) => (
     <div className="flex items-baseline">
         <label htmlFor={name} className="text-gray-800 shrink-0 text-left w-28">
@@ -65,6 +64,7 @@ export default function ContactForm() {
         }
     }
     
+
     return(
         <>
         <div>

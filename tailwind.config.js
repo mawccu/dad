@@ -53,10 +53,14 @@ module.exports = {
         '4xl': '2.25rem',
         '4.5xl': '2.625rem',    // Just an example of a larger custom size
       },
-      boxShadow: {
-        'text': '0 2px 5px rgba(0, 0, 0, 0.3',
-      }
+      textShadow: {
+        'custom': '2px 2px 4px rgba(0, 0, 0, 0.5)', // Example custom shadow
+        'none': 'none', // Override default none shadow
+        'md': '3px 3px 6px rgba(0, 0, 0, 0.6)', // Medium shadow
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow'),
+  ],
 }

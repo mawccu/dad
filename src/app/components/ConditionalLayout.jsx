@@ -7,9 +7,8 @@ import StickyFooter from './StickyFooter';
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
-    const isProjectsPage = pathname.startsWith('/Projects');
 
-    if (isHomePage || isProjectsPage) {
+    if (isHomePage) {
         // Special layout for the home page and projects page, no footer or navbar here
         return (
             <>
@@ -21,7 +20,9 @@ export default function ConditionalLayout({ children }) {
 
     return (
         <>
-            <Navbar />
+            <div style={{ position: 'relative', zIndex: 9997 }}>
+                <Navbar />
+            </div>
             <main className="min-h-screen">
                 {children}
             </main>

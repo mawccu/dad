@@ -30,12 +30,12 @@ export default function Testimonials(){
                         <span className="text-blue-600 font-bold underline decoration-2 underline-offset-4"> <br />Abdoun Bridge Project.</span>
                     </h2>
 
-                    <p className="text-1.5xl text-gray-800 leading-relaxed mb-8 text-center font-350">
+                    <p className="text-1.5xl text-gray-800 leading-relaxed mb-8 text-center font-400">
                         Based in Amman, Jordan, we are a finishing company with a strong foothold in the Gulf region and a reputation for delivering real, tangible results.
                         Specializing in coatings, waterproofing, surface treatments, and painting, we ensure every project meets the highest standards and leaves a lasting impact.
                     </p>
                     
-                    <p className="text-1.5xl text-gray-800 leading-relaxed text-center mb-16 font-350">
+                    <p className="text-1.5xl text-gray-800 leading-relaxed text-center mb-16 font-400">
                         Led by <span className="font-semibold underline text-blue-700"><a href="#">Rami</a></span>, who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the
                         Gulf, we're committed to delivering uncompromising quality, ensuring precision and excellence in every task we undertake.
                     </p>
@@ -148,17 +148,17 @@ export default function Testimonials(){
             </div>
             
             <div className="min-h-screen flex items-center justify-center px-8 ">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h1 className="text-6xl font-400 text-gray-800 leading-tight mb-20">
+                <div className="max-w-5xl mx-auto text-center">
+                    <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-20">
                         Our expertise
                     </h1>
                        
-                    <h2 className="text-3xl font-300 text-gray-700 mb-12">
+                    <h2 className="text-2xl font-400 text-gray-700 mb-12">
                         We specialize in the final, crucial layer of every project, ensuring precision and durability. With years of hands-on
                         experience and collaboration with top engineers and suppliers, we guarantee a streamlined process from start to finish.
                     </h2>
 
-                    <p className="text-3xl text-gray-700 font-300 text-center ">
+                    <p className="text-2xl text-gray-700 font-400 text-center ">
                         Whether it's new construction or renovating existing spaces, from luxury homes to commercial 
                         properties, our work showcases the attention to detail and quality that defines us.
                     </p>
@@ -294,11 +294,11 @@ export default function Testimonials(){
             <div className="min-h-screen flex items-center justify-center px-8 py-8 -mt-20">
                 <div className="max-w-6xl mx-auto text-center">
 
-                    <h1 className="text-6xl font-500 text-gray-800 leading-tight mb-8">
+                    <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-8">
                         Trusted Credentials & Collaborations
                     </h1>
 
-                    <h2 className="text-3xl font-light text-gray-700 mb-12">
+                    <h2 className="text-2xl font-400 text-gray-700 mb-12">
                         Over the years, we've had the privilege of working alongside some of the most respected names in the industry.
                         These collaborations have shaped the quality and precision of the work we deliver.
                     </h2>
@@ -308,7 +308,7 @@ export default function Testimonials(){
                         {/* Partner 1 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/path/to/al-manaseer-logo.png"
+                                src="/medias/al-manaseer-logo.png"
                                 alt="Al Manaseer"
                                 width={150}
                                 height={50}
@@ -318,7 +318,7 @@ export default function Testimonials(){
                         {/* Partner 2 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/path/to/another-partner-logo.png"
+                                src="/medias/another-partner-logo.png"
                                 alt="Another Partner"
                                 width={150}
                                 height={50}
@@ -329,7 +329,7 @@ export default function Testimonials(){
                         {/* Partner 3 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/path/to/abdoun-bridge-logo.png"
+                                src="/medias/abdoun-bridge-logo.png"
                                 alt="Abdoun Bridge"
                                 width={150}
                                 height={50}

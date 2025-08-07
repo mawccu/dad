@@ -19,10 +19,10 @@ const FooterNav = () => {
                 <div className='flex flex-col gap-3'>
                     <h3 className='mb-4 uppercase text-gray-400 font-semibold'>Services</h3>
                     <Link href="/Services" className='hover:text-gray-300 transition-colors'>All Services</Link>
-                    <p className='text-gray-300'>Protective Coatings</p>
-                    <p className='text-gray-300'>Epoxy Solutions</p>
-                    <p className='text-gray-300'>Waterproofing</p>
-                    <p className='text-gray-300'>Surface Treatments</p>
+                    <Link href="/Services/Protective-Coatings" className='hover:text-gray-300 transition-colors'>Protective Coatings</Link>
+                    <Link href="/Services/CustomFlooring" className='hover:text-gray-300 transition-colors'>Custom Flooring</Link>
+                    <Link href="/Services/Waterproofing" className='hover:text-gray-300 transition-colors'>Waterproofing</Link>
+                    <Link href="/Services/Surface-Treatments" className='hover:text-gray-300 transition-colors'>Surface Treatments</Link>
                 </div>
                 
                 <div className='flex flex-col gap-3'>

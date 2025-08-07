@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 
-const StrengthCard = ({ strength, index }) => {
+const StrengthCard = ({ strength, index, className }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -73,12 +73,13 @@ export default function About() {
 
   return (
     <div className="bg-white">
+    <div style={{minHeight: 'calc(100vh - 75px)'}}>
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="max-w-5xl flex justify-center flex-col text-center items-center px-6 py-12 mx-auto">
         <h1 className="text-4xl font-medium mb-6 text-gray-900 leading-tight max-w-4xl">
           Master Finishers with a Legacy of Excellence in Jordan
         </h1>
-        <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
+        <p className="text-xl text-gray-700 max-w-4xl leading-relaxed">
           New Look is led by <span className="font-600">Rami Hamad</span>, who oversaw finishing works on the Abdoun Bridge, one of Jordan's landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we're the invisible force behind surfaces that last.
         </p>
       </section>
@@ -87,12 +88,13 @@ export default function About() {
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <Image src='/medias/placeholder.png' alt='Rami Hamad' width={1920} height={1080} className="shadow-lg" ref={imageRef} />
       </section>
+    </div>
 
       {/* Philosophy Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-medium mb-8 text-gray-900">Our Philosophy</h2>
-          <div className="space-y-5 text-gray-700 leading-relaxed">
+          <h2 className="text-4xl font-medium mb-8 text-gray-900">Our Philosophy</h2>
+          <div className="space-y-5 text-gray-700 text-xl leading-relaxed">
             <p>At New Look, our focus is simple: deliver work that lasts and do it right the first time. Every project we take on is tailored to the client's needs and the demands of the site. We pay special attention not only to the aesthetics but also to creating an immersive and captivating experience.</p>
             <p>We believe good work starts with a clear purpose. Every project has its own context: site conditions, client needs, budget realities and timeline pressure. We consider all of that before we even lift a brush.</p>
             <p>We embrace new challenges as opportunities for growth and innovation.</p>
@@ -105,7 +107,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-6">
           <motion.h2 
             ref={titleRef}
-            className="text-3xl font-medium mb-12 text-gray-900"
+            className="text-4xl font-medium mb-12 text-gray-900"
             initial={{ opacity: 0 }}
             animate={isTitleInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
@@ -119,6 +121,7 @@ export default function About() {
                 key={index}
                 strength={strength}
                 index={index}
+                className="bg-white p-6 border-l-4 border-gray-800 hover:border-blue-600 transition-colors duration-300"
               />
             ))}
           </div>
@@ -126,10 +129,10 @@ export default function About() {
       </section>
 
       {/* Location Section */}
-      <section className="bg-gray-50 py-16 min-h-screen">
+      <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-medium mb-6 text-gray-900">Where we've made our mark</h2>
-          <p className="text-gray-700 mb-8 leading-relaxed">
+          <h2 className="text-4xl font-medium mb-6 text-gray-900">Where we've made our mark</h2>
+          <p className="text-gray-700 mb-8 leading-relaxed text-xl text-center">
             Based in Amman, Jordan, we've brought precision finishing to sites across Amman, Aqaba, The Dead Sea, and beyond.
           </p>
           
@@ -149,9 +152,8 @@ export default function About() {
       {/* Project Previews Section, add pictures from the current villa dad is working on and have them blurred. */}
       <section className="mx-auto max-w-7xl py-16 px-8">
        
-          <h2 className="text-3xl text-center">Project Previews</h2>
-          <p className="text-xl text-center font-300">Before every finish goes live, it lives in our specs and mockups. Here's a sneak peak at upcoming villa refurbushments and protective coating systems, straight from our field journals.</p>
-
+          <h2 className="text-4xl text-center">Project Previews</h2>
+          <p className="text-xl text-center font-350">Before every finish goes live, it lives in our specs and mockups. Here's a sneak peak at upcoming villa refurbushments and protective coating systems, straight from our field journals.</p>
       </section>
 
       <div className="flex gap-6 py-16 mb-16 px-8 max-w-5xl ">
@@ -159,8 +161,8 @@ export default function About() {
             onMouseEnter={() => {
               setIsHovered(true)
               gsap.to(imageRef2.current, {
-                        scale: 1.05,
-                        duration: 0.3,
+                        scale: 1.1,
+                        duration: 0.6,
                         ease: 'power2.out',
                       })
             }}
@@ -168,7 +170,7 @@ export default function About() {
               setIsHovered(false)
               gsap.to(imageRef2.current, {
                 scale: 1,
-                duration: 0.3,
+                duration: 0.6,
                 ease: 'power2.out',
               })
             }}
@@ -192,8 +194,8 @@ export default function About() {
            onMouseEnter={() => {
                   setIsHovered(true);
                   gsap.to(imageRef3.current, {
-                    scale: 1.05,
-                    duration: 0.3,
+                    scale: 1.1,
+                    duration: 0.6,
                     ease: 'power2.out',
                   })
                 }}
@@ -201,7 +203,7 @@ export default function About() {
                   setIsHovered(false);
                   gsap.to(imageRef3.current, {
                     scale: 1,
-                    duration: 0.3,
+                    duration: 0.6,
                     ease: 'power2.out',
                   })
                 }}

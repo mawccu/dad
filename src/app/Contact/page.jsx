@@ -1,8 +1,10 @@
 'use client';
 import React from 'react';
+import { useSearchParams } from 'next/navigation';
 
 function Contact({ onScheduleClick }) {
-    
+
+
     const handleScheduleClick = (type) => {
         onScheduleClick(type);
         setTimeout(() => {
@@ -221,6 +223,14 @@ function ContactForm({ prefillType }) {
 
 export default function Call(){
     const [prefillType, setPrefillType] = React.useState(null);
+    const searchParams = useSearchParams();
+    const reason = searchParams.get('reason');
+
+    React.useEffect(() => {
+        if (reason) {
+            setPrefillType(reason);
+        }
+    }, [reason]);
 
     const handleScheduleClick = (type) => {
         setPrefillType(type);
