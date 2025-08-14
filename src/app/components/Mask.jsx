@@ -7,18 +7,26 @@ import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Mask(){
+export default function Mask({ onComplete }){
     const container = useRef(null)
     const stickyMask = useRef(null)
     const videoRef = useRef(null);
     const { progress } = useProgress();
     const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+    const [shouldShow, setShouldShow] = useState(false); // Add state to control visibility
     const animationFrameRef = useRef(null);
 
     const initialMaskSize = 1;
     const TargetMaskSize = 30.9 // mask end-result
     const easing = 0.15;
     let easedScrollProgress = 0;
+
+    // Show mask only after loader reaches 100%
+    useEffect(() => {
+        if (progress === 100) {
+            setShouldShow(true);
+        }
+    }, [progress]);
 
     useEffect(() => {
         
@@ -29,7 +37,10 @@ export default function Mask(){
             }
         };
         
-        startAnimation();
+        // Only start animation if mask should be shown
+        if (shouldShow) {
+            startAnimation();
+        }
         
         // Cleanup animation frame on unmount
         return () => {
@@ -37,13 +48,13 @@ export default function Mask(){
                 cancelAnimationFrame(animationFrameRef.current);
             }
         };
-    }, []) // Dependencies removed since we're checking refs inside
+    }, [shouldShow]) // Add shouldShow as dependency
 
     useEffect(() => {
-        if(progress === 100 && videoRef.current) {
+        if(progress === 100 && videoRef.current && shouldShow) {
             videoRef.current.play().catch(console.error);
         }
-    }, [progress]) // Added progress as dependency
+    }, [progress, shouldShow]) // Added shouldShow as dependency
 
     const animate = () => {
         // Add null checks before accessing refs
@@ -54,9 +65,14 @@ export default function Mask(){
         const maskSizeProgress = TargetMaskSize * getScrollProgress();
         stickyMask.current.style.webkitMaskSize = (initialMaskSize + maskSizeProgress) * 100 + '%';
         
+     
+
         const tolerance = 0.1;
         if(Math.abs(maskSizeProgress - TargetMaskSize) < tolerance) {
-            setIsAnimationComplete(true)
+            if (!isAnimationComplete) {
+                setIsAnimationComplete(true);
+                onComplete?.();
+            }
         }
         
         if(!isAnimationComplete) {
@@ -99,9 +115,15 @@ export default function Mask(){
         if(!stickyMask.current || !container.current) return 0;
 
         const scrollProgress = stickyMask.current.offsetTop / (container.current.getBoundingClientRect().height - window.innerHeight)
+        
         const delta = scrollProgress - easedScrollProgress;
         easedScrollProgress += delta * easing;
         return Math.max(0, Math.min(1, easedScrollProgress))
+    }
+    
+    // Don't render anything until loader is complete
+    if (!shouldShow) {
+        return null;
     }
     
     return(

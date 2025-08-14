@@ -50,9 +50,7 @@ export default function Testimonials(){
                 </div>
             </div>
 
-            
-
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center min-height-[calc(100vh-75px)]">
                 {/* First Image Container */}
                 <div className="w-[960px] h-[872px] relative overflow-hidden"
                         onMouseEnter={() => {
@@ -308,7 +306,7 @@ export default function Testimonials(){
                         {/* Partner 1 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/medias/al-manaseer-logo.png"
+                                src="/medias/placeholder.png"
                                 alt="Al Manaseer"
                                 width={150}
                                 height={50}
@@ -318,7 +316,7 @@ export default function Testimonials(){
                         {/* Partner 2 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/medias/another-partner-logo.png"
+                                src="/medias/placeholder.png"
                                 alt="Another Partner"
                                 width={150}
                                 height={50}
@@ -329,7 +327,7 @@ export default function Testimonials(){
                         {/* Partner 3 */}
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/medias/abdoun-bridge-logo.png"
+                                src="/medias/placeholder.png"
                                 alt="Abdoun Bridge"
                                 width={150}
                                 height={50}

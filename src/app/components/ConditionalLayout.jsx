@@ -3,17 +3,19 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import Navbar from './Navbar';
 import StickyFooter from './StickyFooter';
+import { useProgress } from './ProgressProvider';
 
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
+    const { progress } = useProgress();
 
     if (isHomePage) {
-        // Special layout for the home page and projects page, no footer or navbar here
+        // Special layout for the home page and projects page, navbar here
         return (
             <>
                 {children}
-                <StickyFooter />
+                {progress === 100 && <StickyFooter />}
             </>
         );
     }

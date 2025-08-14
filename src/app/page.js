@@ -8,13 +8,14 @@ import Image from 'next/image';
 import Testimonials from './components/Testimonials'
 import StickyFooter from './components/StickyFooter';
 
-function MaskLoad(){
+function MaskLoad({ onComplete }) {
   const { reportAsLoaded } = useProgress()
 
   useEffect(() => {
     reportAsLoaded('mask')
   }, [])
-  return <Mask />
+  
+  return <Mask onComplete={onComplete} />
 }
 
 function ImageLoad(){
@@ -23,7 +24,7 @@ function ImageLoad(){
   useEffect(() => {
     reportAsLoaded('heroImage')
   },[])
-  return <div></div>
+  return null; // Don't render anything initially
 }
 
 function HeavyComponent() {
@@ -35,7 +36,7 @@ function HeavyComponent() {
     }, 1500);
   }, []);
 
-  return <div></div>;
+  return null; // Don't render anything initially
 }
 
 function APIComponent() {
@@ -52,29 +53,54 @@ function APIComponent() {
       .catch(() => reportAsLoaded('api')); //report back to the context
   }, []);
 
-  return <div></div>;
+  return null; // Don't render anything initially
 }
 
 export default function Home() {
+  const [maskDone, setMaskDone] = useState(false);
+  const { progress } = useProgress(); // Get progress to control content visibility
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🔍 HOME DEBUG: maskDone state changed to:', maskDone);
+  }, [maskDone]);
+
   return (
     <>
       <Loader />
-      <MaskLoad />
+      <MaskLoad onComplete={() => {
+        console.log('🔍 HOME DEBUG: Mask animation completed, setting maskDone to true');
+        setMaskDone(true);
+      }} />
       <HeavyComponent />
       <APIComponent />
       <ImageLoad />
-      <Navbar />
-      <div className="h-[calc(100vh-80px)] w-full relative">
-        <Image
-          src="/medias/img1.jpg"
-          fill={true}
-          alt="Hero Image"
-          className="object-cover"
-          priority={true} 
-        />
-      </div>
-      <Testimonials />
       
+      {/* Debug: Always show navbar for testing */}
+      {console.log('🔍 HOME DEBUG: Rendering navbar check, maskDone:', maskDone)}
+      
+      {maskDone && (
+        <div style={{ position: 'relative', zIndex: 99999 }}>
+        {console.log('🔍 RENDERING NAVBAR NOW!')} {/* ADD THIS LINE */}
+        <Navbar />
+    </div>
+      )}
+      
+      {/* Only show content after loader completes */}
+      {progress === 100 && (
+        <>
+          <div className="h-[calc(100vh-80px)] w-full relative">
+            <Image
+              src="/medias/img1.jpg"
+              fill={true}
+              alt="Hero Image"
+              className="object-cover"
+              priority={true} 
+            />
+          </div>
+          <Testimonials />
+        </>
+      )}
     </>
   );
 }

@@ -55,3 +55,14 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+/* lock both axes */
+.no-scroll, .no-scroll body {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+/* optional for iOS overscroll reduction */
+.no-scroll {
+  overscroll-behavior: none;
+}

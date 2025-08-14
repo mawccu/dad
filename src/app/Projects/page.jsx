@@ -28,7 +28,7 @@ const projects = [
   { 
     src: '/medias/img4.jpg', 
     link: '/Projects/AbdounBridge', 
-    category: ['surface finishing'],
+    category: ['surface finishing', 'legacy'],
     name: 'Abdoun Bridge'
   },
   { 
@@ -37,6 +37,18 @@ const projects = [
     category: ['surface finishing'],
     name: 'Modern Residence'
   },
+  {
+    src: '/medias/img5.jpg',
+    link: '/Projects/NCC',
+    category: ['surface finishing'],
+    name: 'NCC'
+  },
+  {
+    src: '/medias/img5.jpg',
+    link: '/Projects/Expeditors',
+    category: ['flooring'],
+    name: 'Expeditors'
+  }
 ];
 
 export default function Projects() {
@@ -58,8 +70,8 @@ export default function Projects() {
       <div className="min-h-[calc(100vh-75px)]">
       <p className="pt-24 text-4xl text-center">Our Projects</p>
       <div className="flex gap-8 text-xl font-400 px-12 mt-16">
-        
-        {['All', 'Flooring', 'Surface Finishing'].map((category) => (
+
+        {['All', 'Flooring', 'Surface Finishing', 'Legacy'].map((category) => (
           <button
             key={category}
             onClick={() => setFilter(category)}
