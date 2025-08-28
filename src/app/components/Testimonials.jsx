@@ -51,7 +51,7 @@ export default function Testimonials(){
             </div>
 
 
-            <div className="flex justify-center items-center min-height-[100vh]">
+            <div className="flex justify-center items-center h-[100vh]">
                 {/* First Image Container */}
                 <div className="w-[960px] h-[100vh] relative overflow-hidden"
                         onMouseEnter={() => {

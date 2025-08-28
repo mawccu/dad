@@ -73,22 +73,22 @@ export default function About() {
 
   return (
     <div className="bg-white">
-    <div style={{minHeight: 'calc(100vh - 75px)'}}>
-      {/* Hero Section */}
-      <section className="max-w-5xl flex justify-center flex-col text-center items-center px-6 py-12 mx-auto">
-        <h1 className="text-4xl font-medium mb-6 text-gray-900 leading-tight max-w-4xl">
-          Master Finishers with a Legacy of Excellence in Jordan
-        </h1>
-        <p className="text-xl text-gray-700 max-w-4xl leading-relaxed">
-          New Look is led by <span className="font-600">Rami Hamad</span>, who oversaw finishing works on the Abdoun Bridge, one of Jordan's landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we're the invisible force behind surfaces that last.
-        </p>
-      </section>
+      <div className="min-h-screen py-20">
+        {/* Hero Section */}
+        <section className="max-w-5xl flex justify-center flex-col text-center items-center px-6 py-12 mx-auto">
+          <h1 className="text-4xl font-medium mb-6 text-gray-900 leading-tight max-w-4xl">
+            Master Finishers with a Legacy of Excellence in Jordan
+          </h1>
+          <p className="text-xl text-gray-700 max-w-4xl leading-relaxed">
+            New Look is led by <span className="font-600">Rami Hamad</span>, who oversaw finishing works on the Abdoun Bridge, one of Jordan's landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we're the invisible force behind surfaces that last.
+          </p>
+        </section>
 
-      {/* Image Section */}
-      <section className="max-w-5xl mx-auto px-6 mb-20">
-        <Image src='/medias/placeholder.png' alt='Rami Hamad' width={1920} height={1080} className="shadow-lg" ref={imageRef} />
-      </section>
-    </div>
+        {/* Image Section */}
+        <section className="max-w-5xl mx-auto px-6 mb-20">
+          <Image src='/medias/placeholder.png' alt='Rami Hamad' width={1920} height={1080} className="shadow-lg" ref={imageRef} />
+        </section>
+      </div>
 
       {/* Philosophy Section */}
       <section className="bg-gray-50 py-16">
@@ -153,11 +153,11 @@ export default function About() {
       <section className="mx-auto max-w-7xl py-16 px-8">
        
           <h2 className="text-4xl text-center">Project Previews</h2>
-          <p className="text-xl text-center font-350">Before every finish goes live, it lives in our specs and mockups. Here's a sneak peak at upcoming villa refurbushments and protective coating systems, straight from our field journals.</p>
+          <p className="text-xl text-center font-350">Before every finish goes live, it lives in our specs and mockups. Here's a sneak peak at upcoming villa refurbishments and protective coating systems, straight from our field journals.</p>
       </section>
 
       <div className="flex gap-6 py-16 mb-16 px-8 max-w-5xl ">
-          <div className="relative" 
+          <div className="relative rounded-lg overflow-hidden cursor-pointer" 
             onMouseEnter={() => {
               setIsHovered(true)
               gsap.to(imageRef2.current, {
@@ -181,6 +181,7 @@ export default function About() {
               height={360}
               alt="Project Preview"
               ref={imageRef2}
+              className="object-cover"
                 />
 
               {/* Text Overlay 1*/}
@@ -190,7 +191,7 @@ export default function About() {
               </div>
       </div>
 
-          <div className="relative" 
+          <div className="relative rounded-lg overflow-hidden cursor-pointer" 
            onMouseEnter={() => {
                   setIsHovered(true);
                   gsap.to(imageRef3.current, {
@@ -214,6 +215,7 @@ export default function About() {
               height={360}
               alt="Project Preview"
               ref={imageRef3}
+              className="object-cover"
                 />
 
               {/* Text Overlay 2*/}

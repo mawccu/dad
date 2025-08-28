@@ -231,9 +231,9 @@ const faqData = [
         >
           <div className="mb-20 text-center">
             <h1 className="text-5xl font-semibold text-gray-900 mb-8 tracking-wide">
-              Frequently Asked Quesdsstions
+              Frequently Asked Questions
             </h1>
-            <p className="text-2xl font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl font-300 text-gray-900 max-w-3xl mx-auto leading-relaxed">
               Common questions about our surface finishing and protective coating services.
             </p>
           </div>

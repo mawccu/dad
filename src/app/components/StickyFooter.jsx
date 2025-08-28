@@ -19,10 +19,10 @@ const FooterNav = () => {
                 <div className='flex flex-col gap-3'>
                     <h3 className='mb-4 uppercase text-gray-400 font-semibold'>Services</h3>
                     <Link href="/Services" className='hover:text-gray-300 transition-colors'>All Services</Link>
-                    <Link href="/Services/Protective-Coatings" className='hover:text-gray-300 transition-colors'>Protective Coatings</Link>
+                    <Link href="/Services/SurfaceFinishing" className='hover:text-gray-300 transition-colors'>Protective Coatings</Link>
                     <Link href="/Services/CustomFlooring" className='hover:text-gray-300 transition-colors'>Custom Flooring</Link>
-                    <Link href="/Services/Waterproofing" className='hover:text-gray-300 transition-colors'>Waterproofing</Link>
-                    <Link href="/Services/Surface-Treatments" className='hover:text-gray-300 transition-colors'>Surface Treatments</Link>
+                    <Link href="/Services/SurfaceFinishing" className='hover:text-gray-300 transition-colors'>Waterproofing</Link>
+                    <Link href="/Services/SurfaceFinishing" className='hover:text-gray-300 transition-colors'>Surface Treatments</Link>
                 </div>
                 
                 <div className='flex flex-col gap-3'>
@@ -36,7 +36,7 @@ const FooterNav = () => {
                 <div className='flex flex-col gap-3'>
                     <h3 className='mb-4 uppercase text-gray-400 font-semibold'>Contact</h3>
                     <p className='text-gray-300'>Amman, Jordan</p>
-                    <a href="tel:+962795637354" className='hover:text-gray-300 transition-colors'>+962 79 5637354</a>
+                    <a href="tel:+962000000000" className='hover:text-gray-300 transition-colors'>+962 00 0000000</a>
                     <a href="mailto:info@newlook-jo.com" className='hover:text-gray-300 transition-colors'>info@newlook-jo.com</a>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const FooterNav = () => {
             <div className='text-right'>
                 <Link href="/" className='text-4xl font-semibold'>New Look</Link>
                 <p className='text-gray-400 m-2 max-w-xs'>Master Finishers with a Legacy of Excellence in Jordan</p>
-                <Link href="/About/Rami-Hamad" className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad</Link>
+                <Link href="/About/Rami" className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad (coming soon)</Link>
             </div>
         </div>
     );
@@ -100,8 +100,8 @@ export default function StickyFooter() {
                 <div 
                     className='sticky z-10'
                     style={{
-                        top: '85px', // Height of your navbar
-                        height: 'calc(100vh - 85px)' // Full viewport minus navbar height
+                        top: '110px', // Height of your navbar
+                        height: 'calc(100vh - 110px)' // Full viewport minus navbar height
                     }}
                 >
                     <FooterContent />

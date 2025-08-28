@@ -14,7 +14,7 @@ const navItems = [
   { title: 'Services', href: '../../Services' },
   { title: 'Projects', href: '../../Projects' },
   { title: 'Contact', href: '../../Contact' },
-  
+  { title: 'Language', href: '../../en' }
 ];
 
 export default function index() {

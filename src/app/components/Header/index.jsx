@@ -9,13 +9,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from './RoundedButton';
 import Magnetic from './Magnetic';
 import Link from 'next/link';
+import { motion } from "framer-motion";
 
 export default function index() {
     const headerRef = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
     const button = useRef(null);
-    const mainPage = ["/"]
+    const mainPage = ["/", "/Projects", "/About", "/Contact", "/Services"];
 
     useEffect( () => {
       if(isActive) setIsActive(false)
@@ -25,20 +26,22 @@ export default function index() {
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(button.current, {
             scrollTrigger: {
-                trigger: pathname === mainPage[0] ? headerRef.current : document.documentElement,
-                start: 0,
-                end: window.innerHeight,
+                trigger: document.documentElement,
+                start: pathname === '/' 
+                    ? 'top 20%'
+                    : 'top 20%',
+                end: '+=280',
                 onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
-                onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
+                onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out", onComplete: () => setIsActive(false)})}
             }
         })
     }, [])
 
     return (
         <>
-        <div ref={headerRef} className={styles.header}>
+        <div ref={headerRef} className={styles.header} style={{color: pathname === '/' ? 'white' : 'black'}}>
             <div className={styles.logo}>
-                <p className={styles.copyright}>New Look</p>
+                <Link href="/"><p className={styles.copyright}>New Look</p></Link>
             </div>
             <div className={styles.nav}>
                 <Magnetic>
@@ -65,6 +68,12 @@ export default function index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
+                <Magnetic>
+                    <div className={styles.el}>
+                        <Link href="/Arabic">Arabic</Link>
+                        <div className={styles.indicator}></div>
+                    </div>
+                </Magnetic>
             </div>
         </div>
         <div ref={button} className={styles.headerButtonContainer}>
@@ -73,7 +82,28 @@ export default function index() {
             </Rounded>
         </div>
         <AnimatePresence mode="wait">
-            {isActive && <Nav />}
+            {isActive && (
+                <>
+                    <motion.div
+                    initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                    animate= {{
+                        opacity: 1,
+                        backdropFilter: "blur(6px)",
+                        transition: {
+                            delay: 0.2,
+                            duration: 0.3 // delay on entrance
+                        }}
+                    }
+                    exit={{ opacity: 0, backdropFilter: "blur(0px)", transition: {duration: 0.3}}} //immediate disappearance
+                    className="fixed inset-0 bg-black/40 z-[9998]"
+                    onClick={() => setIsActive(false)}
+                    ></motion.div>
+                    <div className="fixed right-0 top-0 z-[9999]">
+                        <Nav />
+                    </div>
+
+                </>
+                )}
         </AnimatePresence>
         </>
     )

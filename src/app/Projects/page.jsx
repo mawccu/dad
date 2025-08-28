@@ -93,7 +93,7 @@ export default function Projects() {
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="relative group h-[300px] overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
+                className="relative group h-[300px] overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
                 onClick={() => router.push(project.link)}
               >
                 <Image

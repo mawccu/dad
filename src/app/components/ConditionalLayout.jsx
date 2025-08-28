@@ -10,9 +10,21 @@ export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
     const { progress } = useProgress();
+    const isServicesPage = pathname === '/Services';
+    const isCareerPage = pathname === '/Careers';
 
+    if (isCareerPage) {
+        // Special layout for the career page, navbar here
+        return (
+            <>
+                <Header />
+                {children}
+                <StickyFooter />
+            </>
+        );
+    }
     if (isHomePage) {
-        // Special layout for the home page and projects page, navbar here
+        // Special layout for the home page, navbar here
         return (
             <>
                 {children}

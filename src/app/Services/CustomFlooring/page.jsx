@@ -16,7 +16,7 @@ export default function CustomFlooring() {
 
   return (
     <>
-      <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
+      <div className="relative w-full h-[100vh] overflow-hidden">
         <Image
           src="/medias/img9.jpg"
           alt="Epoxy Solutions"
@@ -56,7 +56,7 @@ export default function CustomFlooring() {
 
       <div className="flex justify-center items-center py-32">
         <div
-          className="w-[960px] h-[872px] relative overflow-hidden group cursor-pointer"
+          className="w-[960px] h-[100vh] relative overflow-hidden group cursor-pointer"
           onMouseEnter={() => setIsHovered('first')}
           onMouseLeave={() => setIsHovered(null)}
         >
@@ -98,7 +98,7 @@ export default function CustomFlooring() {
         </div>
 
         <div
-          className="w-[960px] h-[872px] relative overflow-hidden group cursor-pointer"
+          className="w-[960px] h-[100vh] relative overflow-hidden group cursor-pointer"
           onMouseEnter={() => setIsHovered('second')}
           onMouseLeave={() => setIsHovered(null)}
         >
@@ -160,7 +160,7 @@ export default function CustomFlooring() {
 
         <div className="flex gap-6 mb-16 px-12">
           <div
-            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer"
+            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg"
             onMouseEnter={() => {
               setIsHovered(true);
               gsap.to(imageRef3.current, {
@@ -193,7 +193,7 @@ export default function CustomFlooring() {
           </div>
 
           <div
-            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer"
+            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg"
             onMouseEnter={() => {
               setIsHovered(true);
               gsap.to(imageRef4.current, {
@@ -226,7 +226,7 @@ export default function CustomFlooring() {
           </div>
           
           <div
-            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer"
+            className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg"
             onMouseEnter={() => {
               setIsHovered(true);
               gsap.to(imageRef5.current, {

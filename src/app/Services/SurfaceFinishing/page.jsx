@@ -20,7 +20,7 @@ export default function SurfaceFinishing() {
   return (
     
     <>
-      <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
+      <div className="relative w-full h-[100vh] overflow-hidden">
         <Image
           src="/medias/img9.jpg"
           alt="Epoxy Solutions"
@@ -76,7 +76,7 @@ export default function SurfaceFinishing() {
         <div className="flex justify-center items-center py-32">
             {/* First Image Container, change photo */}
             <div 
-                className="w-[960px] h-[872px] relative overflow-hidden group cursor-pointer"
+                className="w-[960px] h-[100vh] relative overflow-hidden group cursor-pointer"
                 onMouseEnter={() => setIsHovered('first')}
                 onMouseLeave={() => setIsHovered(null)}
             >
@@ -130,7 +130,7 @@ export default function SurfaceFinishing() {
 
             {/* Second Image Container */}
             <div 
-                className="w-[960px] h-[872px] relative overflow-hidden group cursor-pointer"
+                className="w-[960px] h-[100vh] relative overflow-hidden group cursor-pointer"
                 onMouseEnter={() => setIsHovered('second')}
                 onMouseLeave={() => setIsHovered(null)}
             >
@@ -194,13 +194,13 @@ export default function SurfaceFinishing() {
   <div className="max-w-6xl mx-auto px-4 py-8 text-center">
     <div>
       <h2 className="text-4xl text-gray-1000 font-semibold mb-12">Selected Surface Finishing Projects</h2>
-      <p className="text-2xl text-gray-900">Explore more of our carefully curated projects and experience our distinctive and bespoke approach</p>
+      <p className="text-2xl text-gray-900 font-350">Explore more of our carefully curated projects and experience our distinctive and bespoke approach</p>
     </div>
   </div>
 
   {/* Remove the max-width container for images and use full width */}
   <div className="flex gap-6 mb-16 px-12">
-    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer" 
+    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg" 
       onMouseEnter={() => {
         setIsHovered(true)
         gsap.to(imageRef3.current, {
@@ -232,7 +232,7 @@ export default function SurfaceFinishing() {
       </div>
     </div>
 
-    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer" 
+    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg" 
       onMouseEnter={() => {
         setIsHovered(true);
         gsap.to(imageRef4.current, {
@@ -264,7 +264,7 @@ export default function SurfaceFinishing() {
       </div>
     </div>
     
-    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer"
+    <div className="relative flex-1 h-[260px] overflow-hidden cursor-pointer rounded-lg"
       onMouseEnter={() => {
         setIsHovered(true);
         gsap.to(imageRef5.current, {
@@ -297,10 +297,6 @@ export default function SurfaceFinishing() {
     </div>
   </div>
 </div>
-
-
-
-<InteriorDesignProjects />
 
     </>
   );
