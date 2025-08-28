@@ -19,7 +19,7 @@ export default function Testimonials(){
 
     return(
         <>
-            <div className="min-h-screen flex items-center justify-center px-8 pt-8">
+            <div className="h-[100vh] flex items-center justify-center px-8">
                 <div className="max-w-5xl mx-auto text-center">
                     <h1 className="text-3xl font-semibold text-gray-800 leading-tight">
                         Turning dreams into reality:
@@ -41,7 +41,7 @@ export default function Testimonials(){
                     </p>
 
                     <div>
-                    <p className="text-center pb-25 text-1.5xl text-gray-800"
+                    <p className="text-center text-1.5xl text-gray-800"
                         onClick={() => router.push("/projects")}
                     >
                     <strong className="underline cursor-pointer hover:text-gray-500 transition-colors">Discover our projects</strong>
@@ -50,9 +50,10 @@ export default function Testimonials(){
                 </div>
             </div>
 
-            <div className="flex justify-center items-center min-height-[calc(100vh-75px)]">
+
+            <div className="flex justify-center items-center min-height-[100vh]">
                 {/* First Image Container */}
-                <div className="w-[960px] h-[872px] relative overflow-hidden"
+                <div className="w-[960px] h-[100vh] relative overflow-hidden"
                         onMouseEnter={() => {
                             setIsHovered(true);
                             gsap.to(imageRef1.current, {
@@ -89,7 +90,7 @@ export default function Testimonials(){
                     <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className="text-3xl font-light underline underline-offset-4 cursor-pointer hover:text-gray-500"
+                            className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
                             onClick={() => router.push("/projects/protective-coatings")}
                             >
                                 Protective Coatings Services</p>
@@ -98,7 +99,7 @@ export default function Testimonials(){
                 </div>
 
                 {/* Second Image Container */}
-                <div className="w-[960px] h-[872px] relative overflow-hidden"
+                <div className="w-[960px] h-[100vh] relative overflow-hidden"
                 onMouseEnter={() => {
                             setIsHovered(true);
                             gsap.to(imageRef2.current, {
@@ -135,7 +136,7 @@ export default function Testimonials(){
                     <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className="text-3xl font-light underline underline-offset-4 cursor-pointer hover:text-gray-500"
+                            className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
                             onClick={() => router.push("/projects/epoxy")}
                             >
                                 Decorative Epoxy Services
@@ -144,8 +145,9 @@ export default function Testimonials(){
                     </div>
                 </div>
             </div>
-            
-            <div className="min-h-screen flex items-center justify-center px-8 ">
+
+            <div className="h-[100vh] flex flex-col items-center justify-start px-8 py-50">
+
                 <div className="max-w-5xl mx-auto text-center">
                     <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-20">
                         Our expertise
@@ -156,30 +158,27 @@ export default function Testimonials(){
                         experience and collaboration with top engineers and suppliers, we guarantee a streamlined process from start to finish.
                     </h2>
 
-                    <p className="text-2xl text-gray-700 font-400 text-center ">
+                    <p className="text-2xl text-gray-700 font-400 text-center mb-40">
                         Whether it's new construction or renovating existing spaces, from luxury homes to commercial 
                         properties, our work showcases the attention to detail and quality that defines us.
                     </p>
-
+                </div>
+                <div>
+                    <p 
+                    className="text-center text-2xl underline underline-offset-4 cursor-pointer hover:text-gray-500"
+                    onClick={() => router.push("/about")}
+                    >
+                        Learn more about New Look
+                    </p>
                 </div>
             </div>
 
-            <div>
-                <p 
-                className="text-center text-2xl underline -mt-20 underline-offset-4 cursor-pointer hover:text-gray-500"
-                onClick={() => router.push("/about")}
-                >
-                    Learn more about New Look
-                </p>
-            </div>
-                    
             
-
-
+                    
             {/** Third Image */}
-            <div className="flex justify-center items-center mt-60">
+            <div className="flex justify-center items-center h-[100vh] ">
                 <div 
-                    className="w-[960px] h-[872px] relative overflow-hidden"
+                    className="w-[960px] h-[100vh] relative overflow-hidden"
                     onMouseEnter={() => {
                         setIsHovered(true);
                         gsap.to(imageRef3.current, {
@@ -233,7 +232,7 @@ export default function Testimonials(){
                 </div>
 
                 <div 
-                    className="w-[960px] h-[872px] relative overflow-hidden"
+                    className="w-[960px] h-[100vh] relative overflow-hidden"
                     onMouseEnter={() => {
                         setIsHovered(true);
                         gsap.to(imageRef4.current, {
@@ -289,7 +288,7 @@ export default function Testimonials(){
             </div>
 
             {/* Partners Section */}
-            <div className="min-h-screen flex items-center justify-center px-8 py-8 -mt-20">
+            <div className="min-h-screen flex items-center justify-center px-8 py-8">
                 <div className="max-w-6xl mx-auto text-center">
 
                     <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-8">
@@ -334,17 +333,14 @@ export default function Testimonials(){
                                 className="opacity-80 hover:opacity-100 transition-opacity"
                             />
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
             {/* Autograph Section - insert hand-drawn animation for Rami's signature*/}
 
             {/* Contact Form Section */}
-            <div className="-py-24">
+            <div className="py-24">
                 <ContactForm />
             </div>
         </>

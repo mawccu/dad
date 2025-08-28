@@ -52,9 +52,11 @@ export default function Loader() {
       const tl = gsap.timeline({
         delay: 0.4,
         onComplete: () => {
-          loaderRef.current.style.display = 'none';
-          // Restore scrolling after loader is completely hidden
-          document.body.style.overflow = 'auto';
+          if (loaderRef.current) {
+            loaderRef.current.style.display = 'none';
+            // Restore scrolling after loader is completely hidden
+            document.body.style.overflow = 'auto';
+          }
         },
       });
 

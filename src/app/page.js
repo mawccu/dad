@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import Image from 'next/image';
 import Testimonials from './components/Testimonials'
 import StickyFooter from './components/StickyFooter';
+import Header from './components/Header'
 
 function MaskLoad({ onComplete }) {
   const { reportAsLoaded } = useProgress()
@@ -81,15 +82,15 @@ export default function Home() {
       
       {maskDone && (
         <div style={{ position: 'relative', zIndex: 99999 }}>
-        {console.log('🔍 RENDERING NAVBAR NOW!')} {/* ADD THIS LINE */}
-        <Navbar />
+        {console.log('🔍 RENDERING HEADER NOW!')} {/* ADD THIS LINE */}
+        <Header />
     </div>
       )}
       
       {/* Only show content after loader completes */}
       {progress === 100 && (
         <>
-          <div className="h-[calc(100vh-80px)] w-full relative">
+          <div className="h-[100vh] w-full relative">
             <Image
               src="/medias/img1.jpg"
               fill={true}

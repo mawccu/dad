@@ -4,6 +4,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import StickyFooter from './StickyFooter';
 import { useProgress } from './ProgressProvider';
+import Header from './Header';
 
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
@@ -22,9 +23,10 @@ export default function ConditionalLayout({ children }) {
 
     return (
         <>
-            <div style={{ position: 'relative', zIndex: 9997 }}>
+            <Header />
+            {/* <div style={{ position: 'relative', zIndex: 9997 }}>
                 <Navbar />
-            </div>
+            </div> */}
             <main className="min-h-screen">
                 {children}
             </main>
