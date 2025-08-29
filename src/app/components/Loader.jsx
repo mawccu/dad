@@ -1,3 +1,4 @@
+//components/Loader.jsx
 'use client';
 import { useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';

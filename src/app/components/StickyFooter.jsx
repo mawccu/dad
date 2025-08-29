@@ -1,3 +1,5 @@
+//components/StickyFooter.jsx
+//components/StickyFooter.jsx
 import React from 'react';
 import Link from 'next/link';
 

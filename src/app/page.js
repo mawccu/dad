@@ -1,3 +1,4 @@
+//app/page.js
 'use client';
 import Loader from './components/Loader';
 import { useEffect, useState } from 'react';

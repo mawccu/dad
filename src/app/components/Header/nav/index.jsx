@@ -1,4 +1,6 @@
+//components/Header/nav/index.jsx
 'use client'
+//nav > index.jsx
 import React, { useState } from 'react';
 import styles from './style.module.scss'
 import { motion } from 'framer-motion';
@@ -14,7 +16,6 @@ const navItems = [
   { title: 'Services', href: '../../Services' },
   { title: 'Projects', href: '../../Projects' },
   { title: 'Contact', href: '../../Contact' },
-  { title: 'Language', href: '../../en' }
 ];
 
 export default function index() {
@@ -45,6 +46,9 @@ export default function index() {
                         />
                     })
                 }
+            </div>
+            <div className={styles.languageSection}>
+                <button onClick={() => console.log("Switch to EN")}>EN</button>   |   <button onClick={() => console.log("Switch to AR")}>AR</button>
             </div>
             <Footer />
         </div>

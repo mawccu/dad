@@ -1,3 +1,4 @@
+//About/page.jsx
 'use client'
 import React, { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';

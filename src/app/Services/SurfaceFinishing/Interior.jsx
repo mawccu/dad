@@ -1,3 +1,4 @@
+//Services/SurfaceFinishing/Interior.jsx
 'use client';
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';

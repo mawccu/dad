@@ -1,3 +1,4 @@
+//Projects/page.jsx
 'use client';
 
 import React, { useState } from 'react';
@@ -35,13 +36,13 @@ const projects = [
     src: '/medias/img5.jpg',
     link: '/Projects/Placeholder',
     category: ['surface finishing'],
-    name: 'Modern Residence'
+    name: 'Talal Abu Ghazaleh Group'
   },
   {
     src: '/medias/img5.jpg',
     link: '/Projects/NCC',
     category: ['surface finishing'],
-    name: 'NCC'
+    name: 'Northern Cement Company'
   },
   {
     src: '/medias/img5.jpg',

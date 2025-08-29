@@ -1,3 +1,4 @@
+//Projects/NCC/page.jsx
 'use client'
 
 export default function NCC() {

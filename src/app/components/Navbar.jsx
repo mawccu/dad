@@ -1,3 +1,4 @@
+//components/Navbar.jsx
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './page.module.css';

@@ -1,4 +1,6 @@
+//components/Header/index.jsx
 'use client';
+//Header.jsx
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from './style.module.scss';
 import { usePathname } from 'next/navigation';
@@ -46,13 +48,13 @@ export default function index() {
             <div className={styles.nav}>
                 <Magnetic>
                     <div className={styles.el}>
-                        <Link href="/Projects">Work</Link>
+                        <Link href="/Services">Services</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <Link href="/About">About</Link>
+                        <Link href="/Projects">Projects</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
@@ -62,20 +64,35 @@ export default function index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
-                 <Magnetic>
+                 
+                
+                <Magnetic>
                     <div className={styles.el}>
-                        <Link href="/Services">Services</Link>
+                        <Link href="/About">About</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <Link href="/Arabic">Arabic</Link>
+                        <button
+                            className={pathname.startsWith("/ar") ? styles.activeLang : ""}
+                            onClick={() => console.log("Switch to EN")}
+                        >
+                            EN
+                        </button>
+                        |
+                        <button
+                            className={!pathname.startsWith("/ar") ? styles.activeLang : ""}
+                            onClick={() => console.log("Switch to AR")}
+                        >
+                            AR
+                        </button>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
             </div>
         </div>
+        
         <div ref={button} className={styles.headerButtonContainer}>
             <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>

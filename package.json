@@ -13,10 +13,13 @@
     "@studio-freight/lenis": "^1.0.42",
     "framer-motion": "^12.23.7",
     "gsap": "^3.13.0",
+    "i18next": "^25.4.2",
     "lucide-react": "^0.525.0",
     "next": "^15.3.5",
+    "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.7.3",
     "sass": "^1.91.0",
     "swiper": "^11.2.10",
     "tailwindcss-textshadow": "^2.1.3"

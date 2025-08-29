@@ -1,3 +1,4 @@
+//Services/CustomFlooring/page.jsx
 'use client';
 
 import React, { useRef } from 'react';
@@ -67,7 +68,7 @@ export default function CustomFlooring() {
             />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-300" />
-          <div className="absolute inset-0 flex items-center justify-center text-white z-10">
+          <div className="absolute inset-0 flex items-center justify-center text-white">
             <div className="text-center px-8 transform transition-transform duration-300 group-hover:translate-y-[-10px]">
               <h3 className="text-5xl font-light tracking-wide mb-12 opacity-90">
                 Exceptional Expertise

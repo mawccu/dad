@@ -1,3 +1,4 @@
+//Services/SurfaceFinishing/page.jsx
 'use client';
 
 import React, { useRef } from 'react';
@@ -148,7 +149,7 @@ export default function SurfaceFinishing() {
                 <div className="absolute inset-0 bg-white bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
 
                 {/* Text Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center px-8 transform transition-transform duration-300 group-hover:translate-y-[-10px]">
                         <h3 className="text-5xl font-light tracking-wide mb-12 text-gray-800 opacity-90">
                             Premium Solutions
@@ -157,7 +158,7 @@ export default function SurfaceFinishing() {
                             {[
                                 { title: 'Protective Coatings', desc: 'Weather-resistant exterior systems' },
                                 { title: 'Decorative Finishes', desc: 'Aesthetic surface treatments' },
-                                { title: 'Anti-Corrosion Systems', desc: 'Long-lasting protection systems' },
+                                { title: 'Renovation', desc: 'High quality painting and surface upgrades' },
                                 { title: 'Waterproofing & Fireproofing', desc: 'Critical safety and durability systems' }
                             ].map((item, index) => (
                                 <div 

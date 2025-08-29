@@ -1,3 +1,4 @@
+//components/Header/animation.js
 export const menuSlide = {
     initial: {x: "calc(100% + 100px)"},
     enter: {x: "0", transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1]}},
