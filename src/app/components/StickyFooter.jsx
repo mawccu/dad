@@ -95,16 +95,12 @@ const FooterBottom = () => {
 export default function StickyFooter() {
     return (
         <div 
-            className='relative h-[100vh]' 
+            className='relative h-[800px]' 
             style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
         >
-            <div className='relative h-[calc(200vh)] -top-[100vh]'>
-                <div 
-                    className='sticky z-10'
-                    style={{
-                        top: '110px', // Height of your navbar
-                        height: 'calc(100vh - 110px)' // Full viewport minus navbar height
-                    }}
+            <div className='relative h-[calc(100vh+800px)] -top-[100vh]'>
+                <div
+                    className='sticky z-10 top-[calc(100vh-800px)] h-[800px]'
                 >
                     <FooterContent />
                 </div>
@@ -112,3 +108,4 @@ export default function StickyFooter() {
         </div>
     );
 }
+
