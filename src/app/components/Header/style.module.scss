@@ -20,6 +20,7 @@
         }
         .copyright{
             font-size: 3rem;
+            font-family: 'SHARY Medium'
         }
         .name{
             display: flex;
@@ -45,6 +46,7 @@
             .copyright{
                 transform: rotate(360deg);
                 font-weight: bold;
+                color:#1f263b
             }
             .name{
                 padding-right: 30px;
@@ -173,4 +175,9 @@
         }
         
     }
+}
+
+@font-face {
+    font-family: 'SHARY Medium';
+    src: url('/fonts/SHARY Medium.otf') format('truetype');
 }

@@ -10,11 +10,11 @@ import ContactForm from '../components/ContactForm';
 const projects = [
   { 
     src: '/medias/img1.jpg', 
-    link: '/Projects/Villa01', 
+    link: '/Projects/Villa04', 
     category: ['flooring', 'surface finishing'],
-    name: 'Villa 01'
+    name: 'Villa 04'
   },
-  { 
+  {
     src: '/medias/img2.jpg', 
     link: '/Projects/Movenpick', 
     category: ['flooring'],
@@ -34,7 +34,7 @@ const projects = [
   },
   { 
     src: '/medias/img5.jpg',
-    link: '/Projects/Placeholder',
+    link: '/Projects/TAG',
     category: ['surface finishing'],
     name: 'Talal Abu Ghazaleh Group'
   },

@@ -2,6 +2,7 @@
 import { ProgressProvider } from './components/ProgressProvider';
 import ConditionalLayout from './components/ConditionalLayout';
 import "./globals.css";
+import SmoothScrolling from './components/SmoothScrolling'
 
 export default function RootLayout({ children }) {
   return (
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <ProgressProvider>
           <ConditionalLayout>{children}</ConditionalLayout> 
-          {/* <SmoothScrolling /> */}
+            <SmoothScrolling /> 
         </ProgressProvider>
       </body>
     </html>

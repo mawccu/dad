@@ -47,7 +47,7 @@ const FooterNav = () => {
             <div className='text-right'>
                 <Link href="/" className='text-4xl font-semibold'>New Look</Link>
                 <p className='text-gray-400 m-2 max-w-xs'>Master Finishers with a Legacy of Excellence in Jordan</p>
-                <Link href="/About/Rami" className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad (coming soon)</Link>
+                <Link href="/About/Rami" className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad</Link>
             </div>
         </div>
     );

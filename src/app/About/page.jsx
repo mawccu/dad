@@ -5,7 +5,7 @@ import { useInView, motion } from 'framer-motion';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Link from 'next/link';
-
+import StrengthSection from './strength'
 
 
 const StrengthCard = ({ strength, index, className }) => {
@@ -94,7 +94,7 @@ export default function About() {
       {/* Philosophy Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-medium mb-8 text-gray-900">Our Philosophy</h2>
+          <h2 className="text-4xl font-medium mb-8 text-gray-900">Our Vision</h2>
           <div className="space-y-5 text-gray-700 text-xl leading-relaxed">
             <p>At New Look, our focus is simple: deliver work that lasts and do it right the first time. Every project we take on is tailored to the client's needs and the demands of the site. We pay special attention not only to the aesthetics but also to creating an immersive and captivating experience.</p>
             <p>We believe good work starts with a clear purpose. Every project has its own context: site conditions, client needs, budget realities and timeline pressure. We consider all of that before we even lift a brush.</p>
@@ -103,7 +103,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Strengths Section */}
+      {/* Our Strengths Section 
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6">
           <motion.h2 
@@ -128,6 +128,9 @@ export default function About() {
           </div>
         </div>
       </section>
+      */}
+
+      <StrengthSection />
 
       {/* Location Section */}
       <section className="bg-gray-50 py-16">

@@ -10,6 +10,7 @@ export default function ContactCTA(){
     return(
         <div className="relative w-full h-[100vh]">
             <Image src="/medias/placeholder.png" fill className="object-cover" alt="Expeditors bathroom project hero"></Image>
+            <div className="absolute inset-0 bg-black/20" />
             <ParallaxText />
         </div>
     )
@@ -24,12 +25,7 @@ function ParallaxText() {
     const cleanup = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-
-    // Set initial position (remove absolute positioning from here)
-    gsap.set(textRef.current, {
-      zIndex: 10
-    });
-
+    
     // Create the sticky effect with proper settings
     ScrollTrigger.create({
       trigger: containerRef.current,
@@ -49,7 +45,7 @@ function ParallaxText() {
     <>
     
       
-      <div ref={containerRef} className="w-full relative h-[120vh] text-white"> {/* Increased height */}
+      <div ref={containerRef} className="w-full relative h-[120vh] text-white">
         <Image 
           src="/medias/img10.webp"
           fill
@@ -57,7 +53,7 @@ function ParallaxText() {
           className="object-cover"
           alt="Background"
         />
-        
+        <div className="absolute inset-0 bg-black/40" />
         <div ref={textRef} className="flex justify-between">
             <p className="px-4 sm:px-10 text-lg font-300 sm:text-xl py-20 sm:py-40 drop-shadow-sm">
                 Interested?

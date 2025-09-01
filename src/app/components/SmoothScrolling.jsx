@@ -1,34 +1,35 @@
-//components/SmoothScrolling.jsx
-'use client';
-import { useEffect } from 'react'
-import Lenis from '@studio-freight/lenis';
+// components/SmoothScrolling.jsx
+"use client";
 
-export default function SmoothScrolling(){
-    useEffect(() => {
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            inifnite: false,
-        })
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
 
-        function raf(time){
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
+export default function SmoothScrolling() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 2, // smoother glide
+      easing: (t) => 1 - Math.pow(2, -10 * t), // buttery exponential easing
+      direction: "vertical",
+      gestureDirection: "vertical",
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: true, // smoother on mobile too
+      touchMultiplier: 1.5,
+      infinite: false, // fixed your "inifnite" typo
+    });
 
-        return () => {
-            lenis.destroy()
-        }
-    }, [])
+    let frame;
+    const raf = (time) => {
+      lenis.raf(time);
+      frame = requestAnimationFrame(raf);
+    };
+    frame = requestAnimationFrame(raf);
 
-    return null
+    return () => {
+      cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
+
+  return null;
 }
-
-//is yet to be used, use it at the end.

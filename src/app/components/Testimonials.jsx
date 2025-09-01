@@ -28,7 +28,7 @@ export default function Testimonials(){
                     
                     <h2 className="text-3xl font-semibold text-gray-800 mb-12">
                         With the expertise of the Project Manager behind the 
-                        <span className="text-blue-600 font-bold underline decoration-2 underline-offset-4"> <br />Abdoun Bridge Project.</span>
+                        <a href="../Projects/AbdounBridge"><span className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-4"> <br />Abdoun Bridge Project.</span></a>
                     </h2>
 
                     <p className="text-1.5xl text-gray-800 leading-relaxed mb-8 text-center font-400">
@@ -37,13 +37,13 @@ export default function Testimonials(){
                     </p>
                     
                     <p className="text-1.5xl text-gray-800 leading-relaxed text-center mb-16 font-400">
-                        Led by <span className="font-semibold underline text-blue-700"><a href="#">Rami</a></span>, who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the
+                        Led by <span className="font-semibold underline"><a href="../About/Rami">Rami</a></span>, who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the
                         Gulf, we're committed to delivering uncompromising quality, ensuring precision and excellence in every task we undertake.
                     </p>
 
                     <div>
                     <p className="text-center text-1.5xl text-gray-800"
-                        onClick={() => router.push("/projects")}
+                        onClick={() => router.push("/../Projects")}
                     >
                     <strong className="underline cursor-pointer hover:text-gray-500 transition-colors">Discover our projects</strong>
                     </p>
@@ -92,7 +92,7 @@ export default function Testimonials(){
                         <div className="text-center">
                             <p 
                             className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/protective-coatings")}
+                            onClick={() => router.push("/../Services/SurfaceFinishing")}
                             >
                                 Protective Coatings Services</p>
                         </div>
@@ -138,9 +138,9 @@ export default function Testimonials(){
                         <div className="text-center">
                             <p 
                             className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/epoxy")}
+                            onClick={() => router.push("/../Services/CustomFlooring")}
                             >
-                                Decorative Epoxy Services
+                                Custom Flooring Services
                             </p>
                         </div>
                     </div>
@@ -160,14 +160,14 @@ export default function Testimonials(){
                     </h2>
 
                     <p className="text-2xl text-gray-700 font-400 text-center mb-40">
-                        Whether it's new construction or renovating existing spaces, from luxury homes to commercial 
-                        properties, our work showcases the attention to detail and quality that defines us.
+                        Whether it's new construction or renovating existing spaces, from luxury homes
+                       to industrial factories, our work showcases the attention to detail and quality that defines us.
                     </p>
                 </div>
                 <div>
                     <p 
                     className="text-center text-2xl underline underline-offset-4 cursor-pointer hover:text-gray-500"
-                    onClick={() => router.push("/about")}
+                    onClick={() => router.push("/../About")}
                     >
                         Learn more about New Look
                     </p>
@@ -224,7 +224,7 @@ export default function Testimonials(){
                         <div className="text-center">
                             <p 
                             className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/epoxy")}
+                            onClick={() => router.push("/../Contact")}
                             >
                                 Register now
                             </p>
