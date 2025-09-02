@@ -221,7 +221,7 @@ export default function SurfaceFinishing() {
       onClick={() => router.push('/Projects/AbdounBridge')}
     >
       <Image
-        src="/medias/placeholder.png"
+        src="/medias/img5.jpg"
         fill={true}
         alt="Project Preview"
         ref={imageRef3}
@@ -250,18 +250,18 @@ export default function SurfaceFinishing() {
           ease: 'power2.out',
         })
       }}
-      onClick={() => router.push('/Projects/Placeholder')}
+      onClick={() => router.push('/Projects/NCC')}
     >
       <Image
-        src="/medias/placeholder.png"
+        src="/medias/img5.jpg"
         fill={true}
         alt="Project Preview"
         ref={imageRef4}
         className="object-cover"
       />
       <div className="absolute p-4 inset-0 flex items-center justify-between flex-col text-white">
-        <p className="text-2xl font-bold text-shadow-md">Placeholder</p>
-        <p className="text-xl text-shadow-md font-semibold">Placeholder</p>
+        <p className="text-2xl font-bold text-shadow-md">Northern Cement Company</p>
+        <p className="text-xl text-shadow-md font-semibold">Waterproofing and Protective Coatings</p>
       </div>
     </div>
     
@@ -285,14 +285,14 @@ export default function SurfaceFinishing() {
       onClick={() => router.push('/Projects/Villa-01')}
     >
       <Image
-        src="/medias/placeholder.png"
+        src="/medias/img5.jpg"
         fill={true}
         alt="Project Preview"
         ref={imageRef5}
         className="object-cover"
       />
       <div className="absolute p-4 inset-0 flex items-center justify-between flex-col text-white">
-        <p className="text-2xl font-bold text-shadow-md">Luxury Villa 01</p>
+        <p className="text-2xl font-bold text-shadow-md">Villa 04</p>
         <p className="text-xl text-shadow-md font-semibold">Interior Surface Coating</p>
       </div>
     </div>

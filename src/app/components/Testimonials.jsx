@@ -4,9 +4,8 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import ContactForm from './ContactForm'
-import Footer from './Footer'
 
 
 export default function Testimonials(){
@@ -91,7 +90,7 @@ export default function Testimonials(){
                     <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
+                            className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
                             onClick={() => router.push("/../Services/SurfaceFinishing")}
                             >
                                 Protective Coatings Services</p>
@@ -137,7 +136,7 @@ export default function Testimonials(){
                     <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className="text-3xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
+                            className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
                             onClick={() => router.push("/../Services/CustomFlooring")}
                             >
                                 Custom Flooring Services
@@ -269,7 +268,7 @@ export default function Testimonials(){
                     <div className="absolute inset-0 flex items-center justify-center text-white">
                         <div className="text-center">
                             <h3 className="text-5xl font-light tracking-wide mb-6">Epoxy Solutions</h3>
-                            <p className="text-3xl font-light">Advanced Epoxy systems for lasting durability</p>
+                            <p className="text-3xl font-light">Decorative Epoxy Systems for Timeless Beauty</p>
                         </div>
                     </div>
 
@@ -278,7 +277,7 @@ export default function Testimonials(){
                         <div className="text-center">
                             <p 
                             className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/projects/epoxy")}
+                            onClick={() => router.push("https://linkedin.com/NewLook")}
                             >
                                 Follow our journey
                             </p>
@@ -288,54 +287,175 @@ export default function Testimonials(){
 
             </div>
 
-            {/* Partners Section */}
-            <div className="min-h-screen flex items-center justify-center px-8 py-8">
-                <div className="max-w-6xl mx-auto text-center">
+    {/* Partners Section */}
+            <div className="min-h-screen flex items-center justify-center px-8 py-16 bg-gray-50">
+            <div className="max-w-7xl text-center">
 
-                    <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-8">
-                        Trusted Credentials & Collaborations
-                    </h1>
+                {/* Section Heading */}
+                <h1 className="text-4xl font-semibold text-gray-800 leading-tight mb-8">
+                Trusted Credentials & Collaborations
+                </h1>
 
-                    <h2 className="text-2xl font-400 text-gray-700 mb-12">
-                        Over the years, we've had the privilege of working alongside some of the most respected names in the industry.
-                        These collaborations have shaped the quality and precision of the work we deliver.
-                    </h2>
+                <h2 className="text-2xl font-light text-gray-700 mb-12 max-w-4xl mx-auto">
+                Over the years, we've had the privilege of working alongside some of the most
+                respected names in the industry. These collaborations have shaped the quality
+                and precision of the work we deliver.
+                </h2>
 
-                    {/* Partner Logos, add l&t, savito, sipes*/}
-                    <div className="flex justify-center space-x-12 mb-16">
-                        {/* Partner 1 */}
-                        <div className="flex items-center justify-center">
-                            <Image
-                                src="/medias/placeholder.png"
-                                alt="Al Manaseer"
-                                width={150}
-                                height={50}
-                                className="opacity-80 hover:opacity-100 transition-opacity"
-                            />
-                        </div>
-                        {/* Partner 2 */}
-                        <div className="flex items-center justify-center">
-                            <Image
-                                src="/medias/placeholder.png"
-                                alt="Another Partner"
-                                width={150}
-                                height={50}
-                                className="opacity-80 hover:opacity-100 transition-opacity"
-                            />
-
-                        </div>
-                        {/* Partner 3 */}
-                        <div className="flex items-center justify-center">
-                            <Image
-                                src="/medias/placeholder.png"
-                                alt="Abdoun Bridge"
-                                width={150}
-                                height={50}
-                                className="opacity-80 hover:opacity-100 transition-opacity"
-                            />
-                        </div>
+                {/* Partner Logos */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+                
+                {/* Partner 1 */}
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">Al Manaseer</p>
+                    <div className="relative w-full h-40">
+                    <a
+                    href="https://mgc-gas.jo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
                     </div>
                 </div>
+
+                {/* Partner 2 */}
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">Saveto Vetonit</p>
+                    <div className="relative w-full h-40">
+                    <a
+                    href="https://www.saveto.com/brand/vetonit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
+                    </div>
+                </div>
+
+                {/* Partner 3 */}
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">Sipes</p>
+                    <div className="relative w-full h-40">
+                        <a
+                        href="https://www.saveto.com/brand/vetonit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        <Image
+                            src="/medias/img3.jpg"
+                            alt="L&T"
+                            fill
+                            className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
+                {/* Partner 4 */}
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">Larsen & Toubro</p>
+                    <div className="relative w-full h-40">
+                        <a
+                        href="https://www.saveto.com/brand/vetonit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        <Image
+                            src="/medias/img3.jpg"
+                            alt="L&T"
+                            fill
+                            className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">L&T</p>
+                    <div className="relative w-full h-40">
+                        <a
+                    href="https://www.saveto.com/brand/vetonit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">L&T</p>
+                    <div className="relative w-full h-40">
+                    <a
+                    href="https://www.saveto.com/brand/vetonit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">L&T</p>
+                    <div className="relative w-full h-40">
+                    <a
+                    href="https://www.saveto.com/brand/vetonit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className="text-lg font-medium text-gray-700 mb-4">L&T</p>
+                    <div className="relative w-full h-40">
+                    <a
+                    href="https://www.saveto.com/brand/vetonit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <Image
+                        src="/medias/img3.jpg"
+                        alt="L&T"
+                        fill
+                        className="object-contain rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                    />
+                    </a>
+                    </div>
+                </div>
+
+                {/* Add more partners as needed */}
+                </div>
+            </div>
             </div>
 
             {/* Autograph Section - insert hand-drawn animation for Rami's signature*/}

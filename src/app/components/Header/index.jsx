@@ -24,20 +24,38 @@ export default function index() {
       if(isActive) setIsActive(false)
     }, [pathname])
 
-    useLayoutEffect( () => {
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to(button.current, {
-            scrollTrigger: {
-                trigger: document.documentElement,
-                start: pathname === '/' 
-                    ? 'top 20%'
-                    : 'top 20%',
-                end: '+=280',
-                onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
-                onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out", onComplete: () => setIsActive(false)})}
-            }
-        })
-    }, [])
+    useLayoutEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // scope to the header, and auto-revert on unmount / re-renders
+  const ctx = gsap.context(() => {
+    const el = button.current;
+    if (!el) return;
+
+    const st = ScrollTrigger.create({
+      trigger: document.documentElement,
+      start: 'top 20%',
+      end: '+=280',
+      onLeave: () => {
+        gsap.to(el, { scale: 1, duration: 0.25, ease: "power1.out" });
+      },
+      onEnterBack: () => {
+        // avoid state churn inside scroll callback; do the scale only
+        gsap.to(el, {
+          scale: 0,
+          duration: 0.25,
+          ease: "power1.out",
+          // if you must close the menu, defer the state update
+          onComplete: () => requestAnimationFrame(() => setIsActive(false)),
+        });
+      },
+    });
+
+    return () => st.kill();
+  }, headerRef);
+
+  return () => ctx.revert();
+}, [pathname]);
 
     return (
         <>

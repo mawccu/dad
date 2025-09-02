@@ -3,8 +3,7 @@
 import React, { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 import Image from 'next/image';
-import gsap from 'gsap';
-import Link from 'next/link';
+import ContactCTA from '../Contact/contactCTA';
 import StrengthSection from './strength'
 
 
@@ -87,7 +86,13 @@ export default function About() {
 
         {/* Image Section */}
         <section className="max-w-5xl mx-auto px-6 mb-20">
-          <Image src='/medias/placeholder.png' alt='Rami Hamad' width={1920} height={1080} className="shadow-lg" ref={imageRef} />
+          <Image 
+            src='/medias/placeholder.png' 
+            alt='Rami Hamad' width={1920} 
+            height={1080} 
+            className="shadow-lg" 
+            ref={imageRef} 
+            />
         </section>
       </div>
 
@@ -152,83 +157,8 @@ export default function About() {
         </div>
       </section>
 
+  <ContactCTA />
 
-      {/* Project Previews Section, add pictures from the current villa dad is working on and have them blurred. */}
-      <section className="mx-auto max-w-7xl py-16 px-8">
-       
-          <h2 className="text-4xl text-center">Project Previews</h2>
-          <p className="text-xl text-center font-350">Before every finish goes live, it lives in our specs and mockups. Here's a sneak peak at upcoming villa refurbishments and protective coating systems, straight from our field journals.</p>
-      </section>
-
-      <div className="flex gap-6 py-16 mb-16 px-8 max-w-5xl ">
-          <div className="relative rounded-lg overflow-hidden cursor-pointer" 
-            onMouseEnter={() => {
-              setIsHovered(true)
-              gsap.to(imageRef2.current, {
-                        scale: 1.1,
-                        duration: 0.6,
-                        ease: 'power2.out',
-                      })
-            }}
-            onMouseLeave={() => {
-              setIsHovered(false)
-              gsap.to(imageRef2.current, {
-                scale: 1,
-                duration: 0.6,
-                ease: 'power2.out',
-              })
-            }}
-          >
-            <Image
-              src="/medias/placeholder.png"
-              width={540}
-              height={360}
-              alt="Project Preview"
-              ref={imageRef2}
-              className="object-cover"
-                />
-
-              {/* Text Overlay 1*/}
-              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
-                  <p className="m-4 text-2xl">New Look</p>
-                  <p className="m-4 text-xl">Coming Soon</p>
-              </div>
-      </div>
-
-          <div className="relative rounded-lg overflow-hidden cursor-pointer" 
-           onMouseEnter={() => {
-                  setIsHovered(true);
-                  gsap.to(imageRef3.current, {
-                    scale: 1.1,
-                    duration: 0.6,
-                    ease: 'power2.out',
-                  })
-                }}
-                onMouseLeave={() => {
-                  setIsHovered(false);
-                  gsap.to(imageRef3.current, {
-                    scale: 1,
-                    duration: 0.6,
-                    ease: 'power2.out',
-                  })
-                }}
-          >
-            <Image
-              src="/medias/placeholder.png"
-              width={540}
-              height={360}
-              alt="Project Preview"
-              ref={imageRef3}
-              className="object-cover"
-                />
-
-              {/* Text Overlay 2*/}
-              <div className="absolute inset-0 flex items-center justify-between flex-col text-white">
-                  <p className="m-4 text-2xl">New Look</p>
-                  <p className="m-4 text-xl">Coming Soon</p>
-              </div>
-        </div>
-      </div>
     </div>
   );
 }

@@ -181,7 +181,7 @@ export default function CustomFlooring() {
             onClick={() => router.push('/Projects/Safeway')}
           >
             <Image
-              src="/medias/placeholder.png"
+              src="/medias/img5.jpg"
               fill={true}
               alt="Project Preview"
               ref={imageRef3}
@@ -214,7 +214,7 @@ export default function CustomFlooring() {
             onClick={() => router.push('/Projects/Movenpick')}
           >
             <Image
-              src="/medias/movenpick.jpg"
+              src="/medias/Movenpick.png"
               fill={true}
               alt="Project Preview"
               ref={imageRef4}
@@ -244,18 +244,18 @@ export default function CustomFlooring() {
                 ease: 'power2.out',
               });
             }}
-            onClick={() => router.push('/Projects/Villa-01')}
+            onClick={() => router.push('/Projects/Villa04')}
           >
             <Image
-              src="/medias/placeholder.png"
+              src="/medias/img5.jpg"
               fill={true}
               alt="Project Preview"
               ref={imageRef5}
               className="object-cover"
             />
             <div className="absolute p-4 inset-0 flex items-center justify-between flex-col text-white">
-              <p className="text-2xl font-bold text-shadow-md">Luxury Villa 01</p>
-              <p className="text-xl text-shadow-md font-semibold">Interior Floors Renovation</p>
+              <p className="text-2xl font-bold text-shadow-md">Expeditors</p>
+              <p className="text-xl text-shadow-md font-semibold">Comprehensive Flooring Systems</p>
             </div>
           </div>
         </div>

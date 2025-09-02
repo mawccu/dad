@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <ProgressProvider>
           <ConditionalLayout>{children}</ConditionalLayout> 
-            <SmoothScrolling /> 
+            {/* <SmoothScrolling />  */}
         </ProgressProvider>
       </body>
     </html>

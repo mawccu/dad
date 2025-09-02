@@ -1,10 +1,17 @@
 //Contact/page.jsx
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-function Contact({ onScheduleClick }) {
+export default function ContactPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Call />
+        </Suspense>
+    )
+}
 
+function Contact({ onScheduleClick }) {
 
     const handleScheduleClick = (type) => {
         onScheduleClick(type);
@@ -222,7 +229,7 @@ function ContactForm({ prefillType }) {
     )
 }
 
-export default function Call(){
+function Call(){
     const [prefillType, setPrefillType] = React.useState(null);
     const searchParams = useSearchParams();
     const reason = searchParams.get('reason');

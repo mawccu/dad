@@ -2,7 +2,6 @@
 //components/StickyFooter.jsx
 import React from 'react';
 import Link from 'next/link';
-
 // Content component for the sticky footer
 function FooterContent() {
     return (
@@ -45,9 +44,8 @@ const FooterNav = () => {
 
             {/* Company Logo/Name */}
             <div className='text-right'>
-                <Link href="/" className='text-4xl font-semibold'>New Look</Link>
-                <p className='text-gray-400 m-2 max-w-xs'>Master Finishers with a Legacy of Excellence in Jordan</p>
-                <Link href="/About/Rami" className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad</Link>
+                <p className='text-gray-400 m-2'>Master Finishers with a Legacy of Excellence in Jordan</p>
+                <Link href="/About/RamiHamad" onClick={(e) => e.preventDefault()} className='text-gray-400 hover:text-gray-100 transition-colors'>Learn more about Rami Hamad (Coming Soon)</Link>
             </div>
         </div>
     );
@@ -56,7 +54,7 @@ const FooterNav = () => {
 // Bottom section with social links and copyright
 const FooterBottom = () => {
     return (
-        <div className='flex justify-between items-end mt-12 pt-8 border-t border-gray-700'>
+        <div className='relative flex justify-between items-end mt-12 pt-8 border-t border-gray-700'>
             <div className='flex items-center gap-6'>
                 <h2 className='text-[8vw] md:text-[6rem] font-light leading-none'>New Look</h2>
             </div>
@@ -78,15 +76,35 @@ const FooterBottom = () => {
                     </Link>
                 </div>
 
-                {/* Legal Links */}
+                {/* Legal Links - Updated to route to Policy page */}
                 <div className="flex gap-4 text-sm text-gray-400 mb-2">
-                    <Link href="#" className="hover:text-gray-300">Privacy Policy</Link>
-                    <Link href="#" className="hover:text-gray-300">Terms of Use</Link>
-                    <Link href="#" className="hover:text-gray-300">Cookie Policy</Link>
+                    <Link 
+                        href="/Policy?section=privacy-policy"
+                        className="hover:text-gray-300 transition-colors"
+                    >
+                        Privacy Policy
+                    </Link>
+                    <Link 
+                        href="/Policy?section=terms-of-use"
+                        className="hover:text-gray-300 transition-colors"
+                    >
+                        Terms of Use
+                    </Link>
+                    <Link 
+                        href="/Policy?section=cookie-policy"
+                        className="hover:text-gray-300 transition-colors"
+                    >
+                        Cookie Policy
+                    </Link>
                 </div>
                 
                 <p className='text-sm text-gray-400'>©2025 New Look. All Rights Reserved</p>
             </div>
+
+            {/* Website made by - positioned at absolute bottom */}
+            <p className="absolute top-[95%] left-1/2 transform -translate-x-1/2 text-sm text-gray-400">
+                Website made by me
+            </p>
         </div>
     );
 };

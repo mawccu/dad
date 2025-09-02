@@ -1,3 +1,4 @@
+//strength.jsx
 'use client'
 import React from 'react';
 import { Star, Shield, Cog } from 'lucide-react';

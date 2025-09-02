@@ -11,7 +11,7 @@ const projects = [
   { 
     src: '/medias/img1.jpg', 
     link: '/Projects/Villa04', 
-    category: ['flooring', 'surface finishing'],
+    category: ['surface finishing'],
     name: 'Villa 04'
   },
   {
@@ -49,6 +49,12 @@ const projects = [
     link: '/Projects/Expeditors',
     category: ['flooring'],
     name: 'Expeditors'
+  },
+  {
+    src: '/medias/img5.jpg',
+    link: '/Projects/BusinessParkTower',
+    category: ['flooring', 'legacy', 'surface finishing'],
+    name: 'Business Park Tower'
   }
 ];
 
