@@ -7,7 +7,7 @@ import Mask from '../components/Mask';
 import Navbar from '../components/Navbar'
 import Image from 'next/image';
 import Hero from './Hero/page.jsx'
-import StickyFooter from '../components/StickyFooter';
+import StickyFooter from './components/StickyFooter';
 import Header from './components/Header'
 import { useT } from './i18n/client';
 

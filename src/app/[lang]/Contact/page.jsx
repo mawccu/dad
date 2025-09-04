@@ -87,9 +87,9 @@ function Contact({ onScheduleClick }) {
     )
 }
 
-const FormInput = ({ label, type= 'text', value, onChange, name }) => (
-    <div className="flex items-baseline">
-        <label htmlFor={name} className="text-gray-800 shrink-0 text-left w-28">
+const FormInput = ({ label, type= 'text', value, onChange, name, lang }) => (
+    <div className={`flex items-baseline ${lang === 'ar' ? 'gap-6' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+        <label htmlFor={name} className={`text-gray-800 shrink-0 ${lang === 'ar' ? 'text-right w-36 text-lg' : 'text-left w-28'}`}>
             {label}
         </label>
         {type === 'textarea' ? (
@@ -98,8 +98,8 @@ const FormInput = ({ label, type= 'text', value, onChange, name }) => (
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="flex-grow bg-transparent border-b bordergray--400 focus:outline-none focus:border-black transition-colors resize-none
-                 focus:text-gray-700 text-gray-300 overflow-hidden"
+                className={`flex-grow bg-transparent border-b border-gray-400 focus:outline-none focus:border-black transition-colors resize-none
+                 focus:text-gray-700 text-gray-300 overflow-hidden ${lang === 'ar' ? 'text-right text-lg mr-2' : 'text-left'}`}
                 rows={1}
                 style={{ resize: 'none' }}
                 onInput={(e) => {e.target.style.height = 'auto';
@@ -113,7 +113,7 @@ const FormInput = ({ label, type= 'text', value, onChange, name }) => (
             id={name}
             value={value}
             onChange={onChange}
-            className="flex-grow bg-transparent border-b border-gray-400 focus:outline-none text-gray-300 focus:border-black transition-colors focus:text-gray-700" 
+            className={`flex-grow bg-transparent border-b border-gray-400 focus:outline-none text-gray-300 focus:border-black transition-colors focus:text-gray-700 ${lang === 'ar' ? 'text-right text-lg mr-2' : 'text-left'}`} 
         />
     )}
     </div>
@@ -188,19 +188,22 @@ function ContactForm({ prefillType }) {
                                     name='name'
                                     value={formData.name}
                                     onChange={handleChange}
+                                    lang={lang}
                                 />
                                 <FormInput
                                     label={t('contact2.label_location')}
                                     name='location'
                                     value={formData.location}
                                     onChange={handleChange}
+                                    lang={lang}
                                 />
                                 <FormInput
                                     label={t('contact2.label_email')}
                                     type='email'
                                     name='email'
                                     value={formData.email}
-                                    onChange={handleChange} 
+                                    onChange={handleChange}
+                                    lang={lang}
                                 />
                                 <FormInput 
                                     label={t('contact2.label_phone')}
@@ -208,6 +211,7 @@ function ContactForm({ prefillType }) {
                                     name='phone'
                                     value={formData.phone}
                                     onChange={handleChange}
+                                    lang={lang}
                                 />
                                 <div className="col-span-2 text-1.5xl">
                                     <FormInput 
@@ -216,6 +220,7 @@ function ContactForm({ prefillType }) {
                                         name='details'
                                         value={formData.details}
                                         onChange={handleChange}
+                                        lang={lang}
                                     />
                                 </div>
                             </div>

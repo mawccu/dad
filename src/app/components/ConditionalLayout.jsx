@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Navbar from './Navbar';
-import StickyFooter from './StickyFooter';
 import { useProgress } from './ProgressProvider';
 
 export default function ConditionalLayout({ children }) {
@@ -15,22 +14,20 @@ export default function ConditionalLayout({ children }) {
     const isServicesPage = pathWithoutLang === '/Services';
     const isCareerPage = pathWithoutLang === '/Careers';
 
-    // Career page layout - minimal with footer
+    // Career page layout - minimal
     if (isCareerPage) {
         return (
             <>
                 {children}
-                <StickyFooter />
             </>
         );
     }
     
-    // Home page layout - conditional footer based on progress
+    // Home page layout - just children
     if (isHomePage) {
         return (
             <>
                 {children}
-                {progress === 100 && <StickyFooter />}
             </>
         );
     }
@@ -45,7 +42,6 @@ export default function ConditionalLayout({ children }) {
             <main className="min-h-screen">
                 {children}
             </main>
-            <StickyFooter />
         </>
     );
 }

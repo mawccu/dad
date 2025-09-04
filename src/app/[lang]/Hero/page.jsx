@@ -11,9 +11,16 @@ import { useT } from '../i18n/client';
 export default function Hero(){
     const [isHovered, setIsHovered] = React.useState(false)
 
-    const { t } = useT('common');
+    const { t, ready } = useT('common');
     const router = useRouter();
     const { lang } = useParams();
+
+    // Don't render until translations are ready
+    if (!ready) {
+        return <div className="h-[100vh] flex items-center justify-center">
+            <div className="text-center">Loading...</div>
+        </div>;
+    }
 
     const contactFormTranslations = {
         title: t('contact.form_hero.title'),
@@ -44,7 +51,6 @@ export default function Hero(){
                         <Link href={`/${lang}/Projects/AbdounBridge`}>
                         <span className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8">
                         {t("heroPage.bridgeLine2")}</span></Link>
-                        
                     </h2>
 
                     <p className="text-1.5xl text-gray-800 leading-relaxed mb-8 text-center font-400">
@@ -59,7 +65,7 @@ export default function Hero(){
 
                     <div>
                     <p className="text-center text-1.5xl text-gray-800"
-                        onClick={() => router.push("/../Projects")}
+                        onClick={() => router.push(`/${lang}/Projects`)}
                     >
                     <strong className="underline cursor-pointer hover:text-gray-500 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</strong>
                     </p>
@@ -107,7 +113,7 @@ export default function Hero(){
                         <div className="text-center">
                             <p 
                             className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/../Services/SurfaceFinishing")}
+                            onClick={() => router.push(`/${lang}/Services/SurfaceFinishing`)}
                             >
                                 {t("heroPage.cards.coatings.cta")}</p>
                         </div>
@@ -153,7 +159,7 @@ export default function Hero(){
                         <div className="text-center">
                             <p 
                             className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/../Services/CustomFlooring")}
+                            onClick={() => router.push(`/${lang}/Services/CustomFlooring`)}
                             >
                                 {t("heroPage.cards.flooring.cta")}
                             </p>
@@ -180,7 +186,7 @@ export default function Hero(){
                 <div>
                     <p 
                     className="text-center text-2xl underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                    onClick={() => router.push("/../About")}
+                    onClick={() => router.push(`/${lang}/About`)}
                     >
                         {t("heroPage.expertise.cta")}
                     </p>
@@ -237,7 +243,7 @@ export default function Hero(){
                         <div className="text-center">
                             <p 
                             className="text-2xl font-light underline underline-offset-8 cursor-pointer hover:text-gray-500"
-                            onClick={() => router.push("/../Contact")}
+                            onClick={() => router.push(`/${lang}/Contact`)}
                             >
                                 {t("heroPage.offer.cta")}
                             </p>

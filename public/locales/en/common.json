@@ -3,50 +3,13 @@
     "lead": "Turning dreams into reality:",
     "bridgeLine1": "With the expertise of the Project Manager behind the",
     "bridgeLine2": " Abdoun Bridge Project.",
-    "section_title": "Interior Painting Works",
-    "section_body": "This project involved the application of high-quality emulsion paint finishes across 2,500 m² in a newly built, four-floor luxury villa. While the scope focused solely on interior painting works, the scale and prestige of the property demanded precise execution, flawless finishes, and strict attention to detail to complement the villa's high-end design."
-  },
-  "contact1": {
+    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments and painting, our projects reflect high standards and long-term value.",
+    "p2": "Led by ",
+    "p3": "Eng. Rami Hamad",
+    "p4": ", who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East.",
     "cta": {
-      "background_alt": "Contact us background image",
-      "interested": "Interested?",
-      "lets_connect": "Let's connect.",
-      "feel_free": "Feel free to reach out.",
-      "love_to_hear": "We would love to hear from you.",
-      "button_text": "Contact us"
-    }
-  },
-  "contact2": {   
-        "loading": "Loading...",
-        "page_title": "Get in contact with us",
-        "page_intro": "Have any questions or inquiries? We'd love to hear from you. Reach out to us to discuss your project ideas, explore collaboration opportunities, or simply learn more about our work. Our team is here to assist you and provide personalized solutions.",
-        "location_city": "Jordan, Amman",
-        "remote_consultations": "Remote Consultations",
-        "available_worldwide": "Available Worldwide",
-        "schedule_online_meetings": "Schedule online meetings",
-        "emails_general": "General Inquiries",
-        "emails_careers": "Careers",
-        "emails_pr": "PR & Collaborations",
-        "form_title": "Let's shape the future of your project together",
-        "form_subtitle": "We are excited to explore your ideas, share our creative vision, and guide you through the process of bringing your project to life. Together, we can create a unique masterpiece.",
-        "label_name": "Name",
-        "label_location": "Location",
-        "label_email": "Email",
-        "label_phone": "Phone",
-        "label_details": "Details",
-        "submit": "Submit",
-        "prefill_consultation": "I would like to schedule an online consultation to discuss my project requirements. Please let me know your available times for a video call.",
-        "prefill_general": "I have some questions about your services and would appreciate the opportunity to discuss my project needs.",
-        "prefill_collaboration": "I'm interested in exploring potential collaboration opportunities and would like to arrange a meeting to discuss further.",
-        "remote_value": "Remote/Online",
-        "alert_fill_prefix": "Please fill in the following fields: "
-  },
-  "about": {
-    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments and painting, our projects reflect high standards and long-term value. Today, our work is rooted in Jordan, with a vision that is gradually expanding into the Gulf",
-    "p2": "Led by",
-    "p3": " Eng. Rami Hamad",
-    "p4": ", who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the Gulf, we're committed to delivering uncompromising quality, ensuring precision and excellence in every task we undertake.",
-    "cta": { "discover": "Discover our projects" },
+      "discover": "Discover our projects"
+    },
     "cards": {
       "coatings": {
         "alt": "Protective Coatings",
@@ -91,6 +54,45 @@
         "lt": "L&T"
       }
     },
+    "section_title": "Interior Painting Works",
+    "section_body": "This project involved the application of high-quality emulsion paint finishes across 2,500 m² in a newly built, four-floor luxury villa. While the scope focused solely on interior painting works, the scale and prestige of the property demanded precise execution, flawless finishes, and strict attention to detail to complement the villa's high-end design."
+  },
+  "contact1": {
+    "cta": {
+      "background_alt": "Contact us background image",
+      "interested": "Interested?",
+      "lets_connect": "Let's connect.",
+      "feel_free": "Feel free to reach out.",
+      "love_to_hear": "We would love to hear from you.",
+      "button_text": "Contact us"
+    }
+  },
+  "contact2": {   
+        "loading": "Loading...",
+        "page_title": "Get in contact with us",
+        "page_intro": "Have any questions or inquiries? We'd love to hear from you. Reach out to us to discuss your project ideas, explore collaboration opportunities, or simply learn more about our work. Our team is here to assist you and provide personalized solutions.",
+        "location_city": "Jordan, Amman",
+        "remote_consultations": "Remote Consultations",
+        "available_worldwide": "Available Worldwide",
+        "schedule_online_meetings": "Schedule online meetings",
+        "emails_general": "General Inquiries",
+        "emails_careers": "Careers",
+        "emails_pr": "PR & Collaborations",
+        "form_title": "Let's shape the future of your project together",
+        "form_subtitle": "We are excited to explore your ideas, share our creative vision, and guide you through the process of bringing your project to life. Together, we can create a unique masterpiece.",
+        "label_name": "Name",
+        "label_location": "Location",
+        "label_email": "Email",
+        "label_phone": "Phone",
+        "label_details": "Details",
+        "submit": "Submit",
+        "prefill_consultation": "I would like to schedule an online consultation to discuss my project requirements. Please let me know your available times for a video call.",
+        "prefill_general": "I have some questions about your services and would appreciate the opportunity to discuss my project needs.",
+        "prefill_collaboration": "I'm interested in exploring potential collaboration opportunities and would like to arrange a meeting to discuss further.",
+        "remote_value": "Remote/Online",
+        "alert_fill_prefix": "Please fill in the following fields: "
+  },
+  "about": {
     "hero": {
       "title": "Master Finishers with a Legacy of Excellence in Jordan",
       "paragraph1": "Formerly known as Al-Mezaab, New Look is led by ",
@@ -536,6 +538,90 @@
     },
     "credits": {
       "website_made_by": "Website made by me"
+    }
+  },
+  "policy": {
+    "header": {
+      "title": "Legal Policies",
+      "subtitle": "Our commitment to transparency and your rights"
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy",
+      "last_updated": "Last updated: 01 Jan 2025",
+      "reading_time": "Reading time: 3 minutes",
+      "sections": [
+        {
+          "subtitle": "Overview",
+          "body": "We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way. This Privacy Policy outlines the types of personal information we collect, how we use that information, and how we keep it safe."
+        },
+        {
+          "subtitle": "Who we are",
+          "body": "This Privacy Policy together with the Terms of Use form an entire legal Agreement between New Look Construction Company and you as a user. The Agreement applies to our website located at newlook-jo.com. If you have any questions you can contact us at info@newlook-jo.com."
+        },
+        {
+          "subtitle": "What personal information do we collect?",
+          "body": "We collect personal information that you provide to us when you interact with our website, such as your name, email address, and phone number. We also collect information about your use of our website, such as your IP address, browser type, and pages visited."
+        },
+        {
+          "subtitle": "How do we use your information?",
+          "body": "We use your personal information to provide you with our services, respond to your inquiries, and improve our website. We may also use your information to send you promotional materials, but only if you have consented to receive them."
+        },
+        {
+          "subtitle": "Data Security",
+          "body": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+        },
+        {
+          "subtitle": "Contact Us",
+          "body": "If you have any questions about this Privacy Policy, please contact us at info@newlook-jo.com or +962 00 0000000."
+        }
+      ]
+    },
+    "terms_of_use": {
+      "title": "Terms of Use",
+      "last_updated": "Last updated: 01 Jan 2025",
+      "reading_time": "Reading time: 4 minutes",
+      "sections": [
+        {
+          "subtitle": "Acceptance of Terms",
+          "body": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. These Terms of Use may be updated from time to time without notice."
+        },
+        {
+          "subtitle": "Use License",
+          "body": "Permission is granted to temporarily download one copy of the materials on New Look's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title."
+        },
+        {
+          "subtitle": "Disclaimer",
+          "body": "The materials on New Look's website are provided on an 'as is' basis. New Look makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+        },
+        {
+          "subtitle": "Limitations",
+          "body": "In no event shall New Look or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on New Look's website."
+        },
+        {
+          "subtitle": "Service Terms",
+          "body": "All construction services are subject to separate written agreements. Website content is for informational purposes only and does not constitute a binding offer for services."
+        },
+        {
+          "subtitle": "Governing Law",
+          "body": "These terms and conditions are governed by and construed in accordance with the laws of Jordan and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location."
+        }
+      ]
+    },
+    "cookie_policy": {
+      "title": "Cookie Policy",
+      "last_updated": "Last updated: 01 Jan 2025",
+      "reading_time": "Reading time: 2 minutes",
+      "sections": [
+        {
+          "body": "Our website uses cookies to improve your browsing experience. Cookies are small text files stored on your device that help us remember your preferences, analyze site traffic, and provide a smoother experience."
+        },
+        {
+          "body": "We use three types of cookies: essential cookies that are required for basic site functionality, analytics cookies that help us understand how visitors use the site, and functional cookies that remember your preferences."
+        },
+        {
+          "body": "You can manage or disable cookies through your browser settings. Please note that disabling cookies may limit some features of our website."
+        }
+      ]
     }
   }
 }
