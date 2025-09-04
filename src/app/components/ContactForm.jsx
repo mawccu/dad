@@ -4,7 +4,7 @@ import React from 'react';
 
 const FormInput = ({ label, type= 'text', value, onChange, name }) => (
     <div className="flex items-baseline">
-        <label htmlFor={name} className="text-gray-800 shrink-0 text-left w-28">
+        <label htmlFor={name} className="text-gray-800 shrink-0 text-left w-36">
             {label}
         </label>
         {type === 'textarea' ? (
@@ -36,7 +36,7 @@ const FormInput = ({ label, type= 'text', value, onChange, name }) => (
 )
 
 
-export default function ContactForm() {
+export default function ContactForm({ translations }) {
 
     const [formData, setFormData] = React.useState({
         name: '',
@@ -71,11 +71,10 @@ export default function ContactForm() {
         <div>
             <div className="flex items-center justify-center flex-col">    
                 <h1 className="text-4xl text-center mb-20 font-500">
-                    Let's shape the future of your project together
+                    {translations.title}
                 </h1>
                 <p className="text-2xl text-gray-800 text-center max-w-5xl font-350">
-                    We are excited to explore your ideas, share our creative vision, and guide you through the process of bringing your project to
-                    life. Together, we can create a unique masterpiece.
+                   {translations.subtitle}
                 </p>
             </div>
         </div>
@@ -85,26 +84,26 @@ export default function ContactForm() {
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-16 text-1.5xl font-400">
                             <FormInput
-                                label='Name'
+                                label={translations.name}
                                 name='name'
                                 value={formData.name}
                                 onChange={handleChange}
                             />
                             <FormInput
-                                label="Location"
+                                label={translations.location}
                                 name='location'
                                 value={formData.location}
                                 onChange={handleChange}
                             />
                             <FormInput
-                                label='Email'
+                                label={translations.email}
                                 type='email'
                                 name='email'
                                 value={formData.email}
                                 onChange={handleChange} 
                             />
                             <FormInput 
-                                label='Phone'
+                                label={translations.phone}
                                 type='tel'
                                 name='phone'
                                 value={formData.phone}
@@ -112,7 +111,7 @@ export default function ContactForm() {
                             />
                             <div className="col-span-2 text-1.5xl">
                                 <FormInput 
-                                    label='Details'
+                                    label={translations.details}
                                     type='textarea'
                                     name='details'
                                     value={formData.details}

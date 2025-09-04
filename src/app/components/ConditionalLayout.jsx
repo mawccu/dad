@@ -5,27 +5,28 @@ import React from 'react';
 import Navbar from './Navbar';
 import StickyFooter from './StickyFooter';
 import { useProgress } from './ProgressProvider';
-import Header from './Header';
 
 export default function ConditionalLayout({ children }) {
     const pathname = usePathname();
-    const isHomePage = pathname === '/';
+    // Remove language prefix for path checking
+    const pathWithoutLang = pathname.replace(/^\/(en|ar)/, '') || '/';
+    const isHomePage = pathWithoutLang === '/';
     const { progress } = useProgress();
-    const isServicesPage = pathname === '/Services';
-    const isCareerPage = pathname === '/Careers';
+    const isServicesPage = pathWithoutLang === '/Services';
+    const isCareerPage = pathWithoutLang === '/Careers';
 
+    // Career page layout - minimal with footer
     if (isCareerPage) {
-        // Special layout for the career page, navbar here
         return (
             <>
-                <Header />
                 {children}
                 <StickyFooter />
             </>
         );
     }
+    
+    // Home page layout - conditional footer based on progress
     if (isHomePage) {
-        // Special layout for the home page, navbar here
         return (
             <>
                 {children}
@@ -34,9 +35,10 @@ export default function ConditionalLayout({ children }) {
         );
     }
 
+    // Default layout for all other pages
     return (
         <>
-            <Header />
+            {/* Navbar is commented out but available if needed */}
             {/* <div style={{ position: 'relative', zIndex: 9997 }}>
                 <Navbar />
             </div> */}

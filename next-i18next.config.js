@@ -1,3 +1,4 @@
+//next-i18next.config.js, in the root directory.
 const nextI18NextConfig = {
   i18n: {
     defaultLocale: "en",

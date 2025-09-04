@@ -1,0 +1,541 @@
+{
+  "heroPage": {
+    "lead": "Turning dreams into reality:",
+    "bridgeLine1": "With the expertise of the Project Manager behind the",
+    "bridgeLine2": " Abdoun Bridge Project.",
+    "section_title": "Interior Painting Works",
+    "section_body": "This project involved the application of high-quality emulsion paint finishes across 2,500 m² in a newly built, four-floor luxury villa. While the scope focused solely on interior painting works, the scale and prestige of the property demanded precise execution, flawless finishes, and strict attention to detail to complement the villa's high-end design."
+  },
+  "contact1": {
+    "cta": {
+      "background_alt": "Contact us background image",
+      "interested": "Interested?",
+      "lets_connect": "Let's connect.",
+      "feel_free": "Feel free to reach out.",
+      "love_to_hear": "We would love to hear from you.",
+      "button_text": "Contact us"
+    }
+  },
+  "contact2": {   
+        "loading": "Loading...",
+        "page_title": "Get in contact with us",
+        "page_intro": "Have any questions or inquiries? We'd love to hear from you. Reach out to us to discuss your project ideas, explore collaboration opportunities, or simply learn more about our work. Our team is here to assist you and provide personalized solutions.",
+        "location_city": "Jordan, Amman",
+        "remote_consultations": "Remote Consultations",
+        "available_worldwide": "Available Worldwide",
+        "schedule_online_meetings": "Schedule online meetings",
+        "emails_general": "General Inquiries",
+        "emails_careers": "Careers",
+        "emails_pr": "PR & Collaborations",
+        "form_title": "Let's shape the future of your project together",
+        "form_subtitle": "We are excited to explore your ideas, share our creative vision, and guide you through the process of bringing your project to life. Together, we can create a unique masterpiece.",
+        "label_name": "Name",
+        "label_location": "Location",
+        "label_email": "Email",
+        "label_phone": "Phone",
+        "label_details": "Details",
+        "submit": "Submit",
+        "prefill_consultation": "I would like to schedule an online consultation to discuss my project requirements. Please let me know your available times for a video call.",
+        "prefill_general": "I have some questions about your services and would appreciate the opportunity to discuss my project needs.",
+        "prefill_collaboration": "I'm interested in exploring potential collaboration opportunities and would like to arrange a meeting to discuss further.",
+        "remote_value": "Remote/Online",
+        "alert_fill_prefix": "Please fill in the following fields: "
+  },
+  "about": {
+    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments and painting, our projects reflect high standards and long-term value. Today, our work is rooted in Jordan, with a vision that is gradually expanding into the Gulf",
+    "p2": "Led by",
+    "p3": " Eng. Rami Hamad",
+    "p4": ", who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East. Whether in Amman or the Gulf, we're committed to delivering uncompromising quality, ensuring precision and excellence in every task we undertake.",
+    "cta": { "discover": "Discover our projects" },
+    "cards": {
+      "coatings": {
+        "alt": "Protective Coatings",
+        "title": "Protective Coatings",
+        "subtitle": "Redefining protection with advanced coating solutions",
+        "cta": "Protective Coatings Services"
+      },
+      "flooring": {
+        "alt": "Epoxy Solutions",
+        "title": "Flooring Solutions",
+        "subtitle": "Advanced Flooring systems for lasting durability",
+        "cta": "Custom Flooring Services"
+      }
+    },
+    "expertise": {
+      "title": "Our expertise",
+      "p1": "We specialize in the final, crucial layer of every project, ensuring precision and durability. With years of hands-on experience and collaboration with top engineers and suppliers, we guarantee a streamlined process from start to finish.",
+      "p2": "Whether it's new construction or renovating existing spaces, from luxury homes to industrial factories, our work showcases the attention to detail and quality that defines us.",
+      "cta": "Learn more about New Look"
+    },
+    "offer": {
+      "label": "Limited Offer",
+      "title": "Elevate your Space",
+      "subtitle": "Enjoy a complimentary initial consultation on your desired project.",
+      "cta": "Register now"
+    },
+    "epoxy": {
+      "label": "Coming Soon",
+      "title": "Epoxy Solutions",
+      "subtitle": "Decorative Epoxy Systems for Timeless Beauty",
+      "cta": "Follow our journey"
+    },
+    "images": { "team_alt": "New Look Team" },
+    "partners": {
+      "title": "Trusted Credentials & Collaborations",
+      "subtitle": "Over the years, we've had the privilege of working alongside some of the most respected names in the industry. These collaborations have shaped the quality and precision of the work we deliver",
+      "list": {
+        "al_manaseer": "Al Manaseer",
+        "saveto": "Saveto Vetonit",
+        "sipes": "Sipes",
+        "larsen_toubro": "Larsen & Toubro",
+        "lt": "L&T"
+      }
+    },
+    "hero": {
+      "title": "Master Finishers with a Legacy of Excellence in Jordan",
+      "paragraph1": "Formerly known as Al-Mezaab, New Look is led by ",
+      "paragraph2": "Eng. Rami Hamad",
+      "paragraph3": ", who oversaw finishing works on the Abdoun Bridge, one of Jordan’s landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we are the invisible force behind surfaces that last",
+      "image_alt": "Eng. Rami Hamad"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "p1": "At New Look, our focus is simple: deliver work that lasts and do it right the first time. Every project we take on is tailored to the client's needs and the demands of the site. We pay special attention not only to the aesthetics but also to creating an immersive and captivating experience.",
+      "p2": "We believe good work starts with a clear purpose. Every project has its own context: site conditions, client needs, budget realities, and timeline pressure. We consider all of that before we even lift a brush.",
+      "p3": "We embrace new challenges as opportunities for growth and innovation."
+    },
+    "locations": {
+      "title": "Where we've made our mark",
+      "p1": "Based in Amman, Jordan, we've brought precision finishing to sites across Amman, Aqaba, The Dead Sea, and beyond.",
+      "map_alt": "Map of project locations"
+    },
+    "strength": {
+      "title": "Why New Look?",
+      "intro": "Our experienced team consists of highly qualified professionals who are characterized by their passion for perfection and their attention to detail.",
+      "items": [
+        {
+          "title": "Quality",
+          "description": "We use only the best materials and state-of-the-art techniques to provide you with long-lasting and aesthetically pleasing results."
+        },
+        {
+          "title": "Reliability",
+          "description": "You can rely on us. We keep our promises, meet deadlines, and deliver work crafted to the highest standards. Every project passes a strict QA process, and we stand behind our work with timely support and rectification if anything falls short of expectations."
+        },
+        {
+          "title": "Experience",
+          "description": "With over 25 years of experience and a deep understanding of the industry, we are ideally equipped to successfully implement your projects."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "loading": "Loading...",
+    "contact": {
+      "title": "Get in contact with us",
+      "intro": "Have any questions or inquiries? We'd love to hear from you. Reach out to us to discuss your project ideas, explore collaboration opportunities, or simply learn more about our work. Our team is here to assist you and provide personalized solutions."
+    },
+    "locations": {
+      "jordan_amman": "Jordan, Amman",
+      "remote_consultations": "Remote Consultations",
+      "available_worldwide": "Available Worldwide",
+      "schedule_online_meetings": "Schedule online meetings"
+    },
+    "emails_section": {
+      "general_inquiries": "General Inquiries",
+      "careers": "Careers",
+      "pr_collaborations": "PR & Collaborations",
+      "email_info": "info@newlook-jo.com",
+      "email_careers": "careers@newlook-jo.com",
+      "email_pr": "pr@newlook-jo.com"
+    },
+    "form_hero": {
+      "title": "Let's shape the future of your project together",
+      "subtitle": "We are excited to explore your ideas, share our creative vision, and guide you through the process of bringing your project to life. Together, we can create a unique masterpiece."
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "location": "Location",
+        "email": "Email",
+        "phone": "Phone",
+        "details": "Details"
+      },
+      "submit": "Submit"
+    },
+    "prefill": {
+      "consultation": "I would like to schedule an online consultation to discuss my project requirements. Please let me know your available times for a video call.",
+      "general": "I have some questions about your services and would appreciate the opportunity to discuss my project needs.",
+      "collaboration": "I'm interested in exploring potential collaboration opportunities and would like to arrange a meeting to discuss further.",
+      "remote_location_value": "Remote/Online"
+    },
+    "alerts": {
+      "fill_missing_fields_prefix": "Please fill in the following fields: "
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "categories": {
+      "all": "All",
+      "flooring": "Flooring",
+      "surface_finishing": "Surface Finishing",
+      "legacy": "Legacy"
+    },
+    "list": [
+      {
+        "name": "Villa 04",
+        "categories": ["Surface Finishing"]
+      },
+      {
+        "name": "Movenpick Hotel",
+        "categories": ["Flooring"]
+      },
+      {
+        "name": "Safeway Center",
+        "categories": ["Flooring"]
+      },
+      {
+        "name": "Abdoun Bridge",
+        "categories": ["Surface Finishing", "Legacy"]
+      },
+      {
+        "name": "Talal Abu Ghazaleh Group",
+        "categories": ["Surface Finishing"]
+      },
+      {
+        "name": "Northern Cement Company",
+        "categories": ["Surface Finishing"]
+      },
+      {
+        "name": "Expeditors",
+        "categories": ["Flooring"]
+      },
+      {
+        "name": "Business Park Tower",
+        "categories": ["Flooring", "Legacy", "Surface Finishing"]
+      }
+    ],
+    "villa04": {
+      "title": "Prestigious Villa-04 Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section_title": "Interior Painting Works",
+      "section_body": "This project involved the application of high-quality emulsion paint finishes across 2,500 m² in a newly built, four-floor luxury villa. While the scope focused solely on interior painting works, the scale and prestige of the property demanded precise execution, flawless finishes, and strict attention to detail to complement the villa’s high-end design."
+    },
+    "Movenpick": {
+      "title": "Mövenpick Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Specialized Decorative Epoxy & Waterproofing Systems",
+      "section1_body": "This project at Mövenpick Dead Sea required a combination of specialized flooring and waterproofing systems tailored to the unique demands of hospitality operations. Works included the application of self-leveling epoxy flooring systems in the hotel kitchens, where seamless and hygienic surfaces are critical for food safety, and epoxy coating systems in the solarium areas, designed for durability under constant moisture and heavy use. On the roofs, torch-applied waterproofing membranes were installed to seal and protect a series of plant containers, ensuring reliable water retention without compromising the structural integrity of the rooftop landscape. Though smaller in scope compared to other projects, it was among the most specialized and detail-oriented works, demanding precision in both planning and execution.",
+      "section2_title": "On-Site Process",
+      "section2_body": "The works required a highly meticulous approach. In the kitchens, substrates were prepared to a fine tolerance before applying multi-layer self-leveling epoxy, resulting in a smooth, non-porous finish that meets hygiene and cleaning standards. In the solarium, epoxy coating systems were chosen for their resistance to UV exposure, humidity, and continuous foot traffic. The waterproofing of rooftop plant containers demanded careful torch application around irregular geometries, with strict attention to splice joints and terminations to ensure watertightness. As one of the most intricate projects in the portfolio, it highlighted the team’s ability to deliver precise, high-performance solutions in sensitive hospitality environments."
+    },
+    "ncc": {
+      "title": "Northern Cement HQ",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Comprehensive Waterproofing and Protective Coatings",
+      "section1_body": "This project at NCC’s headquarters covered a total of 7,000 m², including 1,500 m² of roofing, 2,000 m² of interior areas, and 3,000 m² of exterior facades. The works featured torch-applied waterproofing membranes for the roofs, advanced flooring systems, and specialized protective coatings. Using the same principles, systems and materials applied on the Abdoun Bridge Project, ensuring a proven level of durability and long-term structural protection. Materials were supplied by leading brands such as LAMA, guaranteeing the highest performance standards.",
+      "section2_title": "On-Site Process",
+      "section2_body": "Our team executed waterproofing and coating works with close attention to technical details such as splice links in the membranes, ensuring watertight roofing performance. The interior surfaces were treated with protective flooring and coating systems designed to withstand wear, humidity, and daily use. For the exterior, anti-carbonation coatings were carefully applied to prevent environmental damage and extend the building’s service life. The project combined quality materials, precision application, and proven systems to deliver reliable and long-lasting results."
+    },
+    "businessParkTower": {
+      "title": "Business Park Tower - Jeddah, Saudi Arabia",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Scope of Works",
+      "section1_body": "The Business Park Tower in Jeddah, Saudi Arabia is a landmark high-rise development, delivering state-of-the-art business facilities and commercial space in one of the Kingdom’s most important urban centers. The works carried out during this phase of construction included comprehensive concrete repair, the installation of protective epoxy flooring systems, and waterproofing and fireproofing treatments for the gas, fire, and water tanks, all essential elements for the safety and long-term performance of the tower.",
+      "section2_title": "Leadership & Role",
+      "section2_body": "At the time, Engineer Rami Hamad (Founder) served as acting Project Manager with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> His responsibilities included supervising the execution of repair and protection systems, coordinating subcontractors on site, and ensuring compliance with both engineering standards and safety requirements. Although his assignment was temporary and limited to the mid-phase of construction, it reflected his ability to step into leadership on a major Gulf project and maintain operational continuity.",
+      "section3_title": "Materials & System",
+      "section3_body": "The interventions combined structural repair systems for damaged concrete, high-performance epoxy flooring solutions designed for heavy-use commercial environments, and specialized waterproofing/fireproofing applications for critical utility tanks. These systems were applied in line with Gulf construction standards, providing durability, safety, and long-term asset protection.",
+      "section4_title": "Notes",
+      "section4_body": "This legacy project was undertaken in 2013 under <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> While <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"../../About/RamiHamad\"><span class=\"font-semibold text-blue-700 hover:text-blue-400\">Engineer Rami Hamad's</span></a> role as acting Project Manager was limited in time and scope, it remains an important milestone in his career, showcasing adaptability, technical oversight, and leadership experience within the Saudi market."
+    },
+    "safeway": {
+      "title": "Safeway Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Epoxy Flooring & Renovation Works",
+      "section1_body": "This project at Safeway’s head office covered approximately 6,000 m² of epoxy flooring systems, supplied and applied to meet the operational demands of a high-traffic retail environment. The scope also extended to renovation and maintenance works across several Safeway branches, ensuring consistency in flooring performance and finish. The epoxy systems were selected for their durability, resistance to wear, and ease of maintenance, making them well-suited for both back-of-house facilities and customer-facing areas.",
+      "section2_title": "On-Site Process",
+      "section2_body": "The works began with full substrate preparation, including grinding, cleaning, and joint treatment, followed by the application of a multi-layer epoxy system consisting of a primer, high-build body coat, and protective topcoat. This process created a seamless, non-porous surface with high resistance to wear, chemicals, and daily cleaning, making it ideal for Safeway’s heavy-traffic retail operations. Curing schedules were carefully managed and much of the application was carried out during off-hours to minimize disruption. Renovation and maintenance across additional branches applied the same technical standards, ensuring consistent performance, safety, and appearance throughout all Safeway facilities."
+    },
+     "TAG": {
+      "title": "Talal Abu-Gazaleh Group Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Comprehensive Waterproofing & Renovation Works",
+      "section1_body": "This project at the Talal Abu-Gazaleh Group (TAG) Head Office and academic facilities in Amman encompassed more than 2,500 m² of waterproofing and interior renovation works. At the Shmeisani head office, over 550 m² of roof surfaces were treated with advanced polyurethane waterproofing systems to ensure long-term durability and weather resistance. In addition, torch-applied membranes were installed across approximately 700 m² of roofs at the TAG academic buildings on Mecca Street, delivering watertight performance under challenging environmental conditions. The works also included interior renovations across 1,000 m² within TAG buildings, where high-quality painting systems were applied to restore and refresh office environments.",
+      "section2_title": "On-Site Process",
+      "section2_body": "Execution combined large-scale waterproofing with detailed interior finishing. On the head office roofs, substrates were prepared and coated with high-performance polyurethane systems, providing superior elasticity and resistance to UV exposure. At the academic facilities, torch-applied membranes were installed with strict attention to splice joints and detailing around penetrations, ensuring complete watertightness. Interior renovation works involved surface preparation and multi-layer paint application across offices and common areas, enhancing both aesthetics and protection. The project’s scale and mix of techniques demonstrated the team’s ability to deliver reliable, high-quality solutions across diverse building types within the TAG portfolio."
+    },
+    "wadiAbdoun": {
+      "title": "Wadi-Abdoun Bridge Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Scope of Works",
+      "section1_body": "This project at the Wadi Abdoun Bridge involved the full application of anti-carbonation coating systems across the bridge structure, the specialized waterproofing of pylons using cementitious systems, and the protective painting of scaffolding metallic systems. In total, more than 45,000 m² of surfaces were treated, ensuring long-term durability and safeguarding one of Amman’s most iconic engineering landmarks.",
+      "section2_title": "Leadership & Recognition",
+      "section2_body": "At the time, the works were carried out under SIPES, where <span class='font-semibold text-gray-700'>Engineer Rami Hamad (Founder)</span> served as Project Manager. His performance was formally acknowledged by <a href='https://www.larsentoubro.com/' target='_blank' rel='noopener noreferrer' class='font-semibold text-blue-700 hover:text-blue-400'>Larsen & Toubro</a>, who issued a signed <span class='font-semibold text-gray-700'>Letter of Recommendation</span> confirming his role.",
+      "section2_note": "A copy of the signed Letter of Recommendation from Larsen & Toubro is available upon request.",
+      "section3_title": "Materials & Execution",
+      "section3_body": "The works were executed under Jordan Sipes Paint Co., in collaboration with <a href='https://www.larsentoubro.com/' target='_blank' rel='noopener noreferrer' class='font-semibold text-blue-700 hover:text-blue-400'>Larsen & Toubro</a>, using advanced SIPES × Küster systems. These materials were selected for their international-grade performance in infrastructure projects, combining high resistance to carbonation, superior adhesion, and long-term waterproofing protection. Application included detailed surface preparation, precision in coating layers, and careful treatment of critical areas such as pylons and scaffolding to guarantee complete structural integrity."
+    },
+    "expeditors": {
+      "title": "Expeditors Project",
+      "hero_alt": "Expeditors bathroom project hero",
+      "section1_title": "Comprehensive Surface Coatings and Maintenance",
+      "section1_body": "This project took place at the Expeditors head office factories in Sahab, covering more than 2,900 m². The scope included flooring traffic lining coatings, solo coatings, renovation and maintenance. Each step was carried out after a thorough inspection to ensure the solutions could withstand the factory's weather conditions and humidity levels. All work was completed with minimal disruption to the client's operations.",
+      "section2_title": "On-Site Process",
+      "section2_body": "This project involved the development of a comprehensive logistics solution for Expeditors, aimed at optimizing their supply chain operations. To ensure durability under constant industrial use, we prepared the substrates meticulously and selected coating systems that could withstand humidity and temperature fluctuations. Joints and lining paths were aligned precisely to maintain consistency across the factory floor, delivering both long-term performance and a clean, uniform finish."
+    }
+  },
+  "services": {
+    "custom_flooring": "Custom Flooring",
+    "surface_finishing": "Surface Finishing",
+    "surface_finishing_page": {
+      "hero_alt": "Epoxy Solutions",
+      "hero_title": "Surface Finishing Solutions",
+      "hero_subtitle": "Protective & decorative coatings built for lasting performance and aesthetics",
+      "cta_free_consultation": "Get a free consultation",
+      "intro_title": "High-performance surface treatments for walls, facades, and exposed elements",
+      "intro_p1": "At New Look, our surface finishing solutions are engineered to protect, preserve, and elevate. From UV-resistant coatings on exterior walls to decorative renderings for interior accents, we adapt each system to fit the climate, exposure, and aesthetic goals of the space. These finishes are more than surface-deep, extending the life of the material while defining its character and style.",
+      "intro_p2": "Every application begins with an on-site assessment and material mapping. We coordinate directly with project leads to ensure finish compatibility and execution precision. The result: surfaces that meet structural expectations while elevating the space's visual tone without compromise. Our team maintains a consistent dialogue with architects and contractors throughout, aligning aesthetic goals with technical requirements.",
+      "panel1_title": "Exceptional Expertise",
+      "panel1_items": [
+        "Interior Walls",
+        "Exterior Facades",
+        "Wet zones & spas",
+        "Rooftops & parapets",
+        "Architectural Features"
+      ],
+      "panel2_title": "Premium Solutions",
+      "panel2_items": [
+        {
+          "title": "Protective Coatings",
+          "desc": "Weather-resistant exterior systems"
+        },
+        {
+          "title": "Decorative Finishes",
+          "desc": "Aesthetic surface treatments"
+        },
+        {
+          "title": "Renovation",
+          "desc": "High quality painting and surface upgrades"
+        },
+        {
+          "title": "Waterproofing & Fireproofing",
+          "desc": "Critical safety and durability systems"
+        }
+      ],
+      "projects_title": "Selected Surface Finishing Projects",
+      "projects_subtitle": "Explore more of our carefully curated projects and experience our distinctive and bespoke approach",
+      "card_alt": "Project Preview",
+      "card1_title": "Abdoun Bridge Project",
+      "card1_subtitle": "Legacy-Project: Thorough Surface Coatings",
+      "card2_title": "Northern Cement Company",
+      "card2_subtitle": "Waterproofing and Protective Coatings",
+      "card3_title": "Villa 04",
+      "card3_subtitle": "Interior Surface Coating"
+    },
+    "surface_finishing_faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about our surface finishing and protective coating services.",
+      "items": [
+        {
+          "question": "What types of surfaces can you finish and protect?",
+          "intro": "We provide surface finishing for a wide range of substrates and applications:",
+          "bullets": [
+            "Concrete and masonry surfaces",
+            "Steel and metal structures",
+            "Exterior building facades",
+            "Infrastructure elements (bridges, tunnels)",
+            "Interior walls and ceilings"
+          ]
+        },
+        {
+          "question": "What's the difference between surface finishing and regular painting?",
+          "content": "Surface finishing goes far beyond aesthetics. We apply technical treatments that provide waterproofing, chemical resistance, thermal protection, and structural integrity. Our finishes are engineered solutions that enhance both performance and longevity, not just appearance."
+        },
+        {
+          "question": "Do you provide waterproofing services?",
+          "content": "Yes, waterproofing is a core component of our surface finishing expertise. We apply specialized membrane systems, penetrating sealers, and barrier coatings to protect against moisture infiltration and structural damage. This is critical for Jordan's climate conditions."
+        },
+        {
+          "question": "What protective coatings do you offer?",
+          "intro": "We offer comprehensive protective coating systems:",
+          "bullets": [
+            "Anti-corrosion coatings for metal structures",
+            "Chemical-resistant finishes",
+            "Fire-retardant systems",
+            "UV protection treatments",
+            "Weather barrier systems"
+          ]
+        },
+        {
+          "question": "Do you work on infrastructure projects like bridges and public buildings?",
+          "content": "Yes, our experience includes major infrastructure projects like the Abdoun Bridge Project. We understand the unique requirements of public infrastructure including safety standards, environmental resistance, and long-term durability. Our team is equipped for large-scale, complex applications."
+        },
+        {
+          "question": "Can you restore and refinish existing surfaces?",
+          "content": "Absolutely. We specialize in surface restoration, from removing old coatings and treating substrate damage to applying new protective systems. This approach is often more cost-effective than complete replacement while extending surface life significantly."
+        },
+        {
+          "question": "How do you ensure proper surface preparation?",
+          "intro": "Surface preparation is critical to our success. Our comprehensive process includes:",
+          "bullets": [
+            "Thorough cleaning and contamination removal",
+            "Surface profiling to manufacturer specifications",
+            "Substrate testing and compatibility analysis",
+            "Proper priming according to industry standards"
+          ]
+        },
+        {
+          "question": "What environmental conditions affect your work?",
+          "content": "Temperature, humidity, and weather significantly impact surface finishing. We carefully monitor conditions and may delay work to ensure optimal curing and adhesion. Quality is never compromised for speed — proper environmental conditions are essential for long-term performance."
+        },
+        {
+          "question": "How long do your surface finishes typically last?",
+          "content": "Lifespan varies by system and environment, but our finishes typically provide 10–25 years of protection. Factors include exposure conditions, environmental stress, and maintenance. We provide realistic expectations based on your specific situation and usage requirements."
+        },
+        {
+          "question": "Do you provide maintenance contracts for large projects?",
+          "content": "Yes, for commercial and infrastructure projects, we offer ongoing maintenance programs. This includes regular inspections, preventive touch-ups, and planned refinishing schedules to maintain optimal protection and extend system life."
+        }
+      ],
+      "footer_text": "Still have questions?",
+      "footer_cta": "Contact our team"
+    },
+    "custom_flooring_page": {
+      "hero_alt": "Epoxy Solutions",
+      "hero_title": "Custom Flooring",
+      "hero_subtitle": "Advanced Flooring systems for lasting durability",
+      "cta_free_consultation": "Get a free consultation",
+      "intro_title": "Tailored Flooring Finishes services for exclusive residences, private homes, and big box systems",
+      "intro_p1": "New Look delivers tailored flooring systems designed for performance, durability, and aesthetic consistency. From seamless epoxy layers to specialized coatings, our solutions are matched to the specific technical demands of each site, like traffic, moisture, thermal expansion, and substrate behavior. We take pride in applying solutions that hold up under pressure while maintaining a refined visual impact.",
+      "intro_p2": "Every application begins with an on-site assessment and material mapping. We coordinate directly with project leads to ensure finish compatibility and execution precision. The result: surfaces that meet structural expectations while elevating the space's visual tone without compromise. Our team maintains a consistent dialogue with architects and contractors throughout, aligning aesthetic goals with technical requirements.",
+      "panel1_title": "Exceptional Expertise",
+      "panel1_items": [
+        "Modern Villas",
+        "Big Box Systems",
+        "Residential Communities",
+        "Private Homes",
+        "Schools"
+      ],
+      "panel2_title": "Premium Solutions",
+      "panel2_items": [
+        {
+          "title": "Anti-slip Systems",
+          "desc": "Advanced safety flooring"
+        },
+        {
+          "title": "High-traffic Areas",
+          "desc": "Durable commercial solutions"
+        },
+        {
+          "title": "Decorative Epoxy",
+          "desc": "Aesthetic floor finishes"
+        }
+      ],
+      "projects_title": "Selected Surface Finishing Projects",
+      "projects_subtitle": "Explore more of our carefully curated projects and experience our distinctive and bespoke approach",
+      "card_alt": "Project Preview",
+      "card1_title": "Safeway Project",
+      "card1_subtitle": "High-traffic Epoxy Flooring",
+      "card2_title": "Mövenpick Hotels & Resorts",
+      "card2_subtitle": "Exterior Renovation & Interior Kitchen Flooring",
+      "card3_title": "Expeditors",
+      "card3_subtitle": "Comprehensive Flooring Systems"
+    },
+    "custom_flooring_faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about our custom flooring services and expertise.",
+      "items": [
+        {
+          "question": "What types of custom flooring systems do you install?",
+          "intro": "We specialize in a comprehensive range of custom flooring solutions:",
+          "bullets": [
+            "Seamless epoxy flooring systems",
+            "Anti-slip surface treatments",
+            "High-traffic commercial flooring",
+            "Decorative epoxy finishes",
+            "Protective coatings and waterproofing"
+          ]
+        },
+        {
+          "question": "How long do your flooring systems typically last?",
+          "content": "Our flooring systems are designed for lasting durability. With proper maintenance, epoxy flooring can last 10–20 years or more depending on traffic levels and environmental conditions. We engineer our solutions to meet long-term structural expectations while maintaining their aesthetic appeal throughout their lifespan."
+        },
+        {
+          "question": "Do you work on both residential and commercial projects?",
+          "content": "Yes, we handle projects ranging from private homes and luxury villas to commercial properties, schools, and hotels. Our experience includes high-profile projects like the Mövenpick Dead Sea Hotel and infrastructure work on the Abdoun Bridge. We tailor our approach to meet the specific demands of each project type."
+        },
+        {
+          "question": "What is your process for custom flooring installations?",
+          "intro": "Our comprehensive process ensures optimal results:",
+          "bullets": [
+            "Initial consultation and project assessment",
+            "On-site evaluation of substrate conditions",
+            "Material mapping and system specification",
+            "Coordination with project teams",
+            "Precision installation and quality control"
+          ]
+        },
+        {
+          "question": "Do you provide warranties on your flooring work?",
+          "content": "Yes, we stand behind our work with comprehensive warranties. Warranty terms vary based on the specific system installed, project conditions, and usage patterns. We'll discuss warranty details during your consultation, ensuring you understand what's covered and for how long."
+        },
+        {
+          "question": "How do you ensure quality and durability?",
+          "content": "Quality is our foundation. We use only proven, field-tested materials and techniques refined through decades of experience. Every project undergoes thorough site assessment to match materials to specific conditions including traffic patterns, moisture levels, and thermal expansion requirements. Our collaborative approach with engineers and suppliers ensures optimal results."
+        },
+        {
+          "question": "Can you work around my business operations or daily schedule?",
+          "content": "Absolutely. We understand the importance of minimizing disruption to your operations or daily life. We work closely with clients to schedule installations at convenient times and can often work in phases to reduce impact. Our efficient project management ensures timely completion without compromising quality."
+        },
+        {
+          "question": "What maintenance is required for your flooring systems?",
+          "content": "Our flooring systems are designed for minimal maintenance. Regular cleaning with appropriate products and periodic inspections are typically sufficient. We provide detailed maintenance guidelines specific to your installation, helping you preserve both the performance and appearance of your floors for years to come."
+        }
+      ],
+      "footer_text": "Still have questions?",
+      "footer_cta": "Contact our team"
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Services",
+      "all_services": "All Services",
+      "protective_coatings": "Protective Coatings",
+      "custom_flooring": "Custom Flooring",
+      "waterproofing": "Waterproofing",
+      "surface_treatments": "Surface Treatments"
+    },
+    "company": {
+      "title": "Company",
+      "about_us": "About Us",
+      "projects": "Projects",
+      "careers": "Careers",
+      "contact": "Contact",
+      "tagline": "Master Finishers with a Legacy of Excellence in Jordan",
+      "learn_more": "Learn more about Rami Hamad (Coming Soon)",
+      "brand_name": "New Look"
+    },
+    "contact": {
+      "title": "Contact",
+      "location": "Amman, Jordan",
+      "phone": "+962 00 0000000",
+      "email": "info@newlook-jo.com"
+    },
+    "legal": {
+      "privacy_policy": "Privacy Policy",
+      "terms_of_use": "Terms of Use",
+      "cookie_policy": "Cookie Policy",
+      "copyright": "©2025 New Look. All Rights Reserved"
+    },
+    "credits": {
+      "website_made_by": "Website made by me"
+    }
+  }
+}
