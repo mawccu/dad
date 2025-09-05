@@ -8,40 +8,40 @@ export default function MasonryGrid() {
         {/* Image 1 - wider */}
         <div className="col-span-5 relative">
           <Image
-            src="/medias/img1.jpg"
+            src="/medias/mm.png"
             alt="Image 1"
             fill
-            className="object-cover rounded-lg"
+            className="content-fit rounded-lg"
           />
         </div>
 
         {/* Image 2 */}
         <div className="col-span-7 relative">
           <Image
-            src="/medias/img2.jpg"
+            src="/medias/b.png"
             alt="Image 2"
             fill
-            className="object-cover rounded-lg"
+            className="content-fit rounded-lg"
           />
         </div>
 
         {/* Image 3 */}
         <div className="col-span-8 relative">
           <Image
-            src="/medias/img3.jpg"
+            src="/medias/b.png"
             alt="Image 3"
             fill
-            className="object-cover rounded-lg"
+            className="content-fit rounded-lg"
           />
         </div>
 
         {/* Image 4 - takes the rest */}
         <div className="col-span-4 relative">
           <Image
-            src="/medias/img4.jpg"
+            src="/medias/abdounbridge/bbb.png"
             alt="Image 4"
             fill
-            className="object-cover rounded-lg"
+            className="content-fit rounded-lg"
           />
         </div>
       </div>

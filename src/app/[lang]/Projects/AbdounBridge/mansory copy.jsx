@@ -8,7 +8,7 @@ export default function MasonryGrid2() {
         {/* Image 1 - wider */}
         <div className="col-span-2 relative">
           <Image
-            src="/medias/img1.jpg"
+            src="/medias/img5.jpg"
             alt="Image 1"
             fill
             className="object-cover rounded-lg"
@@ -18,7 +18,7 @@ export default function MasonryGrid2() {
         {/* Image 2 */}
         <div className="col-span-7 relative">
           <Image
-            src="/medias/img2.jpg"
+            src="/medias/img5.jpg"
             alt="Image 2"
             fill
             className="object-cover rounded-lg"
@@ -28,7 +28,7 @@ export default function MasonryGrid2() {
         {/* Image 3 */}
         <div className="col-span-3 relative">
           <Image
-            src="/medias/img3.jpg"
+            src="/medias/img5.jpg"
             alt="Image 3"
             fill
             className="object-cover rounded-lg"
@@ -38,7 +38,7 @@ export default function MasonryGrid2() {
         {/* Image 4 - takes the rest */}
         <div className="col-span-4 relative">
           <Image
-            src="/medias/img4.jpg"
+            src="/medias/img5.jpg"
             alt="Image 4"
             fill
             className="object-cover rounded-lg"
@@ -47,7 +47,7 @@ export default function MasonryGrid2() {
 
         <div className="col-span-8 relative">
           <Image
-            src="/medias/img4.jpg"
+            src="/medias/img5.jpg"
             alt="Image 4"
             fill
             className="object-cover rounded-lg"

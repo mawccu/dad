@@ -33,10 +33,10 @@ export default function SurfaceFinishing() {
         {/* Center Text Overlay, change photo*/}
         <div className="absolute inset-0 flex items-center justify-center text-white">
           <div className="text-center">
-            <h3 className={`mb-6 ${lang === 'ar' ? 'text-6xl' : 'text-5xl'} font-semibold tracking-wide`}>
+            <h3 className={`mb-6 ${lang === 'ar' ? 'text-5xl' : 'text-5xl'} font-semibold tracking-wide`}>
               {t('services.surface_finishing_page.hero_title')}
             </h3>
-            <p className={`${lang === 'ar' ? 'text-3xl' : 'text-2xl'} font-light`}>
+            <p className={`${lang === 'ar' ? 'text-2xl' : 'text-2xl'} font-light`}>
               {t('services.surface_finishing_page.hero_subtitle')}
             </p>
           </div>
@@ -55,15 +55,15 @@ export default function SurfaceFinishing() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-32 text-center min-h-screen">
-        <h1 className={`${lang === 'ar' ? 'text-5xl' : 'text-4xl'} font-semibold mb-32`}>
+        <h1 className={`${lang === 'ar' ? 'text-4xl' : 'text-4xl'} font-semibold mb-32`}>
           {t('services.surface_finishing_page.intro_title')}
         </h1>
 
-        <p className={`${lang === 'ar' ? 'text-3xl' : 'text-2xl'} font-light leading-relaxed mb-8`}>
+        <p className={`${lang === 'ar' ? 'text-2xl' : 'text-2xl'} font-light leading-relaxed mb-8`}>
             {t('services.surface_finishing_page.intro_p1')}
         </p>
 
-        <p className={`${lang === 'ar' ? 'text-3xl' : 'text-2xl'} font-light leading-relaxed mb-8`}>
+        <p className={`${lang === 'ar' ? 'text-2xl' : 'text-2xl'} font-light leading-relaxed mb-8`}>
             {t('services.surface_finishing_page.intro_p2')}
         </p>
     </div>
@@ -91,7 +91,7 @@ export default function SurfaceFinishing() {
                 {/* Text Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center text-white z-10">
                     <div className="text-center px-8 transform transition-transform duration-300 group-hover:translate-y-[-10px]">
-                        <h3 className={`${lang === 'ar' ? 'text-6xl' : 'text-5xl'} font-light tracking-wide mb-12 opacity-90`}>
+                        <h3 className={`${lang === 'ar' ? 'text-5xl' : 'text-5xl'} font-light tracking-wide mb-12 opacity-90`}>
                             {t('services.surface_finishing_page.panel1_title')}
                         </h3>
                         <div className="space-y-4">
@@ -104,7 +104,7 @@ export default function SurfaceFinishing() {
                             ].map((item, index) => (
                                 <div 
                                     key={item}
-                                    className={`flex items-center justify-center ${lang === 'ar' ? 'text-3xl' : 'text-2xl'} font-light opacity-90 transform transition-all duration-300`}
+                                    className={`flex items-center justify-center ${lang === 'ar' ? 'text-2xl' : 'text-2xl'} font-light opacity-90 transform transition-all duration-300`}
                                     style={{
                                         transitionDelay: `${index * 100}ms`
                                     }}
@@ -145,7 +145,7 @@ export default function SurfaceFinishing() {
                 {/* Text Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center px-8 transform transition-transform duration-300 group-hover:translate-y-[-10px]">
-                        <h3 className={`${lang === 'ar' ? 'text-6xl' : 'text-5xl'} font-light tracking-wide mb-12 text-gray-800 opacity-90`}>
+                        <h3 className={`${lang === 'ar' ? 'text-5xl' : 'text-5xl'} font-light tracking-wide mb-12 text-gray-800 opacity-90`}>
                             {t('services.surface_finishing_page.panel2_title')}
                         </h3>
                         <div className="space-y-6">
@@ -188,8 +188,8 @@ export default function SurfaceFinishing() {
 <div className="py-32">
   <div className="max-w-6xl mx-auto px-4 py-8 text-center">
     <div>
-      <h2 className={`${lang === 'ar' ? 'text-5xl' : 'text-4xl'} text-gray-1000 font-semibold mb-12`}>{t('services.surface_finishing_page.projects_title')}</h2>
-      <p className={`${lang === 'ar' ? 'text-3xl' : 'text-2xl'} text-gray-900 font-350`}>{t('services.surface_finishing_page.projects_subtitle')}</p>
+      <h2 className={`${lang === 'ar' ? 'text-4xl' : 'text-4xl'} text-gray-1000 font-semibold mb-12`}>{t('services.surface_finishing_page.projects_title')}</h2>
+      <p className={`${lang === 'ar' ? 'text-2xl' : 'text-2xl'} text-gray-900 font-350`}>{t('services.surface_finishing_page.projects_subtitle')}</p>
     </div>
   </div>
 

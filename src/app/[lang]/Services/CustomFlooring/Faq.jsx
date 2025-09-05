@@ -210,11 +210,11 @@ const FAQ = () => {
           </div>
         </div>
         
-        <div className={`mt-20 ${lang === 'ar' ? 'text-right' : 'text-center'}`}>
-          <p className={`${lang === 'ar' ? 'text-xl' : 'text-xl'} font-light text-gray-600`}>
-            Still have questions?{' '}
+        <div className={`mt-20 ${lang === 'ar' ? 'text-center' : 'text-center'}`}>
+          <p className={`${lang === 'ar' ? 'text-2xl' : 'text-xl'} font-light text-gray-600`}>
+            {lang === 'ar' ? 'هل لديك أسئلة أخرى؟' : 'Still have questions?'}{' '}
             <a href={`/${lang}/Contact`} className="text-gray-900 hover:text-gray-600 font-light underline underline-offset-8 decoration-1 transition-all duration-300">
-              Contact our team
+              {lang === 'ar' ? 'تواصل مع فريقنا' : 'Contact our team'}
             </a>
           </p>
         </div>

@@ -21,13 +21,14 @@ export default function AbdounBridge() {
 
       <section className="relative w-full h-[100vh]">
         <Image
-          src="/medias/placeholder.png"
+          src="/medias/mm.png"
           alt={t('projects.wadiAbdoun.hero_alt')}
           fill
-          className="object-cover"
+          className="object-cover object-left"
           sizes="100vw"
           priority
         />
+        {/* Dark overlay */}
       </section>
 
       <section className="px-6 pt-40 pb-15 max-w-5xl ms-auto text-start">

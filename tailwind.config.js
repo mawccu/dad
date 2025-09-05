@@ -7,6 +7,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/**/*.html",
   ],
+  safelist: [
+    "text-blue-700",
+    "hover:text-blue-400",
+    "font-semibold"
+  ],
   theme: {
     extend: {
       fontWeight: {
