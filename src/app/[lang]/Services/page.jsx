@@ -15,13 +15,13 @@ export default function Services() {
       {/* Custom Flooring Section */}
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
         <Image
-          src="/medias/placeholder.png"
+          src="/medias/tower/3.png"
           alt={t('services.custom_flooring.alt')}
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-colors duration-300">
           <Link 
             href={`/${lang}/Services/CustomFlooring`}
             className="absolute inset-0 flex items-center justify-center"
@@ -37,13 +37,13 @@ export default function Services() {
       {/* Surface Finishing Section */}
       <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
         <Image
-          src="/medias/placeholder.png"
+          src="/medias/abdounbridge/bbb.png"
           alt="Surface Finishing Services"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-colors duration-300">
           <Link 
             href={`/${lang}/Services/SurfaceFinishing`}
             className="absolute inset-0 flex items-center justify-center"

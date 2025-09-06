@@ -11,7 +11,7 @@ import Footer from './Footer';
 import { useParams } from 'next/navigation'
 
 
-export default function index({ navTranslations }) {
+export default function index({ navTranslations, onClose }) {
     const { lang } = useParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -46,6 +46,15 @@ export default function index({ navTranslations }) {
           variants={menuSlide}
           className={styles.menu}
         >
+        {/* Close Button */}
+        <button 
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close menu"
+        >
+            <span className={styles.closeIcon}></span>
+        </button>
+        
         <div className={styles.body}>
             <div onMouseLeave={() => setSelectedIndicator(pathname)} className={styles.nav}>
                 <div className={styles.header}>

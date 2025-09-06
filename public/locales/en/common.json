@@ -3,7 +3,7 @@
     "lead": "Turning dreams into reality:",
     "bridgeLine1": "With the expertise of the Project Manager behind the",
     "bridgeLine2": " Abdoun Bridge Project.",
-    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments and painting, our projects reflect high standards and long-term value.",
+    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments, painting and facility management, our projects reflect high standards and long-term value.",
     "p2": "Led by ",
     "p3": "Eng. Rami Hamad",
     "p4": ", who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East.",
@@ -13,9 +13,9 @@
     "cards": {
       "coatings": {
         "alt": "Protective Coatings",
-        "title": "Protective Coatings",
+        "title": "Surface Finishing",
         "subtitle": "Redefining protection with advanced coating solutions",
-        "cta": "Protective Coatings Services"
+        "cta": "Surface Finishing Services"
       },
       "flooring": {
         "alt": "Epoxy Solutions",
@@ -33,7 +33,7 @@
     "offer": {
       "label": "Limited Offer",
       "title": "Elevate your Space",
-      "subtitle": "Enjoy a complimentary initial consultation on your desired project.",
+      "subtitle": "Enjoy a complimentary initial consultation on your project.",
       "cta": "Register now"
     },
     "epoxy": {
@@ -95,9 +95,9 @@
   "about": {
     "hero": {
       "title": "Master Finishers with a Legacy of Excellence in Jordan",
-      "paragraph1": "Formerly known as Al-Mezaab, New Look is led by ",
-      "paragraph2": "Eng. Rami Hamad",
-      "paragraph3": ", who oversaw finishing works on the Abdoun Bridge, one of Jordan’s landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we are the invisible force behind surfaces that last",
+      "paragraph1": "<strong>New Look</strong> (formerly known as Al-Mezaab) is led by ",
+      "paragraph2": "Eng. Rami Hamad,",
+      "paragraph3": "who oversaw finishing works on the Wadi-Abdoun Bridge Project, one of Jordan’s landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we are the invisible force behind surfaces that last",
       "image_alt": "Eng. Rami Hamad"
     },
     "vision": {
@@ -249,13 +249,13 @@
       "title": "Business Park Tower - Jeddah, Saudi Arabia",
       "hero_alt": "Expeditors bathroom project hero",
       "section1_title": "Scope of Works",
-      "section1_body": "The Business Park Tower in Jeddah, Saudi Arabia is a landmark high-rise development, delivering state-of-the-art business facilities and commercial space in one of the Kingdom’s most important urban centers. The works carried out during this phase of construction included comprehensive concrete repair, the installation of protective epoxy flooring systems, and waterproofing and fireproofing treatments for the gas, fire, and water tanks, all essential elements for the safety and long-term performance of the tower.",
+      "section1_body": "The Business Park Tower in Jeddah, Saudi Arabia is a landmark high-rise development, delivering state-of-the-art business facilities and commercial space in one of the Kingdom's most important urban centers. The works carried out during this phase of construction included comprehensive concrete repair, the installation of protective epoxy flooring systems, and waterproofing and fireproofing treatments for the gas, fire, and water tanks, all essential elements for the safety and long-term performance of the tower.",
       "section2_title": "Leadership & Role",
-      "section2_body": "At the time, Engineer Rami Hamad (Founder) served as acting Project Manager with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> His responsibilities included supervising the execution of repair and protection systems, coordinating subcontractors on site, and ensuring compliance with both engineering standards and safety requirements. Although his assignment was temporary and limited to the mid-phase of construction, it reflected his ability to step into leadership on a major Gulf project and maintain operational continuity.",
+      "section2_body": "At the time, Engineer Rami Hamad (Founder) served as acting Project Manager with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> His responsibilities included supervising the execution of repair and protection systems, coordinating subcontractors on site, and ensuring compliance with both engineering standards and safety requirements. Although his assignment was temporary and limited to the mid-phase of construction, it reflected his ability to step into leadership on a major Gulf project and maintain operational continuity.",
       "section3_title": "Materials & System",
       "section3_body": "The interventions combined structural repair systems for damaged concrete, high-performance epoxy flooring solutions designed for heavy-use commercial environments, and specialized waterproofing/fireproofing applications for critical utility tanks. These systems were applied in line with Gulf construction standards, providing durability, safety, and long-term asset protection.",
       "section4_title": "Notes",
-      "section4_body": "This legacy project was undertaken in 2013 under <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> While <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"../../About/RamiHamad\"><span class=\"font-semibold text-blue-700 hover:text-blue-400\">Engineer Rami Hamad's</span></a> role as acting Project Manager was limited in time and scope, it remains an important milestone in his career, showcasing adaptability, technical oversight, and leadership experience within the Saudi market."
+      "section4_body": "This legacy project was undertaken in 2013 under <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sak.com.sa\"><span class=\"text-blue-700 font-semibold hover:text-blue-400\">Saad H. Abukhadra & Co.</span></a> While <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"../../About/RamiHamad\"><span class=\"font-semibold text-blue-700 hover:text-blue-400\">Engineer Rami Hamad's</span></a> role as acting Project Manager was limited in time and scope, it remains an important milestone in his career, showcasing adaptability, technical oversight, and leadership experience within the Saudi market."
     },
     "safeway": {
       "title": "Safeway Project",
@@ -282,7 +282,7 @@
       "section2_body": "At the time, the works were carried out under SIPES, where <span class='font-semibold text-gray-700'>Engineer Rami Hamad (Founder)</span> served as Project Manager. His performance was formally acknowledged by <a href='https://www.larsentoubro.com/' target='_blank' rel='noopener noreferrer' class='font-semibold text-blue-700 hover:text-blue-400'>Larsen & Toubro</a>, who issued a signed <span class='font-semibold text-gray-700'>Letter of Recommendation</span> confirming his role.",
       "section2_note": "A copy of the signed Letter of Recommendation from Larsen & Toubro is available upon request.",
       "section3_title": "Materials & Execution",
-      "section3_body": "The works were executed under Jordan Sipes Paint Co., in collaboration with <a href='https://www.larsentoubro.com/' target='_blank' rel='noopener noreferrer' class='font-semibold text-blue-700 hover:text-blue-400'>Larsen & Toubro</a>, using advanced SIPES × Küster systems. These materials were selected for their international-grade performance in infrastructure projects, combining high resistance to carbonation, superior adhesion, and long-term waterproofing protection. Application included detailed surface preparation, precision in coating layers, and careful treatment of critical areas such as pylons and scaffolding to guarantee complete structural integrity."
+      "section3_body": "The works were executed under Jordan Sipes Paint Co., in collaboration with <a href='https://www.larsentoubro.com/' target='_blank' rel='noopener noreferrer' class='font-semibold text-blue-700 hover:text-blue-400'>Larsen & Toubro</a>, using advanced SIPES × Köster systems. These materials were selected for their international-grade performance in infrastructure projects, combining high resistance to carbonation, superior adhesion, and long-term waterproofing protection. Application included detailed surface preparation, precision in coating layers, and careful treatment of critical areas such as pylons and scaffolding to guarantee complete structural integrity."
     },
     "expeditors": {
       "title": "Expeditors Project",

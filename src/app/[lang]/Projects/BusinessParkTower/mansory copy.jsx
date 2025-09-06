@@ -3,12 +3,13 @@ import Image from "next/image";
 
 export default function MasonryGrid2() {
   return (
-    <main className="px-8 py-10">
-      <div className="grid grid-cols-12 gap-2 h-[100vh]">
-        {/* Image 1 - wider */}
-        <div className="col-span-2 relative">
+    <main className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+      {/* Mobile: Single column stack */}
+      <div className="grid grid-cols-1 gap-4 h-auto sm:hidden">
+        {/* Image 1 */}
+        <div className="relative h-[250px]">
           <Image
-            src="/medias/img1.jpg"
+            src="/medias/tower/5.png"
             alt="Image 1"
             fill
             className="object-cover rounded-lg"
@@ -16,39 +17,56 @@ export default function MasonryGrid2() {
         </div>
 
         {/* Image 2 */}
-        <div className="col-span-7 relative">
+        <div className="relative h-[250px]">
           <Image
-            src="/medias/img2.jpg"
+            src="/medias/tower/6.png"
             alt="Image 2"
             fill
             className="object-cover rounded-lg"
           />
         </div>
+      </div>
 
-        {/* Image 3 */}
-        <div className="col-span-3 relative">
+      {/* Tablet: Single column stack */}
+      <div className="hidden sm:grid lg:hidden grid-cols-1 gap-4 h-auto">
+        {/* Image 1 */}
+        <div className="relative h-[300px]">
           <Image
-            src="/medias/img3.jpg"
-            alt="Image 3"
+            src="/medias/tower/5.png"
+            alt="Image 1"
             fill
             className="object-cover rounded-lg"
           />
         </div>
 
-        {/* Image 4 - takes the rest */}
-        <div className="col-span-4 relative">
+        {/* Image 2 */}
+        <div className="relative h-[300px]">
           <Image
-            src="/medias/img4.jpg"
-            alt="Image 4"
+            src="/medias/tower/6.png"
+            alt="Image 2"
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      </div>
+
+      {/* Desktop: Original layout */}
+      <div className="hidden lg:grid grid-cols-12 gap-2 h-[50vh]">       
+        {/* Image 1 */}
+        <div className="col-span-6 relative">
+          <Image
+            src="/medias/tower/5.png"
+            alt="Image 1"
             fill
             className="object-cover rounded-lg"
           />
         </div>
 
-        <div className="col-span-8 relative">
+        {/* Image 2 */}
+        <div className="col-span-6 relative">
           <Image
-            src="/medias/img4.jpg"
-            alt="Image 4"
+            src="/medias/tower/6.png"
+            alt="Image 2"
             fill
             className="object-cover rounded-lg"
           />

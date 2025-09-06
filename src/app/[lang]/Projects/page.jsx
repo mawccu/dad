@@ -9,7 +9,6 @@ import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
 
 
-
 export default function Projects() {
   const [filter, setFilter] = useState('all');
   const router = useRouter();
@@ -17,54 +16,64 @@ export default function Projects() {
   const { lang } = useParams();
 
   const projects = [
-  { 
-    src: '/medias/img1.jpg', 
-    link: `/${lang}/Projects/Villa04`, 
-    category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
-    name: { en: 'Villa 04', ar: 'ڤيلا عميش' }
-  },
+  
   {
-    src: '/medias/img2.jpg',
+    src: '/medias/movenpick/Movenpick.png',
+    blueprint: '/medias/movenpick/blue.png', // Add your hotel blueprint here
     link: `/${lang}/Projects/Movenpick`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
-    name: { en: 'Movenpick Hotel', ar: 'فندق موفنبيك' }
+    name: { en: 'Mövenpick Hotel', ar: 'فندق موفنبيك' }
   },
   {
-    src: '/medias/img3.jpg',
+    src: '/medias/safeway/11.png',
+    blueprint: '/medias/safeway/blue.png', // Add your center blueprint here
     link: `/${lang}/Projects/Safeway`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Safeway Center', ar: 'أسواق السيفوي' }
   },
   {
-    src: '/medias/img4.jpg',
+    src: '/medias/abdounbridge/bb (2).jpg',
+    blueprint: '/medias/abdounbridge/blue.png', // Your awesome bridge blueprint!
     link: `/${lang}/Projects/AbdounBridge`,
     category: { en: ['surface finishing', 'legacy'], ar: ['مشاريع التشطيبات', 'المشاريع المميزة'] },
     name: { en: 'Abdoun Bridge', ar: 'جسر عبدون' }
   },
   { 
-    src: '/medias/img5.jpg',
+    src: '/medias/tag/2.png',
+    blueprint: '/medias/tag/blue.png', // Add your TAG blueprint here
     link: `/${lang}/Projects/TAG`,
     category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
     name: { en: 'Talal Abu Ghazaleh Group', ar: 'مجموعة طلال أبو غزالة' }
   },
   {
-    src: '/medias/img5.jpg',
+    src: '/medias/tower/1.png',
+    blueprint: '/medias/tower/blue.png', // Add your tower blueprint here
+    link: `/${lang}/Projects/BusinessParkTower`,
+    category: { en: ['flooring', 'legacy', 'surface finishing'], ar: ['مشاريع الأرضيات', 'المشاريع المميزة', 'مشاريع التشطيبات'] },
+    name: { en: 'Business Park Tower', ar: 'برج مجمع المشاريع' }
+  },
+  { 
+    src: '/medias/villa/1.png', 
+    blueprint: '/medias/villa/blue.png', // Add your villa blueprint here
+    link: `/${lang}/Projects/Villa04`, 
+    category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
+    name: { en: 'Villa 04', ar: 'ڤيلا عميش' }
+  },
+  {
+    src: '/medias/ncc/1.png',
+    blueprint: '/medias/ncc/blue.png', // Add your NCC blueprint here
     link: `/${lang}/Projects/NCC`,
     category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
     name: { en: 'Northern Cement Company', ar: 'شركة اسمنت الشمالية' }
   },
   {
-    src: '/medias/img5.jpg',
+    src: '/medias/ex/3.png',
+    blueprint: '/medias/ex/blue.png', // Add your Expeditors blueprint here
     link: `/${lang}/Projects/Expeditors`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Expeditors', ar: 'Expeditors' }
   },
-  {
-    src: '/medias/img5.jpg',
-    link: `/${lang}/Projects/BusinessParkTower`,
-    category: { en: ['flooring', 'legacy', 'surface finishing'], ar: ['مشاريع الأرضيات', 'المشاريع المميزة', 'مشاريع التشطيبات'] },
-    name: { en: 'Business Park Tower', ar: 'برج مجمع المشاريع' }
-  }
+  
 ];
 
 
@@ -88,9 +97,46 @@ export default function Projects() {
 
       {/* Category Filter Buttons */}
       <div className="min-h-[100vh]">
-        <p className="pt-24 text-4xl text-center">{t('projects.title')}</p>
-        <div className={`flex gap-8 text-xl font-400 px-12 mt-16 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+        <p className="pt-16 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
+        
+        {/* Mobile: 2 filters per line */}
+        <div className="sm:hidden px-4 mt-8">
+          <div className={`grid grid-cols-2 gap-3 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+            {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilter(category)}
+                className={`text-base font-400 transition-colors duration-300 py-2 px-3 text-center rounded-lg border ${
+                  filter === category
+                    ? 'text-white bg-black border-black'
+                    : 'text-black bg-white border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {t(`projects.categories.${category}`)}
+              </button>
+            ))}
+          </div>
+        </div>
 
+        {/* Tablet: Wrap on small screens */}
+        <div className={`hidden sm:flex lg:hidden flex-wrap gap-4 text-lg font-400 px-6 mt-12 justify-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+          {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
+            <button
+              key={category}
+              onClick={() => setFilter(category)}
+              className={`transition-colors duration-300 ${
+                filter === category
+                  ? 'text-black underline underline-offset-4'
+                  : 'text-black hover:text-gray-400'
+              }`}
+            >
+              {t(`projects.categories.${category}`)}
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop: Original Layout (UNCHANGED) */}
+        <div className={`hidden lg:flex gap-8 text-xl font-400 px-12 mt-16 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
           {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
             <button
               key={category}
@@ -105,40 +151,84 @@ export default function Projects() {
             </button>
           ))}
         </div>
-        <hr className="border-t border-gray-500 mx-12 my-4" />
+        
+        <hr className="border-t border-gray-500 mx-4 sm:mx-6 lg:mx-12 my-4" />
 
 
         {/* Projects Grid */}
-        <div className="max-w-8xl mx-auto px-12 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="relative group h-[300px] overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+                className="relative group h-[250px] sm:h-[280px] lg:h-[300px] overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500 rounded-lg border"
                 onClick={() => router.push(project.link)}
               >
+                {/* Original Image */}
                 <Image
                   src={project.src}
                   alt={project.name[lang] || project.name.en}
                   fill={true}
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
-                {/* Overlay for readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-opacity duration-300" />
+                {/* Blueprint Overlay - Hidden by default, shown on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-95 transition-all duration-500 bg-blue-900">
+                  <Image
+                    src={project.blueprint}
+                    alt={`${project.name[lang] || project.name.en} Blueprint`}
+                    fill={true}
+                    className="object-cover"
+                  />
+                  
+                  {/* Blueprint Grid Overlay */}
+                  <div className="absolute inset-0 opacity-30" 
+                       style={{
+                         backgroundImage: `
+                           linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                         `,
+                         backgroundSize: '20px 20px'
+                       }}>
+                  </div>
+
+                  {/* Engineering Corner Lines */}
+                  <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-cyan-300"></div>
+                  <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-cyan-300"></div>
+                  <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-cyan-300"></div>
+                  <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-cyan-300"></div>
+
+                  {/* Technical Specifications Overlay */}
+                  <div className="absolute top-2 sm:top-3 lg:top-4 left-8 sm:left-10 lg:left-12 text-blue-300 text-xs font-mono">
+                    <div>PROJ-{String(index + 1).padStart(3, '0')}</div>
+                  </div>
+
+                  {/* Engineering Stamp */}
+                  <div className="absolute bottom-2 sm:bottom-3 lg:bottom-4 right-8 sm:right-10 lg:right-12 text-cyan-300 text-xs font-mono opacity-70">
+                    <div>{new Date().getFullYear()}</div>
+                  </div>
+                </div>
+
+                {/* Overlay for readability (only on non-blueprint) */}
+                <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition-opacity duration-500" />
 
                 {/* Project Name */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-2xl font-bold text-center px-4 drop-shadow-lg">
+                  <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-bold text-center px-3 sm:px-4 drop-shadow-lg group-hover:text-cyan-300 group-hover:opacity-60 transition-colors duration-500">
                     {project.name[lang] || project.name.en}
                   </h3>
                 </div>
 
-                {/* Category Display on Hover */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-medium capitalize">
-                    {project.category[lang]?.join(', ') || project.category.en?.join(', ')}
-                  </p>
+                {/* Category Display - Modified for Blueprint Style */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent group-hover:from-blue-900 group-hover:to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="flex justify-between items-end">
+                    <p className="text-white group-hover:text-cyan-300 text-xs sm:text-sm font-medium font-mono transition-colors duration-500">
+                      {project.category[lang]?.join(' | ') || project.category.en?.join(' | ')}
+                    </p>
+                    <p className="text-white group-hover:text-cyan-300 text-xs font-mono opacity-70 transition-colors duration-500">
+                      BLUEPRINT MODE
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -146,7 +236,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="min-h-screen py-40">
+      <div className="min-h-screen py-20 sm:py-32 lg:py-40">
         <ContactForm />
       </div>
     </>

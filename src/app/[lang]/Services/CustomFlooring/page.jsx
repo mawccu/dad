@@ -23,7 +23,7 @@ export default function CustomFlooring() {
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="relative w-full h-[100vh] overflow-hidden">
         <Image
-          src="/medias/img9.jpg"
+          src="/medias/safeway/2.png"
           alt={t('services.custom_flooring_page.hero_alt')}
           fill
           className="object-cover"
@@ -70,10 +70,10 @@ export default function CustomFlooring() {
           <div className="absolute inset-0 bg-gray-800">
             <div
               className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style={{ backgroundImage: "url('/medias/001.jpg')" }}
+              style={{ backgroundImage: "url('/medias/floor2.jpg')" }}
             />
           </div>
-          <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-300" />
+          <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-50 transition-all duration-300" />
           <div className="absolute inset-0 flex items-center justify-center text-white">
             <div className="text-center px-8 transform transition-transform duration-300 group-hover:translate-y-[-10px]">
               <h3 className={`${lang === 'ar' ? 'text-5xl' : 'text-5xl'} font-light tracking-wide mb-12 opacity-90`}>
@@ -112,7 +112,7 @@ export default function CustomFlooring() {
           <div className="absolute inset-0 bg-gray-200">
             <div
               className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style={{ backgroundImage: "url('/medias/floor2.jpg')" }}
+              style={{ backgroundImage: "url('/medias/8.png')" }}
             />
           </div>
           <div className="absolute inset-0 bg-white bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
@@ -186,7 +186,7 @@ export default function CustomFlooring() {
             onClick={() => router.push(`/${lang}/Projects/Safeway`)}
           >
             <Image
-              src="/medias/img5.jpg"
+              src="/medias/safeway/1.png"
               fill={true}
               alt={t('services.custom_flooring_page.card_alt')}
               ref={imageRef3}
@@ -223,7 +223,7 @@ export default function CustomFlooring() {
             onClick={() => router.push(`/${lang}/Projects/Movenpick`)}
           >
             <Image
-              src="/medias/Movenpick.png"
+              src="/medias/Movenpick/Movenpick.png"
               fill={true}
               alt={t('services.custom_flooring_page.card_alt')}
               ref={imageRef4}
@@ -260,7 +260,7 @@ export default function CustomFlooring() {
             onClick={() => router.push(`/${lang}/Projects/Expeditors`)}
           >
             <Image
-              src="/medias/img5.jpg"
+              src="/medias/ex/3.png"
               fill={true}
               alt={t('services.custom_flooring_page.card_alt')}
               ref={imageRef5}

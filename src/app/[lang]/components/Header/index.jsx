@@ -53,30 +53,40 @@ export default function index() {
     const el = button.current;
     if (!el) return;
 
-    const st = ScrollTrigger.create({
-      trigger: document.documentElement,
-      start: 'top 20%',
-      end: '+=280',
-      onLeave: () => {
-        gsap.to(el, { scale: 1, duration: 0.25, ease: "power1.out" });
-      },
-      onEnterBack: () => {
-        // avoid state churn inside scroll callback; do the scale only
-        gsap.to(el, {
-          scale: 0,
-          duration: 0.25,
-          ease: "power1.out",
-          // if you must close the menu, defer the state update
-          onComplete: () => requestAnimationFrame(() => setIsActive(false)),
-        });
-      },
-    });
+    // Only apply scroll trigger on desktop
+    if (window.innerWidth >= 1024) {
+      const st = ScrollTrigger.create({
+        trigger: document.documentElement,
+        start: 'top 20%',
+        end: '+=280',
+        onLeave: () => {
+          gsap.to(el, { scale: 1, duration: 0.25, ease: "power1.out" });
+        },
+        onEnterBack: () => {
+          // avoid state churn inside scroll callback; do the scale only
+          gsap.to(el, {
+            scale: 0,
+            duration: 0.25,
+            ease: "power1.out",
+            // if you must close the menu, defer the state update
+            onComplete: () => requestAnimationFrame(() => setIsActive(false)),
+          });
+        },
+      });
 
-    return () => st.kill();
+      return () => st.kill();
+    }
+    // On mobile, the button is always visible via CSS
   }, headerRef);
 
   return () => ctx.revert();
 }, [pathname]);
+
+    const isServicesPage = pathname.startsWith(`/${lang}/Services`);
+    // Helper function to check if we're on the main page
+    const isMainPage = () => {
+        return pathname === `/${lang}` || pathname === '/' || pathname === `/en` || pathname === `/ar` || isServicesPage;
+    };
 
     const navTranslations = {
         home: t('nav.home'),
@@ -88,7 +98,7 @@ export default function index() {
 
     return (
         <>
-        <div ref={headerRef} className={styles.header} style={{color: pathname === '/' ? 'white' : 'black'}}>
+        <div ref={headerRef} className={styles.header} style={{color: isMainPage() ? 'white' : 'black'}}>
             <div className={styles.logo}>
                 <Link href={createLangLink('/')}><p className={styles.copyright}>New Look</p></Link>
             </div>
@@ -140,7 +150,7 @@ export default function index() {
             </div>
         </div>
         
-        <div ref={button} className={styles.headerButtonContainer}>
+        <div ref={button} className={styles.headerButtonContainer} data-lang={lang}>
             <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </Rounded>
@@ -163,7 +173,7 @@ export default function index() {
                     onClick={() => setIsActive(false)}
                     ></motion.div>
                     <div className="fixed right-0 top-0 z-[9999]">
-                        <Nav navTranslations={navTranslations} />
+                        <Nav navTranslations={navTranslations} onClose={() => setIsActive(false)} />
                     </div>
                 </>
                 )}

@@ -96,7 +96,7 @@ export default function Home() {
         <>
           <div className="h-[100vh] w-full relative">
             <Image
-              src="/medias/img5.jpg"
+              src="/medias/abdounbridge/ss.png"
               fill={true}
               alt="Hero Image"
               className="object-cover"

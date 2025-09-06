@@ -39,10 +39,7 @@ export default function About() {
           <h1 className="text-4xl font-medium mb-6 text-gray-900 leading-tight max-w-4xl">
             {t('about.hero.title')}
           </h1>
-          <p className="text-xl text-gray-700 max-w-4xl leading-relaxed">
-              {t('about.hero.paragraph1')}
-              <span className="font-600">{t('about.hero.paragraph2')}</span>
-              {t('about.hero.paragraph3')}
+          <p className="text-xl text-gray-700 max-w-4xl leading-relaxed" dangerouslySetInnerHTML={{ __html: t('about.hero.paragraph1') + ' ' + '<span class="font-600">' + t('about.hero.paragraph2') + '</span>' + ' ' + t('about.hero.paragraph3') }}>
           </p>
         </section>
 
@@ -75,7 +72,7 @@ export default function About() {
       {/* Location Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-medium mb-6 text-gray-900">{t('about.locations.title')}</h2>
+          <h2 className="text-4xl font-medium mb-6 text-gray-900 text-center">{t('about.locations.title')}</h2>
           <p className="text-gray-700 mb-8 leading-relaxed text-xl text-center">
             {t('about.locations.p1')}
           </p>
