@@ -24,13 +24,13 @@ export default function SurfaceFinishing() {
     <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
-      <div className="relative w-full h-[100vh] overflow-hidden">
+      <div className="relative w-full h-[50vh] lg:h-[100vh] overflow-hidden">
         <Image
           src="/medias/abdounbridge/bbb.png"
           alt={t('services.surface_finishing_page.hero_alt')}
           fill
           sizes="100vw"
-          className="object-cover"
+          className="lg:object-cover object-cover"
           priority
         />
 
@@ -251,9 +251,7 @@ export default function SurfaceFinishing() {
       </div>
 
       {/* FAQ */}
-      <div className="min-h-screen">
         <FAQ />
-      </div>
 
       {/* PROJECT CARDS — fixed for mobile */}
       <div className="py-16 sm:py-24 lg:py-32">

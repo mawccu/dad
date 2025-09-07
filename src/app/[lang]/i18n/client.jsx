@@ -10,18 +10,18 @@ export function I18nClientProvider({ lang, children }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    console.log('I18nClientProvider - lang received:', lang);
+    //console.log('I18nClientProvider - lang received:', lang);
     i18next
       .use(initReactI18next)
       .use(resourcesToBackend((lng, ns, cb) => {
-        console.log('Loading translation file:', `/locales/${lng}/${ns}.json`);
+        //console.log('Loading translation file:', `/locales/${lng}/${ns}.json`);
         fetch(`/locales/${lng}/${ns}.json`)
           .then(r => {
-            console.log('Translation file response:', r.status, r.ok);
+            //console.log('Translation file response:', r.status, r.ok);
             return r.json();
           })
           .then(d => {
-            console.log('Translation data loaded for', lng, ns, ':', d);
+            //console.log('Translation data loaded for', lng, ns, ':', d);
             cb(null, d);
           })
           .catch(e => {
@@ -41,7 +41,7 @@ export function I18nClientProvider({ lang, children }) {
         returnObjects: false,
       })
       .then(() => {
-        console.log('i18n initialized for language:', lang);
+        //console.log('i18n initialized for language:', lang);
         setReady(true);
       });
   }, [lang]);

@@ -12,7 +12,7 @@ export default function ConditionalHeaderWrapper({ children }) {
     const isHomePage = pathWithoutLang === '/';
     const { progress } = useProgress();
     const isCareerPage = pathWithoutLang === '/Careers';
-
+    const isPolicyPage = pathname.toLowerCase().includes('privacy') || pathname.toLowerCase().includes('policy') || pathname.toLowerCase().includes('/cookie');
     // Career page layout - minimal with footer
     if (isCareerPage) {
         return (
@@ -29,6 +29,14 @@ export default function ConditionalHeaderWrapper({ children }) {
             <>
                 {children}
                 {progress === 100 && <StickyFooter />}
+            </>
+        );
+    }
+    if (isPolicyPage) {
+        return (
+            <>
+                {!isHomePage && <Header />}
+                {children}
             </>
         );
     }

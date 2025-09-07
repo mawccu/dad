@@ -2,7 +2,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import Navbar from './Navbar';
 import StairsTransition from './StairsTransition';
 import { useProgress } from './ProgressProvider';
 

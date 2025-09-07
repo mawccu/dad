@@ -1,7 +1,40 @@
-.footer{
+/* --- Default Styles (Mobile) --- */
+.footer {
     display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    align-items: center;
+    gap: 20px;
+    padding: 1rem;
     width: 100%;
-    justify-content: space-between;
-    font-size: 12px;
-    gap: 40px;
+    box-sizing: border-box;
+    font-size: 14px; /* Slightly larger font for mobile readability */
+
+    /* Style the links directly */
+    a {
+        text-align: center;
+    }
+}
+
+/* --- Medium Screens (Tablets, "md") --- */
+/* Applies when screen width is 768px or more */
+@media (min-width: 768px) {
+    .footer {
+        display: grid; /* Switch to CSS Grid for the 2x2 layout */
+        grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+        gap: 20px 40px; /* 20px vertical gap, 40px horizontal gap */
+        justify-items: center; /* Center content within each grid cell */
+    }
+}
+
+/* --- Large Screens (Desktops, "lg") --- */
+/* Applies when screen width is 1024px or more */
+@media (min-width: 1024px) {
+    .footer {
+        display: flex; /* Switch back to Flexbox for the row layout */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        font-size: 12px;
+    }
 }

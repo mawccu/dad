@@ -1,72 +1,14 @@
 // [lang]/components/StickyFooter.jsx
 'use client';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useT } from '../i18n/client';
 
-/* ───────────────── helpers ───────────────── */
-
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 1024);
-    check();
-    window.addEventListener('resize', check);
-    window.addEventListener('orientationchange', check);
-    return () => {
-      window.removeEventListener('resize', check);
-      window.removeEventListener('orientationchange', check);
-    };
-  }, []);
-  return isDesktop;
-}
-
-/** Detects whether any ancestor of node has transform/filter/perspective that breaks sticky */
-function hasTransformedAncestor(node) {
-  let el = node?.parentElement;
-  while (el) {
-    const cs = window.getComputedStyle(el);
-    if (
-      cs.transform && cs.transform !== 'none' ||
-      cs.perspective && cs.perspective !== 'none' ||
-      cs.filter && cs.filter !== 'none' ||
-      cs.contain && cs.contain.includes('paint') // sometimes also breaks
-    ) return true;
-    el = el.parentElement;
-  }
-  return false;
-}
-
-/** Best-effort check that sticky actually sticks (not just supported). */
-function useStickyHealth(stickyRef) {
-  const [ok, setOk] = useState(true);
-  useEffect(() => {
-    if (!stickyRef.current) return;
-
-    // If any ancestor is transformed, sticky won't work.
-    if (hasTransformedAncestor(stickyRef.current)) {
-      setOk(false);
-      return;
-    }
-
-    // Quick feature probe: does the UA claim to support sticky?
-    const supports = CSS && CSS.supports && CSS.supports('position', 'sticky');
-    if (!supports) {
-      setOk(false);
-      return;
-    }
-
-    // Sanity: keep it true; if later you still see issues you can add scroll tests here.
-    setOk(true);
-  }, [stickyRef]);
-  return ok;
-}
-
-/* ──────────────── content ──────────────── */
-
+// Content component for the sticky footer
 function FooterContent() {
   const { lang } = useParams();
+
   return (
     <div
       className="
@@ -84,6 +26,7 @@ function FooterContent() {
   );
 }
 
+// Navigation section
 const FooterNav = () => {
   const { lang } = useParams();
   const { t } = useT();
@@ -99,6 +42,7 @@ const FooterNav = () => {
         flex-col lg:flex-row
       `}
     >
+      {/* Columns */}
       <div
         className={`
           flex ${lang === 'ar' ? 'flex-row-reverse' : ''}
@@ -138,9 +82,7 @@ const FooterNav = () => {
           <Link href={`/${currentLang}/Projects`} className="hover:text-gray-300 transition-colors">
             {t('footer.company.projects')}
           </Link>
-          <Link href={`/${currentLang}/Careers`} className="hover:text-gray-300 transition-colors">
-            {t('footer.company.careers')}
-          </Link>
+        
           <Link href={`/${currentLang}/Contact`} className="hover:text-gray-300 transition-colors">
             {t('footer.company.contact')}
           </Link>
@@ -160,14 +102,15 @@ const FooterNav = () => {
         </div>
       </div>
 
-      <div className={`${lang === 'ar' ? 'text-right' : 'text-right'} hidden sm:block`}>
-        <p className={`text-gray-400 m-2 ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
+      {/* Company Logo/Name - Hidden on mobile */}
+      <div className={`${lang === 'ar' ? 'text-right' : 'text-left'} hidden sm:block`}>
+        <p className={`text-gray-400 m-2  ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
           {t('footer.company.tagline')}
         </p>
         <Link
           href="/About/RamiHamad"
           onClick={(e) => e.preventDefault()}
-          className="text-gray-400 hover:text-gray-100 transition-colors"
+          className="text-gray-400 hover:text-gray-100 transition-colors md:px-2"
         >
           {t('footer.company.learn_more')}
         </Link>
@@ -176,6 +119,7 @@ const FooterNav = () => {
   );
 };
 
+// Bottom section with social links and copyright
 const FooterBottom = () => {
   const { lang } = useParams();
   const { t } = useT();
@@ -199,6 +143,7 @@ const FooterBottom = () => {
       </div>
 
       <div className={`${lang === 'ar' ? 'text-left' : 'text-right'} w-full sm:w-auto flex-shrink-0`}>
+        {/* Social Links */}
         <div className={`flex gap-3 sm:gap-4 mb-2 sm:mb-4 ${lang === 'ar' ? 'justify-start' : 'justify-end'}`}>
           <Link href="#" className="hover:opacity-70 transition-opacity">
             <img src="/icons/instagram.png" alt="Instagram" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
@@ -214,23 +159,34 @@ const FooterBottom = () => {
           </Link>
         </div>
 
+        {/* Legal Links */}
         <div className={`flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 mb-1 sm:mb-2 ${lang === 'ar' ? 'justify-start' : 'justify-end'}`}>
-          <Link href={`/${lang}/Policy?section=privacy-policy`} className="hover:text-gray-300 transition-colors">
+          <Link
+            href={`/${lang}/Policy?section=privacy-policy`}
+            className="hover:text-gray-300 transition-colors"
+          >
             {t('footer.legal.privacy_policy')}
           </Link>
-          <Link href={`/${lang}/Policy?section=terms-of-use`} className="hover:text-gray-300 transition-colors">
+          <Link
+            href={`/${lang}/Policy?section=terms-of-use`}
+            className="hover:text-gray-300 transition-colors"
+          >
             {t('footer.legal.terms_of_use')}
           </Link>
-          <Link href={`/${lang}/Policy?section=cookie-policy`} className="hover:text-gray-300 transition-colors">
+          <Link
+            href={`/${lang}/Policy?section=cookie-policy`}
+            className="hover:text-gray-300 transition-colors"
+          >
             {t('footer.legal.cookie_policy')}
           </Link>
         </div>
 
-        <p className="text-xs sm:text-sm text-gray-400 text-right">
+        <p className={`text-xs sm:text-sm text-gray-400 ${lang === 'ar' ? 'text-right' : 'text-right'}`}>
           {t('footer.legal.copyright')}
         </p>
       </div>
 
+      {/* Website made by - absolute line stays centered */}
       <p className="absolute top-[96%] left-1/2 transform -translate-x-1/2 text-xs sm:text-sm text-gray-400">
         {t('footer.credits.website_made_by')}
       </p>
@@ -238,78 +194,37 @@ const FooterBottom = () => {
   );
 };
 
-/* ─────────────── main ─────────────── */
-(function () {
-  const sf = document.querySelector('[data-sticky-probe]') || null;
-  let el = sf;
-  while (el && el.parentElement) {
-    el = el.parentElement;
-    const cs = getComputedStyle(el);
-    if (cs.transform !== 'none' || cs.perspective !== 'none' || cs.filter !== 'none') {
-      console.log('Transformed ancestor:', el, cs.transform, cs.perspective, cs.filter);
-      break;
-    }
-  }
-})()
+// Main Sticky Footer Component
 export default function StickyFooter() {
-  const isDesktop = useIsDesktop();
+  // Responsive sticky heights:
+  // mobile: 560px, tablet: 680px, desktop: 800px
+  // We mirror these in the calc()s so the sticky panel sits exactly at the bottom edge.
 
-  // Use a ref to detect transformed ancestors and decide if sticky is safe.
-  const stickyRef = useRef(null);
-  const stickyHealthy = useStickyHealth(stickyRef);
-
-  // heights
-  const H_MOBILE = 560;
-  const H_TABLET = 680;
-  const H_DESKTOP = 800;
-
-  // Pick the target height for current viewport width.
-  const targetHeight = useMemo(() => {
-    if (typeof window === 'undefined') return H_DESKTOP;
-    const w = window.innerWidth;
-    if (w >= 1024) return H_DESKTOP;
-    if (w >= 640) return H_TABLET;
-    return H_MOBILE;
-  }, []);
-
-  // FALLBACK: if sticky is broken, render normal footer (no spacer → no gap)
-  if (true) {
-    return (
-      <div className="relative">
-        <FooterContent />
-      </div>
-    );
-  }
-
-  // MOBILE/TABLET: normal footer (avoid white space issues entirely there)
-  if (!isDesktop) {
-    return (
-      <div className="relative">
-        <FooterContent />
-      </div>
-    );
-  }
-
-  // DESKTOP + healthy sticky → keep the effect
   return (
     <div
-      className="relative"
-      style={{ height: `${targetHeight}px`, clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
+      className="
+        relative
+        h-[560px] sm:h-[680px] lg:h-[800px]
+      "
+      style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
       <div
-        className="relative -top-[100vh]"
-        // use dvh if available; fallback to vh
-        style={{
-          height: `calc((var(--vh, 1vh) * 100) + ${targetHeight}px)`,
-        }}
+        className="
+          relative
+          h-[calc(100vh+560px)]
+          sm:h-[calc(100vh+680px)]
+          lg:h-[calc(100vh+800px)]
+          -top-[100vh]
+        "
       >
         <div
-          ref={stickyRef}
-          className="sticky z-10"
-          style={{
-            top: `calc((var(--vh, 1vh) * 100) - ${targetHeight}px)`,
-            height: `${targetHeight}px`,
-          }}
+          className="
+            sticky z-10
+            top-[calc(100vh-560px)]
+            sm:top-[calc(100vh-680px)]
+            lg:top-[calc(100vh-800px)]
+            h-[560px] sm:h-[680px] lg:h-[800px]
+          "
         >
           <FooterContent />
         </div>

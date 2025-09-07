@@ -106,6 +106,7 @@ export default function Hero(){
                         src="/medias/abdounbridge/111.png"
                         alt="Protective Coatings"
                         fill={true}
+                        sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
                     {/* Text Overlay */}
@@ -153,6 +154,7 @@ export default function Hero(){
                         src="/medias/ex/1.png"
                         alt="Epoxy Solutions"
                         fill={true}
+                        sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
                     {/* Dark overlay for better text contrast */}
@@ -235,6 +237,7 @@ export default function Hero(){
                         src="/medias/movenpick/2.png"
                         alt="New Look Team"
                         fill={true}
+                        sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
 
@@ -289,6 +292,7 @@ export default function Hero(){
                         src="/medias/s.png"
                         alt="New Look Team"
                         fill={true}
+                        sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
 
@@ -348,12 +352,14 @@ export default function Hero(){
                     href="https://mgc-gas.jo/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/manaseer.jpeg"
                         alt="Al Manaseer"
                         fill
-                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"    
+                        className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                     />
                     </a>
                     </div>
@@ -367,12 +373,14 @@ export default function Hero(){
                     href="https://www.saveto.com/brand/vetonit"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/vetonit.png"
                         alt="Saveto Vetonit"
                         fill
-                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                        className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                     />
                     </a>
                     </div>
@@ -386,11 +394,13 @@ export default function Hero(){
                         href="https://www.facebook.com/SipesJo/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="block w-full h-full"
                         >
                         <Image
                             src="/medias/partner/sipes.png"
                             alt="Sipes"
                             fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
                             className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                         />
                         </a>
@@ -405,11 +415,13 @@ export default function Hero(){
                         href="https://www.larsentoubro.com/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="block w-full h-full"
                         >
                         <Image
                             src="/medias/partner/larsen.jpeg"
                             alt="Larsen & Toubro"
                             fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
                             className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                         />
                         </a>
@@ -423,12 +435,14 @@ export default function Hero(){
                     href="https://www.saveto.com/brand/vetonit"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/tag.jpg"
                         alt="Talal Abu Ghazaleh & Co."
                         fill
-                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                        className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                     />
                     </a>
                     </div>
@@ -441,12 +455,14 @@ export default function Hero(){
                     href="https://lamawp.com/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/lama.png"
                         alt="LAMA"
                         fill
-                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                        className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                     />
                     </a>
                     </div>
@@ -459,11 +475,13 @@ export default function Hero(){
                     href="https://www.ikkgroup.com/nweb/ikk-companies-v2/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/ikk.png"
                         alt="Isam Khairi Kabbani Group"
                         fill
+                        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
                         className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                     />
                     </a>
@@ -477,11 +495,13 @@ export default function Hero(){
                         href="https://sapac.com.sa/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="block w-full h-full"
                         >
                         <Image
                             src="/medias/partner/sapac.png"
                             alt="SAPAC"
                             fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
                             className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
                         />
                         </a>

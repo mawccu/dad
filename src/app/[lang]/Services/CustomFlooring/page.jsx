@@ -24,13 +24,13 @@ export default function CustomFlooring() {
     <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
-      <div className="relative w-full h-[100vh] overflow-hidden">
+      <div className="relative w-full h-[100vh] sm:h-[50vh]  overflow-hidden">
         <Image
           src="/medias/safeway/2.png"
           alt={t('services.custom_flooring_page.hero_alt')}
           fill
           sizes="100vw"
-          className="object-cover"
+          className="sm:object-fill object-cover"
           priority
         />
 
@@ -238,7 +238,6 @@ export default function CustomFlooring() {
 
       {/* FAQ */}
         <FAQ />
-
       {/* PROJECT CARDS — fixed for mobile */}
       <div className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 text-center">
@@ -339,7 +338,7 @@ export default function CustomFlooring() {
             onClick={() => router.push(`/${lang}/Projects/Movenpick`)}
           >
             <Image
-              src="/medias/Movenpick/Movenpick.png"
+              src="/medias/movenpick/Movenpick.png"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               alt={t('services.custom_flooring_page.card_alt')}
