@@ -2,7 +2,7 @@
 'use client'
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import ContactCTA from '../Contact/ContactCTA';
+import ContactCTA from '../Contact/contactCTA';
 import StrengthSection from './strength'
 import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';

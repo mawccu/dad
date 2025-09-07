@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@studio-freight/lenis": "^1.0.42",
+    "firebase": "^12.2.1",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "i18next": "^25.4.2",

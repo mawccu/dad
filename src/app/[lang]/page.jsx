@@ -4,12 +4,12 @@ import Loader from '../components/Loader';
 import { useEffect, useState } from 'react';
 import { useProgress } from '../components/ProgressProvider';
 import Mask from '../components/Mask';
-import Navbar from '../components/Navbar'
 import Image from 'next/image';
 import Hero from './Hero/page.jsx'
 import StickyFooter from './components/StickyFooter';
 import Header from './components/Header'
 import { useT } from './i18n/client';
+
 
 // Custom hook for device detection
 function useDeviceType() {
@@ -116,12 +116,24 @@ export default function Home() {
     const { isDesktop } = useDeviceType();
     const { isInitialVisit } = useInitialVisit();
     const { isInitialMount } = useInitialWebsiteMount();
-    
+    const [showHeader, setShowHeader] = useState(false); 
+
     // Device-based loading strategy:
     // Desktop (≥1024px) + Initial Visit = Mask animation
     // Mobile/Tablet (<1024px) + Initial Website Mount = Loader with progress
     const shouldShowMask = isInitialVisit && isDesktop;
     const shouldShowLoader = !isDesktop && isInitialMount;
+
+    // Check if content should be ready (mask done or loader complete)
+    const contentReady = (maskDone || !shouldShowMask) && (!shouldShowLoader || progress === 100);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowHeader(true);
+        }, 3000); // 3 second delay
+
+        return () => clearTimeout(timer);
+    }, []);
 
   // Debug logging
   useEffect(() => {
@@ -146,18 +158,22 @@ export default function Home() {
       <APIComponent />
       <ImageLoad />
       
-      {/* Header visibility: Show when mask is done (desktop) OR when loader is done (mobile/tablet) OR when neither is needed */}
-      {(maskDone || !shouldShowMask) && (!shouldShowLoader || progress === 100) && (
-        <div style={{ position: 'relative', zIndex: 99999 }}>
-        {/* {console.log('🔍 RENDERING HEADER NOW!')} ADD THIS LINE */}
-        <Header />
-    </div>
+      {/* FIXED: Header with fade animation - always render but control visibility */}
+      {contentReady && (
+        <div style={{ 
+          position: 'relative', 
+          zIndex: 99999,
+          opacity: showHeader ? 1 : 0,
+          transition: 'opacity 0.8s ease-in-out'
+        }}>
+          <Header />
+        </div>
       )}
       
       {/* Content visibility: Show when loader completes (mobile/tablet) OR when mask is done (desktop) OR when neither is needed */}
       {(!shouldShowLoader || progress === 100) && (!shouldShowMask || maskDone) && (
         <>
-          <div className="h-[100vh] w-full relative">
+          <div className="h-screen w-full relative overflow-hidden">
             <Image
               src="/medias/abdounbridge/ss.png"
               fill={true}

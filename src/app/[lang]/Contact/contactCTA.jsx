@@ -46,7 +46,7 @@ function ParallaxText() {
       const st = ScrollTrigger.create({
         trigger: containerRef.current,
         start: 'top 350px',
-        end: 'bottom 300px',
+        end: 'bottom bottom',
         pin: textRef.current,
         pinSpacing: false,
       });

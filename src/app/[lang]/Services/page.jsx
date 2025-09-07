@@ -13,7 +13,6 @@ export default function Services() {
 
   return (
     <FadeUp delay={0}>
-      <div className="relative w-full min-h-screen flex flex-col md:flex-row">
         {/* Custom Flooring Section */}
         <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
         <Image
@@ -57,7 +56,6 @@ export default function Services() {
           </Link>
         </div>
       </div>
-    </div>
     </FadeUp>
   );
 }

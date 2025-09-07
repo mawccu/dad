@@ -2,7 +2,7 @@
 'use client';
 import Image from "next/image";
 import MasonryGrid from './mansory';
-import ContactCTA from '../../Contact/ContactCTA';
+import ContactCTA from '../../Contact/contactCTA';
 import { useT } from '../../i18n/client';
 import { useParams } from 'next/navigation';
 
@@ -20,7 +20,7 @@ export default function Movenpick() {
 
       <section className="relative w-full h-[50vh] sm:h-[70vh] lg:h-[100vh]">
         <Image
-          src="/medias/movenpick/movenpick.png"
+          src="/medias/movenpick/Movenpick.png"
           alt={t('projects.Movenpick.hero_alt')}
           fill
           className="object-cover"

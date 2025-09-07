@@ -5,7 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Link from 'next/link';
-import ContactForm from '../Contact/ContactCTA';
+import ContactCTA from '../Contact/contactCTA';
 import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
 
@@ -42,7 +42,7 @@ export default function Hero(){
         <>
             {/* Hero Section */}
             <FadeUp delay={0}>
-                <div className="min-h-[100vh] md:min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+                <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
                     <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
                         <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
                             {t('heroPage.lead')} 
@@ -325,7 +325,7 @@ export default function Hero(){
 
     {/* Partners Section */}
             <FadeUp delay={1.6}>
-                <div className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-8 sm:py-10 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
+                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-16 sm:py-30 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
             <div className="max-w-7xl text-center">
 
                 {/* Section Heading */}
@@ -496,7 +496,7 @@ export default function Hero(){
 
             {/* Contact Form Section */}
             <FadeUp delay={2.0}>
-                <ContactForm translations={contactFormTranslations} lang={lang} />
+                <ContactCTA />
             </FadeUp>
         </>
     )

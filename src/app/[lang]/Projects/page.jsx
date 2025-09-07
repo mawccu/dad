@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import ContactForm from '../Contact/ContactCTA';
+import ContactCTA from '../Contact/contactCTA'; 
 import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
 import FadeUp from '../../components/FadeUp';
@@ -240,8 +240,8 @@ export default function Projects() {
       </FadeUp>
 
       <FadeUp delay={0.4}>
-        <div className="min-h-screen py-20 sm:py-32 lg:py-40">
-          <ContactForm />
+        <div className="py-8 sm:py-16 lg:py-20">
+          <ContactCTA />
         </div>
       </FadeUp>
     </>

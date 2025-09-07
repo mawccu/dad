@@ -2,7 +2,7 @@
 'use client';
 import Image from "next/image";
 import MasonryGrid from './mansory';
-import ContactCTA from '../../Contact/ContactCTA';
+import ContactCTA from '../../Contact/contactCTA';
 import { useT } from '../../i18n/client';
 import { useParams } from 'next/navigation';
 

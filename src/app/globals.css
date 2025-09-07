@@ -66,3 +66,153 @@ body {
 .no-scroll {
   overscroll-behavior: none;
 }
+
+/* ===== SAFARI iPHONE COMPATIBILITY FIXES ===== */
+
+/* iOS Safari viewport height fix */
+html {
+  /* Use custom property for dynamic viewport height */
+  --vh: 100vh;
+}
+
+/* iOS Safari specific fixes */
+@media screen and (max-width: 768px) {
+  /* Fix for iOS Safari 100vh issue - only for specific cases */
+  .min-h-screen:not(.contact-cta) {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .h-screen:not(.contact-cta) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  /* Prevent zoom on input focus */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Fix for iOS Safari button styling */
+  button {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 0;
+  }
+
+  /* Fix for iOS Safari link styling */
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Fix for iOS Safari touch scrolling */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  /* Fix for iOS Safari fixed positioning */
+  .fixed,
+  [style*="position: fixed"],
+  [style*="position:fixed"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  /* Fix for iOS Safari momentum scrolling */
+  html {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+
+  /* Fix for iOS Safari image rendering */
+  img {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Fix for iOS Safari flexbox issues */
+  .flex {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* Fix for iOS Safari gradient rendering */
+  .bg-gradient-to-r,
+  .bg-gradient-to-l,
+  .bg-gradient-to-t,
+  .bg-gradient-to-b {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Fix for iOS Safari border radius */
+  .rounded,
+  .rounded-lg,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-full {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Fix for iOS Safari box shadow */
+  .shadow,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Fix for iOS Safari transitions */
+  .transition-all,
+  .transition-opacity,
+  .transition-transform {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* iOS Safari specific media queries */
+@media screen and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* iPhone specific fixes */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Fix for iOS Safari video playback */
+  video {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Fix for iOS Safari iframe issues */
+  iframe {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* iOS Safari landscape orientation fixes */
+@media screen and (orientation: landscape) and (max-device-width: 896px) {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* ===== END SAFARI iPHONE COMPATIBILITY FIXES ===== */
