@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.stairs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.stair {
+  position: absolute;
+  width: 10vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  transform-origin: bottom;
+}
+
+.stair:nth-child(1) { left: 0%; }
+.stair:nth-child(2) { left: 10%; }
+.stair:nth-child(3) { left: 20%; }
+.stair:nth-child(4) { left: 30%; }
+.stair:nth-child(5) { left: 40%; }
+.stair:nth-child(6) { left: 50%; }
+.stair:nth-child(7) { left: 60%; }
+.stair:nth-child(8) { left: 70%; }
+.stair:nth-child(9) { left: 80%; }
+.stair:nth-child(10) { left: 90%; }
+
+/* Alternative darker theme */
+.stair.dark {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
+}
+
+/* Add subtle shadow for depth */
+.stair::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stair {
+    width: 12.5vw;
+  }
+  
+  .stair:nth-child(1) { left: 0%; }
+  .stair:nth-child(2) { left: 12.5%; }
+  .stair:nth-child(3) { left: 25%; }
+  .stair:nth-child(4) { left: 37.5%; }
+  .stair:nth-child(5) { left: 50%; }
+  .stair:nth-child(6) { left: 62.5%; }
+  .stair:nth-child(7) { left: 75%; }
+  .stair:nth-child(8) { left: 87.5%; }
+  .stair:nth-child(9) { display: none; }
+  .stair:nth-child(10) { display: none; }
+}

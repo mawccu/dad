@@ -5,15 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
+import FadeUp from '../../components/FadeUp';
   
 export default function Services() {
   const { t } = useT('common');
   const { lang } = useParams();
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col md:flex-row">
-      {/* Custom Flooring Section */}
-      <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
+    <FadeUp delay={0}>
+      <div className="relative w-full min-h-screen flex flex-col md:flex-row">
+        {/* Custom Flooring Section */}
+        <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
         <Image
           src="/medias/tower/3.png"
           alt={t('services.custom_flooring.alt')}
@@ -56,5 +58,6 @@ export default function Services() {
         </div>
       </div>
     </div>
+    </FadeUp>
   );
 }

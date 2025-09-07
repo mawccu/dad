@@ -1,41 +1,51 @@
 .stairs{
+    position: relative;
+    overflow: hidden;
+    
     .transition-overlay{
         position: fixed;
         inset: 0;
-        z-index: 3;
+        z-index: 999999;
         display: flex;
         align-items: center;
         justify-content: center;
         pointer-events: none;
         .transition-text{
-            color: #1e3a8a; /* dark blue */
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            font-size: clamp(32px, 8vw, 80px);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-size: clamp(28px, 6vw, 64px);
+            text-transform: uppercase;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            opacity: 0.95;
         }
     }
     .transition-container{
         position: fixed;
         width: 100vw;
         height: 100vh;
-        display: flex;
         left: 0;
         top: 0;
         pointer-events: none;
-        z-index: 2;
+        z-index: 999998;
+        
         div{
-            position: relative;
-            height: 100%;
-            width: 100%;
-            background-color: black;
+            position: absolute;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 100%);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            
+            &:last-child {
+                border-right: none;
+            }
         }
     }
     .transition-background{
         position: fixed;
         width: 100%;
         height: 100vh;
-        background-color: black;
-        z-index: 1;
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        z-index: 999997;
         pointer-events: none;
         top: 0;
         left: 0;

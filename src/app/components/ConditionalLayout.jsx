@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Navbar from './Navbar';
+import StairsTransition from './StairsTransition';
 import { useProgress } from './ProgressProvider';
 
 export default function ConditionalLayout({ children }) {
@@ -14,34 +15,40 @@ export default function ConditionalLayout({ children }) {
     const isServicesPage = pathWithoutLang === '/Services';
     const isCareerPage = pathWithoutLang === '/Careers';
 
-    // Career page layout - minimal
+    // Career page layout - minimal with transition
     if (isCareerPage) {
         return (
-            <>
-                {children}
-            </>
+            <StairsTransition>
+                <div style={{position: 'relative', zIndex: 1, minHeight: '100vh'}}>
+                    {children}
+                </div>
+            </StairsTransition>
         );
     }
     
-    // Home page layout - just children
+    // Home page layout - with transition
     if (isHomePage) {
         return (
-            <>
-                {children}
-            </>
+            <StairsTransition>
+                <div style={{position: 'relative', zIndex: 1, minHeight: '100vh'}}>
+                    {children}
+                </div>
+            </StairsTransition>
         );
     }
 
-    // Default layout for all other pages
+    // Default layout for all other pages with transition
     return (
-        <>
-            {/* Navbar is commented out but available if needed */}
-            {/* <div style={{ position: 'relative', zIndex: 9997 }}>
-                <Navbar />
-            </div> */}
-            <main className="min-h-screen">
-                {children}
-            </main>
-        </>
+        <StairsTransition>
+            <div style={{position: 'relative', zIndex: 1, minHeight: '100vh'}}>
+                {/* Navbar is commented out but available if needed */}
+                {/* <div style={{ position: 'relative', zIndex: 9997 }}>
+                    <Navbar />
+                </div> */}
+                <main className="min-h-screen">
+                    {children}
+                </main>
+            </div>
+        </StairsTransition>
     );
 }

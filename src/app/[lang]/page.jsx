@@ -11,14 +11,64 @@ import StickyFooter from './components/StickyFooter';
 import Header from './components/Header'
 import { useT } from './i18n/client';
 
-function MaskLoad({ onComplete }) {
+// Custom hook for device detection
+function useDeviceType() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  
+  useEffect(() => {
+    const checkDevice = () => {
+      const width = window.innerWidth;
+      // Consider desktop as 1024px and above (lg breakpoint)
+      // This means mobile (< 768px) and tablet (768px - 1023px) will show loader
+      setIsDesktop(width >= 1024);
+    };
+    
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+  
+  return { isDesktop };
+}
+
+// Custom hook for initial visit tracking
+function useInitialVisit() {
+  const [isInitialVisit, setIsInitialVisit] = useState(false);
+  
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+    if (!hasVisited) {
+      setIsInitialVisit(true);
+      sessionStorage.setItem('hasVisitedHome', 'true');
+    }
+  }, []);
+  
+  return { isInitialVisit };
+}
+
+// Custom hook for tracking very first website mount (any page)
+function useInitialWebsiteMount() {
+  const [isInitialMount, setIsInitialMount] = useState(false);
+  
+  useEffect(() => {
+    const hasEverVisited = sessionStorage.getItem('hasVisitedWebsite');
+    if (!hasEverVisited) {
+      setIsInitialMount(true);
+      sessionStorage.setItem('hasVisitedWebsite', 'true');
+    }
+  }, []);
+  
+  return { isInitialMount };
+}
+
+function MaskLoad({ onComplete, shouldShow }) {
   const { reportAsLoaded } = useProgress()
 
   useEffect(() => {
     reportAsLoaded('mask')
   }, [])
   
-  return <Mask onComplete={onComplete} />
+  return shouldShow ? <Mask onComplete={onComplete} /> : null;
 }
 
 function ImageLoad(){
@@ -63,36 +113,49 @@ export default function Home() {
     const [maskDone, setMaskDone] = useState(false);
     const { progress } = useProgress(); // Get progress to control content visibility
     const { t } = useT('common'); // translations available
-
+    const { isDesktop } = useDeviceType();
+    const { isInitialVisit } = useInitialVisit();
+    const { isInitialMount } = useInitialWebsiteMount();
+    
+    // Device-based loading strategy:
+    // Desktop (≥1024px) + Initial Visit = Mask animation
+    // Mobile/Tablet (<1024px) + Initial Website Mount = Loader with progress
+    const shouldShowMask = isInitialVisit && isDesktop;
+    const shouldShowLoader = !isDesktop && isInitialMount;
 
   // Debug logging
   useEffect(() => {
-    // console.log('🔍 HOME DEBUG: maskDone state changed to:', maskDone);
-  }, [maskDone]);
+    // console.log('🔍 DEVICE DEBUG: isDesktop:', isDesktop, 'shouldShowLoader:', shouldShowLoader, 'shouldShowMask:', shouldShowMask);
+    // console.log('🔍 MOUNT DEBUG: isInitialMount:', isInitialMount, 'isInitialVisit:', isInitialVisit);
+    // console.log('🔍 PROGRESS DEBUG: progress:', progress, 'maskDone:', maskDone);
+  }, [maskDone, isInitialVisit, isDesktop, shouldShowMask, shouldShowLoader, progress, isInitialMount]);
 
   return (
     <>
-      {/* <Loader /> */}
-      <MaskLoad onComplete={() => {
-        // console.log('🔍 HOME DEBUG: Mask animation completed, setting maskDone to true');
-        setMaskDone(true);
-      }} />
+      {/* Show Loader ONLY on initial website mount for mobile/tablet devices */}
+      {shouldShowLoader && <Loader />}
+      
+      <MaskLoad 
+        shouldShow={shouldShowMask}
+        onComplete={() => {
+          // console.log('🔍 HOME DEBUG: Mask animation completed, setting maskDone to true');
+          setMaskDone(true);
+        }} 
+      />
       <HeavyComponent />
       <APIComponent />
       <ImageLoad />
       
-      {/* Debug: Always show navbar for testing */}
-      {/* {console.log('🔍 HOME DEBUG: Rendering navbar check, maskDone:', maskDone)} */}
-      
-      {maskDone && (
+      {/* Header visibility: Show when mask is done (desktop) OR when loader is done (mobile/tablet) OR when neither is needed */}
+      {(maskDone || !shouldShowMask) && (!shouldShowLoader || progress === 100) && (
         <div style={{ position: 'relative', zIndex: 99999 }}>
         {/* {console.log('🔍 RENDERING HEADER NOW!')} ADD THIS LINE */}
         <Header />
     </div>
       )}
       
-      {/* Only show content after loader completes */}
-      {progress === 100 && (
+      {/* Content visibility: Show when loader completes (mobile/tablet) OR when mask is done (desktop) OR when neither is needed */}
+      {(!shouldShowLoader || progress === 100) && (!shouldShowMask || maskDone) && (
         <>
           <div className="h-[100vh] w-full relative">
             <Image

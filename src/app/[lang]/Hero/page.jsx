@@ -5,8 +5,9 @@ import { useRouter, useParams } from 'next/navigation';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Link from 'next/link';
-import ContactForm from '../../components/ContactForm'
+import ContactForm from '../Contact/ContactCTA';
 import { useT } from '../i18n/client';
+import FadeUp from '../../components/FadeUp';
 
 export default function Hero(){
     const [isHovered, setIsHovered] = React.useState(false)
@@ -40,44 +41,47 @@ export default function Hero(){
     return(
         <>
             {/* Hero Section */}
-            <div className="h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
-                <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
-                        {t('heroPage.lead')} 
-                    </h1>
+            <FadeUp delay={0}>
+                <div className="min-h-[100vh] md:min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
+                        <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
+                            {t('heroPage.lead')} 
+                        </h1>
 
-                    <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-lg sm:text-2xl lg:text-3xl'}`}>
-                        {t("heroPage.bridgeLine1")} 
-                        <br />
-                        <Link href={`/${lang}/Projects/AbdounBridge`}>
-                            <span className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8">
-                                {t("heroPage.bridgeLine2")}
-                            </span>
-                        </Link>
-                    </h2>
+                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-lg sm:text-2xl lg:text-3xl'}`}>
+                            {t("heroPage.bridgeLine1")} 
+                            <br />
+                            <Link href={`/${lang}/Projects/AbdounBridge`}>
+                                <span className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8">
+                                    {t("heroPage.bridgeLine2")}
+                                </span>
+                            </Link>
+                        </h2>
 
-                    <p className={`text-gray-700 lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
-                        {t("heroPage.p1")}
-                    </p>
-                    
-                    <p className={`text-gray-700 lg:leading-relaxed text-center mb-12 sm:mb-14 lg:mb-16 font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
-                        {t("heroPage.p2")}
-                        <span className="font-semibold underline underline-offset-8">{t("heroPage.p3")}</span>
-                        {t("heroPage.p4")}
-                    </p>
+                        <p className={`text-gray-700 lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                            {t("heroPage.p1")}
+                        </p>
+                        
+                        <p className={`text-gray-700 lg:leading-relaxed text-center mb-12 sm:mb-14 lg:mb-16 font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                            {t("heroPage.p2")}
+                            <span className="font-semibold underline underline-offset-8">{t("heroPage.p3")}</span>
+                            {t("heroPage.p4")}
+                        </p>
 
-                    <div>
-                    <p className={`text-center text-gray-800 cursor-pointer ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}
-                        onClick={() => router.push(`/${lang}/Projects`)}
-                    >
-                    <strong className="underline cursor-pointer hover:text-gray-500 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</strong>
-                    </p>
-            </div>
+                        <div>
+                        <p className={`text-center text-gray-800 cursor-pointer ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}
+                            onClick={() => router.push(`/${lang}/Projects`)}
+                        >
+                        <strong className="underline cursor-pointer hover:text-gray-500 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</strong>
+                        </p>
                 </div>
-            </div>
+                    </div>
+                </div>
+            </FadeUp>
 
             {/* Image Cards Section - Mobile: Stack, Desktop: Side by side */}
-            <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
+            <FadeUp delay={0.4}>
+                <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
                 {/* First Image Container */}
                 <div className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
                         onMouseEnter={() => {
@@ -175,11 +179,13 @@ export default function Hero(){
                     </div>
                 </div>
             </div>
+            </FadeUp>
 
             {/* Expertise Section */}
-            <div className="min-h-[100vh] flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-50">
+            <FadeUp delay={0.8}>
+                <div className="min-h-[100vh] flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh]  sm:py-16 lg:py-50">
                 <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-16 sm:mt-20 md:mt-40 lg:mt-32 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
                         {t("heroPage.expertise.title")}
                     </h1>
                        
@@ -200,9 +206,10 @@ export default function Hero(){
                     </p>
                 </div>
             </div>
+            </FadeUp>
 
-            {/** Third and Fourth Images */}
-            <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
+            <FadeUp delay={1.2}>
+                <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
                 <div 
                     className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
                     onMouseEnter={() => {
@@ -314,9 +321,11 @@ export default function Hero(){
                 </div>
 
             </div>
+            </FadeUp>
 
     {/* Partners Section */}
-            <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 bg-gray-50">
+            <FadeUp delay={1.6}>
+                <div className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-8 sm:py-10 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
             <div className="max-w-7xl text-center">
 
                 {/* Section Heading */}
@@ -481,13 +490,14 @@ export default function Hero(){
                 </div>
             </div>
             </div>
+            </FadeUp>
 
             {/* Autograph Section - insert hand-drawn animation for Rami's signature*/}
 
             {/* Contact Form Section */}
-            <div className="py-16 sm:py-20 lg:py-24">
-                <ContactForm translations={contactFormTranslations}/>
-            </div>
+            <FadeUp delay={2.0}>
+                <ContactForm translations={contactFormTranslations} lang={lang} />
+            </FadeUp>
         </>
     )
 }

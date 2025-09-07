@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import ContactForm from '../Contact/ContactCTA';
 import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
+import FadeUp from '../../components/FadeUp';
 
 
 export default function Projects() {
@@ -96,12 +97,13 @@ export default function Projects() {
     <>
 
       {/* Category Filter Buttons */}
-      <div className="min-h-[100vh]">
-        <p className="pt-16 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
-        
-        {/* Mobile: 2 filters per line */}
-        <div className="sm:hidden px-4 mt-8">
-          <div className={`grid grid-cols-2 gap-3 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
+      <FadeUp delay={0}>
+        <div className="min-h-[100vh]">
+          <p className="pt-16 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
+          
+          {/* Mobile: 2 filters per line */}
+          <div className="sm:hidden px-4 mt-8">
+            <div className={`grid grid-cols-2 gap-3 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
             {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
               <button
                 key={category}
@@ -235,10 +237,13 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      </FadeUp>
 
-      <div className="min-h-screen py-20 sm:py-32 lg:py-40">
-        <ContactForm />
-      </div>
+      <FadeUp delay={0.4}>
+        <div className="min-h-screen py-20 sm:py-32 lg:py-40">
+          <ContactForm />
+        </div>
+      </FadeUp>
     </>
   );
 }
