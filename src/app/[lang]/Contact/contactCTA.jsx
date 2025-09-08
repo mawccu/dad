@@ -15,7 +15,7 @@ export default function ContactCTA(){
   return(
     <div className="relative w-full h-[70vh] sm:h-[90vh] lg:h-[100vh]">
       <Image
-        src="/medias/placeholder.png"
+        src="/medias/img10.webp"
         fill
         sizes="100vw"
         className="object-cover"
@@ -112,7 +112,7 @@ function ParallaxText() {
         <div
           className={`
             flex flex-col
-            ${lang === 'ar' ? 'items-end text-right' : 'items-start text-left'}
+            ${lang === 'ar' ? 'items-start text-right' : 'items-start text-left'}
             pr-0 sm:pr-12 lg:pr-80
             gap-4
           `}
@@ -139,7 +139,7 @@ function ParallaxText() {
               transition-all duration-300
               relative z-50 cursor-pointer
               whitespace-nowrap
-              ${lang === 'ar' ? 'text-base sm:text-xl' : 'text-sm sm:text-1.5xl'}
+              ${lang === 'ar' ? 'text-base sm:text-xl text-center' : 'text-sm sm:text-1.5xl'}
             `}
             onClick={(e) => {
               e.preventDefault();

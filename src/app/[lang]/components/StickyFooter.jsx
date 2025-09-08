@@ -72,7 +72,7 @@ const FooterNav = () => {
           </Link>
         </div>
 
-        <div className={`flex flex-col gap-3 ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className={`flex flex-col gap-3 ${lang === 'ar' ? 'text-right items-start' : ''}`}>
           <h3 className={`mb-2 sm:mb-4 uppercase text-gray-400 font-semibold ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
             {t('footer.company.title')}
           </h3>
@@ -87,8 +87,8 @@ const FooterNav = () => {
             {t('footer.company.contact')}
           </Link>
         </div>
-
-        <div className={`flex flex-col gap-3 ${lang === 'ar' ? 'text-right' : ''}`}>
+        {/* Contact Info */}
+        <div className={`flex flex-col gap-3 ${lang === 'ar' ? 'text-right items-start' : ''}`}>
           <h3 className={`mb-2 sm:mb-4 uppercase text-gray-400 font-semibold ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
             {t('footer.contact.title')}
           </h3>

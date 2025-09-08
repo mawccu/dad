@@ -10,7 +10,7 @@ export default function StrengthSection({ translation }) {
       <div
         className="
           /* Mobile/Tablet */
-          flex flex-col min-h-screen items-start
+          flex flex-col items-start
           py-10 px-4 sm:py-16 sm:px-8
           text-black bg-white
           /* Desktop (unchanged) */

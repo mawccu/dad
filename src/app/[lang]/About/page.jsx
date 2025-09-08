@@ -15,15 +15,13 @@ export default function About() {
 
   return (
     <div className="bg-white pt-20">
-      <div className="min-h-screen py-20">
+      <div className="py-20">
         {/* Hero Section */}
         <FadeUp delay={0}>
           <section className="max-w-5xl flex justify-center flex-col text-center items-center px-4 sm:px-6 py-8 sm:py-10 mx-auto">
-            {/* Desktop unchanged: lg:text-4xl */}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-4 sm:mb-6 text-gray-900 leading-tight max-w-4xl">
               {t('about.hero.title')}
             </h1>
-            {/* Desktop unchanged: lg:text-xl */}
             <p
               className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-4xl md:leading-relaxed sm:leading-relaxed leading-relaxed lg:leading-relaxed"
               dangerouslySetInnerHTML={{
@@ -42,13 +40,13 @@ export default function About() {
 
         {/* Image Section */}
         <FadeUp delay={0.3}>
-          <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
+          <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-20 lg:mb-24">
             <Image
               src="/medias/abdounbridge/mm.png"
               alt={t('about.hero.image_alt')}
-              width={1920}
-              height={1080}
-              className="shadow-lg w-full h-auto object-cover"
+              width={1080}
+              height={540}
+              className="shadow-lg object-cover w-full h-auto"
               ref={imageRef}
               priority
             />
@@ -56,9 +54,9 @@ export default function About() {
         </FadeUp>
       </div>
 
-      {/* Philosophy Section */}
+      {/* Vision Section */}
       <FadeUp delay={0.6}>
-        <section className="bg-gray-50 py-12 sm:py-16">
+        <section className="bg-gray-50 py-16 sm:py-20 md:py-32 lg:py-40">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             {/* Desktop unchanged: lg:text-4xl */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6 sm:mb-8 text-gray-900">
@@ -73,8 +71,10 @@ export default function About() {
           </div>
         </section>
       </FadeUp>
-
+      
+      
       <FadeUp delay={0.9}>
+      <div className="py-16 sm:py-16">
         <StrengthSection
           translation={{
             title: t('about.strength.title'),
@@ -86,6 +86,7 @@ export default function About() {
             ],
           }}
         />
+        </div>
       </FadeUp>
 
       {/* Location Section */}

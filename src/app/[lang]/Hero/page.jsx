@@ -185,9 +185,9 @@ export default function Hero(){
 
             {/* Expertise Section */}
             <FadeUp delay={0.8}>
-                <div className="min-h-[100vh] flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh]  sm:py-16 lg:py-50">
+                <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh]  sm:py-16 lg:py-50">
                 <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-16 sm:mt-20 md:mt-40 lg:mt-32 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
                         {t("heroPage.expertise.title")}
                     </h1>
                        
@@ -329,7 +329,7 @@ export default function Hero(){
 
     {/* Partners Section */}
             <FadeUp delay={1.6}>
-                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-16 sm:py-30 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
+                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-32 sm:py-30 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
             <div className="max-w-7xl text-center">
 
                 {/* Section Heading */}
