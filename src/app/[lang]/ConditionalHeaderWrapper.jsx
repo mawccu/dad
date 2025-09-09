@@ -2,8 +2,9 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import Header from './components/Header';
-import StickyFooter from './components/StickyFooter';
 import { useProgress } from '../components/ProgressProvider';
+import dynamic from 'next/dynamic';
+const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
 
 export default function ConditionalHeaderWrapper({ children }) {
     const pathname = usePathname();
