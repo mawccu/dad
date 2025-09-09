@@ -25,6 +25,13 @@ export default function Projects() {
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Mövenpick Hotel', ar: 'فندق موفنبيك' }
   },
+   {
+    src: '/medias/abdounbridge/bb (2).jpg',
+    blueprint: '/medias/abdounbridge/blue.png', // Your awesome bridge blueprint!
+    link: `/${lang}/Projects/AbdounBridge`,
+    category: { en: ['surface finishing', 'legacy'], ar: ['مشاريع التشطيبات', 'المشاريع المميزة'] },
+    name: { en: 'Abdoun Bridge', ar: 'جسر عبدون' }
+  },
   {
     src: '/medias/safeway/11.png',
     blueprint: '/medias/safeway/blue.png', // Add your center blueprint here
@@ -32,13 +39,7 @@ export default function Projects() {
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Safeway Center', ar: 'أسواق السيفوي' }
   },
-  {
-    src: '/medias/abdounbridge/bb (2).jpg',
-    blueprint: '/medias/abdounbridge/blue.png', // Your awesome bridge blueprint!
-    link: `/${lang}/Projects/AbdounBridge`,
-    category: { en: ['surface finishing', 'legacy'], ar: ['مشاريع التشطيبات', 'المشاريع المميزة'] },
-    name: { en: 'Abdoun Bridge', ar: 'جسر عبدون' }
-  },
+ 
   { 
     src: '/medias/tag/2.png',
     blueprint: '/medias/tag/blue.png', // Add your TAG blueprint here
@@ -138,7 +139,7 @@ export default function Projects() {
         </div>
 
         {/* Desktop: Original Layout (UNCHANGED) */}
-        <div className={`hidden lg:flex gap-8 text-xl font-400 px-12 mt-16 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+        <div className={`hidden lg:flex gap-8 text-xl font-400 px-12 mt-16 ${lang === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
           {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
             <button
               key={category}

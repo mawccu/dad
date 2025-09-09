@@ -24,7 +24,7 @@ export default function CustomFlooring() {
     <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
-      <div className="relative w-full h-[100vh] sm:h-[50vh]  overflow-hidden">
+      <div className="relative w-full h-[100vh] sm:h-[50vh] lg:h-[100vh] overflow-hidden">
         <Image
           src="/medias/safeway/2.png"
           alt={t('services.custom_flooring_page.hero_alt')}
@@ -39,8 +39,8 @@ export default function CustomFlooring() {
             <h3
               className={`mb-4 sm:mb-6 font-semibold tracking-wide ${
                 lang === 'ar'
-                  ? 'text-2xl sm:text-4xl lg:text-5xl'
-                  : 'text-xl sm:text-3xl lg:text-5xl'
+                  ? 'text-2xl sm:text-2xl lg:text-5xl'
+                  : 'text-xl sm:text-1xl lg:text-5xl'
               }`}
             >
               {t('services.custom_flooring_page.hero_title')}
@@ -73,9 +73,9 @@ export default function CustomFlooring() {
       </div>
 
       {/* INTRO */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 text-center">
+      <div className="max-w-6xl mx-auto px-4 flex justify-center flex-col sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-24 lg:min-h-[100vh] text-center">
         <h1
-          className={`font-semibold mb-16 sm:mb-24 ${
+          className={`font-semibold mb-16 sm:mb-24 md:leading-relaxed sm:leading-relaxed leading-relaxed lg:leading-relaxed ${
             lang === 'ar'
               ? 'text-2xl sm:text-3xl lg:text-4xl'
               : 'text-xl sm:text-2xl lg:text-4xl'
@@ -136,6 +136,8 @@ export default function CustomFlooring() {
                   t('services.custom_flooring_page.panel1_items.2'),
                   t('services.custom_flooring_page.panel1_items.3'),
                   t('services.custom_flooring_page.panel1_items.4'),
+                  t('services.custom_flooring_page.panel1_items.5'),
+                  t('services.custom_flooring_page.panel1_items.6'),
                 ].map((item, index) => (
                   <div
                     key={item}

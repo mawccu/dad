@@ -66,6 +66,21 @@ module.exports = {
         'none': 'none', // Override default none shadow
         'md': '3px 3px 6px rgba(0, 0, 0, 0.6)', // Medium shadow
       },
+      colors: {
+        // New Look Brand Colors
+        'brand': {
+          'navy': '#1a365d',      // Primary - Trust, professionalism
+          'steel': '#4a5568',     // Secondary - Industrial strength
+          'gold': '#b7791f',      // Accent - Quality, craftsmanship
+          'charcoal': '#2d3748',  // Dark backgrounds
+          'slate': '#718096',     // Text and borders
+          'cream': '#f7fafc',     // Light backgrounds
+        },
+        // Legacy colors for smooth transition
+        'primary': '#1a365d',
+        'secondary': '#4a5568',
+        'accent': '#b7791f',
+      },
     },
   },
   plugins: [

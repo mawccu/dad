@@ -186,7 +186,7 @@ const FAQ = () => {
           className="bg-white"
         >
           <div className="mb-12 sm:mb-16 lg:mb-20 text-center">
-            <h1 className={`${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-6xl' : 'text-xl sm:text-2xl lg:text-5xl'} font-semibold text-gray-900 mb-4 sm:mb-6 lg:mb-8 tracking-wide`}>
+            <h1 className={`${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-5xl' : 'text-xl sm:text-2xl lg:text-5xl'} font-semibold text-gray-900 mb-4 sm:mb-6 lg:mb-8 tracking-wide`}>
               {t('services.custom_flooring_faq.title')}
             </h1>
             <p className={`${lang === 'ar' ? 'text-base sm:text-lg lg:text-3xl' : 'text-sm sm:text-base lg:text-2xl'} font-300 text-gray-900 max-w-3xl mx-auto leading-relaxed`}>

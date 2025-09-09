@@ -44,11 +44,11 @@ export default function Hero(){
             <FadeUp delay={0}>
                 <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
                     <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                        <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
+                        <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-2xl lg:text-3xl' : 'text-2xl sm:text-2xl lg:text-3xl'}`}>
                             {t('heroPage.lead')} 
                         </h1>
 
-                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl' : 'text-lg sm:text-2xl lg:text-3xl'}`}>
+                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
                             {t("heroPage.bridgeLine1")} 
                             <br />
                             <Link href={`/${lang}/Projects/AbdounBridge`}>
@@ -58,11 +58,11 @@ export default function Hero(){
                             </Link>
                         </h2>
 
-                        <p className={`text-gray-700 lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                        <p className={`text-gray-700 lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-400 ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
                             {t("heroPage.p1")}
                         </p>
                         
-                        <p className={`text-gray-700 lg:leading-relaxed text-center mb-12 sm:mb-14 lg:mb-16 font-400 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                        <p className={`text-gray-700 lg:leading-relaxed text-center mb-12 sm:mb-14 lg:mb-16 font-400 ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
                             {t("heroPage.p2")}
                             <span className="font-semibold underline underline-offset-8">{t("heroPage.p3")}</span>
                             {t("heroPage.p4")}
@@ -185,23 +185,23 @@ export default function Hero(){
 
             {/* Expertise Section */}
             <FadeUp delay={0.8}>
-                <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh]  sm:py-16 lg:py-50">
+                <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh] lg:min-h-[100vh] sm:py-16 lg:py-50">
                 <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
                         {t("heroPage.expertise.title")}
                     </h1>
                        
-                    <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                    <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
                         {t("heroPage.expertise.p1")}
                     </h2>
 
-                    <p className={`text-gray-700 font-400 text-center mb-20 sm:mb-30 lg:mb-40 ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                    <p className={`text-gray-700 font-400 text-center mb-20 sm:mb-30 lg:mb-40 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
                         {t("heroPage.expertise.p2")}
                     </p>
                 </div>
                 <div>
                     <p 
-                    className={`text-center underline underline-offset-8 cursor-pointer hover:text-gray-500 ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}
+                    className={`text-center underline underline-offset-8 cursor-pointer hover:text-gray-500 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}
                     onClick={() => router.push(`/${lang}/About`)}
                     >
                         {t("heroPage.expertise.cta")}
@@ -329,15 +329,15 @@ export default function Hero(){
 
     {/* Partners Section */}
             <FadeUp delay={1.6}>
-                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-8 py-32 sm:py-30 md:py-40 lg:py-16 mt-0 sm:mt-0  lg:mt-0 bg-gray-50">
+                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 py-32 sm:py-30 md:py-40 lg:py-32 mt-0 sm:mt-0 lg:mt-0 bg-gray-50">
             <div className="max-w-7xl text-center">
 
                 {/* Section Heading */}
-                <h1 className={`font-semibold text-gray-800 leading-tight mb-6 sm:mb-7 lg:mb-8 ${lang === 'ar' ? 'text-3xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+                <h1 className={`font-semibold text-gray-800 leading-tight mb-6 sm:mb-7 lg:mb-8 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
                 {t("heroPage.partners.title")}
                 </h1>
 
-                <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
                 {t("heroPage.partners.subtitle")}
                 </h2>
 
@@ -428,11 +428,93 @@ export default function Hero(){
                     </div>
                 </div>
 
+                {/* Partner 4 */}
+                <div className="flex flex-col items-center">
+                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>Laticrete</p>
+                    <div className="relative w-full h-24 sm:h-32 lg:h-40">
+                        <a
+                        href="https://me.laticrete.com/?gad_source=1&gad_campaignid=21408879056&gbraid=0AAAAADNSEJ5utRjmeu09jPgPru9xd-2fy&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZn2IK1uEyfBf0Im48gxBCeRYHHHhdBcLrxDSGiGQqxcsTp3aMLpnNBoCAF0QAvD_BwE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                        >
+                        <Image
+                            src="/medias/partner/laticrete.png"
+                            alt="Laticrete"
+                            fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>Al Jazeera Paints</p>
+                    <div className="relative w-full h-24 sm:h-32 lg:h-40">
+                        <a
+                        href="https://jazeerapaints.com/sa_en?srsltid=AfmBOorBBf_GoCLjezYMNm_tQeqUxmMS8AXrls3Mn8tr-5AmyGq8Kx7d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                        >
+                        <Image
+                            src="/medias/partner/aljazeerapaints.jpeg"
+                            alt="Al Jazeera Paints"
+                            fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>SIKA (Formerly BASF)</p>
+                    <div className="relative w-full h-24 sm:h-32 lg:h-40">
+                        <a
+                        href="https://www.basf.com/global/en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                        >
+                        <Image
+                            src="/medias/partner/basf.png"
+                            alt="BASF"
+                            fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
+                {/* Partner 4 */}
+                <div className="flex flex-col items-center">
+                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>MAPEI</p>
+                    <div className="relative w-full h-24 sm:h-32 lg:h-40">
+                        <a
+                        href="https://www.mapei.com//"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                        >
+                        <Image
+                            src="/medias/partner/mapei.png"
+                            alt="MAPEI"
+                            fill
+                            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                            className="object-contain rounded-lg opacity-100 hover:opacity-80 transition-opacity shadow-md cursor-pointer hover:shadow-lg"
+                        />
+                        </a>
+                    </div>
+                </div>
+
                 <div className="flex flex-col items-center">
                     <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>TAG Group</p>
                     <div className="relative w-full h-24 sm:h-32 lg:h-40">
                         <a
-                    href="https://www.saveto.com/brand/vetonit"
+                    href="https://www.tag-gu.global/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full h-full"

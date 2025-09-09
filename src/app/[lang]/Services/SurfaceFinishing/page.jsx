@@ -24,13 +24,13 @@ export default function SurfaceFinishing() {
     <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
-      <div className="relative w-full h-[50vh] lg:h-[100vh] overflow-hidden">
+      <div className="relative w-full h-[100vh] lg:h-[100vh] overflow-hidden">
         <Image
-          src="/medias/abdounbridge/bbb.png"
+          src="/medias/movenpick/4.png"
           alt={t('services.surface_finishing_page.hero_alt')}
           fill
           sizes="100vw"
-          className="lg:object-cover object-cover"
+          className="lg:object-cover object-fill"
           priority
         />
 
@@ -40,8 +40,8 @@ export default function SurfaceFinishing() {
             <h3
               className={`mb-4 sm:mb-6 ${
                 lang === 'ar'
-                  ? 'text-3xl sm:text-4xl lg:text-5xl'
-                  : 'text-3xl sm:text-4xl lg:text-5xl'
+                  ? 'text-xl sm:text-2xl lg:text-5xl'
+                  : 'text-xl sm:text-1xl lg:text-5xl'
               } font-semibold tracking-wide`}
             >
               {t('services.surface_finishing_page.hero_title')}
@@ -49,8 +49,8 @@ export default function SurfaceFinishing() {
             <p
               className={`${
                 lang === 'ar'
-                  ? 'text-lg sm:text-xl lg:text-2xl'
-                  : 'text-lg sm:text-xl lg:text-2xl'
+                  ? 'text-md sm:text-xl lg:text-2xl'
+                  : 'text-md sm:text-xl lg:text-2xl'
               } font-light max-w-2xl mx-auto`}
             >
               {t('services.surface_finishing_page.hero_subtitle')}
@@ -74,7 +74,7 @@ export default function SurfaceFinishing() {
       </div>
 
       {/* INTRO */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center sm:py-24 lg:py-24 lg:min-h-screen text-center">
         <h1
           className={`${
             lang === 'ar'

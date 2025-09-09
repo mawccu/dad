@@ -71,7 +71,8 @@
         "loading": "Loading...",
         "page_title": "Get in contact with us",
         "page_intro": "Have any questions or inquiries? We'd love to hear from you. Reach out to us to discuss your project ideas, explore collaboration opportunities, or simply learn more about our work. Our team is here to assist you and provide personalized solutions.",
-        "location_city": "Jordan, Amman",
+        "location_city": "Jordan",
+        "location_city2": "Saudi Arabia",
         "remote_consultations": "Remote Consultations",
         "available_worldwide": "Available Worldwide",
         "schedule_online_meetings": "Schedule online meetings",
@@ -423,7 +424,9 @@
         "Big Box Systems",
         "Residential Communities",
         "Private Homes",
-        "Schools"
+        "Schools",
+        "Industrial Facilities",
+        "Private Projects"
       ],
       "panel2_title": "Premium Solutions",
       "panel2_items": [

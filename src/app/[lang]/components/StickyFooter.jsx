@@ -145,17 +145,39 @@ const FooterBottom = () => {
       <div className={`${lang === 'ar' ? 'text-left' : 'text-right'} w-full sm:w-auto flex-shrink-0`}>
         {/* Social Links */}
         <div className={`flex gap-3 sm:gap-4 mb-2 sm:mb-4 ${lang === 'ar' ? 'justify-start' : 'justify-end'}`}>
-          <Link href="#" className="hover:opacity-70 transition-opacity">
-            <img src="/icons/instagram.png" alt="Instagram" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+          <Link
+            href="https://www.instagram.com/newlook_jo/?next=%2Fdirect%2Ft%2F117471066306121%2F"
+            className="hover:opacity-70 transition-opacity"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src="/icons/instagram.png" alt="Instagram" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-8 lg:h-8" />
           </Link>
-          <Link href="#" className="hover:opacity-70 transition-opacity">
-            <img src="/icons/facebook.png" alt="Facebook" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+          <Link
+            href="https://www.facebook.com/profile.php?id=100064126295491"
+            className="hover:opacity-70 transition-opacity"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src="/icons/facebook.png" alt="Facebook" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-8 lg:h-8" />
           </Link>
-          <Link href="#" className="hover:opacity-70 transition-opacity">
-            <img src="/icons/twitter.png" alt="Twitter" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+
+          <Link
+            href="https://x.com/NewLook_jo"
+            className="hover:opacity-70 transition-opacity"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src="/icons/twitter.png" alt="Twitter" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-8 lg:h-8" />
           </Link>
-          <Link href="#" className="hover:opacity-70 transition-opacity">
-            <img src="/icons/linkedin.png" alt="LinkedIn" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+
+          <Link
+            href="https://www.linkedin.com/in/rami-s-hamad-09821a59/"
+            className="hover:opacity-70 transition-opacity"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src="/icons/linkedin.png" alt="LinkedIn" className="w-4 h-4 sm:w-5 sm:h-5 lg:w-8 lg:h-8" />
           </Link>
         </div>
 
