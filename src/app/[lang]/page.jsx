@@ -179,7 +179,8 @@ export default function Home() {
               fill={true}
               alt="Hero Image"
               className="object-cover"
-              priority={true} 
+              priority
+              fetchPriority="high"
             />
           </div>
            <Hero /> 

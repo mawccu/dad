@@ -134,7 +134,7 @@ export default function Mask({ onComplete }){
                     <div className={styles.stickyMask} ref={stickyMask}>
                         <video 
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             muted
                             loop 
                             ref={videoRef}

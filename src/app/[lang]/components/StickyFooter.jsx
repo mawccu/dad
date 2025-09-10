@@ -93,8 +93,11 @@ const FooterNav = () => {
             {t('footer.contact.title')}
           </h3>
           <p className="text-gray-300">{t('footer.contact.location')}</p>
-          <a href="tel:+962000000000" className="hover:text-gray-300 transition-colors">
-            {t('footer.contact.phone')}
+          <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors">
+            +962 79 5637354
+          </a>
+          <a href="tel:+966595687465" className="hover:text-gray-300 transition-colors">
+            +966 59 5687465
           </a>
           <a href="mailto:info@newlook-jo.com" className="hover:text-gray-300 transition-colors">
             {t('footer.contact.email')}
