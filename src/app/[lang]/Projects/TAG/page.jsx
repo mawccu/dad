@@ -20,10 +20,10 @@ export default function TAG() {
 
       <section className="relative w-full h-[50vh] sm:h-[70vh] lg:h-[100vh]">
         <Image
-          src="/medias/tag/2.png"
+          src="/medias/tag/111.png"
           alt={t('projects.TAG.hero_alt')}
           fill
-          className="object-cover object-bottom lg:content-fit"
+          className="object-cover object-top lg:content-fit"
           sizes="100vw"
           priority
         />

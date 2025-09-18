@@ -33,7 +33,7 @@ function Contact({ onScheduleClick }) {
 
   return (
     <FadeUp delay={0}>
-      <div className="py-16 sm:py-24 lg:py-40" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="py-16 sm:py-24 md:py-40 lg:py-40" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 py-6 sm:py-8 flex flex-col items-center">
           <h1 className={`font-bold text-center mb-6 sm:mb-8 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
             {t('contact2.page_title')}

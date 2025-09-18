@@ -78,8 +78,6 @@ export default function Projects() {
   
 ];
 
-
-  // Define category mapping for filtering
   const categoryMap = {
     'all': 'all',
     'flooring': lang === 'ar' ? 'مشاريع الأرضيات' : 'flooring',
@@ -87,7 +85,12 @@ export default function Projects() {
     'legacy': lang === 'ar' ? 'المشاريع المميزة' : 'legacy'
   };
 
-  // Filter the projects based on selected category
+  const categories = lang === 'ar'
+    ? Object.keys(categoryMap).reverse()
+    : Object.keys(categoryMap);
+
+  const mobileCategories = Object.keys(categoryMap);
+
   const filteredProjects = filter === 'all'
     ? projects
     : projects.filter(p =>
@@ -100,12 +103,12 @@ export default function Projects() {
       {/* Category Filter Buttons */}
       <FadeUp delay={0}>
         <div className="min-h-[100vh]">
-          <p className="pt-16 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
+          <p className="pt-32 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
           
           {/* Mobile: 2 filters per line */}
           <div className="sm:hidden px-4 mt-8">
-            <div className={`grid grid-cols-2 gap-3 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
-            {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
+            <div className={`grid grid-cols-2 gap-3 ${lang === 'ar' ? 'text-right' : 'text-left'}`} style={{ direction: lang === 'ar' ? 'rtl' : 'ltr' }}>
+            {mobileCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
@@ -123,7 +126,7 @@ export default function Projects() {
 
         {/* Tablet: Wrap on small screens */}
         <div className={`hidden sm:flex lg:hidden flex-wrap gap-4 text-lg font-400 px-6 mt-12 justify-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-          {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
+          {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
@@ -140,7 +143,7 @@ export default function Projects() {
 
         {/* Desktop: Original Layout (UNCHANGED) */}
         <div className={`hidden lg:flex gap-8 text-xl font-400 px-12 mt-16 ${lang === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
-          {['all', 'flooring', 'surface_finishing', 'legacy'].map((category) => (
+          {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}

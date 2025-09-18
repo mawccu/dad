@@ -93,10 +93,10 @@ const FooterNav = () => {
             {t('footer.contact.title')}
           </h3>
           <p className="text-gray-300">{t('footer.contact.location')}</p>
-          <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors">
+          <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
             +962 79 5637354
           </a>
-          <a href="tel:+966595687465" className="hover:text-gray-300 transition-colors">
+          <a href="tel:+966595687465" className="hover:text-gray-300 transition-colors" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
             +966 59 5687465
           </a>
           <a href="mailto:info@newlook-jo.com" className="hover:text-gray-300 transition-colors">
@@ -229,7 +229,7 @@ export default function StickyFooter() {
     <div
       className="
         relative
-        h-[560px] sm:h-[680px] lg:h-[800px]
+        h-[560px] sm:h-[680px] lg:h-[680px]
       "
       style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
@@ -238,7 +238,7 @@ export default function StickyFooter() {
           relative
           h-[calc(100vh+560px)]
           sm:h-[calc(100vh+680px)]
-          lg:h-[calc(100vh+800px)]
+          lg:h-[calc(100vh+680px)]
           -top-[100vh]
         "
       >
@@ -247,8 +247,8 @@ export default function StickyFooter() {
             sticky z-10
             top-[calc(100vh-560px)]
             sm:top-[calc(100vh-680px)]
-            lg:top-[calc(100vh-800px)]
-            h-[560px] sm:h-[680px] lg:h-[800px]
+            lg:top-[calc(100vh-680px)]
+            h-[560px] sm:h-[680px] lg:h-[680px]
           "
         >
           <FooterContent />

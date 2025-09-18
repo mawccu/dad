@@ -30,7 +30,6 @@ export default function Mask({ onComplete }){
     }, [progress]);
 
     useEffect(() => {
-        
         const startAnimation = () => {
             // Only start animation after component mounts and refs are available
             if (stickyMask.current && container.current) {
@@ -67,7 +66,6 @@ export default function Mask({ onComplete }){
         stickyMask.current.style.webkitMaskSize = (initialMaskSize + maskSizeProgress) * 100 + '%';
         
      
-
         const tolerance = 0.1;
         if(Math.abs(maskSizeProgress - TargetMaskSize) < tolerance) {
             if (!isAnimationComplete) {
@@ -85,7 +83,7 @@ export default function Mask({ onComplete }){
         let scrollTriggerInstance = null;
         
         if(isAnimationComplete && container.current) {
-            //console.log("animation has completed")
+            console.log("animation has completed")
             const containerElement = container.current; // Store reference
             
             scrollTriggerInstance = ScrollTrigger.create({

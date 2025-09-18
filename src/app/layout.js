@@ -1,6 +1,5 @@
 //app/layout.js
 import { ProgressProvider } from './components/ProgressProvider';
-import ConditionalLayout from './components/ConditionalLayout';
 import "./globals.css";
 import SmoothScrolling from './components/SmoothScrolling'
 import React from 'react';
@@ -47,22 +46,15 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  // const [isMobile, setIsMobile] = React.useState(false);
-
-  // React.useEffect(() => {
-  //   const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-  //   checkMobile();
-  //   window.addEventListener('resize', checkMobile);
-  //   return () => window.removeEventListener('resize', checkMobile);
-  // }, []);
+  
 
   return (
     <html suppressHydrationWarning="true">
     
       <body suppressHydrationWarning={true}>
           <ProgressProvider>
-            <ConditionalLayout>{children}</ConditionalLayout>
-            {/* {!isMobile && <SmoothScrolling />} */}
+            
+              {children}
           </ProgressProvider>
       </body>
     </html>

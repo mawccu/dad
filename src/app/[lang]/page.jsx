@@ -1,25 +1,19 @@
-//[lang]/page.jsx
+// 4. app/[lang]/page.jsx - Simplified Home Page (remove Header logic)
 'use client';
 import Loader from '../components/Loader';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useProgress } from '../components/ProgressProvider';
 import Mask from '../components/Mask';
-import Image from 'next/image';
-import Hero from './Hero/page.jsx'
-import StickyFooter from './components/StickyFooter';
-import Header from './components/Header'
-import { useT } from './i18n/client';
+import Header from './components/Header';
+const Hero = dynamic(() => import('./Hero/page.jsx'), { ssr: false });
 
-
-// Custom hook for device detection
 function useDeviceType() {
   const [isDesktop, setIsDesktop] = useState(false);
   
   useEffect(() => {
     const checkDevice = () => {
       const width = window.innerWidth;
-      // Consider desktop as 1024px and above (lg breakpoint)
-      // This means mobile (< 768px) and tablet (768px - 1023px) will show loader
       setIsDesktop(width >= 1024);
     };
     
@@ -31,7 +25,6 @@ function useDeviceType() {
   return { isDesktop };
 }
 
-// Custom hook for initial visit tracking
 function useInitialVisit() {
   const [isInitialVisit, setIsInitialVisit] = useState(false);
   
@@ -46,7 +39,6 @@ function useInitialVisit() {
   return { isInitialVisit };
 }
 
-// Custom hook for tracking very first website mount (any page)
 function useInitialWebsiteMount() {
   const [isInitialMount, setIsInitialMount] = useState(false);
   
@@ -66,10 +58,12 @@ function MaskLoad({ onComplete, shouldShow }) {
 
   useEffect(() => {
     reportAsLoaded('mask')
+    console.log('Mask reported as loaded');
   }, [])
   
   return shouldShow ? <Mask onComplete={onComplete} /> : null;
 }
+
 
 function ImageLoad(){
   const { reportAsLoaded } = useProgress();
@@ -77,7 +71,7 @@ function ImageLoad(){
   useEffect(() => {
     reportAsLoaded('heroImage')
   },[])
-  return null; // Don't render anything initially
+  return null;
 }
 
 function HeavyComponent() {
@@ -89,103 +83,65 @@ function HeavyComponent() {
     }, 1500);
   }, []);
 
-  return null; // Don't render anything initially
-}
-
-function APIComponent() {
-  const { reportAsLoaded } = useProgress();
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('https://worldtimeapi.org/api/timezone/Asia/Amman')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        reportAsLoaded('api'); //report back to the context
-      })
-      .catch(() => reportAsLoaded('api')); //report back to the context
-  }, []);
-
-  return null; // Don't render anything initially
+  return null;
 }
 
 export default function Home() {
-    const [maskDone, setMaskDone] = useState(false);
-    const { progress } = useProgress(); // Get progress to control content visibility
-    const { t } = useT('common'); // translations available
-    const { isDesktop } = useDeviceType();
-    const { isInitialVisit } = useInitialVisit();
-    const { isInitialMount } = useInitialWebsiteMount();
-    const [showHeader, setShowHeader] = useState(false); 
+  const [maskDone, setMaskDone] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const { progress } = useProgress();
+  const { isDesktop } = useDeviceType();
+  const { isInitialVisit } = useInitialVisit();
+  const { isInitialMount } = useInitialWebsiteMount();
+  
+  const shouldShowMask = isInitialVisit && isDesktop;
+  const shouldShowLoader = !isDesktop && isInitialMount;
+  const contentReady = (maskDone || !shouldShowMask) && (!shouldShowLoader || progress === 100);
 
-    // Device-based loading strategy:
-    // Desktop (≥1024px) + Initial Visit = Mask animation
-    // Mobile/Tablet (<1024px) + Initial Website Mount = Loader with progress
-    const shouldShowMask = isInitialVisit && isDesktop;
-    const shouldShowLoader = !isDesktop && isInitialMount;
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowHeader(true);
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-    // Check if content should be ready (mask done or loader complete)
-    const contentReady = (maskDone || !shouldShowMask) && (!shouldShowLoader || progress === 100);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowHeader(true);
-        }, 3000); // 3 second delay
-
-        return () => clearTimeout(timer);
-    }, []);
-
-  // Debug logging
   useEffect(() => {
-    // console.log('🔍 DEVICE DEBUG: isDesktop:', isDesktop, 'shouldShowLoader:', shouldShowLoader, 'shouldShowMask:', shouldShowMask);
-    // console.log('🔍 MOUNT DEBUG: isInitialMount:', isInitialMount, 'isInitialVisit:', isInitialVisit);
-    // console.log('🔍 PROGRESS DEBUG: progress:', progress, 'maskDone:', maskDone);
-  }, [maskDone, isInitialVisit, isDesktop, shouldShowMask, shouldShowLoader, progress, isInitialMount]);
+    if (contentReady) {
+      setShowHeader(true);
+      setVisible(true);
+    }
+  }, [contentReady]);
+
 
   return (
     <>
-      {/* Show Loader ONLY on initial website mount for mobile/tablet devices */}
       {shouldShowLoader && <Loader />}
       
       <MaskLoad 
         shouldShow={shouldShowMask}
-        onComplete={() => {
-          // console.log('🔍 HOME DEBUG: Mask animation completed, setting maskDone to true');
-          setMaskDone(true);
-        }} 
+        onComplete={() => setMaskDone(true)} 
       />
       <HeavyComponent />
-      <APIComponent />
       <ImageLoad />
       
-      {/* FIXED: Header with fade animation - always render but control visibility */}
       {contentReady && (
         <div style={{ 
-          position: 'relative', 
-          zIndex: 99999,
           opacity: showHeader ? 1 : 0,
           transition: 'opacity 0.8s ease-in-out'
         }}>
           <Header />
         </div>
       )}
-      
-      {/* Content visibility: Show when loader completes (mobile/tablet) OR when mask is done (desktop) OR when neither is needed */}
-      {(!shouldShowLoader || progress === 100) && (!shouldShowMask || maskDone) && (
-        <>
-          <div className="h-screen w-full relative overflow-hidden">
-            <Image
-              src="/medias/abdounbridge/ss.png"
-              fill={true}
-              alt="Hero Image"
-              className="object-cover"
-              priority
-              fetchPriority="high"
-            />
-          </div>
-           <Hero /> 
-        </>
-      )}
+      {contentReady &&
+          <div style={{ 
+          position: 'relative',
+          opacity: visible ? 1 : 0,
+          transition: 'opacity 2s ease-in-out'
+        }}>
+            <Hero />
+        </div>}
     </>
   );
 }
+

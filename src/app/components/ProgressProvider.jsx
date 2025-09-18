@@ -1,4 +1,4 @@
-//components/ProgressProvider.jsx
+// app/components/ProgressProvider.jsx
 'use client';
 import { createContext, useContext, useMemo, useState } from 'react';
 
@@ -7,16 +7,12 @@ const ProgressContext = createContext(null);
 export function ProgressProvider({ children }) {
   const [items, setItems] = useState({
     heroImage: false,
-    api: false,
-    mask: false,
     heavyComponent: false
   });
 
   const reportAsLoaded = (key) => {
     setItems((prev) => ({ ...prev, [key]: true }));
   };
-  // keys = heroImage, api, heavyComponent
-  // values = false, false, false
 
   const progress = useMemo(() => { // so it saves the calculated data and doesn't calculate again on each re-render
     const total = Object.keys(items).length;

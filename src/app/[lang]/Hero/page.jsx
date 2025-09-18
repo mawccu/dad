@@ -10,8 +10,7 @@ import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
 
 export default function Hero(){
-    const [isHovered, setIsHovered] = React.useState(false)
-
+    const [isHovered, setIsHovered] = React.useState(false);
     const { t, ready } = useT('common');
     const router = useRouter();
     const { lang } = useParams();
@@ -39,7 +38,17 @@ export default function Hero(){
     const imageRef4 = React.useRef(null);
 
     return(
-        <>
+        <>  
+            <div className="flex flex-col items-center justify-center w-full">
+                <div className="h-screen w-full relative overflow-hidden">
+                <Image
+                src="/medias/placeholder1.jpg"
+                fill={true}
+                alt="Hero Image"
+                className="object-cover"
+                />
+            </div>
+            </div>
             {/* Hero Section */}
             <FadeUp delay={0}>
                 <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -157,7 +166,6 @@ export default function Hero(){
                         sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
-                    {/* Dark overlay for better text contrast */}
 
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white px-4">
@@ -346,7 +354,7 @@ export default function Hero(){
                 
                 {/* Partner 1 */}
                 <div className="flex flex-col items-center">
-                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4 ${lang === 'ar' ? 'text-base sm:text-lg lg:text-lg' : 'text-sm sm:text-base lg:text-lg'}`}>Al Manaseer</p>
+                    <p className={`font-medium text-gray-700 mb-3 sm:mb-4  lg:text-lg ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`}>Al Manaseer</p>
                     <div className="relative w-full h-24 sm:h-32 lg:h-40">
                     <a
                     href="https://mgc-gas.jo/"

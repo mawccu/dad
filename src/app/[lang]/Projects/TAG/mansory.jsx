@@ -9,7 +9,7 @@ export default function MasonryGrid() {
         {/* Image 1 */}
         <div className="relative h-[250px]">
           <Image
-            src="/medias/tag/1.png"
+            src="/medias/tag/1.webp"
             alt="Image 1"
             fill
             className="object-cover rounded-lg"
@@ -52,7 +52,7 @@ export default function MasonryGrid() {
         {/* Image 1 */}
         <div className="relative h-[300px]">
           <Image
-            src="/medias/tag/1.png"
+            src="/medias/tag/1.webp"
             alt="Image 1"
             fill
             className="object-cover rounded-lg"
@@ -95,7 +95,7 @@ export default function MasonryGrid() {
         {/* Image 1 - wider */}
         <div className="col-span-5 relative">
           <Image
-            src="/medias/tag/1.png"
+            src="/medias/tag/1.webp"
             alt="Image 1"
             fill
             className="object-cover rounded-lg"

@@ -109,7 +109,7 @@ export default function About() {
               layout="responsive"
               width={700}
               height={475}
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="rounded-lg shadow-lg"
             />
           </div>

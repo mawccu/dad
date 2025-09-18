@@ -63,7 +63,6 @@ export default function index() {
           gsap.to(el, { scale: 1, duration: 0.25, ease: "power1.out" });
         },
         onEnterBack: () => {
-          // avoid state churn inside scroll callback; do the scale only
           gsap.to(el, {
             scale: 0,
             duration: 0.25,
@@ -76,14 +75,12 @@ export default function index() {
 
       return () => st.kill();
     }
-    // On mobile, the button is always visible via CSS
   }, headerRef);
 
   return () => ctx.revert();
 }, [pathname]);
 
     const isServicesPage = pathname.startsWith(`/${lang}/Services`);
-    // Helper function to check if we're on the main page
     const isMainPage = () => {
         return pathname === `/${lang}` || pathname === '/' || pathname === `/en` || pathname === `/ar` || isServicesPage;
     };
@@ -98,10 +95,10 @@ export default function index() {
 
     return (
         <>
-        <div ref={headerRef} className={styles.header} style={{color: isMainPage() ? 'white' : 'black'}}>
-            <div className={styles.logo}>
-                <Link href={createLangLink('/')}><p className={styles.copyright}>New Look</p></Link>
-            </div>
+        <div ref={headerRef} className={styles.header} style={{color: isMainPage() ? 'black' : 'black'}}>
+                <div className={styles.logo}>
+                    <Link href={createLangLink('/')}><p className={styles.copyright}>New Look</p></Link>
+                </div>
             <div className={styles.nav}>
                 <Magnetic>
                     <div className={styles.el}>
@@ -122,7 +119,6 @@ export default function index() {
                     </div>
                 </Magnetic>
                  
-                
                 <Magnetic>
                     <div className={styles.el}>
                         <Link href={createLangLink('/About')}>{t('nav.about')}</Link>

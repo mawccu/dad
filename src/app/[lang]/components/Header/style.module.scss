@@ -1,19 +1,20 @@
-.header{
-  position: absolute;
-  display: flex;
+.header {
+  top: 0;            /* distance from the top of viewport */
   z-index: 10;
-  top: 0;
-  padding: 20px;
+  display: flex;
   justify-content: space-between;
-  width: 100%;
-  font-weight: 300;
-  box-sizing: border-box;
   align-items: center;
+  padding: 12px;
+  width: 100%;
+  background: white;
+  font-weight: 300;
+  color: black;
+  position: sticky;
 
-  // Mobile: only show logo, hide nav
-  @media (max-width: 1023px) {
-    .nav {
-      display: none;
+// Mobile: only show logo, hide nav
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
     }
   }
 
@@ -23,12 +24,14 @@
 
     p{
       margin: 0px;
-      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      transition: all 0.25s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
     .copyright{
       font-size: 3rem;
-      font-family: 'SHARY Medium';
+      font-family: 'SHARY Medium', sans-serif;
+      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      color: inherit;
 
       // Responsive font size for mobile
       @media (max-width: 768px) {
@@ -65,9 +68,7 @@
 
     &:hover{
       .copyright{
-        transform: rotate(360deg);
-        font-weight: bold;
-        color:#1f263b
+        color: rgb(218, 45, 45);
       }
       .name{
         padding-right: 30px;
