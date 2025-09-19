@@ -92,7 +92,7 @@ const FooterNav = () => {
           <h3 className={`mb-2 sm:mb-4 uppercase text-gray-400 font-semibold ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
             {t('footer.contact.title')}
           </h3>
-          <p className="text-gray-300">{t('footer.contact.location')}</p>
+          <p>{t('footer.contact.location')}</p>
           <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
             +962 79 5637354
           </a>

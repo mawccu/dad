@@ -88,13 +88,20 @@ export default function Mask({ onComplete }){
             
             scrollTriggerInstance = ScrollTrigger.create({
                 trigger: containerElement,
-                start: 'bottom top',
+                start: 'bottom top+=50',
                 end: '+=1',
                 onEnter:() =>{
                     //console.log("The navbar is now the top of the user's screen.")
                     if (containerElement && containerElement.style) {
                         containerElement.style.display = 'none';
+                        containerElement.style.pointerEvents = 'none';
                     }
+
+                    if (scrollTriggerInstance) {
+                        scrollTriggerInstance.kill();
+                        scrollTriggerInstance = null;
+                    }
+
                 },
                 onLeave: () => {
                     //console.log("navbar is now pinned.")

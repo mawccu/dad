@@ -24,22 +24,18 @@ export default function index() {
     const { t } = useT('common');
     const { lang } = useParams();
 
-    const switchLanguage = (newLang) => {
-        let newPath = pathname;
-        
-        if (lang === 'en' && newLang === 'ar') {
-            newPath = pathname.replace('/en', '/ar');
-        } else if (lang === 'ar' && newLang === 'en') {
-            newPath = pathname.replace('/ar', '/en');
-        }
-        
-        router.push(newPath);
-    };
+       
+       
 
-    // Helper function to create language-aware links
-    const createLangLink = (path) => {
-        return `/${lang}${path}`;
-    };
+    const getLangFromPath = (path) => {
+        if (path.startsWith('/en')) return 'en';
+        if (path.startsWith('/ar')) return 'ar';
+        return 'en'; // default to English if no lang prefix
+    }
+
+     function activePage(path) {
+        return pathname === path ? styles.active : '';
+    }
 
     useEffect( () => {
       if(isActive) setIsActive(false)
@@ -53,7 +49,6 @@ export default function index() {
     const el = button.current;
     if (!el) return;
 
-    // Only apply scroll trigger on desktop
     if (window.innerWidth >= 1024) {
       const st = ScrollTrigger.create({
         trigger: document.documentElement,
@@ -80,11 +75,57 @@ export default function index() {
   return () => ctx.revert();
 }, [pathname]);
 
-    const isServicesPage = pathname.startsWith(`/${lang}/Services`);
-    const isMainPage = () => {
-        return pathname === `/${lang}` || pathname === '/' || pathname === `/en` || pathname === `/ar` || isServicesPage;
+
+    const [navbarHeight, setNavbarHeight] = useState(0);
+    const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+    const [currentLang, setCurrentLang] = useState(getLangFromPath(pathname));
+
+
+    useEffect(() => {
+        setCurrentLang(getLangFromPath(pathname));
+    }, [pathname]);
+
+    const switchLang = (newLang) => {
+    setCurrentLang(newLang); // instant UI feedback
+
+    let newPath = '';
+    if (/^\/(en|ar)(\/|$)/.test(pathname)) {
+        newPath = pathname.replace(/^\/(en|ar)/, `/${newLang}`);
+    } else {
+        newPath = `/${newLang}${pathname === '/' ? '' : pathname}`;
+    }
+
+    router.push(newPath);
     };
 
+    const createLangLink = (path) => {
+        const base = `/${currentLang}`;
+        return `${base}${path === '/' ? '' : path}`;
+    }
+
+    useEffect(() => {
+        if (headerRef.current) {
+            setNavbarHeight(headerRef.current.offsetHeight);
+        }
+        const initialNavbarOffset = headerRef.current.offsetTop;
+
+        const handleScroll = () => {
+            if(window.scrollY > initialNavbarOffset) {
+                setIsNavbarFixed(true);
+            } else {
+                setIsNavbarFixed(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => { window.removeEventListener('scroll', handleScroll); }
+    }, []);
+
+    const isServicesPage = pathname.startsWith(`/${currentLang}/Services`);
+    const isMainPage = () => {
+        return pathname === `/${currentLang}` || pathname === '/' || pathname === `/en` || pathname === `/ar` || isServicesPage;
+    };
+    const isMobile = typeof window !== 'undefined' ? window.innerWidth < 1024 : false;
+    
     const navTranslations = {
         home: t('nav.home'),
         about: t('nav.about'),
@@ -95,63 +136,63 @@ export default function index() {
 
     return (
         <>
-        <div ref={headerRef} className={styles.header} style={{color: isMainPage() ? 'black' : 'black'}}>
+        {isNavbarFixed && <div style={{height: navbarHeight}}></div>} {/* Placeholder to prevent layout shift */}
+
+        <div ref={headerRef} className={`${styles.header} ${isNavbarFixed ? styles.fixed : ''}`} style={{color: isMainPage() ? 'black' : 'black'}}>
                 <div className={styles.logo}>
                     <Link href={createLangLink('/')}><p className={styles.copyright}>New Look</p></Link>
+
                 </div>
             <div className={styles.nav}>
-                <Magnetic>
                     <div className={styles.el}>
                         <Link href={createLangLink('/Services')}>{t('nav.services')}</Link>
                         <div className={styles.indicator}></div>
+                        <div className={activePage(`/${currentLang}/Services`)}></div>
                     </div>
-                </Magnetic>
-                <Magnetic>
                     <div className={styles.el}>
                         <Link href={createLangLink('/Projects')}>{t('nav.projects')}</Link>
                         <div className={styles.indicator}></div>
+                        <div className={activePage(`/${currentLang}/Projects`)}></div>
                     </div>
-                </Magnetic>
-                <Magnetic>
+              
                     <div className={styles.el}>
                         <Link href={createLangLink('/Contact')}>{t('nav.contact')}</Link>
                         <div className={styles.indicator}></div>
+                        <div className={activePage(`/${currentLang}/Contact`)}></div>
                     </div>
-                </Magnetic>
-                 
-                <Magnetic>
                     <div className={styles.el}>
                         <Link href={createLangLink('/About')}>{t('nav.about')}</Link>
                         <div className={styles.indicator}></div>
+                        <div className={activePage(`/${currentLang}/About`)}></div>
                     </div>
-                </Magnetic>
-                <Magnetic>
-                    <div className={styles.el}>
+            </div>
+                    <div className={`${styles.el} cursor-pointer`}>
                         <button
-                            className={lang === "en" ? styles.activeLang : ""}
-                            onClick={() => switchLanguage("en")}
+                            className={`${currentLang === "en" ? styles.activeLang : ""} text-gray-400 px-2 text-xl hover:text-gray-900 hover:font-300 transition-all duration-300 ease-in-out`}
+                            onClick={() => switchLang("en")}
                         >
                             EN
                         </button>
                         |
                         <button
-                            className={lang === "ar" ? styles.activeLang : ""}
-                            onClick={() => switchLanguage("ar")}
+                            className={`${currentLang === "ar" ? styles.activeLang : ""} text-gray-400 px-2 text-xl hover:text-gray-900 hover:font-300 transition-all duration-300 ease-in-out`}
+                            onClick={() => switchLang("ar")}
                         >
                             AR
                         </button>
-                        <div className={styles.indicator}></div>
                     </div>
-                </Magnetic>
-            </div>
         </div>
         
-        <div ref={button} className={styles.headerButtonContainer} data-lang={lang}>
+       {isMobile && <div ref={button} className={styles.headerButtonContainer} data-lang={currentLang}>
             <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </Rounded>
-        </div>
-        <AnimatePresence mode="wait">
+        </div>}
+
+        
+
+
+       {isMobile && <AnimatePresence mode="wait">
             {isActive && (
                 <>
                     <motion.div
@@ -173,7 +214,7 @@ export default function index() {
                     </div>
                 </>
                 )}
-        </AnimatePresence>
+        </AnimatePresence>}
         </>
     )
 }

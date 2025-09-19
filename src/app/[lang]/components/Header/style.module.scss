@@ -1,20 +1,22 @@
 .header {
-  top: 0;            /* distance from the top of viewport */
+  top: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 4px 40px;
   width: 100%;
   background: white;
   font-weight: 300;
   color: black;
-  position: sticky;
+  box-sizing: border-box;
+  position: fixed;
+ 
 
-// Mobile: only show logo, hide nav
-@media (max-width: 1023px) {
-  .nav {
-    display: none;
+  // Mobile: only show logo, hide nav
+  @media (max-width: 1023px) {
+    .nav {
+      display: none;
     }
   }
 
@@ -28,12 +30,11 @@
     }
 
     .copyright{
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-family: 'SHARY Medium', sans-serif;
       transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
       color: inherit;
 
-      // Responsive font size for mobile
       @media (max-width: 768px) {
         font-size: 2rem;
       }
@@ -88,44 +89,45 @@
   .nav{
     display: flex;
     align-items: center;
+    font-weight: 400;
 
-    // Show on desktop only (lg and above)
     @media (min-width: 1024px) {
       display: flex;
     }
 
-    // Hide on mobile and tablet
     @media (max-width: 1023px) {
       display: none;
     }
 
     .el {
       display: flex;
-      flex-direction: row; // ✅ instead of column
+      flex-direction: row;
       align-items: center;
-      gap: 6px; // spacing between EN | AR
+      gap: 6px;
       position: relative;
       z-index: 1;
       padding: 15px;
       cursor: pointer;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 500;
 
       &:hover {
         .indicator {
-          transform: scale(1);
+          transform: scaleX(1);
+          
         }
       }
 
       .indicator {
         position: absolute;
-        width: 5px;
-        height: 5px;
+        width: 70%;
+        height: 1px;
         top: 45px;
-        left: 50%;
-        background-color: red;
-        border-radius: 50%;
-        transform: scale(0) translateX(-50%);
-        transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+        left: 15%;
+        background-color: black;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
       }
 
       button {
@@ -134,6 +136,8 @@
         font: inherit;
         color: inherit;
         cursor: pointer;
+        font-size: 1.25rem; 
+        padding: 0.5rem;
         transition: opacity 0.3s ease;
 
         &:hover {
@@ -141,38 +145,58 @@
         }
       }
 
-      .activeLang {
-        font-weight: bold;
-        text-decoration: underline;
+      // Language switcher specific styling
+      &.languageSwitcher {
+        .separator {
+          color: inherit;
+          margin: 0 4px;
+          user-select: none;
+        }
       }
     }
 
     a{
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
   }
+}
+
+.active {
+  position: absolute;
+        width: 70%;
+        height: 1px;
+        top: 45px;
+        left: 15%;
+        background-color: black;
+}
+// Move activeLang outside and make it more specific
+.activeLang {
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  color: black !important;
+  text-decoration-thickness: 2px !important;
 }
 
 .headerButtonContainer{
   transform: scale(0);
   position: fixed;
-  z-index: 1001; // higher so it sits above content but below the overlay/menu
+  z-index: 1001;
   top: max(env(safe-area-inset-top, 0px), 0px);
 
-  // Desktop: positioning based on ScrollTrigger
   @media (min-width: 1024px) {
     right: 0;
     left: auto;
   }
 
-  // Mobile: always visible + DEFAULT PIN to right (works even if data-lang isn't set yet)
   @media (max-width: 1023px) {
-    transform: scale(1) !important; // Always visible on mobile
-    right: 0 !important;   // ✅ fallback for EN (and any language) so it's visible
+    transform: scale(1) !important;
+    right: 0 !important;
     left: auto !important;
   }
 
-  // Arabic override: pin to left on mobile
   &[data-lang="ar"] {
     @media (max-width: 1023px) {
       left: 0 !important;
@@ -195,7 +219,6 @@
     }
   }
 
-  // English/mobile defaults (kept for your spacing prefs; positioning handled by base rule above)
   &[data-lang="en"] {
     .button {
       margin-right: 15px !important;
@@ -225,7 +248,6 @@
     align-items: center;
     justify-content: center;
 
-    // Responsive sizing for mobile
     @media (max-width: 768px) {
       width: 60px;
       height: 60px;
@@ -254,7 +276,6 @@
       position: relative;
       transition: transform 0.3s;
 
-      // Responsive burger line thickness
       @media (max-width: 768px) {
         height: 1.5px;
         width: 35%;
