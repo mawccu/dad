@@ -75,6 +75,7 @@ export default function UnifiedLayoutWrapper({ children }) {
       {children}
     </motion.div>
   </AnimatePresence>
+  <StickyFooter />
 </div>
     </div>
   );

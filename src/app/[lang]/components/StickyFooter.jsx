@@ -4,6 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useT } from '../i18n/client';
+import { useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 // Content component for the sticky footer
 function FooterContent() {
@@ -221,44 +225,69 @@ const FooterBottom = () => {
 };
 
 // Main Sticky Footer Component
+// Main Sticky Footer Component
+
+
 export default function StickyFooter() {
-  // Responsive sticky heights:
-  // mobile: 560px, tablet: 680px, desktop: 800px
-  // We mirror these in the calc()s so the sticky panel sits exactly at the bottom edge.
+  const rangeRef = useRef(null);
+  const revealRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(revealRef.current, { yPercent: -100 });
+
+      const tl = gsap.timeline().to(revealRef.current, {
+        yPercent: 0,
+        ease: 'none',
+      });
+
+      ScrollTrigger.create({
+        trigger: rangeRef.current,
+        start: 'top bottom',
+        end: 'bottom bottom',
+        scrub: true,
+        animation: tl,
+      });
+
+      setTimeout(() => ScrollTrigger.refresh(), 0);
+    }, rangeRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div
-      className="
-        relative
-        h-[560px] sm:h-[680px] lg:h-[680px] opacity-0
-      "
-    >
+    <div className="relative h-[560px] sm:h-[680px] lg:h-[680px]">
+      {/* MAKE THIS ABSOLUTE + TRANSLATE INSTEAD OF relative + -top */}
       <div
+        ref={rangeRef}
         className="
-              relative
+          absolute inset-0
           h-[calc(100dvh+560px)]
           sm:h-[calc(100dvh+680px)]
           lg:h-[calc(100dvh+680px)]
-          -top-[100dvh]
-          sm:-top-[100dvh]
-          lg:-top-[100dvh]
+          translate-y-[-100dvh]
           will-change-transform
-          [transform:translateZ(0)] opacity-0
-        "        style={{ contain: 'paint' }}
-
+          [transform:translateZ(0)]
+          pointer-events-none
+        "
+        style={{ contain: 'paint' }}
       >
         <div
           className="
-             sticky z-10
+            sticky z-10
             top-[calc(100dvh-560px)]
             sm:top-[calc(100dvh-680px)]
             lg:top-[calc(100dvh-680px)]
             h-[560px] sm:h-[680px] lg:h-[680px]
-            will-change-transform
-            [transform:translateZ(0)] opacity-0
           "
         >
-          <FooterContent />
+          {/* animate this wrapper; re-enable pointer events for its content */}
+          <div
+            ref={revealRef}
+            className="h-full will-change-transform [transform:translateZ(0)] pointer-events-auto"
+          >
+            <FooterContent />
+          </div>
         </div>
       </div>
     </div>
