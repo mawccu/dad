@@ -6,7 +6,6 @@ import ContactCTA from '../Contact/contactCTA';
 import StrengthSection from './strength'
 import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
-import PageTransition from '../../components/PageTransition';
 
 export default function About() {
   const { t } = useT('common');
@@ -14,8 +13,8 @@ export default function About() {
   const imageRef2 = useRef(null);
 
   return (
-    <div className="bg-white pt-20">
-      <div className="py-20">
+    <div className="bg-white">
+      <div className="py-32">
         {/* Hero Section */}
         <FadeUp delay={0}>
           <section className="max-w-5xl flex justify-center flex-col text-center items-center px-4 sm:px-6 py-8 sm:py-10 mx-auto">

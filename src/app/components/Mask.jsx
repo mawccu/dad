@@ -30,6 +30,7 @@ export default function Mask({ onComplete }){
     }, [progress]);
 
     useEffect(() => {
+        
         const startAnimation = () => {
             // Only start animation after component mounts and refs are available
             if (stickyMask.current && container.current) {
@@ -66,6 +67,7 @@ export default function Mask({ onComplete }){
         stickyMask.current.style.webkitMaskSize = (initialMaskSize + maskSizeProgress) * 100 + '%';
         
      
+
         const tolerance = 0.1;
         if(Math.abs(maskSizeProgress - TargetMaskSize) < tolerance) {
             if (!isAnimationComplete) {
@@ -83,25 +85,18 @@ export default function Mask({ onComplete }){
         let scrollTriggerInstance = null;
         
         if(isAnimationComplete && container.current) {
-            console.log("animation has completed")
+            //console.log("animation has completed")
             const containerElement = container.current; // Store reference
             
             scrollTriggerInstance = ScrollTrigger.create({
                 trigger: containerElement,
-                start: 'bottom top+=50',
+                start: 'bottom top',
                 end: '+=1',
                 onEnter:() =>{
                     //console.log("The navbar is now the top of the user's screen.")
                     if (containerElement && containerElement.style) {
                         containerElement.style.display = 'none';
-                        containerElement.style.pointerEvents = 'none';
                     }
-
-                    if (scrollTriggerInstance) {
-                        scrollTriggerInstance.kill();
-                        scrollTriggerInstance = null;
-                    }
-
                 },
                 onLeave: () => {
                     //console.log("navbar is now pinned.")
@@ -139,13 +134,14 @@ export default function Mask({ onComplete }){
                     <div className={styles.stickyMask} ref={stickyMask}>
                         <video 
                             playsInline
-                            preload="none"
+                            preload="metadata"
                             muted
                             loop 
                             ref={videoRef}
                             >
 
-                            <source src="medias/bo.mp4" type="video/mp4" />
+                            <source src="/medias/bo.mp4" type="video/mp4" />
+
                         </video>
                     </div>
                 </div>

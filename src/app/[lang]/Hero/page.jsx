@@ -37,6 +37,7 @@ export default function Hero(){
     const imageRef3 = React.useRef(null);
     const imageRef4 = React.useRef(null);
 
+    const navbarHeight = 80; // Adjust based on your navbar height
     return(
         <>  
             <div className="flex flex-col items-center justify-center w-full">
@@ -52,12 +53,12 @@ export default function Hero(){
             {/* Hero Section */}
             <FadeUp delay={0}>
                 <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                        <h1 className={`font-semibold leading-tight text-gray-800  ${lang === 'ar' ? 'text-2xl sm:text-2xl lg:text-3xl' : 'text-2xl sm:text-2xl lg:text-3xl'}`}>
+                    <div className="max-w-full sm:max-w-4xl lg:max-w-6xl mx-auto text-center">
+                        <h1 className={`font-semibold leading-tight text-gray-800 text-2xl sm:text-2xl lg:text-3xl`}>
                             {t('heroPage.lead')} 
                         </h1>
 
-                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-3xl' : 'text-xl sm:text-2xl lg:text-3xl'}`}>
+                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto text-xl sm:text-2xl lg:text-3xl`}>
                             {t("heroPage.bridgeLine1")} 
                             <br />
                             <Link href={`/${lang}/Projects/AbdounBridge`}>
@@ -96,8 +97,8 @@ export default function Hero(){
                         onMouseEnter={() => {
                             setIsHovered(true);
                             gsap.to(imageRef1.current, {
-                                scale: 1.1,
-                                duration: 0.3,
+                                scale: 1.05,
+                                duration: 0.5,
                                 ease: 'power2.out',
                             })
                         }}
@@ -105,7 +106,7 @@ export default function Hero(){
                             setIsHovered(false);
                             gsap.to(imageRef1.current, {
                                 scale: 1,
-                                duration: 0.3,
+                                duration: 0.5,
                                 ease: 'power2.out',
                             })
                         }}
@@ -144,8 +145,8 @@ export default function Hero(){
                 onMouseEnter={() => {
                             setIsHovered(true);
                             gsap.to(imageRef2.current, {
-                                scale: 1.1,
-                                duration: 0.3,
+                                scale: 1.05,
+                                duration: 0.5,
                                 ease: 'power2.out',
                             })
                         }}
@@ -153,7 +154,7 @@ export default function Hero(){
                             setIsHovered(false);
                             gsap.to(imageRef2.current, {
                                 scale: 1,
-                                duration: 0.3,
+                                duration: 0.5,
                                 ease: 'power2.out',
                             })
                         }}
@@ -195,21 +196,21 @@ export default function Hero(){
             <FadeUp delay={0.8}>
                 <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh] lg:min-h-[100vh] sm:py-16 lg:py-50">
                 <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 text-2xl sm:text-3xl lg:text-4xl`}>
                         {t("heroPage.expertise.title")}
                     </h1>
                        
-                    <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                    <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 text-lg sm:text-2xl lg:text-2xl`}>
                         {t("heroPage.expertise.p1")}
                     </h2>
 
-                    <p className={`text-gray-700 font-400 text-center mb-20 sm:mb-30 lg:mb-40 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                    <p className={`text-gray-700 font-400 text-center mb-20 sm:mb-30 lg:mb-40 text-lg sm:text-2xl lg:text-2xl`}>
                         {t("heroPage.expertise.p2")}
                     </p>
                 </div>
                 <div>
                     <p 
-                    className={`text-center underline underline-offset-8 cursor-pointer hover:text-gray-500 ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}
+                    className={`text-center underline underline-offset-8 cursor-pointer hover:text-gray-500 text-lg sm:text-2xl lg:text-2xl`}
                     onClick={() => router.push(`/${lang}/About`)}
                     >
                         {t("heroPage.expertise.cta")}
@@ -225,8 +226,8 @@ export default function Hero(){
                     onMouseEnter={() => {
                         setIsHovered(true);
                         gsap.to(imageRef3.current, {
-                            scale: 1.1,
-                            duration: 0.3,
+                            scale: 1.05,
+                            duration: 0.5,
                             ease: 'power2.out',
                         })
                     }}
@@ -235,7 +236,7 @@ export default function Hero(){
                         setIsHovered(false);
                         gsap.to(imageRef3.current, {
                             scale: 1,
-                            duration: 0.3,
+                            duration: 0.5,
                             ease: 'power2.out',
                         })
                     }}
@@ -281,8 +282,8 @@ export default function Hero(){
                     onMouseEnter={() => {
                         setIsHovered(true);
                         gsap.to(imageRef4.current, {
-                            scale: 1.1,
-                            duration: 0.3,
+                            scale: 1.05,
+                            duration: 0.5,
                             ease: 'power2.out',
                         })
                     }}
@@ -290,7 +291,7 @@ export default function Hero(){
                         setIsHovered(false);
                         gsap.to(imageRef4.current, {
                             scale: 1,
-                            duration: 0.3,
+                            duration: 0.5,
                             ease: 'power2.out',
                         })
                     }}

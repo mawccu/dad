@@ -1,34 +1,41 @@
 // app/components/ProgressProvider.jsx
 'use client';
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState, useCallback } from 'react';
 
 const ProgressContext = createContext(null);
 
 export function ProgressProvider({ children }) {
-  const [items, setItems] = useState({
-    heroImage: false,
-    heavyComponent: false
-  });
+  const [items, setItems] = useState({}); // start empty
 
-  const reportAsLoaded = (key) => {
+  // Seed the exact keys we expect for this page load (idempotent)
+  const setExpected = useCallback((keys) => {
+    setItems((prev) => {
+      // keep any already-true values if they exist
+      const next = {};
+      keys.forEach((k) => { next[k] = prev[k] ?? false; });
+      return next;
+    });
+  }, []);
+
+  const reportAsLoaded = useCallback((key) => {
     setItems((prev) => ({ ...prev, [key]: true }));
-  };
+  }, []);
 
-  const progress = useMemo(() => { // so it saves the calculated data and doesn't calculate again on each re-render
-    const total = Object.keys(items).length;
-    const loaded = Object.values(items).filter(Boolean).length; // filters for truthy values
+  const progress = useMemo(() => {
+    const total = Object.keys(items).length || 1;   // avoid div-by-0
+    const loaded = Object.values(items).filter(Boolean).length;
     return Math.round((loaded / total) * 100);
   }, [items]);
 
   return (
-    <ProgressContext.Provider value={{ reportAsLoaded, progress }}>
+    <ProgressContext.Provider value={{ reportAsLoaded, setExpected, progress }}>
       {children}
     </ProgressContext.Provider>
   );
 }
 
 export function useProgress() {
-  const context = useContext(ProgressContext);
-  if (!context) throw new Error('ProgressProvider is missing');
-  return context;
+  const ctx = useContext(ProgressContext);
+  if (!ctx) throw new Error('ProgressProvider is missing');
+  return ctx;
 }

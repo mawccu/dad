@@ -34,6 +34,8 @@ function ParallaxText() {
   const { t } = useT('common');
   const { lang } = useParams();
   const router = useRouter();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
 
   useEffect(() => {
     // Clean up previous ScrollTriggers
@@ -76,7 +78,7 @@ function ParallaxText() {
         fill
         sizes="100vw"
         priority
-        className="object-cover"
+        className={`object-cover ${isMobile ? 'object-right' : ''}`}
         alt={t('contact1.cta.background_alt')}
       />
       <div className="absolute inset-0 bg-black/40" />

@@ -4,7 +4,7 @@ import { useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { useProgress } from './ProgressProvider';
 
-export default function Loader() {
+export default function Loader({ onFinish }) {
   const { progress } = useProgress();
   const loaderRef = useRef(null);
   const percentRef = useRef(null);
@@ -57,6 +57,7 @@ export default function Loader() {
             loaderRef.current.style.display = 'none';
             // Restore scrolling after loader is completely hidden
             document.body.style.overflow = 'auto';
+            onFinish?.();
           }
         },
       });
@@ -67,12 +68,12 @@ export default function Loader() {
         duration: 2.2,
       });
     }
-  }, [progress]);
+  }, [progress, onFinish]);
 
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 bg-white text-black z-50 flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 bg-white text-black z-[10000] flex-col items-center justify-center overflow-hidden"
       style={{ display: 'none', opacity: 0 }} // Start hidden
     >
       <div className="text-[4rem] sm:text-[6rem] font-bold tracking-tight leading-none" ref={percentRef}>

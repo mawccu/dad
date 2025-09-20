@@ -103,7 +103,7 @@ export default function Projects() {
       {/* Category Filter Buttons */}
       <FadeUp delay={0}>
         <div className="min-h-[100vh]">
-          <p className="pt-20 sm:pt-20 lg:pt-24 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
+          <p className="pt-20 sm:pt-20 lg:pt-40 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
           
           {/* Mobile: 2 filters per line */}
           <div className="sm:hidden px-4 mt-8">

@@ -1,6 +1,16 @@
+/* ===========================
+   Header (style.module.scss)
+   =========================== */
+
+@font-face {
+  font-family: 'SHARY Medium';
+  src: url('/fonts/SHARY Medium.otf') format('truetype');
+}
+
+
 .header {
-  top: 0;
-  z-index: 10;
+  position: relative; /* anchor for .mobileActions */
+  z-index: 110;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,41 +20,41 @@
   font-weight: 300;
   color: black;
   box-sizing: border-box;
-  position: fixed;
- 
 
-  // Mobile: only show logo, hide nav
-  @media (max-width: 1023px) {
-    .nav {
-      display: none;
-    }
+  &.navbarFixed {
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    width: 100%;
+    animation: slideDown 0.35s ease-out;
+    z-index: 1200;
   }
 
-  .logo{
+  /* Mobile: only show logo, hide nav */
+  @media (max-width: 1023px) {
+    .nav { display: none; }
+  }
+
+  .logo {
     display: flex;
     cursor: pointer;
 
-    p{
-      margin: 0px;
+    p {
+      margin: 0;
       transition: all 0.25s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
-    .copyright{
+    .copyright {
       font-size: 2.5rem;
       font-family: 'SHARY Medium', sans-serif;
       transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
       color: inherit;
 
-      @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 1.5rem;
-      }
+      @media (max-width: 768px) { font-size: 2rem; }
+      @media (max-width: 480px) { font-size: 1.5rem; }
     }
 
-    .name{
+    .name {
       display: flex;
       position: relative;
       overflow: hidden;
@@ -52,14 +62,12 @@
       margin-left: 5px;
       transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 
-      p{
+      p {
         position: relative;
         transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 
-        &:nth-of-type(2){
-          padding-left: 0.3em;
-        }
-        &:nth-of-type(3){
+        &:nth-of-type(2) { padding-left: 0.3em; }
+        &:nth-of-type(3) {
           position: absolute;
           left: 120px;
           padding-left: 0.3em;
@@ -67,68 +75,56 @@
       }
     }
 
-    &:hover{
-      .copyright{
-        color: rgb(218, 45, 45);
-      }
-      .name{
+    &:hover {
+      .copyright { color: rgb(218, 45, 45); }
+      .name {
         padding-right: 30px;
-        .codeBy{
-          transform: translateX(-100%);
-        }
-        .dennis{
-          transform: translateX(-65px);
-        }
-        .snellenberg{
-          transform: translateX(-65px);
-        }
+        .codeBy { transform: translateX(-100%); }
+        .dennis, .snellenberg { transform: translateX(-65px); }
       }
     }
   }
 
-  .nav{
+  .nav {
     display: flex;
     align-items: center;
     font-weight: 400;
 
-    @media (min-width: 1024px) {
-      display: flex;
-    }
-
-    @media (max-width: 1023px) {
-      display: none;
-    }
+    @media (min-width: 1024px) { display: flex; }
+    @media (max-width: 1023px) { display: none; }
 
     .el {
+      position: relative;            /* required for absolute underline */
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 6px;
-      position: relative;
       z-index: 1;
       padding: 15px;
       cursor: pointer;
       font-size: 1.15rem;
       font-weight: 500;
 
-      &:hover {
-        .indicator {
-          transform: scaleX(1);
-          
-        }
-      }
-
+      /* Single underline element for hover + active */
       .indicator {
         position: absolute;
-        width: 70%;
-        height: 1px;
-        top: 45px;
         left: 15%;
+        right: 15%;
+        top: 45px;
+        height: 1px;
         background-color: black;
-        transform: scaleX(0);
         transform-origin: left;
-        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        transform: scaleX(0);
+        transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+        pointer-events: none;
+        will-change: transform;
       }
+
+      /* Hover underline */
+      &:hover .indicator { transform: scaleX(1); }
+
+      /* Active underline via class on the item */
+      &.isActive .indicator { transform: scaleX(1); }
 
       button {
         background: none;
@@ -136,16 +132,14 @@
         font: inherit;
         color: inherit;
         cursor: pointer;
-        font-size: 1.25rem; 
+        font-size: 1.25rem;
         padding: 0.5rem;
         transition: opacity 0.3s ease;
 
-        &:hover {
-          opacity: 0.6;
-        }
+        &:hover { opacity: 0.6; }
       }
 
-      // Language switcher specific styling
+      /* Language switcher specific styling (desktop) */
       &.languageSwitcher {
         .separator {
           color: inherit;
@@ -155,23 +149,38 @@
       }
     }
 
-    a{
+    a {
       cursor: pointer;
       text-decoration: none;
       color: inherit;
+      font-weight: inherit; /* prevent width change on :visited/:active */
     }
+  }
+
+  /* ===========================
+     Pinned mobile burger inside header
+     =========================== */
+  .mobileActions {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* vertically center within header */
+    z-index: 1300;
+
+    /* Default (EN): pin to right */
+    right: 12px;
+
+    /* Flip side for Arabic */
+    &[data-lang="ar"] {
+      right: auto;
+      left: 12px;
+    }
+
+    @media (max-width: 1023px) { display: block; }
   }
 }
 
-.active {
-  position: absolute;
-        width: 70%;
-        height: 1px;
-        top: 45px;
-        left: 15%;
-        background-color: black;
-}
-// Move activeLang outside and make it more specific
+/* Desktop header language active state */
 .activeLang {
   font-weight: 500 !important;
   text-decoration: underline !important;
@@ -180,136 +189,53 @@
   text-decoration-thickness: 2px !important;
 }
 
-.headerButtonContainer{
-  transform: scale(0);
-  position: fixed;
-  z-index: 1001;
-  top: max(env(safe-area-inset-top, 0px), 0px);
+/* ===========================
+   Compact burger button
+   =========================== */
+.button {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: #1C1D20;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @media (min-width: 1024px) {
-    right: 0;
-    left: auto;
-  }
-
-  @media (max-width: 1023px) {
-    transform: scale(1) !important;
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  &[data-lang="ar"] {
-    @media (max-width: 1023px) {
-      left: 0 !important;
-      right: auto !important;
-    }
-
-    .button {
-      margin-left: 15px !important;
-      margin-right: 20px !important;
-
-      @media (max-width: 768px) {
-        margin-left: 12px !important;
-        margin-right: 15px !important;
-      }
-
-      @media (max-width: 480px) {
-        margin-left: 10px !important;
-        margin-right: 12px !important;
-      }
-    }
-  }
-
-  &[data-lang="en"] {
-    .button {
-      margin-right: 15px !important;
-      margin-left: 20px !important;
-
-      @media (max-width: 768px) {
-        margin-right: 12px !important;
-        margin-left: 15px !important;
-      }
-
-      @media (max-width: 480px) {
-        margin-right: 10px !important;
-        margin-left: 12px !important;
-      }
-    }
-  }
-
-  .button{
-    position: relative;
-    margin: 20px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #1C1D20;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: 768px) {
-      width: 60px;
-      height: 60px;
-      margin: 15px;
-    }
-
-    @media (max-width: 480px) {
-      width: 50px;
-      height: 50px;
-      margin: 12px;
-    }
-  }
-
-  .burger{
-    width: 100%;
-    position: relative;
-    z-index: 1;
-
-    &::after, &::before{
-      content: "";
-      display: block;
-      height: 1px;
-      width: 40%;
-      margin: auto;
-      background-color: white;
-      position: relative;
-      transition: transform 0.3s;
-
-      @media (max-width: 768px) {
-        height: 1.5px;
-        width: 35%;
-      }
-
-      @media (max-width: 480px) {
-        height: 1px;
-        width: 30%;
-      }
-    }
-
-    &::after{
-      top: -5px;
-    }
-
-    &::before{
-      top: 5px;
-    }
-  }
-
-  .burgerActive{
-    &::after{
-      transform: rotate(45deg);
-      top: -1px;
-    }
-
-    &::before{
-      transform: rotate(-45deg);
-      top: 0px;
-    }
-  }
+  @media (max-width: 768px) { width: 44px; height: 44px; }
+  @media (max-width: 480px) { width: 40px; height: 40px; }
 }
 
-@font-face {
-  font-family: 'SHARY Medium';
-  src: url('/fonts/SHARY Medium.otf') format('truetype');
+/* Burger lines */
+.burger {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 46%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    transition: transform 0.25s ease, top 0.25s ease;
+
+    @media (max-width: 768px) { width: 44%; }
+    @media (max-width: 480px) { width: 42%; }
+  }
+
+  &::after { top: -4px; }
+  &::before { top: 4px; }
 }
+
+.burgerActive {
+  &::after { transform: rotate(45deg); top: 0; }
+  &::before { transform: rotate(-45deg); top: 0; }
+}
+
+/* Optional: flip underline retract direction for RTL if you set dir="rtl" on <html> */
+:root[dir="rtl"] .nav .el .indicator { transform-origin: right; }

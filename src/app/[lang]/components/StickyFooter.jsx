@@ -110,13 +110,14 @@ const FooterNav = () => {
         <p className={`text-gray-400 m-2  ${lang === 'ar' ? 'text-base sm:text-lg' : 'text-base'}`}>
           {t('footer.company.tagline')}
         </p>
-        <Link
-          href="/About/RamiHamad"
+        <span
+          
+          disabled={true}
           onClick={(e) => e.preventDefault()}
           className="text-gray-400 hover:text-gray-100 transition-colors md:px-2"
         >
           {t('footer.company.learn_more')}
-        </Link>
+        </span>
       </div>
     </div>
   );
@@ -229,26 +230,32 @@ export default function StickyFooter() {
     <div
       className="
         relative
-        h-[560px] sm:h-[680px] lg:h-[680px]
+        h-[560px] sm:h-[680px] lg:h-[680px] opacity-0
       "
-      style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
       <div
         className="
-          relative
-          h-[calc(100vh+560px)]
-          sm:h-[calc(100vh+680px)]
-          lg:h-[calc(100vh+680px)]
-          -top-[100vh]
-        "
+              relative
+          h-[calc(100dvh+560px)]
+          sm:h-[calc(100dvh+680px)]
+          lg:h-[calc(100dvh+680px)]
+          -top-[100dvh]
+          sm:-top-[100dvh]
+          lg:-top-[100dvh]
+          will-change-transform
+          [transform:translateZ(0)] opacity-0
+        "        style={{ contain: 'paint' }}
+
       >
         <div
           className="
-            sticky z-10
-            top-[calc(100vh-560px)]
-            sm:top-[calc(100vh-680px)]
-            lg:top-[calc(100vh-680px)]
+             sticky z-10
+            top-[calc(100dvh-560px)]
+            sm:top-[calc(100dvh-680px)]
+            lg:top-[calc(100dvh-680px)]
             h-[560px] sm:h-[680px] lg:h-[680px]
+            will-change-transform
+            [transform:translateZ(0)] opacity-0
           "
         >
           <FooterContent />
