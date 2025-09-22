@@ -66,9 +66,9 @@ export default function Mask({ onComplete }){
         const maskSizeProgress = TargetMaskSize * getScrollProgress();
         stickyMask.current.style.webkitMaskSize = (initialMaskSize + maskSizeProgress) * 100 + '%';
         
-     
-
         const tolerance = 0.1;
+        // Check if the animation is close enough to the target to consider it complete, avoiding infinite loops
+        // isAnimationComplete flag ensures onComplete is called only once
         if(Math.abs(maskSizeProgress - TargetMaskSize) < tolerance) {
             if (!isAnimationComplete) {
                 setIsAnimationComplete(true);
@@ -103,7 +103,6 @@ export default function Mask({ onComplete }){
                 }
             })
         }
-        
         // Clean up ScrollTrigger on unmount or when dependencies change
         return () => {
             if (scrollTriggerInstance) {
@@ -139,9 +138,7 @@ export default function Mask({ onComplete }){
                             loop 
                             ref={videoRef}
                             >
-
                             <source src="/medias/bo.mp4" type="video/mp4" />
-
                         </video>
                     </div>
                 </div>

@@ -1,12 +1,9 @@
 {
   "heroPage": {
-    "lead": "Turning dreams into reality:",
-    "bridgeLine1": "With the expertise of the Project Manager behind the",
-    "bridgeLine2": " Abdoun Bridge Project.",
-    "p1": "Based in Amman, Jordan, we are a finishing company focused on precision, durability, and results. From coatings and waterproofing to surface treatments, painting and facility management, our projects reflect high standards and long-term value.",
-    "p2": "Led by ",
-    "p3": "Eng. Rami Hamad",
-    "p4": ", who managed the finishing operations on the Abdoun Bridge, our company brings decades of hands-on experience across the Middle East.",
+    "lead": "Where precision becomes protection:",
+    "bridgeLine1": "With the expertise of the Project Manager behind the <bridgeLink> Wadi-Abdoun Bridge Project</bridgeLink>.",
+    "p1": "Born from decades of hands-on finishing leadership, New Look is a finishing company, specializing in specialty coatings, waterproofing, surface treatments, and painting. Our work reflects high standards and long-term value.",
+    "p2": "Led by <rami>Eng. Rami Hamad</rami>, who managed the finishing operations of the Wadi-Abdoun Bridge Project, our company brings decades of experience across the Middle East. Based in Amman, Jordan, we serve clients throughout the region with the same commitment to excellence that defines landmark projects.",
     "cta": {
       "discover": "Discover our projects"
     },
@@ -27,7 +24,7 @@
     "expertise": {
       "title": "Our expertise",
       "p1": "We specialize in the final, crucial layer of every project, ensuring precision and durability. With years of hands-on experience and collaboration with top engineers and suppliers, we guarantee a streamlined process from start to finish.",
-      "p2": "Whether it's new construction or renovating existing spaces, from luxury homes to industrial factories, our work showcases the attention to detail and quality that defines us.",
+      "p2": "Whether it's new construction or renovating existing spaces, from luxury homes to industrial factories, our work showcases the attention to detail and quality that defines New Look.",
       "cta": "Learn more about New Look"
     },
     "offer": {
@@ -45,7 +42,7 @@
     "images": { "team_alt": "New Look Team" },
     "partners": {
       "title": "Trusted Credentials & Collaborations",
-      "subtitle": "Over the years, we've had the privilege of working alongside some of the most respected names in the industry. These collaborations have shaped the quality and precision of the work we deliver",
+      "subtitle": "Over the years, we've had the privilege of working alongside some of the most respected names in the industry. These collaborations have shaped the quality and precision of the work we deliver.",
       "list": {
         "al_manaseer": "Al Manaseer",
         "saveto": "Saveto Vetonit",
@@ -177,7 +174,7 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "About us",
     "services": "Services",
     "projects": "Projects",
     "contact": "Contact"

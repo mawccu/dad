@@ -4,10 +4,11 @@ import Loader from '../components/Loader';
 import dynamic from 'next/dynamic';
 import { useEffect, useMemo, useState } from 'react';
 import { useProgress } from '../components/ProgressProvider';
-import Mask from '../components/Mask';
-import Header from './components/Header';
 
+const Mask = dynamic(() => import('../components/Mask'), { ssr: false });
+const Header = dynamic(() => import('./components/Header'), { ssr: false });
 const Hero = dynamic(() => import('./Hero/page.jsx'), { ssr: false });
+const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
 
 function useDeviceType() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -47,8 +48,7 @@ function useInitialWebsiteMount() {
 function MaskLoad({ onComplete }) {
   const { reportAsLoaded } = useProgress();
   useEffect(() => {
-    // report early so progress can hit 100% and Mask video can start
-    reportAsLoaded('mask');
+    reportAsLoaded('mask'); // let progress hit 100 so mask can start
   }, [reportAsLoaded]);
   return <Mask onComplete={onComplete} />;
 }
@@ -61,13 +61,7 @@ function ImageLoad() {
 
 export default function Home() {
   const [maskDone, setMaskDone] = useState(false);
-  const [loaderFinished, setLoaderFinished] = useState(false);
-
-  // Fade visibility flags (wrappers always mounted)
-  const [headerVisible, setHeaderVisible] = useState(false);
-  const [heroVisible, setHeroVisible] = useState(false);
-
-  // NEW: gate that opens 1s after ready
+  const [loaderExitStarted, setLoaderExitStarted] = useState(false);
 
   const { setExpected } = useProgress();
   const { isDesktop } = useDeviceType();
@@ -87,73 +81,49 @@ export default function Home() {
   // Ready when: (desktop) mask done or not used, AND (mobile) loader finished or not used
   const contentReady = useMemo(() => {
     const maskReady = maskDone || !shouldShowMask;
-    const loaderReady = !shouldShowLoader || loaderFinished;
-    return maskReady && loaderReady;
-  }, [maskDone, shouldShowMask, shouldShowLoader, loaderFinished]);
+    return maskReady;
+  }, [maskDone, shouldShowMask]);
 
- 
-
-  // Run fades when the gate opens (double rAF to guarantee first paint at opacity:0)
-  useEffect(() => {
-    if (!contentReady) {
-      setHeaderVisible(false);
-      setHeroVisible(false);
-      return;
-    }
-    setHeaderVisible(false);
-    setHeroVisible(false);
-    const id1 = requestAnimationFrame(() => {
-      const id2 = requestAnimationFrame(() => {
-        setHeaderVisible(true);
-        setHeroVisible(true);
-      });
-      return () => cancelAnimationFrame(id2);
-    });
-    return () => cancelAnimationFrame(id1);
-  }, [contentReady]);
+  // Content reveal policy:
+  // - Desktop + mask: content should be visible under the mask immediately.
+  // - Mobile + loader: start content fade-in when loader exit begins (cross-fade), and stay visible once finished.
+  const contentVisible =
+    (isDesktop && shouldShowMask)
+      ? true
+      : (loaderExitStarted || contentReady);
 
   return (
     <>
       {/* Mobile loader */}
-
-      {shouldShowLoader && <Loader onFinish={() => setLoaderFinished(true)} />}
-
-      {/* Desktop mask splash */}
-      {shouldShowMask && 
-      (
-      <div style={{zIndex: 120}}><MaskLoad onComplete={() => setMaskDone(true)} /></div>
+      {shouldShowLoader && (
+        <Loader
+          onExitStart={() => setLoaderExitStarted(true)}  // NEW: begin content fade exactly when loader starts exiting
+          onFinish={() => setLoaderFinished(true)}        // you already had this path via callback
+        />
       )}
 
-      {/* Mark hero image as loaded */}
+      {/* Desktop mask splash */}
+      {shouldShowMask && (
+        <div style={{ zIndex: 120 }} className="pointer-events-none transition-opacity duration-500">
+          <MaskLoad onComplete={() => setMaskDone(true)} />
+        </div>
+      )}
+
+      {/* mark hero image as loaded */}
       <ImageLoad />
 
-      {/* HEADER: always mounted; fades via opacity (wrapper has its own stacking context) */}
-      <div
+      {/* Content cross-fade wrapper */}
+      {contentReady && <div
         style={{
-          opacity: headerVisible ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out',
-          willChange: 'opacity',
-          pointerEvents: headerVisible ? 'auto' : 'none',
-          position: 'relative',
-          zIndex: 100, // keep above any transformed siblings
+          opacity: contentVisible ? 1 : 0,
+          transition: 'opacity 600ms ease',
+          pointerEvents: contentVisible ? 'auto' : 'none',
         }}
       >
         <Header />
-      </div>
-
-      {/* HERO: always mounted; fades via opacity */}
-      <div
-        style={{
-          position: 'relative',
-          opacity: heroVisible ? 1 : 0,
-          transition: 'opacity 0.8s ease-in-out',
-          willChange: 'opacity',
-          pointerEvents: heroVisible ? 'auto' : 'none',
-          transform: 'translateZ(0)', // OK here (not on header wrapper)
-        }}
-      >
         <Hero />
-      </div>
+        <StickyFooter />
+      </div>}
     </>
   );
 }

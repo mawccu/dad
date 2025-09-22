@@ -232,29 +232,7 @@ export default function StickyFooter() {
   const rangeRef = useRef(null);
   const revealRef = useRef(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.set(revealRef.current, { yPercent: -100 });
-
-      const tl = gsap.timeline().to(revealRef.current, {
-        yPercent: 0,
-        ease: 'none',
-      });
-
-      ScrollTrigger.create({
-        trigger: rangeRef.current,
-        start: 'top bottom',
-        end: 'bottom bottom',
-        scrub: true,
-        animation: tl,
-      });
-
-      setTimeout(() => ScrollTrigger.refresh(), 0);
-    }, rangeRef);
-
-    return () => ctx.revert();
-  }, []);
-
+  
   return (
     <div className="relative h-[560px] sm:h-[680px] lg:h-[680px]">
       {/* MAKE THIS ABSOLUTE + TRANSLATE INSTEAD OF relative + -top */}

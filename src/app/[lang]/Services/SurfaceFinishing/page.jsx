@@ -21,7 +21,6 @@ export default function SurfaceFinishing() {
   const [isHovered, setIsHovered] = useState(null);
 
   return (
-    <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
       <div className="relative w-full h-[100vh] lg:h-[100vh] overflow-hidden">
@@ -435,6 +434,5 @@ export default function SurfaceFinishing() {
         </div>
       </div>
     </div>
-    </FadeUp>
   );
 }

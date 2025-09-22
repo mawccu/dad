@@ -12,7 +12,6 @@ export default function Services() {
   const { lang } = useParams();
 
   return (
-    <FadeUp delay={0}>
       <div className="relative w-full flex flex-col md:flex-row">
         {/* Custom Flooring Section */}
         <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen group">
@@ -58,6 +57,5 @@ export default function Services() {
         </div>
       </div>
     </div>
-    </FadeUp>
   );
 }

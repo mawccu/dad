@@ -32,7 +32,6 @@ function Contact({ onScheduleClick }) {
   };
 
   return (
-    <FadeUp delay={0}>
       <div className="py-16 sm:py-24 md:py-40 lg:py-40" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 py-6 sm:py-8 flex flex-col items-center">
           <h1 className={`font-bold text-center mb-6 sm:mb-8 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
@@ -92,7 +91,6 @@ function Contact({ onScheduleClick }) {
           </div>
         </div>
       </div>
-    </FadeUp>
   );
 }
 
@@ -306,7 +304,6 @@ function ContactForm({ prefillType }) {
   };
 
   return (
-    <FadeUp delay={0.4}>
       <div className="py-20 min-h-screen">
         <div className="container mx-auto px-4">
           {/* Headings above form */}
@@ -409,7 +406,6 @@ function ContactForm({ prefillType }) {
           </div>
         </div>
       </div>
-    </FadeUp>
   );
 }
 

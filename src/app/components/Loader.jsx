@@ -1,23 +1,18 @@
-//components/Loader.jsx
+// components/Loader.jsx
 'use client';
 import { useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { useProgress } from './ProgressProvider';
 
-export default function Loader({ onFinish }) {
+export default function Loader({ onExitStart, onFinish }) {
   const { progress } = useProgress();
   const loaderRef = useRef(null);
   const percentRef = useRef(null);
   const progressBarRef = useRef(null);
 
-
   useLayoutEffect(() => {
     document.body.style.overflow = 'hidden';
-    
-    // Cleanup function to restore scrolling if component unmounts unexpectedly
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    return () => { document.body.style.overflow = 'auto'; };
   }, []);
 
   // Show loader when progress begins
@@ -28,7 +23,7 @@ export default function Loader({ onFinish }) {
     }
   }, [progress]);
 
-  // Animate % text and progress bar
+  // Animate % text and progress bar + exit
   useEffect(() => {
     if (progress > 0) {
       if (percentRef.current) {
@@ -39,7 +34,6 @@ export default function Loader({ onFinish }) {
           snap: { textContent: 1 },
         });
       }
-
       if (progressBarRef.current) {
         gsap.to(progressBarRef.current, {
           width: `${progress}%`,
@@ -50,41 +44,39 @@ export default function Loader({ onFinish }) {
     }
 
     if (progress === 100 && loaderRef.current) {
+      // NEW: signal exit start so the content can begin fading in (mobile cross-fade)
+      onExitStart?.();
+
       const tl = gsap.timeline({
         delay: 0.4,
         onComplete: () => {
           if (loaderRef.current) {
             loaderRef.current.style.display = 'none';
-            // Restore scrolling after loader is completely hidden
             document.body.style.overflow = 'auto';
             onFinish?.();
           }
         },
       });
 
-      tl.to(loaderRef.current, { 
+      tl.to(loaderRef.current, {
         opacity: 0,
         ease: 'power4.inOut',
         duration: 2.2,
       });
     }
-  }, [progress, onFinish]);
+  }, [progress, onExitStart, onFinish]);
 
   return (
     <div
       ref={loaderRef}
       className="fixed inset-0 bg-white text-black z-[10000] flex-col items-center justify-center overflow-hidden"
-      style={{ display: 'none', opacity: 0 }} // Start hidden
+      style={{ display: 'none', opacity: 0 }}
     >
       <div className="text-[4rem] sm:text-[6rem] font-bold tracking-tight leading-none" ref={percentRef}>
         0
       </div>
       <div className="w-[60%] h-[2px] bg-white bg-opacity-10 mt-6 relative overflow-hidden">
-        <div
-          ref={progressBarRef}
-          className="absolute top-0 left-0 h-full bg-black"
-          style={{ width: '0%' }}
-        />
+        <div ref={progressBarRef} className="absolute top-0 left-0 h-full bg-black" style={{ width: '0%' }} />
       </div>
     </div>
   );

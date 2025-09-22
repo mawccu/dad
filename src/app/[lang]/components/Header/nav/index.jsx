@@ -30,7 +30,7 @@ export default function index({ navTranslations, onClose }) {
 
     const navItems = [
         { title: navTranslations?.home || 'Home', href: `/${lang}` },
-        { title: navTranslations?.about || 'About', href: `/${lang}/About` },
+        { title: navTranslations?.about || 'About us', href: `/${lang}/About` },
         { title: navTranslations?.services || 'Services', href: `/${lang}/Services` },
         { title: navTranslations?.projects || 'Projects', href: `/${lang}/Projects` },
         { title: navTranslations?.contact || 'Contact', href: `/${lang}/Contact` },

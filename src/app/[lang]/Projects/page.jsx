@@ -20,21 +20,21 @@ export default function Projects() {
   
   {
     src: '/medias/movenpick/Movenpick.png',
-    blueprint: '/medias/movenpick/blue.png', // Add your hotel blueprint here
+    blueprint: '/medias/movenpick/blue.png', 
     link: `/${lang}/Projects/Movenpick`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Mövenpick Hotel', ar: 'فندق موفنبيك' }
   },
-   {
+  {
     src: '/medias/abdounbridge/bb (2).jpg',
-    blueprint: '/medias/abdounbridge/blue.png', // Your awesome bridge blueprint!
+    blueprint: '/medias/abdounbridge/bb (2).jpg', 
     link: `/${lang}/Projects/AbdounBridge`,
     category: { en: ['surface finishing', 'legacy'], ar: ['مشاريع التشطيبات', 'المشاريع المميزة'] },
     name: { en: 'Abdoun Bridge', ar: 'جسر عبدون' }
   },
   {
     src: '/medias/safeway/11.png',
-    blueprint: '/medias/safeway/blue.png', // Add your center blueprint here
+    blueprint: '/medias/safeway/blue.png',
     link: `/${lang}/Projects/Safeway`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Safeway Center', ar: 'أسواق السيفوي' }
@@ -42,35 +42,35 @@ export default function Projects() {
  
   { 
     src: '/medias/tag/2.png',
-    blueprint: '/medias/tag/blue.png', // Add your TAG blueprint here
+    blueprint: '/medias/tag/blue.png',
     link: `/${lang}/Projects/TAG`,
     category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
     name: { en: 'Talal Abu Ghazaleh Group', ar: 'مجموعة طلال أبو غزالة' }
   },
   {
     src: '/medias/tower/1.png',
-    blueprint: '/medias/tower/blue.png', // Add your tower blueprint here
+    blueprint: '/medias/tower/blue.png', 
     link: `/${lang}/Projects/BusinessParkTower`,
     category: { en: ['flooring', 'legacy', 'surface finishing'], ar: ['مشاريع الأرضيات', 'المشاريع المميزة', 'مشاريع التشطيبات'] },
     name: { en: 'Business Park Tower', ar: 'برج مجمع المشاريع' }
   },
   { 
     src: '/medias/villa/1.png', 
-    blueprint: '/medias/villa/blue.png', // Add your villa blueprint here
+    blueprint: '/medias/villa/blue.png', 
     link: `/${lang}/Projects/Villa04`, 
     category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
     name: { en: 'Villa 04', ar: 'ڤيلا عميش' }
   },
   {
     src: '/medias/ncc/1.png',
-    blueprint: '/medias/ncc/blue.png', // Add your NCC blueprint here
+    blueprint: '/medias/ncc/blue.png', 
     link: `/${lang}/Projects/NCC`,
     category: { en: ['surface finishing'], ar: ['مشاريع التشطيبات'] },
     name: { en: 'Northern Cement Company', ar: 'شركة اسمنت الشمالية' }
   },
   {
     src: '/medias/ex/3.png',
-    blueprint: '/medias/ex/blue.png', // Add your Expeditors blueprint here
+    blueprint: '/medias/ex/blue.png',
     link: `/${lang}/Projects/Expeditors`,
     category: { en: ['flooring'], ar: ['مشاريع الأرضيات'] },
     name: { en: 'Expeditors', ar: 'Expeditors' }
@@ -101,7 +101,6 @@ export default function Projects() {
     <>
 
       {/* Category Filter Buttons */}
-      <FadeUp delay={0}>
         <div className="min-h-[100vh]">
           <p className="pt-20 sm:pt-20 lg:pt-40 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
           
@@ -175,6 +174,7 @@ export default function Projects() {
                   src={project.src}
                   alt={project.name[lang] || project.name.en}
                   fill={true}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -184,6 +184,7 @@ export default function Projects() {
                     src={project.blueprint}
                     alt={`${project.name[lang] || project.name.en} Blueprint`}
                     fill={true}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                   
@@ -241,13 +242,10 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      </FadeUp>
 
-      <FadeUp delay={0.4}>
         <div className="py-8 sm:py-16 lg:py-20">
           <ContactCTA />
         </div>
-      </FadeUp>
     </>
   );
 }

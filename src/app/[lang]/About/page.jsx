@@ -16,9 +16,8 @@ export default function About() {
     <div className="bg-white">
       <div className="py-32">
         {/* Hero Section */}
-        <FadeUp delay={0}>
           <section className="max-w-5xl flex justify-center flex-col text-center items-center px-4 sm:px-6 py-8 sm:py-10 mx-auto">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-4 sm:mb-6 text-gray-900 leading-tight max-w-4xl">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-4 sm:mb-6 text-gray-800 leading-tight max-w-4xl">
               {t('about.hero.title')}
             </h1>
             <p
@@ -35,10 +34,8 @@ export default function About() {
               }}
             />
           </section>
-        </FadeUp>
 
         {/* Image Section */}
-        <FadeUp delay={0.3}>
           <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-20 lg:mb-24">
             <Image
               src="/medias/abdounbridge/mm.png"
@@ -50,11 +47,9 @@ export default function About() {
               priority
             />
           </section>
-        </FadeUp>
       </div>
 
       {/* Vision Section */}
-      <FadeUp delay={0.6}>
         <section className="bg-gray-50 py-16 sm:py-20 md:py-32 lg:py-40">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             {/* Desktop unchanged: lg:text-4xl */}
@@ -69,10 +64,8 @@ export default function About() {
             </div>
           </div>
         </section>
-      </FadeUp>
       
       
-      <FadeUp delay={0.9}>
       <div className="py-16 sm:py-16">
         <StrengthSection
           translation={{
@@ -86,10 +79,8 @@ export default function About() {
           }}
         />
         </div>
-      </FadeUp>
 
       {/* Location Section */}
-      <FadeUp delay={1.2}>
         <section className="bg-gray-50 py-12 sm:py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             {/* Desktop unchanged: lg:text-4xl */}
@@ -113,11 +104,8 @@ export default function About() {
             />
           </div>
         </section>
-      </FadeUp>
 
-      <FadeUp delay={1.5}>
         <ContactCTA />
-      </FadeUp>
     </div>
   );
 }

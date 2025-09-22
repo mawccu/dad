@@ -21,7 +21,6 @@ export default function CustomFlooring() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <FadeUp delay={0}>
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
       <div className="relative w-full h-[100vh] sm:h-[50vh] lg:h-[100vh] overflow-hidden">
@@ -422,6 +421,5 @@ export default function CustomFlooring() {
         </div>
       </div>
     </div>
-    </FadeUp>
   );
 }

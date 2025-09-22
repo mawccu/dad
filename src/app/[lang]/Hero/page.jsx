@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ContactCTA from '../Contact/contactCTA';
 import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
+import { Trans } from 'react-i18next';
 
 export default function Hero(){
     const [isHovered, setIsHovered] = React.useState(false);
@@ -43,7 +44,7 @@ export default function Hero(){
             <div className="flex flex-col items-center justify-center w-full">
                 <div className="h-screen w-full relative overflow-hidden">
                 <Image
-                src="/medias/placeholder1.jpg"
+                src="/medias/abdounbridge/ss.png"
                 fill={true}
                 alt="Hero Image"
                 className="object-cover"
@@ -51,46 +52,47 @@ export default function Hero(){
             </div>
             </div>
             {/* Hero Section */}
-            <FadeUp delay={0}>
                 <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
                     <div className="max-w-full sm:max-w-4xl lg:max-w-6xl mx-auto text-center">
-                        <h1 className={`font-semibold leading-tight text-gray-800 text-2xl sm:text-2xl lg:text-3xl`}>
+                        <h1 className={`font-semibold leading-tight text-gray-800 text-2xl sm:text-2xl lg:mb-2 lg:text-3xl`}>
                             {t('heroPage.lead')} 
                         </h1>
 
-                        <h2 className={`font-450 text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto text-xl sm:text-2xl lg:text-3xl`}>
-                            {t("heroPage.bridgeLine1")} 
-                            <br />
-                            <Link href={`/${lang}/Projects/AbdounBridge`}>
-                                <span className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8">
-                                    {t("heroPage.bridgeLine2")}
-                                </span>
-                            </Link>
+                        <h2 className="font-semibold text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto text-xl sm:text-2xl lg:text-3xl">
+                            <Trans
+                                t={t}
+                                i18nKey="heroPage.bridgeLine1"
+                                components={{
+                                    bridgeLink: (
+                                        <Link  className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8 hover:text-blue-400 transition-colors" href={`/${lang}/Projects/AbdounBridge`}>
+                                            <span />
+                                        </Link>
+                                    )
+                                }}
+                            />
                         </h2>
 
-                        <p className={`text-gray-700 lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-400 ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                        <p className={`lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-light ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
                             {t("heroPage.p1")}
                         </p>
-                        
-                        <p className={`text-gray-700 lg:leading-relaxed text-center mb-12 sm:mb-14 lg:mb-16 font-400 ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
-                            {t("heroPage.p2")}
-                            <span className="font-semibold underline underline-offset-8">{t("heroPage.p3")}</span>
-                            {t("heroPage.p4")}
+
+                        <p className={`lg:leading-relaxed text-center mb-12 sm:mb-16 lg:mb-32 font-light ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                            <Trans
+                                i18nKey="heroPage.p2"
+                                t={t}
+                                components={{rami: <strong className="font-semibold underline underline-offset-8" />}}
+                            />
                         </p>
 
-                        <div>
-                        <p className={`text-center text-gray-800 cursor-pointer ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}
+                        <p className={`text-center text-gray-800 cursor-pointer ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-2xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}
                             onClick={() => router.push(`/${lang}/Projects`)}
                         >
-                        <strong className="underline cursor-pointer hover:text-gray-500 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</strong>
+                            <span className="underline cursor-pointer font-500 hover:text-gray-400 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</span>
                         </p>
-                </div>
                     </div>
                 </div>
-            </FadeUp>
 
             {/* Image Cards Section - Mobile: Stack, Desktop: Side by side */}
-            <FadeUp delay={0.4}>
                 <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
                 {/* First Image Container */}
                 <div className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
@@ -190,36 +192,32 @@ export default function Hero(){
                     </div>
                 </div>
             </div>
-            </FadeUp>
 
             {/* Expertise Section */}
-            <FadeUp delay={0.8}>
                 <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh] lg:min-h-[100vh] sm:py-16 lg:py-50">
                 <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
                     <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 text-2xl sm:text-3xl lg:text-4xl`}>
                         {t("heroPage.expertise.title")}
                     </h1>
                        
-                    <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 text-lg sm:text-2xl lg:text-2xl`}>
+                    <h2 className={`font-light mb-8 sm:mb-10 lg:mb-12 text-lg sm:text-2xl lg:text-2xl`}>
                         {t("heroPage.expertise.p1")}
                     </h2>
 
-                    <p className={`text-gray-700 font-400 text-center mb-20 sm:mb-30 lg:mb-40 text-lg sm:text-2xl lg:text-2xl`}>
+                    <p className={` font-light text-center mb-20 sm:mb-30 lg:mb-40 text-lg sm:text-2xl lg:text-2xl`}>
                         {t("heroPage.expertise.p2")}
                     </p>
                 </div>
                 <div>
                     <p 
-                    className={`text-center underline underline-offset-8 cursor-pointer hover:text-gray-500 text-lg sm:text-2xl lg:text-2xl`}
+                    className={`text-center underline underline-offset-8 font-500 cursor-pointer hover:text-gray-500 text-lg sm:text-2xl lg:text-2xl`}
                     onClick={() => router.push(`/${lang}/About`)}
                     >
                         {t("heroPage.expertise.cta")}
                     </p>
                 </div>
             </div>
-            </FadeUp>
 
-            <FadeUp delay={1.2}>
                 <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
                 <div 
                     className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
@@ -334,11 +332,9 @@ export default function Hero(){
                 </div>
 
             </div>
-            </FadeUp>
 
-    {/* Partners Section */}
-            <FadeUp delay={1.6}>
-                <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 py-32 sm:py-30 md:py-40 lg:py-32 mt-0 sm:mt-0 lg:mt-0 bg-gray-50">
+            {/* Partners Section */}
+            <div className="min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 py-32 sm:py-30 md:py-40 lg:py-32 mt-0 sm:mt-0 lg:mt-0">
             <div className="max-w-7xl text-center">
 
                 {/* Section Heading */}
@@ -346,7 +342,7 @@ export default function Hero(){
                 {t("heroPage.partners.title")}
                 </h1>
 
-                <h2 className={`font-400 text-gray-700 mb-8 sm:mb-10 lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
+                <h2 className={`font-light mb-8 sm:mb-10 lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto ${lang === 'ar' ? 'text-lg sm:text-2xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl'}`}>
                 {t("heroPage.partners.subtitle")}
                 </h2>
 
@@ -601,14 +597,11 @@ export default function Hero(){
                 </div>
             </div>
             </div>
-            </FadeUp>
 
             {/* Autograph Section - insert hand-drawn animation for Rami's signature*/}
 
             {/* Contact Form Section */}
-            <FadeUp delay={2.0}>
                 <ContactCTA />
-            </FadeUp>
         </>
     )
 }

@@ -138,6 +138,10 @@ export default function Header() {
         </div>
 
         <div className={styles.nav}>
+          <div className={`${styles.el} ${pathname === `/${currentLang}/About` ? styles.isActive : ''}`}>
+            <Link href={createLangLink('/About')}>{t('nav.about')}</Link>
+            <div className={styles.indicator} />
+          </div>
           <div className={`${styles.el} ${pathname === `/${currentLang}/Services` ? styles.isActive : ''}`}>
             <Link href={createLangLink('/Services')}>{t('nav.services')}</Link>
             <div className={styles.indicator} />
@@ -150,10 +154,7 @@ export default function Header() {
             <Link href={createLangLink('/Contact')}>{t('nav.contact')}</Link>
             <div className={styles.indicator} />
           </div>
-          <div className={`${styles.el} ${pathname === `/${currentLang}/About` ? styles.isActive : ''}`}>
-            <Link href={createLangLink('/About')}>{t('nav.about')}</Link>
-            <div className={styles.indicator} />
-          </div>
+          
         </div>
 
         {!isMobile && <div className={`${styles.el} cursor-pointer`}>
