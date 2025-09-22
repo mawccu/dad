@@ -8,7 +8,6 @@ import gsap from 'gsap';
 import FAQ from './Faq';
 import { useT } from '../../i18n/client';
 import { useParams } from 'next/navigation';
-import FadeUp from '../../../components/FadeUp';
 
 export default function CustomFlooring() {
   const router = useRouter();
@@ -32,14 +31,14 @@ export default function CustomFlooring() {
           className="sm:object-fill object-cover"
           priority
         />
-
+        <div className="absolute inset-0 bg-black bg-opacity-20" />
         <div className="absolute inset-0 flex items-center justify-center text-white px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3
               className={`mb-4 sm:mb-6 font-semibold tracking-wide ${
                 lang === 'ar'
-                  ? 'text-2xl sm:text-2xl lg:text-5xl'
-                  : 'text-xl sm:text-1xl lg:text-5xl'
+                  ? 'text-2xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl'
+                  : 'text-xl sm:text-1xl lg:text-3xl xl:text-4xl 2xl:text-5xl'
               }`}
             >
               {t('services.custom_flooring_page.hero_title')}
@@ -47,8 +46,8 @@ export default function CustomFlooring() {
             <p
               className={`font-light ${
                 lang === 'ar'
-                  ? 'text-lg sm:text-xl lg:text-2xl'
-                  : 'text-base sm:text-lg lg:text-2xl'
+                  ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+                  : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
               }`}
             >
               {t('services.custom_flooring_page.hero_subtitle')}
@@ -72,12 +71,12 @@ export default function CustomFlooring() {
       </div>
 
       {/* INTRO */}
-      <div className="max-w-6xl mx-auto px-4 flex justify-center flex-col sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-24 lg:min-h-[100vh] text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center sm:py-24 lg:py-28 lg:min-h-screen text-center">
         <h1
-          className={`font-semibold mb-16 sm:mb-24 md:leading-relaxed sm:leading-relaxed leading-relaxed lg:leading-relaxed ${
+          className={`font-semibold mb-16 sm:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24 md:leading-relaxed sm:leading-relaxed leading-relaxed lg:leading-relaxed ${
             lang === 'ar'
-              ? 'text-2xl sm:text-3xl lg:text-4xl'
-              : 'text-xl sm:text-2xl lg:text-4xl'
+              ? 'text-xl sm:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl'
+              : 'text-xl sm:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl'
           }`}
         >
           {t('services.custom_flooring_page.intro_title')}
@@ -85,17 +84,17 @@ export default function CustomFlooring() {
         <p
           className={`font-light leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed mb-6 sm:mb-8 ${
             lang === 'ar'
-              ? 'text-lg sm:text-xl lg:text-2xl'
-              : 'text-base sm:text-lg lg:text-2xl'
+              ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+              : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
           }`}
         >
           {t('services.custom_flooring_page.intro_p1')}
         </p>
         <p
-          className={`font-light leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed mb-6 sm:mb-8 ${
+          className={`font-light leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed ${
             lang === 'ar'
-              ? 'text-lg sm:text-xl lg:text-2xl'
-              : 'text-base sm:text-lg lg:text-2xl'
+              ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+              : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
           }`}
         >
           {t('services.custom_flooring_page.intro_p2')}
@@ -103,7 +102,7 @@ export default function CustomFlooring() {
       </div>
 
       {/* TWO PANELS */}
-      <div className="flex flex-col lg:flex-row justify-center items-center py-16 sm:py-24">
+      <div className="flex flex-col lg:flex-row justify-center items-center">
         {/* Panel 1 */}
         <div
           className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden group cursor-pointer"
@@ -115,6 +114,7 @@ export default function CustomFlooring() {
               className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundImage: "url('/medias/floor2.jpg')" }}
             />
+            <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-50 transition-all duration-300" />
           <div className="absolute inset-0 flex items-center justify-center text-white px-4 sm:px-6 lg:px-8">
@@ -122,8 +122,8 @@ export default function CustomFlooring() {
               <h3
                 className={`font-light tracking-wide mb-6 sm:mb-8 lg:mb-12 opacity-90 ${
                   lang === 'ar'
-                    ? 'text-2xl sm:text-4xl lg:text-5xl'
-                    : 'text-xl sm:text-3xl lg:text-5xl'
+                    ? 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
+                    : 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
                 }`}
               >
                 {t('services.custom_flooring_page.panel1_title')}
@@ -140,10 +140,10 @@ export default function CustomFlooring() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className={`flex items-center justify-center font-light opacity-90 transform transition-all duration-300 ${
+                    className={`flex items-center justify-start font-light opacity-90 transform transition-all duration-300 ${
                       lang === 'ar'
-                        ? 'text-base sm:text-lg lg:text-2xl'
-                        : 'text-sm sm:text-base lg:text-2xl'
+                        ? 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+                        : 'text-sm sm:text-base lg:text-xl 2xl:text-2xl'
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
@@ -174,15 +174,16 @@ export default function CustomFlooring() {
               className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundImage: "url('/medias/8.png')" }}
             />
+            <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
           </div>
           <div className="absolute inset-0 bg-white bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
           <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="text-center transform transition-transform duration-300 group-hover:translate-y-[-10px]">
               <h3
-                className={`font-light tracking-wide mb-6 sm:mb-8 lg:mb-12 text-gray-800 opacity-90 ${
+                className={`font-light tracking-wide mb-6 sm:mb-8 lg:mb-12 opacity-90 ${
                   lang === 'ar'
-                    ? 'text-2xl sm:text-4xl lg:text-5xl'
-                    : 'text-xl sm:text-3xl lg:text-5xl'
+                    ? 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
+                    : 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
                 }`}
               >
                 {t('services.custom_flooring_page.panel2_title')}
@@ -212,17 +213,17 @@ export default function CustomFlooring() {
                     <h4
                       className={`font-medium text-gray-800 mb-1 sm:mb-2 group-hover:text-gray-900 transition-colors duration-300 ${
                         lang === 'ar'
-                          ? 'text-lg sm:text-xl lg:text-2xl'
-                          : 'text-base sm:text-lg lg:text-2xl'
+                          ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+                          : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
                       }`}
                     >
                       {item.title}
                     </h4>
                     <p
-                      className={`font-light text-gray-600 opacity-80 group-hover:opacity-100 transition-all duration-300 ${
+                      className={`font-light text-gray-800 opacity-100 group-hover:opacity-100 transition-all duration-300 ${
                         lang === 'ar'
-                          ? 'text-base sm:text-lg lg:text-xl'
-                          : 'text-sm sm:text-base lg:text-lg'
+                          ? 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+                          : 'text-sm sm:text-base lg:text-base 2xl:text-lg'
                       }`}
                     >
                       {item.desc}
@@ -241,23 +242,23 @@ export default function CustomFlooring() {
         <FAQ />
       {/* PROJECT CARDS — fixed for mobile */}
       <div className="py-16 sm:py-24 lg:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-30 text-center">
           <div>
             <h2
               className={` ${
                 lang === 'ar'
-                  ? 'text-2xl sm:text-3xl lg:text-4xl'
-                  : 'text-xl sm:text-2xl lg:text-4xl'
-              } text-gray-900 font-semibold mb-8 sm:mb-10 lg:mb-12`}
+                  ? 'text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl'
+                  : 'text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl'
+              } text-gray-900 font-semibold mb-4`}
             >
               {t('services.custom_flooring_page.projects_title')}
             </h2>
             <p
               className={`${
                 lang === 'ar'
-                  ? 'text-lg sm:text-xl lg:text-2xl'
-                  : 'text-base sm:text-lg lg:text-2xl'
-              } text-gray-900 font-350`}
+                  ? 'text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl'
+                  : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
+              } text-gray-900 font-350 lg:mb-8 mb-4`}
             >
               {t('services.custom_flooring_page.projects_subtitle')}
             </p>
@@ -299,8 +300,8 @@ export default function CustomFlooring() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card1_title')}
@@ -308,8 +309,8 @@ export default function CustomFlooring() {
               <p
                 className={`font-semibold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card1_subtitle')}
@@ -350,17 +351,17 @@ export default function CustomFlooring() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card2_title')}
               </p>
               <p
-                className={`text-shadow-md font-semibold ${
+                className={`font-semibold text-shadow-md text-center ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card2_subtitle')}
@@ -401,17 +402,17 @@ export default function CustomFlooring() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card3_title')}
               </p>
               <p
-                className={`text-shadow-md font-semibold ${
+                className={`font-semibold text-shadow-md text-center ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.custom_flooring_page.card3_subtitle')}

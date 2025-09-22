@@ -102,7 +102,7 @@ export default function Projects() {
 
       {/* Category Filter Buttons */}
         <div className="min-h-[100vh]">
-          <p className="pt-20 sm:pt-20 lg:pt-40 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
+          <p className="pt-12 sm:pt-20 lg:pt-20 xl:pt-28 2xl:pt-30 text-2xl sm:text-3xl lg:text-4xl text-center px-4">{t('projects.title')}</p>
           
           {/* Mobile: 2 filters per line */}
           <div className="sm:hidden px-4 mt-8">
@@ -221,7 +221,7 @@ export default function Projects() {
 
                 {/* Project Name */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-bold text-center px-3 sm:px-4 drop-shadow-lg group-hover:text-cyan-300 group-hover:opacity-60 transition-colors duration-500">
+                  <h3 className="text-white text-lg sm:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl font-bold text-center px-3 sm:px-4 drop-shadow-lg group-hover:text-cyan-300 group-hover:opacity-60 transition-colors duration-500">
                     {project.name[lang] || project.name.en}
                   </h3>
                 </div>

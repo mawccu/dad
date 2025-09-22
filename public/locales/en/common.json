@@ -1,7 +1,7 @@
 {
   "heroPage": {
     "lead": "Where precision becomes protection:",
-    "bridgeLine1": "With the expertise of the Project Manager behind the <bridgeLink> Wadi-Abdoun Bridge Project</bridgeLink>.",
+    "bridgeLine1": "With the expertise of the Project Manager behind the <br/><bridgeLink> Wadi-Abdoun Bridge Project</bridgeLink>",
     "p1": "Born from decades of hands-on finishing leadership, New Look is a finishing company, specializing in specialty coatings, waterproofing, surface treatments, and painting. Our work reflects high standards and long-term value.",
     "p2": "Led by <rami>Eng. Rami Hamad</rami>, who managed the finishing operations of the Wadi-Abdoun Bridge Project, our company brings decades of experience across the Middle East. Based in Amman, Jordan, we serve clients throughout the region with the same commitment to excellence that defines landmark projects.",
     "cta": {
@@ -95,7 +95,7 @@
       "title": "Master Finishers with a Legacy of Excellence in Jordan",
       "paragraph1": "<strong>New Look</strong> (formerly known as Al-Mezaab) is led by ",
       "paragraph2": "Eng. Rami Hamad,",
-      "paragraph3": "who oversaw finishing works on the Wadi-Abdoun Bridge Project, one of Jordan’s landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time. From private residences to public structures, we are the invisible force behind surfaces that last",
+      "paragraph3": "who oversaw finishing works on the Wadi-Abdoun Bridge Project, one of Jordan’s landmark infrastructure projects. Our team specializes in coatings, waterproofing, and final-phase treatments that stand the test of time.",
       "image_alt": "Eng. Rami Hamad"
     },
     "vision": {
@@ -119,7 +119,7 @@
         },
         {
           "title": "Reliability",
-          "description": "You can rely on us. We keep our promises, meet deadlines, and deliver work crafted to the highest standards. Every project passes a strict QA process, and we stand behind our work with timely support and rectification if anything falls short of expectations."
+          "description": "You can rely on us. We keep our promises, meet deadlines, and deliver work crafted to the highest standards."
         },
         {
           "title": "Experience",
@@ -180,7 +180,7 @@
     "contact": "Contact"
   },
   "projects": {
-    "title": "Our Projects",
+    "title": "Projects",
     "categories": {
       "all": "All",
       "flooring": "Flooring",

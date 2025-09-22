@@ -52,19 +52,24 @@ export default function Hero(){
             </div>
             </div>
             {/* Hero Section */}
-                <div className="min-h-[100vh] md:min-h-[100vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+                <div className="py-32 text-left sm:py-20 md:py-24 lg:py-32 xl:py-36 2xl:py-48 flex items-center justify-center px-4 sm:px-6 lg:px-8">
                     <div className="max-w-full sm:max-w-4xl lg:max-w-6xl mx-auto text-center">
-                        <h1 className={`font-semibold leading-tight text-gray-800 text-2xl sm:text-2xl lg:mb-2 lg:text-3xl`}>
+                        <h1 className={`font-semibold leading-tight text-gray-800 `}
+                              style={{ fontSize: "clamp(1.15rem, 2vw + 0.5rem, 2rem)" }}
+>
                             {t('heroPage.lead')} 
                         </h1>
 
-                        <h2 className="font-semibold text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto text-xl sm:text-2xl lg:text-3xl">
+                        <h2 className="font-semibold text-gray-800 mb-8 sm:mb-10 lg:leading-relaxed lg:mb-12 max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto"
+                        style={{ fontSize: "clamp(1.15rem, 2vw + 0.5rem, 2rem)" }}>
                             <Trans
                                 t={t}
                                 i18nKey="heroPage.bridgeLine1"
                                 components={{
+                                            br: <br />,
+
                                     bridgeLink: (
-                                        <Link  className="text-blue-600 font-bold underline decoration-2 cursor-pointer underline-offset-8 hover:text-blue-400 transition-colors" href={`/${lang}/Projects/AbdounBridge`}>
+                                        <Link  className="text-blue-600 font-bold underline decoration-1 cursor-pointer underline-offset-8 hover:text-blue-400 transition-colors" href={`/${lang}/Projects/AbdounBridge`}>
                                             <span />
                                         </Link>
                                     )
@@ -72,22 +77,25 @@ export default function Hero(){
                             />
                         </h2>
 
-                        <p className={`lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-light ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                        <p className={`lg:leading-relaxed mb-6 sm:mb-7 lg:mb-8 text-center font-light ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl xl:text-2xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
                             {t("heroPage.p1")}
                         </p>
 
-                        <p className={`lg:leading-relaxed text-center mb-12 sm:mb-16 lg:mb-32 font-light ${lang === 'ar' ? 'text-base sm:text-xl lg:text-1.5xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                        <p className={`lg:leading-relaxed text-center mb-12 sm:mb-16 lg:mb-32 font-light ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-1.5xl xl:text-2xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
                             <Trans
                                 i18nKey="heroPage.p2"
                                 t={t}
-                                components={{rami: <strong className="font-semibold underline underline-offset-8" />}}
+                                components={{rami: <strong className="font-semibold underline decoration-1 underline-offset-8" />}}
                             />
                         </p>
 
-                        <p className={`text-center text-gray-800 cursor-pointer ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-2xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}
-                            onClick={() => router.push(`/${lang}/Projects`)}
-                        >
-                            <span className="underline cursor-pointer font-500 hover:text-gray-400 transition-colors underline-offset-8">{t('heroPage.cta.discover')}</span>
+                        <p className={`text-center text-gray-800 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-2xl' : 'text-base sm:text-lg lg:text-1.5xl'}`}>
+                            <span className="underline cursor-pointer font-500 hover:text-gray-400 transition-colors underline-offset-8"
+
+                                onClick={() => router.push(`/${lang}/Projects`)}
+                            >
+                                {t('heroPage.cta.discover')}
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -121,19 +129,21 @@ export default function Hero(){
                         sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
+                        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white px-4">
                         <div className="text-center">
-                            <h3 className={`font-light tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-base sm:text-2xl lg:text-5xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.coatings.title")}</h3>
-                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-3xl' : 'text-xs sm:text-lg lg:text-3xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.coatings.subtitle")}</p>
+                            <h3 className={`font-400 tracking-wide mb-2 sm:mb-4 lg:mb-2 xl:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-3xl xl:text-3xl 2xl:text-4xl' : 'text-base sm:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.coatings.title")}</h3>
+                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-lg xl:text-2xl 2xl:text-2xl' : 'text-xs sm:text-lg lg:text-lg xl:text-2xl 2xl:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.coatings.subtitle")}</p>
                         </div>
                     </div>
                     
                     {/* Bottom text */}
-                    <div className="absolute bottom-8 sm:bottom-12 lg:bottom-40 left-1/2 transform -translate-x-1/2 text-white">
+                    <div className="absolute bottom-8 sm:bottom-12 lg:bottom-12 xl:bottom-20 2xl:bottom-30 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`}
+                            className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-xl xl:text-2xl' : 'text-xs sm:text-base lg:text-xl xl:text-2xl'}`}
                             style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}
                             onClick={() => router.push(`/${lang}/Services/SurfaceFinishing`)}
                             >
@@ -169,20 +179,21 @@ export default function Hero(){
                         sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
+                        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                     {/* Text Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center text-white px-4">
                         <div className="text-center">
-                            <h3 className={`font-light tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-sm whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-base sm:text-2xl lg:text-5xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.flooring.title")}</h3>
-                            <p className={`font-light drop-shadow-sm whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-3xl' : 'text-xs sm:text-lg lg:text-3xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.flooring.subtitle")}</p>
+                            <h3 className={`font-400 tracking-wide mb-2 sm:mb-4 lg:mb-2 xl:mb-6 drop-shadow-sm whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-3xl xl:text-3xl 2xl:text-4xl' : 'text-base sm:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.flooring.title")}</h3>
+                            <p className={`font-light drop-shadow-sm whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-md xl:text-2xl 2xl:text-2xl' : 'text-xs sm:text-lg lg:text-md xl:text-2xl 2xl:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.cards.flooring.subtitle")}</p>
                         </div>
                     </div>
 
                     {/*Bottom text Second Image*/}
-                    <div className="absolute bottom-8 sm:bottom-12 lg:bottom-40 left-1/2 transform -translate-x-1/2 text-white">
+                    <div className="absolute bottom-8 sm:bottom-12 lg:bottom-12 xl:bottom-20 2xl:bottom-30 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
-                            className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`}
+                            className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-xl xl:text-2xl' : 'text-xs sm:text-base lg:text-xl xl:text-2xl'}`}
                             style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}
                             onClick={() => router.push(`/${lang}/Services/CustomFlooring`)}
                             >
@@ -194,51 +205,52 @@ export default function Hero(){
             </div>
 
             {/* Expertise Section */}
-                <div className="min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:min-h-[80vh] lg:min-h-[100vh] sm:py-16 lg:py-50">
-                <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
-                    <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 text-2xl sm:text-3xl lg:text-4xl`}>
-                        {t("heroPage.expertise.title")}
-                    </h1>
-                       
-                    <h2 className={`font-light mb-8 sm:mb-10 lg:mb-12 text-lg sm:text-2xl lg:text-2xl`}>
-                        {t("heroPage.expertise.p1")}
-                    </h2>
+                <div className="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8  md:min-h-[80vh] lg:min-h-[100vh] py-20 sm:py-16 lg:py-40">
+                    <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto text-center">
+                        <h1 className={`font-semibold text-gray-800 leading-tight mb-12 sm:mb-16 lg:mb-20 mt-0 text-2xl sm:text-3xl lg:text-4xl`}>
+                            {t("heroPage.expertise.title")}
+                        </h1>
+                        
+                        <p className={`font-light mb-8 sm:mb-10 lg:mb-12 text-lg sm:text-2xl lg:text-2xl`}>
+                            {t("heroPage.expertise.p1")}
+                        </p>
 
-                    <p className={` font-light text-center mb-20 sm:mb-30 lg:mb-40 text-lg sm:text-2xl lg:text-2xl`}>
-                        {t("heroPage.expertise.p2")}
-                    </p>
+                        <p className={`font-light text-center mb-20 sm:mb-30 lg:mb-40 text-lg sm:text-2xl lg:text-2xl`}>
+                            {t("heroPage.expertise.p2")}
+                        </p>
+                    </div>
+                    <div>
+                        <p 
+                        className={`text-center underline underline-offset-8 font-500 cursor-pointer hover:text-gray-500 text-lg sm:text-2xl lg:text-2xl`}
+                        onClick={() => router.push(`/${lang}/About`)}
+                        >
+                            {t("heroPage.expertise.cta")}
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p 
-                    className={`text-center underline underline-offset-8 font-500 cursor-pointer hover:text-gray-500 text-lg sm:text-2xl lg:text-2xl`}
-                    onClick={() => router.push(`/${lang}/About`)}
-                    >
-                        {t("heroPage.expertise.cta")}
-                    </p>
-                </div>
-            </div>
 
+                {/* Special Offers Images Section */}
                 <div className="flex flex-col lg:flex-row justify-center items-center min-h-[100vh]">
-                <div 
-                    className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
-                    onMouseEnter={() => {
-                        setIsHovered(true);
-                        gsap.to(imageRef3.current, {
-                            scale: 1.05,
-                            duration: 0.5,
-                            ease: 'power2.out',
-                        })
-                    }}
+                    <div 
+                        className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden"
+                        onMouseEnter={() => {
+                            setIsHovered(true);
+                            gsap.to(imageRef3.current, {
+                                scale: 1.05,
+                                duration: 0.5,
+                                ease: 'power2.out',
+                            })
+                        }}
 
-                    onMouseLeave={() => {
-                        setIsHovered(false);
-                        gsap.to(imageRef3.current, {
-                            scale: 1,
-                            duration: 0.5,
-                            ease: 'power2.out',
-                        })
-                    }}
-                >
+                        onMouseLeave={() => {
+                            setIsHovered(false);
+                            gsap.to(imageRef3.current, {
+                                scale: 1,
+                                duration: 0.5,
+                                ease: 'power2.out',
+                            })
+                        }}
+                    >
                     <Image
                         ref={imageRef3}
                         src="/medias/movenpick/2.png"
@@ -247,22 +259,22 @@ export default function Hero(){
                         sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
-
+                    <div className="absolute inset-0 bg-black bg-opacity-30"></div>
                     {/*Upper text first image */}
-                    <div className="absolute top-5 sm:top-8 lg:top-20 left-1/2 transform -translate-x-1/2 text-white">
-                        <div className={`text-center font-500 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>
+                    <div className="absolute top-5 sm:top-8 lg:top-12 xl:top-20 2xl:top-30 left-1/2 transform -translate-x-1/2 text-white">
+                        <div className={`text-center font-500 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl' : 'text-xs sm:text-base lg:text-xl xl:text-2xl 2xl:text-3xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>
                             <p>{t("heroPage.offer.label")}</p>
                         </div>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center text-white px-4">
                         <div className="text-center">
-                            <h3 className={`font-500 tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-base sm:text-2xl lg:text-5xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.offer.title")}</h3>
-                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-2xl' : 'text-xs sm:text-lg lg:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.offer.subtitle")}</p>
+                            <h3 className={`font-400 tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-3xl xl:text-3xl 2xl:text-4xl' : 'text-base sm:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.offer.title")}</h3>
+                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-lg xl:text-2xl 2xl:text-2xl' : 'text-xs sm:text-lg lg:text-lg xl:text-2xl 2xl:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.offer.subtitle")}</p>
                         </div>
                     </div>
 
                     {/*Bottom text Second Image*/}
-                    <div className="absolute bottom-5 sm:bottom-8 lg:bottom-20 left-1/2 transform -translate-x-1/2 text-white">
+                    <div className="absolute bottom-5 sm:bottom-8 lg:bottom-12 xl:bottom-20 2xl:bottom-30 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
                             className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`}
@@ -302,23 +314,23 @@ export default function Hero(){
                         sizes="(max-width: 1023px) 100vw, 960px"
                         className="object-cover"
                     />
-
+                    <div className="absolute inset-0 bg-black bg-opacity-30"></div>
                     {/*Upper text second image*/}
 
-                    <div className="absolute top-5 sm:top-8 lg:top-20 left-1/2 transform -translate-x-1/2 text-white">
-                        <p className={`font-500 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>
+                    <div className="absolute top-5 sm:top-8 lg:top-12 xl:top-20 2xl:top-30 left-1/2 transform -translate-x-1/2 text-white">
+                        <p className={`font-500 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl' : 'text-xs sm:text-base lg:text-xl xl:text-2xl 2xl:text-3xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>
                             {t("heroPage.epoxy.label")}
                         </p>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center text-white px-4">
                         <div className="text-center">
-                            <h3 className={`font-light tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-base sm:text-2xl lg:text-5xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.epoxy.title")}</h3>
-                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-3xl' : 'text-xs sm:text-lg lg:text-3xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.epoxy.subtitle")}</p>
+                            <h3 className={`font-400 tracking-wide mb-2 sm:mb-4 lg:mb-6 drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-3xl xl:text-3xl 2xl:text-4xl' : 'text-base sm:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.epoxy.title")}</h3>
+                            <p className={`font-light drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-xl lg:text-lg xl:text-2xl 2xl:text-2xl' : 'text-xs sm:text-lg lg:text-lg xl:text-2xl 2xl:text-2xl'}`} style={{textShadow: '1px 1px 3px rgba(0,0,0,0.4)'}}>{t("heroPage.epoxy.subtitle")}</p>
                         </div>
                     </div>
 
                     {/*Bottom text Second Image*/}
-                    <div className="absolute bottom-5 sm:bottom-8 lg:bottom-20 left-1/2 transform -translate-x-1/2 text-white">
+                    <div className="absolute bottom-5 sm:bottom-8 lg:bottom-12 xl:bottom-20 2xl:bottom-30 left-1/2 transform -translate-x-1/2 text-white">
                         <div className="text-center">
                             <p 
                             className={`font-light underline underline-offset-8 cursor-pointer hover:text-gray-300 transition-colors drop-shadow-lg whitespace-nowrap ${lang === 'ar' ? 'text-sm sm:text-lg lg:text-2xl' : 'text-xs sm:text-base lg:text-2xl'}`}

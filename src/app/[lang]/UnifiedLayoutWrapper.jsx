@@ -26,21 +26,8 @@ export default function UnifiedLayoutWrapper({ children }) {
   const footerVisible = !pageType.isHome && !pageType.isPolicy;
     
 
-  return (
+  return (  
     <div className="flex flex-col min-h-screen relative z-[1]">
-      <div
-        style={{
-          opacity: 0,
-          transition: 'opacity 0.5s ease-in-out',
-          willChange: 'opacity',
-          pointerEvents: 'none',
-          position: 'relative',
-          zIndex: 100, // keep above any transformed siblings
-        }}
-      >
-          
-
-      </div>
       <div className="relative isolate flex-1">
         {showHeader && <Header />}
         {children}

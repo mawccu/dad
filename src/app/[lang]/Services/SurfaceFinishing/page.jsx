@@ -23,7 +23,7 @@ export default function SurfaceFinishing() {
   return (
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* HERO */}
-      <div className="relative w-full h-[100vh] lg:h-[100vh] overflow-hidden">
+      <div className="relative w-full h-[100vh] sm:h-[50vh] lg:h-[100vh] overflow-hidden">
         <Image
           src="/medias/movenpick/4.png"
           alt={t('services.surface_finishing_page.hero_alt')}
@@ -34,23 +34,25 @@ export default function SurfaceFinishing() {
         />
 
         {/* Center Text Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-20" />
+
         <div className="absolute inset-0 flex items-center justify-center text-white">
           <div className="text-center px-4">
             <h3
-              className={`mb-4 sm:mb-6 ${
+              className={`mb-4 sm:mb-6 font-semibold tracking-wide ${
                 lang === 'ar'
-                  ? 'text-xl sm:text-2xl lg:text-5xl'
-                  : 'text-xl sm:text-1xl lg:text-5xl'
-              } font-semibold tracking-wide`}
+                  ? 'text-2xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl'
+                  : 'text-xl sm:text-1xl lg:text-3xl xl:text-4xl 2xl:text-5xl'
+              }`}
             >
               {t('services.surface_finishing_page.hero_title')}
             </h3>
             <p
-              className={`${
+              className={`font-light ${
                 lang === 'ar'
-                  ? 'text-md sm:text-xl lg:text-2xl'
-                  : 'text-md sm:text-xl lg:text-2xl'
-              } font-light max-w-2xl mx-auto`}
+                  ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+                  : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+              }`}
             >
               {t('services.surface_finishing_page.hero_subtitle')}
             </p>
@@ -73,43 +75,43 @@ export default function SurfaceFinishing() {
       </div>
 
       {/* INTRO */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center sm:py-24 lg:py-24 lg:min-h-screen text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center sm:py-24 lg:py-28 lg:min-h-screen text-center">
         <h1
-          className={`${
+          className={`font-semibold mb-16 sm:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24 md:leading-relaxed sm:leading-relaxed leading-relaxed lg:leading-relaxed ${
             lang === 'ar'
-              ? 'text-2xl sm:text-3xl lg:text-4xl'
-              : 'text-2xl sm:text-3xl lg:text-4xl'
-          } font-semibold mb-16 sm:mb-24 lg:mb-32`}
+              ? 'text-xl sm:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl'
+              : 'text-xl sm:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl'
+          }`}
         >
           {t('services.surface_finishing_page.intro_title')}
         </h1>
 
         <p
-          className={`${
+          className={`font-light leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed mb-6 sm:mb-8 ${
             lang === 'ar'
-              ? 'text-lg sm:text-xl lg:text-2xl'
-              : 'text-lg sm:text-xl lg:text-2xl'
-          } font-light sm:leading-relaxed leading-relaxed lg:leading-relaxed mb-6 sm:mb-8`}
+              ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+              : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+          }`}
         >
           {t('services.surface_finishing_page.intro_p1')}
         </p>
 
         <p
-          className={`${
+          className={`font-light leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed ${
             lang === 'ar'
-              ? 'text-lg sm:text-xl lg:text-2xl'
-              : 'text-lg sm:text-xl lg:text-2xl'
-          } font-light sm:leading-relaxed leading-relaxed lg:leading-relaxed mb-6 sm:mb-8`}
+              ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+              : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+          }`}
         >
           {t('services.surface_finishing_page.intro_p2')}
         </p>
       </div>
 
       {/* TWO PANELS */}
-      <div className="flex flex-col lg:flex-row justify-center items-center py-16 sm:py-24 lg:py-16">
+      <div className="flex flex-col lg:flex-row justify-center items-center">
         {/* Panel 1 */}
         <div
-          className="w-full lg:w-[960px] h-[50vh] sm:h-[60vh] lg:h-[100vh] relative overflow-hidden group cursor-pointer"
+          className="w-full h-[50vh] sm:h-[60vh] lg:w-[960px] lg:h-[100vh] relative overflow-hidden group cursor-pointer"
           onMouseEnter={() => setIsHovered('first')}
           onMouseLeave={() => setIsHovered(null)}
         >
@@ -127,14 +129,14 @@ export default function SurfaceFinishing() {
               <h3
                 className={`${
                   lang === 'ar'
-                    ? 'text-xl sm:text-2xl lg:text-5xl'
-                    : 'text-xl sm:text-2xl lg:text-5xl'
+                   ? 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
+                    : 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
                 } font-light tracking-wide mb-4 sm:mb-6 lg:mb-12 opacity-90`}
               >
                 {t('services.surface_finishing_page.panel1_title')}
               </h3>
 
-              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 flex flex-col items-center">
                 {[
                   t('services.surface_finishing_page.panel1_items.0'),
                   t('services.surface_finishing_page.panel1_items.1'),
@@ -144,10 +146,10 @@ export default function SurfaceFinishing() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className={`flex items-center justify-center ${
+                    className={`flex items-center justify-start ${
                       lang === 'ar'
-                        ? 'text-sm sm:text-base lg:text-2xl'
-                        : 'text-sm sm:text-base lg:text-2xl'
+                       ? 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+                        : 'text-sm sm:text-base lg:text-xl 2xl:text-2xl'
                     } font-light opacity-90 transform transition-all duration-300`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
@@ -179,6 +181,8 @@ export default function SurfaceFinishing() {
               className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundImage: "url('/medias/ncc/3.png')" }}
             />
+            <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
+
           </div>
 
           <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-40 transition-all duration-300" />
@@ -188,8 +192,8 @@ export default function SurfaceFinishing() {
               <h3
                 className={`${
                   lang === 'ar'
-                    ? 'text-xl sm:text-2xl lg:text-5xl'
-                    : 'text-xl sm:text-2xl lg:text-5xl'
+                   ? 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
+                    : 'text-xl sm:text-3xl lg:text-3xl 2xl:text-4xl'
                 } font-400 tracking-wide mb-4 sm:mb-6 lg:mb-12 text-white opacity-100`}
               >
                 {t('services.surface_finishing_page.panel2_title')}
@@ -226,8 +230,8 @@ export default function SurfaceFinishing() {
                     <h4
                       className={`${
                         lang === 'ar'
-                          ? 'text-sm sm:text-base lg:text-3xl'
-                          : 'text-sm sm:text-base lg:text-2xl'
+                           ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl'
+                          : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
                       } font-medium text-white mb-1 group-hover:text-gray-900 transition-colors duration-300`}
                     >
                       {item.title}
@@ -235,8 +239,8 @@ export default function SurfaceFinishing() {
                     <p
                       className={`${
                         lang === 'ar'
-                          ? 'text-xs sm:text-sm lg:text-2xl'
-                          : 'text-xs sm:text-sm lg:text-xl'
+                          ? 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'
+                          : 'text-sm sm:text-base lg:text-base 2xl:text-lg'
                       } font-400 text-white opacity-80 group-hover:opacity-100 transition-all duration-300`}
                     >
                       {item.desc}
@@ -257,20 +261,20 @@ export default function SurfaceFinishing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 text-center">
           <div>
             <h2
-              className={`${
+              className={` ${
                 lang === 'ar'
-                  ? 'text-2xl sm:text-3xl lg:text-4xl'
-                  : 'text-2xl sm:text-3xl lg:text-4xl'
-              } text-gray-900 font-semibold mb-8 sm:mb-10 lg:mb-12`}
+                  ? 'text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl'
+                  : 'text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl'
+              } text-gray-900 font-semibold mb-4`}
             >
               {t('services.surface_finishing_page.projects_title')}
             </h2>
             <p
               className={`${
                 lang === 'ar'
-                  ? 'text-lg sm:text-xl lg:text-2xl'
-                  : 'text-lg sm:text-xl lg:text-2xl'
-              } text-gray-900 font-350`}
+                  ? 'text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl'
+                  : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
+              } text-gray-900 font-350 lg:mb-8 mb-4`}
             >
               {t('services.surface_finishing_page.projects_subtitle')}
             </p>
@@ -312,17 +316,17 @@ export default function SurfaceFinishing() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card1_title')}
               </p>
               <p
-                className={`text-shadow-md font-semibold ${
+                className={`font-semibold text-shadow-md text-center ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card1_subtitle')}
@@ -363,17 +367,17 @@ export default function SurfaceFinishing() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card2_title')}
               </p>
               <p
-                className={`text-shadow-md font-semibold ${
+                className={`font-semibold text-shadow-md text-center ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card2_subtitle')}
@@ -414,17 +418,17 @@ export default function SurfaceFinishing() {
               <p
                 className={`font-bold text-shadow-md ${
                   lang === 'ar'
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-2xl'
+                    ? 'text-lg sm:text-xl lg:text-xl xl:text-xl 2xl:text-2xl'
+                    : 'text-base sm:text-lg lg:text-xl xl:text-xl 2xl:text-2xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card3_title')}
               </p>
               <p
-                className={`text-shadow-md font-semibold ${
+                className={`font-semibold text-shadow-md text-center ${
                   lang === 'ar'
-                    ? 'text-base sm:text-lg lg:text-xl'
-                    : 'text-sm sm:text-base lg:text-xl'
+                    ? 'text-base sm:text-lg lg:text-base 2xl:text-xl'
+                    : 'text-sm sm:text-base lg:text-base 2xl:text-xl'
                 }`}
               >
                 {t('services.surface_finishing_page.card3_subtitle')}

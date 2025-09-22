@@ -53,7 +53,6 @@ export default function RootLayout({ children }) {
     
       <body suppressHydrationWarning={true}>
           <ProgressProvider>
-            
               {children}
           </ProgressProvider>
       </body>

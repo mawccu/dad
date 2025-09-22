@@ -185,11 +185,11 @@ const FAQ = () => {
           ref={containerRef}
           className="bg-white"
         >
-          <div className="mb-12 sm:mb-16 lg:mb-20 text-center">
-            <h1 className={`${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-5xl' : 'text-xl sm:text-2xl lg:text-5xl'} font-semibold text-gray-900 mb-4 sm:mb-6 lg:mb-8 tracking-wide`}>
+          <div className="mb-8 sm:mb-10 lg:mb-12 2xl:mb-20 text-center">
+            <h1 className={`${lang === 'ar' ? 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl' : 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl'} font-semibold text-gray-900 mb-4 sm:mb-6 lg:mb-4 2xl:mb-6 tracking-wide`}>
               {t('services.custom_flooring_faq.title')}
             </h1>
-            <p className={`${lang === 'ar' ? 'text-base sm:text-lg lg:text-3xl' : 'text-sm sm:text-base lg:text-2xl'} font-300 text-gray-900 max-w-3xl mx-auto leading-relaxed`}>
+            <p className={`${lang === 'ar' ? 'text-sm sm:text-base lg:text-xl 2xl:text-xl' : 'text-sm sm:text-base lg:text-xl 2xl:text-2xl'} font-300 text-gray-900 max-w-3xl mx-auto leading-relaxed`}>
               {t('services.custom_flooring_faq.subtitle')}
             </p>
           </div>

@@ -34,10 +34,10 @@ function Contact({ onScheduleClick }) {
   return (
       <div className="py-16 sm:py-24 md:py-40 lg:py-40" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 py-6 sm:py-8 flex flex-col items-center">
-          <h1 className={`font-bold text-center mb-6 sm:mb-8 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
+          <h1 className={`font-bold text-center mb-6 sm:mb-8 ${lang === 'ar' ? 'text-2xl sm:text-3xl lg:text-3xl 2xl:text-4xl' : 'text-2xl sm:text-3xl lg:text-3xl 2xl:text-4xl'}`}>
             {t('contact2.page_title')}
           </h1>
-          <p className={`max-w-6xl font-300 text-center mb-10 sm:mb-16 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-2xl' : 'text-base sm:text-lg lg:text-2xl'}`}>
+          <p className={`max-w-6xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl font-300 text-center mb-10 sm:mb-16 ${lang === 'ar' ? 'text-lg sm:text-xl lg:text-xl 2xl:text-2xl' : 'text-base sm:text-lg lg:text-xl 2xl:text-2xl'}`}>
             {t('contact2.page_intro')}
           </p>
         </div>
@@ -305,10 +305,10 @@ function ContactForm({ prefillType }) {
 
   return (
       <div className="py-20 min-h-screen">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-10 xl:px-12 2xl:px-16">
           {/* Headings above form */}
           <div className="flex items-center justify-center flex-col mb-12 sm:mb-16">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center mb-6 sm:mb-8 font-500">
+            <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl text-center mb-6 sm:mb-8 font-500">
               {lang === 'ar' ? 'بانتظارك متى ما شئت.' : 'Ready when you are.'}
             </h1>
           </div>
