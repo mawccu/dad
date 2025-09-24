@@ -144,9 +144,9 @@
       "general_inquiries": "General Inquiries",
       "careers": "Careers",
       "pr_collaborations": "PR & Collaborations",
-      "email_info": "info@newlook-jo.com",
-      "email_careers": "careers@newlook-jo.com",
-      "email_pr": "pr@newlook-jo.com"
+      "email_info": "info@newlookjo.com",
+      "email_careers": "careers@newlookjo.com",
+      "email_pr": "pr@newlookjo.com"
     },
     "form_hero": {
       "title": "Let's shape the future of your project together",
@@ -528,7 +528,7 @@
       "title": "Contact",
       "location": "Amman, Jordan",
       "phone": "+962 00 0000000",
-      "email": "info@newlook-jo.com"
+      "email": "info@newlookjo.com"
     },
     "legal": {
       "privacy_policy": "Privacy Policy",
@@ -537,7 +537,7 @@
       "copyright": "©2025 New Look. All Rights Reserved"
     },
     "credits": {
-      "website_made_by": "Website made by me"
+      "website_made_by": "Website developed by our IT team."
     }
   },
   "policy": {
@@ -556,7 +556,7 @@
         },
         {
           "subtitle": "Who we are",
-          "body": "This Privacy Policy together with the Terms of Use form an entire legal Agreement between New Look Construction Company and you as a user. The Agreement applies to our website located at newlook-jo.com. If you have any questions you can contact us at info@newlook-jo.com."
+          "body": "This Privacy Policy together with the Terms of Use form an entire legal Agreement between New Look Construction Company and you as a user. The Agreement applies to our website located at newlookjo.com. If you have any questions you can contact us at info@newlookjo.com."
         },
         {
           "subtitle": "What personal information do we collect?",
@@ -572,7 +572,7 @@
         },
         {
           "subtitle": "Contact Us",
-          "body": "If you have any questions about this Privacy Policy, please contact us at info@newlook-jo.com or +962 00 0000000."
+          "body": "If you have any questions about this Privacy Policy, please contact us at info@newlookjo.com."
         }
       ]
     },

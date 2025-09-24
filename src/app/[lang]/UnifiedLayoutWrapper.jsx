@@ -2,14 +2,12 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { useProgress } from '../components/ProgressProvider';
 import dynamic from 'next/dynamic';
 const Header = dynamic(() => import('./components/Header'), { ssr: false });
 const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
 
 export default function UnifiedLayoutWrapper({ children }) {
   const pathname = usePathname();
-  const { progress } = useProgress();
   const pathWithoutLang = pathname.replace(/^\/(en|ar)/, '') || '/';
 
   const pageType = {
@@ -25,10 +23,9 @@ export default function UnifiedLayoutWrapper({ children }) {
   const showHeader = !pageType.isHome && !pageType.isCareer;
   const footerVisible = !pageType.isHome && !pageType.isPolicy;
     
-
   return (  
-    <div className="flex flex-col min-h-screen relative z-[1]">
-      <div className="relative isolate flex-1">
+    <div>
+      <div>
         {showHeader && <Header />}
         {children}
         {footerVisible && <StickyFooter />}

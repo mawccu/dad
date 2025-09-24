@@ -105,7 +105,6 @@ export default function About() {
           </div>
         </section>
 
-        <ContactCTA />
     </div>
   );
 }

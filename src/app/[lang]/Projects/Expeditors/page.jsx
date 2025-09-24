@@ -38,7 +38,6 @@ export default function Expeditors() {
       
       <MasonryGrid />
       
-      <ContactCTA />
     </main>
   );
 }

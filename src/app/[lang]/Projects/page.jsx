@@ -244,7 +244,6 @@ export default function Projects() {
       </div>
 
         <div className="py-8 sm:py-16 lg:py-20">
-          <ContactCTA />
         </div>
     </>
   );

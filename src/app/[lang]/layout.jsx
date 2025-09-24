@@ -2,6 +2,7 @@
 import '../globals.css';
 import { I18nClientProvider } from './i18n/client';
 import UnifiedLayoutWrapper from './UnifiedLayoutWrapper.jsx';
+import SmoothScrolling from '../components/SmoothScrolling.jsx';
 
 export const dynamicParams = true;
 export async function generateStaticParams() {

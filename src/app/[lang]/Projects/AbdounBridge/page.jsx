@@ -70,7 +70,6 @@ export default function AbdounBridge() {
         <p className={`font-400 leading-relaxed text-gray-500 ${lang === 'ar' ? 'text-lg sm:text-lg lg:text-xl' : 'text-base sm:text-base lg:text-lg'}`} dangerouslySetInnerHTML={{ __html: t('projects.wadiAbdoun.section3_body') }} />
       </section>
 
-      <ContactCTA />
       
     </main>
   );

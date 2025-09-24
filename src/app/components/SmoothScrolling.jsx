@@ -3,44 +3,62 @@
 
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function SmoothScrolling({ children}) {
-   const [isMobile, setIsMobile] = useState(false);
+gsap.registerPlugin(ScrollTrigger);
 
-   useEffect(() => {
-      const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-      return () => window.removeEventListener('resize', checkMobile);
-    }, []);
+export default function SmoothScrolling({ children }) {
+  const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-      if (isMobile) return; // Skip initializing Lenis on mobile devices
-    
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      // Use native scroll on mobile
+      ScrollTrigger.refresh();
+      return;
+    }
+
     const lenis = new Lenis({
-      duration: 1.4, // smoother glide, default is 1
-      easing: (t) => 1 - Math.pow(2, -10 * t), // buttery exponential easing
+      duration: 1.15,
       direction: "vertical",
       gestureDirection: "vertical",
       smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: true, // smoother on mobile too
-      touchMultiplier: 1.5,
-      infinite: false, // fixed your "inifnite" typo
+      smoothTouch: false,
+      autoRaf: false, // we'll drive it from GSAP's ticker
+      infinite: false,
     });
 
-    let frame;
-    const raf = (time) => {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
+    // Keep ScrollTrigger in sync with Lenis
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Single RAF loop: GSAP ticker -> Lenis
+    const tick = (time) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
+
+    // When ST refreshes (layout changes), ask Lenis to recompute if available
+    const onRefresh = () => {
+      if (typeof lenis.resize === "function") lenis.resize();
     };
-    frame = requestAnimationFrame(raf);
+    ScrollTrigger.addEventListener("refresh", onRefresh);
+
+    // First refresh after wiring
+    requestAnimationFrame(() => ScrollTrigger.refresh());
 
     return () => {
-      cancelAnimationFrame(frame);
+      ScrollTrigger.removeEventListener("refresh", onRefresh);
+      gsap.ticker.remove(tick);
+      gsap.ticker.lagSmoothing(1000, 16);
       lenis.destroy();
     };
   }, [isMobile]);
 
-  return <div>{children}</div>;
+  return <div id="lenis-root">{children}</div>;
 }

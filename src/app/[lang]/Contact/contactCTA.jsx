@@ -1,6 +1,7 @@
-//'[lang]/Contact/contactCTA.jsx
-'use client'
-import { useRef, useEffect } from 'react';
+// '[lang]/Contact/contactCTA.jsx'
+'use client';
+
+import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
@@ -9,11 +10,12 @@ import { useParams, useRouter } from 'next/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ContactCTA(){
+export default function ContactCTA() {
   const { t } = useT('common');
 
-  return(
-    <div className="relative w-full h-[70vh] sm:h-[90vh] lg:h-[100vh]">
+  return (
+    <div className="relative w-full h-[90vh] lg:h-[110vh]">
+      {/* Single background image (removed duplicate from inner component) */}
       <Image
         src="/medias/img10.webp"
         fill
@@ -22,10 +24,10 @@ export default function ContactCTA(){
         alt={t('contact1.cta.background_alt')}
         priority
       />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/30" />
       <ParallaxText />
     </div>
-  )
+  );
 }
 
 function ParallaxText() {
@@ -34,55 +36,58 @@ function ParallaxText() {
   const { t } = useT('common');
   const { lang } = useParams();
   const router = useRouter();
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  useLayoutEffect(() => {
+    if (!containerRef.current || !textRef.current) return;
+
+    // Scope everything; easy cleanup with ctx.revert()
+    const ctx = gsap.context(() => {
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      // Desktop
+      "(min-width: 1024px)": () => {
+        const st = ScrollTrigger.create({
+          id: "cta-pin",
+          trigger: containerRef.current,
+          start: "top top+=350",
+          end: () => {
+            const vh = window.innerHeight * 0.6;
+            const available = containerRef.current.offsetHeight - 100;
+            return `+=${Math.max(0, Math.min(vh, available))}`;
+          },
+          pin: textRef.current,
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          refreshPriority: 1,
+          // markers: true,
+        });
+
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+
+        return () => st.kill(); // cleanup
+      },
+
+      // Mobile/tablet
+      "(max-width: 1023px)": () => {
+        // no pinning
+      },
+    },
+    containerRef // optional scoping for React context
+  );
+}, containerRef);
 
 
-  useEffect(() => {
-    // Clean up previous ScrollTriggers
-    const cleanup = () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-
-    // Only enable pinning on desktop to keep mobile/tablet smooth
-    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
-      const st = ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: 'top 350px',
-        end: 'bottom bottom',
-        pin: textRef.current,
-        pinSpacing: false,
-      });
-      ScrollTrigger.refresh();
-
-      return () => {
-        st && st.kill();
-        cleanup();
-      };
-    } else {
-      // No pinning on smaller screens
-      return cleanup;
-    }
+    return () => ctx.revert();         // safely remove only what we created
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="
-        w-full relative
-        h-[90vh] sm:h-[110vh] lg:h-[120vh]
-        text-white
-      "
+      className="relative w-full h-full text-white"
     >
-      <Image
-        src="/medias/img10.webp"
-        fill
-        sizes="100vw"
-        priority
-        className={`object-cover ${isMobile ? 'object-right' : ''}`}
-        alt={t('contact1.cta.background_alt')}
-      />
-      <div className="absolute inset-0 bg-black/40" />
-
       <div
         ref={textRef}
         className={`
@@ -148,7 +153,6 @@ function ParallaxText() {
               e.stopPropagation();
               router.push(`/${lang}/Contact`);
             }}
-            style={{ pointerEvents: 'all' }}
           >
             {t('contact1.cta.button_text')}
           </button>

@@ -47,11 +47,11 @@ function Contact({ onScheduleClick }) {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16 lg:gap-32">
             <div className="text-center">
               <h4 className="font-semibold text-lg sm:text-xl lg:text-1.5xl mb-2 sm:mb-4">{t('contact2.location_city')}</h4>
-              <p><a href="tel:+962795637354" className="hover:underline" dir={'ltr'}>+962 79 5637354</a></p>
+              <p><a href="tel:+962795637354" className="hover:underline" dir={'ltr'}>+962 79 563 7354</a></p>
             </div>
             <div className="text-center">
               <h4 className="font-semibold text-lg sm:text-xl lg:text-1.5xl mb-2 sm:mb-4">{t('contact2.location_city2')}</h4>
-              <p><a href="tel:+966595687465" className="hover:underline" dir={'ltr'}>+966 59 5687465</a></p>
+              <p><a href="tel:+966595687465" className="hover:underline" dir={'ltr'}>+966 59 568 7465</a></p>
             </div>
 
             <div className="text-center">

@@ -55,7 +55,6 @@ export default function Safeway() {
         </p>
       </section>
       
-      <ContactCTA />
       
     </main>
   );

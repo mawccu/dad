@@ -369,7 +369,7 @@ export default function Hero(){
                     href="https://mgc-gas.jo/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="block w-full h-full relative"
                     >
                     <Image
                         src="/medias/partner/manaseer.jpeg"
@@ -390,7 +390,7 @@ export default function Hero(){
                     href="https://www.saveto.com/brand/vetonit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="block w-full h-full relative"
                     >
                     <Image
                         src="/medias/partner/vetonit.png"
@@ -411,7 +411,7 @@ export default function Hero(){
                         href="https://www.facebook.com/SipesJo/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block w-full h-full relative"
                         >
                         <Image
                             src="/medias/partner/sipes.png"
@@ -432,7 +432,7 @@ export default function Hero(){
                         href="https://www.larsentoubro.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block w-full h-full relative"
                         >
                         <Image
                             src="/medias/partner/larsen.jpeg"
@@ -453,7 +453,7 @@ export default function Hero(){
                         href="https://me.laticrete.com/?gad_source=1&gad_campaignid=21408879056&gbraid=0AAAAADNSEJ5utRjmeu09jPgPru9xd-2fy&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZn2IK1uEyfBf0Im48gxBCeRYHHHhdBcLrxDSGiGQqxcsTp3aMLpnNBoCAF0QAvD_BwE"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block w-full h-full relative"
                         >
                         <Image
                             src="/medias/partner/laticrete.png"
@@ -473,7 +473,7 @@ export default function Hero(){
                         href="https://jazeerapaints.com/sa_en?srsltid=AfmBOorBBf_GoCLjezYMNm_tQeqUxmMS8AXrls3Mn8tr-5AmyGq8Kx7d"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block w-full h-full relative"
                         >
                         <Image
                             src="/medias/partner/aljazeerapaints.jpeg"
@@ -493,7 +493,7 @@ export default function Hero(){
                         href="https://www.basf.com/global/en"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block w-full relative h-full"
                         >
                         <Image
                             src="/medias/partner/basf.png"
@@ -514,7 +514,7 @@ export default function Hero(){
                         href="https://www.mapei.com//"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="block relative w-full h-full"
                         >
                         <Image
                             src="/medias/partner/mapei.png"
@@ -534,7 +534,7 @@ export default function Hero(){
                     href="https://www.tag-gu.global/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="relative block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/tag.jpg"
@@ -554,7 +554,7 @@ export default function Hero(){
                     href="https://lamawp.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="relative block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/lama.png"
@@ -574,7 +574,7 @@ export default function Hero(){
                     href="https://www.ikkgroup.com/nweb/ikk-companies-v2/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-full"
+                    className="relative block w-full h-full"
                     >
                     <Image
                         src="/medias/partner/ikk.png"
@@ -594,7 +594,7 @@ export default function Hero(){
                         href="https://sapac.com.sa/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full h-full"
+                        className="relative block w-full h-full"
                         >
                         <Image
                             src="/medias/partner/sapac.png"
@@ -613,7 +613,6 @@ export default function Hero(){
             {/* Autograph Section - insert hand-drawn animation for Rami's signature*/}
 
             {/* Contact Form Section */}
-                <ContactCTA />
         </>
     )
 }
