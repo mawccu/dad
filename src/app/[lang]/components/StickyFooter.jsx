@@ -120,7 +120,7 @@ export default function StickyFooter() {
       <footer className="w-screen bg-[#111] overflow-hidden">
         <section
           ref={revealRef}
-          className="bg-[#111] text-white min-h-[60vh] md:h-[60vh] lg:h-[600px] w-screen"
+          className="bg-[#111] text-white min-h-[60vh] md:min-h-[45vh] md:h-[500px] lg:h-[50vh] lg:h-[600px] w-screen"
           style={{ transform: isSmallDevice ? 'translateY(0)' : 'translateY(-50%)' }}
           data-sticky-footer
           data-animation-disabled={isSmallDevice}

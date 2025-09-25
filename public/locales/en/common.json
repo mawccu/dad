@@ -511,7 +511,7 @@
       "all_services": "All Services",
       "protective_coatings": "Protective Coatings",
       "custom_flooring": "Custom Flooring",
-      "waterproofing": "Waterproofing",
+      "waterproofing": "Waterproofing & Fireproofing",
       "surface_treatments": "Surface Treatments"
     },
     "company": {
@@ -526,7 +526,8 @@
     },
     "contact": {
       "title": "Contact",
-      "location": "Amman, Jordan",
+      "location1": "Amman, Jordan",
+      "location2": "Saudi Arabia",
       "phone": "+962 00 0000000",
       "email": "info@newlookjo.com"
     },

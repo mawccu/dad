@@ -72,8 +72,8 @@ function MobileFooter() {
       </div>
 
       {/* Huge brand */}
-      <div className="pt-6">
-        <h2 className="font-light leading-none text-[14vw] tracking-tight">
+      <div>
+        <h2 className="font-light leading-none text-[8vw] tracking-tight">
           NEW LOOK
         </h2>
       </div>
@@ -165,14 +165,14 @@ function FooterNav() {
             {t('footer.contact.title')}
           </h3>
           <p className="text-gray-300">{t('footer.contact.location1')}</p>
-          <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors">
+          <a href="tel:+962795637354" className="hover:text-gray-300 transition-colors" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
             +962 79 563 7354
           </a>
           <p className="text-gray-300">{t('footer.contact.location2')}</p>
-          <a href="tel:+966595687465" className="hover:text-gray-300 transition-colors">
+          <a href="tel:+966595687465" className="hover:text-gray-300 transition-colors" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
             +966 59 568 7465
           </a>
-          <a href="mailto:info@newlook-jo.com" className="hover:text-gray-300 transition-colors">
+          <a href="mailto:info@newlookjo.com" className="hover:text-gray-300 transition-colors">
             {t('footer.contact.email')}
           </a>
         </div>
@@ -206,8 +206,8 @@ function FooterBottom() {
         className={`
           hidden md:flex ${lang === 'ar' ? 'flex-row-reverse' : ''}
           justify-between items-end
-          mt-16 md:mt-4 lg:mt-16 xl:mt-20 2xl:mt-24
-          pt-12 md:pt-2 lg:pt-4 2xl:pt-20
+          mt-16 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24
+          pt-12 md:pt-8 lg:pt-16 2xl:pt-20
           border-t border-gray-700
           gap-4 md:gap-8
           flex-col-reverse md:flex-row
@@ -221,16 +221,16 @@ function FooterBottom() {
 
         <div className={`${lang === 'ar' ? 'text-left' : 'text-right'} w-full md:w-auto flex-shrink-0`}>
           <div className={`flex gap-3 md:gap-4 mb-2 md:mb-4 ${lang === 'ar' ? 'justify-start' : 'justify-end'}`}>
-            <Link href="https://www.instagram.com/newlookjo911/" className="hover:opacity-70 transition-opacity">
+            <Link href="https://www.instagram.com/newlookjo911/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
               <img src="/icons/instagram.png" alt="Instagram" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
             </Link>
-            <Link href="https://www.facebook.com/profile.php?id=100064126295491" className="hover:opacity-70 transition-opacity">
+            <Link href="https://www.facebook.com/profile.php?id=100064126295491" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
               <img src="/icons/facebook.png" alt="Facebook" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
             </Link>
-            <Link href="https://x.com/NewLook_jo" className="hover:opacity-70 transition-opacity">
+            <Link href="https://x.com/NewLook_jo" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
               <img src="/icons/twitter.png" alt="Twitter" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
             </Link>
-            <Link href="#" className="hover:opacity-70 transition-opacity">
+            <Link href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
               <img src="/icons/linkedin.png" alt="LinkedIn" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
             </Link>
           </div>
@@ -274,7 +274,7 @@ export default function Footer() {
         py-10 px-5
         sm:py-10 sm:px-8
         lg:py-12 xl:py-14 2xl:py-16
-        min-h-[50vh]
+        min-h-[60vh]
         h-full w-full
         flex flex-col gap-10
       "
