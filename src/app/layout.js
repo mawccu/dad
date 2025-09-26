@@ -6,10 +6,13 @@ import React from 'react';
 import Script from 'next/script'; // <--- 1. IMPORT SCRIPT COMPONENT
 
 export const metadata = {
-  title: 'New Look',
-  description: 'New Look Company for Finishing and Maintenance',
+  title: { 
+    template: '%s | New Look',
+    default: 'New Look Finishing | High Quality Interior and Exterior Finishing Services' 
+  },
+  description: 'Led by the expertise from the Abdoun Bridge project, New Look delivers master finishing services, including protective coatings, waterproofing, and high-performance flooring solutions.',
+
   icons: {
-    // ... your icon metadata remains unchanged
     icon: [
       { url: '/favicon/favicon-32x32.png', sizes: '32x32', },
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', },

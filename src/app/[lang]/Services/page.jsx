@@ -4,6 +4,11 @@ import Link from 'next/link';
 import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
 
+export const metadata = {
+  title: 'Professional Finishing Services',
+  description: 'New Look offers expert surface finishing, protective coatings, waterproofing, and custom flooring solutions for commercial and residential projects. Legacy of Abdoun Bridge excellence.',
+};
+
 export default function Services() {
   const { t } = useT('common');
   const { lang } = useParams();

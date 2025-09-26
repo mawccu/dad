@@ -9,6 +9,10 @@ import { useT } from '../i18n/client';
 import { useParams } from 'next/navigation';
 import FadeUp from '../../components/FadeUp';
 
+export const metadata = {
+  title: 'Our Project Portfolio', // The template will add "| New Look Finishing"
+  description: 'Explore our portfolio of finishing projects, from luxury villas to major infrastructure like the Abdoun Bridge and commercial sites for Mövenpick Hotels.',
+};
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');

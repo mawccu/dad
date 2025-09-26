@@ -14,6 +14,10 @@ const Hero   = dynamic(() => import('./Hero/page.jsx'),      { ssr: false });
 const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
 const ContactButton = dynamic(() => import('./components/ContactButton'), { ssr: false });
 
+export const metadata = {
+  title: 'New Look Finishing | Coatings & Flooring Specialists in Jordan & KSA', // Use the full name here for the homepage
+  description: 'Led by the expertise from the Abdoun Bridge project, New Look delivers master finishing services, including protective coatings, waterproofing, and high-performance flooring solutions.',
+};
 
 function useDeviceType() {
   const [isDesktop, setIsDesktop] = useState(false);

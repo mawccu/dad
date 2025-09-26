@@ -6,6 +6,11 @@ import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
 import { sendContactMessage } from '../../../lib/firebase'; // <-- optional, safe if not configured
 
+export const metadata = {
+  title: 'Contact Us | New Look Finishing',
+  description: 'Reach out to New Look Finishing for a complimentary consultation on your project, and further assistance. We serve Amman, Jordan, and the wider Middle East region.',
+};
+
 export default function ContactPage() {
   const { t } = useT('common');
   return (

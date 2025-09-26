@@ -7,6 +7,11 @@ import StrengthSection from './strength'
 import { useT } from '../i18n/client';
 import FadeUp from '../../components/FadeUp';
 
+export const metadata = {
+  title: 'About Our Company & Expertise',
+  description: 'Learn about New Look Finishing, led by Eng. Rami Hamad. Our legacy of excellence is built on major infrastructure projects like the Wadi-Abdoun Bridge.',
+};
+
 export default function About() {
   const { t } = useT('common');
   const imageRef = useRef(null);
