@@ -5,6 +5,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 const Header = dynamic(() => import('./components/Header'), { ssr: false });
 const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
+const ContactButton = dynamic(() => import('./components/ContactButton'), { ssr: false });
 
 export default function UnifiedLayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -28,6 +29,7 @@ export default function UnifiedLayoutWrapper({ children }) {
       <div>
         {showHeader && <Header />}
         {children}
+        <ContactButton show={!pageType.isHome} />
         {footerVisible && <StickyFooter />}
       </div>
     </div>

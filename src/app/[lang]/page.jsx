@@ -12,8 +12,8 @@ const Mask   = dynamic(() => import('../components/Mask'),   { ssr: false });
 const Header = dynamic(() => import('./components/Header'),  { ssr: false });
 const Hero   = dynamic(() => import('./Hero/page.jsx'),      { ssr: false });
 const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
+const ContactButton = dynamic(() => import('./components/ContactButton'), { ssr: false });
 
-const log = (...a) => console.log('%c[HOME]', 'color:#06b6d4;font-weight:bold', ...a);
 
 function useDeviceType() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -102,7 +102,6 @@ export default function Home() {
   useEffect(() => {
     window.__dumpST__ = () => {
       const all = ScrollTrigger.getAll();
-      console.log('[ST] count=', all.length, all);
       const sf = all.find(s => s.vars?.id === 'sticky-footer' || s.vars?.trigger?.hasAttribute?.('data-sticky-footer'));
       return sf || all;
     };
@@ -111,24 +110,19 @@ export default function Home() {
   }, []);
   // ---
 
-  useEffect(() => {
-    log('mount', { isDesktop, isInitialVisit, isInitialMount, shouldShowMask, shouldShowLoader });
-  }, [isDesktop, isInitialVisit, isInitialMount, shouldShowMask, shouldShowLoader]);
-
   // announce mask open
   useEffect(() => {
     if (shouldShowMask) {
       window.__MASK_ACTIVE__ = true;
       window.dispatchEvent(new CustomEvent('mask:open'));
-      log('mask:open dispatched');
     }
   }, [shouldShowMask]);
 
   // first-paint safety refreshes
   useEffect(() => {
-    const raf = requestAnimationFrame(() => { log('RAF -> ST.refresh'); ScrollTrigger.refresh(); });
-    const t = setTimeout(() => { log('250ms -> ST.refresh'); ScrollTrigger.refresh(); }, 250);
-    const onLoad = () => { log('window.load -> ST.refresh'); ScrollTrigger.refresh(); };
+    const raf = requestAnimationFrame(() => { ScrollTrigger.refresh(); });
+    const t = setTimeout(() => { ScrollTrigger.refresh(); }, 250);
+    const onLoad = () => { ScrollTrigger.refresh(); };
     window.addEventListener('load', onLoad);
     return () => { cancelAnimationFrame(raf); clearTimeout(t); window.removeEventListener('load', onLoad); };
   }, []);
@@ -136,7 +130,6 @@ export default function Home() {
   // refresh when splash/loader done
   useEffect(() => {
     if (maskDone || loaderExitStarted) {
-      log('maskDone/loaderExitStarted changed', { maskDone, loaderExitStarted });
       ScrollTrigger.refresh();
     }
   }, [maskDone, loaderExitStarted]);
@@ -145,29 +138,23 @@ export default function Home() {
   useEffect(() => {
     const keys = ['heroImage'];
     if (shouldShowMask) keys.push('mask');
-    log('setExpected()', keys);
     setExpected(keys);
   }, [shouldShowMask, setExpected]);
 
   const contentReady = useMemo(() => {
     const maskReady = maskDone || !shouldShowMask;
     const ready = maskReady;
-    log('contentReady computed', { maskDone, shouldShowMask, ready });
     return ready;
   }, [maskDone, shouldShowMask]);
 
   const contentVisible =
     (isDesktop && shouldShowMask) ? true : (loaderExitStarted || contentReady);
 
-  useEffect(() => {
-    log('render-state', { maskDone, loaderExitStarted, contentReady, contentVisible });
-  });
-
   return (
     <>
       {shouldShowLoader && (
         <Loader
-          onExitStart={() => { log('Loader onExitStart'); setLoaderExitStarted(true); }}
+          onExitStart={() => { setLoaderExitStarted(true); }}
           // NOTE: if you don’t have setLoaderFinished defined, remove onFinish or define that state.
           // onFinish={() => setLoaderFinished(true)}
         />
@@ -175,7 +162,7 @@ export default function Home() {
 
       {shouldShowMask && (
         <div style={{ zIndex: 120 }} className="pointer-events-none transition-opacity duration-500">
-          <MaskLoad onComplete={() => { log('MaskLoad onComplete -> setMaskDone(true)'); setMaskDone(true); }} />
+          <MaskLoad onComplete={() => { setMaskDone(true); }} />
         </div>
       )}
 
@@ -191,6 +178,7 @@ export default function Home() {
         >
           <Header />
           <Hero />
+          <ContactButton show={contentVisible} />
           <StickyFooter />
         </div>
       )}

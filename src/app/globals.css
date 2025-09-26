@@ -61,6 +61,7 @@ body {
   overflow: hidden !important;
   height: 100%;
 }
+.motion-fade { backface-visibility: hidden; transform: translateZ(0); }
 
 /* optional for iOS overscroll reduction */
 .no-scroll {
@@ -155,3 +156,25 @@ body {
 }
 
 /* ===== END iOS SAFARI COMPATIBILITY FIXES ===== */
+
+/* enable automatic transitions for SPA navigations */
+@view-transition {
+  navigation: auto;
+}
+
+/* only fade the page content, not header/footer */
+.main-vt { view-transition-name: page; }
+.header-vt, .footer-vt { view-transition-name: none; }
+
+/* simple cross-fade */
+@keyframes vt-fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes vt-fade-out { from { opacity: 1 } to { opacity: 0 } }
+
+::view-transition-new(page) { animation: vt-fade-in 260ms ease-out; }
+::view-transition-old(page) { animation: vt-fade-out 180ms ease-out; }
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(page),
+  ::view-transition-old(page) { animation: none; }
+}

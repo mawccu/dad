@@ -4,8 +4,6 @@ import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('./Footer'), { ssr: false });
 
-// simple logger you can keep/remove
-const log = (...a) => console.log('%c[STICKY-vanilla]', 'color:#22c55e;font-weight:bold', ...a);
 
 export default function StickyFooter() {
   const revealRef  = useRef(null);  // the moving section
@@ -41,7 +39,6 @@ export default function StickyFooter() {
     if (isSmallDevice) {
       reveal.style.transform = 'translateY(0)';
       reveal.style.willChange = 'auto';
-      log('Small device detected - animation disabled');
       return;
     }
 
@@ -62,7 +59,6 @@ export default function StickyFooter() {
       const prog = Math.max(0, Math.min(1, past / h));       // clamp 0..1
       const y    = -50 + 50 * prog;                          // -50% -> 0%
       reveal.style.transform = `translateY(${y}%)`;
-      // log('progress', prog.toFixed(3), 'y%', y.toFixed(1));
     };
 
     // debounce with rAF (smooth + cheap)
@@ -106,7 +102,6 @@ export default function StickyFooter() {
       moRef.current?.disconnect();
       // clear transform so it doesn't carry across routes
       reveal.style.transform = '';
-      log('cleanup');
     };
   }, [isSmallDevice]); // Re-run effect when device size changes
 

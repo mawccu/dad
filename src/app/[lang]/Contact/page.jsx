@@ -56,7 +56,7 @@ function Contact({ onScheduleClick }) {
 
             <div className="text-center">
               <h4 className="font-semibold text-lg sm:text-xl lg:text-1.5xl mb-2 sm:mb-4">{t('contact2.remote_consultations')}</h4>
-              <p className="text-sm sm:text-base lg:text-xl">{t('contact2.available_worldwide')}</p>
+              <p className="sm:text-base lg:text-xl">{t('contact2.available_worldwide')}</p>
               <button
                 onClick={() => handleScheduleClick('consultation')}
                 className="text-lg lg:text-lg text-blue-600 mt-2 hover:text-blue-800 hover:underline transition-colors cursor-pointer bg-transparent border-none whitespace-nowrap"
@@ -364,7 +364,7 @@ function ContactForm({ prefillType }) {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     lang={lang}
-                    placeholder={lang === 'ar' ? 'رقم الهاتف' : '+962 79 1234567'}
+                    placeholder={lang === 'ar' ? 'رقم الهاتف' : '+966 79 1234567'}
                     error={touched.phone && errors.phone}
                   />
                   <div className="sm:col-span-2 text-base sm:text-1.5xl">

@@ -40,7 +40,7 @@ export default function Villa04() {
       </section>
 
       <MasonryGrid />
-      
+      <ContactCTA />
     </main>
   );
 }

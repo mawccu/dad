@@ -467,7 +467,7 @@
         },
         {
           "question": "How long do your flooring systems typically last?",
-          "content": "Our flooring systems are designed for lasting durability. With proper maintenance, epoxy flooring can last 10–20 years or more depending on traffic levels and environmental conditions. We engineer our solutions to meet long-term structural expectations while maintaining their aesthetic appeal throughout their lifespan."
+          "content": "Our flooring systems are designed for lasting durability. With proper maintenance, epoxy flooring can last 2-7 years or more depending on traffic levels, environmental conditions, and epoxy thickness. We engineer our solutions to meet long-term structural expectations while maintaining their aesthetic appeal throughout their lifespan."
         },
         {
           "question": "Do you work on both residential and commercial projects?",
@@ -516,6 +516,7 @@
     },
     "company": {
       "title": "Company",
+      "home": "Home",
       "about_us": "About Us",
       "projects": "Projects",
       "careers": "Careers",

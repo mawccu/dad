@@ -49,7 +49,7 @@ export default function TAG() {
         </p>
       </section>
 
-      
+      <ContactCTA />
     </main>
   );
 }

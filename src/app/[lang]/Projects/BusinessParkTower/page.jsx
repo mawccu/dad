@@ -12,7 +12,7 @@ export default function BusinessParkTower() {
   const { lang } = useParams();
   
   return (
-    <main className="w-full overflow-hidden py-6 sm:py-8 lg:py-10" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <main className="w-full" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <section className="px-4 sm:px-6 lg:px-6 pt-20 sm:pt-32 lg:pt-40 pb-4">
         <h1 className={`font-450 text-start ${lang === 'ar' ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
           {t('projects.businessParkTower.title')}
@@ -65,11 +65,7 @@ export default function BusinessParkTower() {
         </p>
       </section>
       
-      <section className="px-4 sm:px-6 lg:px-6 pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 max-w-full sm:max-w-4xl lg:max-w-5xl ms-auto text-start">
-        {/** This project involves the development of a comprehensive logistics
-        solution for Expeditors, aimed at optimizing their supply chain
-        operations. 
-        */}
+      <section className="px-4 sm:px-6 lg:px-6 pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-36 max-w-full sm:max-w-4xl lg:max-w-5xl ms-auto text-start">
         <h2 className={`pb-4 font-medium ${lang === 'ar' ? 'text-2xl sm:text-2xl lg:text-3xl' : 'text-xl sm:text-xl lg:text-2xl'}`}>
           {t('projects.businessParkTower.section4_title')}
         </h2>
@@ -79,7 +75,7 @@ export default function BusinessParkTower() {
         />
       </section>
 
-      
+      <ContactCTA />
     </main>
   );
 }

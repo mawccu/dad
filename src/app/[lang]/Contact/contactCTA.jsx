@@ -1,4 +1,3 @@
-// '[lang]/Contact/contactCTA.jsx'
 'use client';
 
 import { useRef, useLayoutEffect } from 'react';
@@ -8,14 +7,12 @@ import Image from 'next/image';
 import { useT } from '../i18n/client';
 import { useParams, useRouter } from 'next/navigation';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function ContactCTA() {
   const { t } = useT('common');
 
   return (
     <div className="relative w-full h-[90vh] lg:h-[110vh]">
-      {/* Single background image (removed duplicate from inner component) */}
+      {/* Background image */}
       <Image
         src="/medias/img10.webp"
         fill
@@ -38,49 +35,51 @@ function ParallaxText() {
   const router = useRouter();
 
   useLayoutEffect(() => {
+    // Register ScrollTrigger inside the effect
+    gsap.registerPlugin(ScrollTrigger);
+
     if (!containerRef.current || !textRef.current) return;
 
-    // Scope everything; easy cleanup with ctx.revert()
-    const ctx = gsap.context(() => {
-  const mm = gsap.matchMedia();
+    let scrollTriggerInstance = null;
 
-  mm.add(
-    {
-      // Desktop
-      "(min-width: 1024px)": () => {
-        const st = ScrollTrigger.create({
-          id: "cta-pin",
-          trigger: containerRef.current,
-          start: "top top+=350",
-          end: () => {
-            const vh = window.innerHeight * 0.6;
-            const available = containerRef.current.offsetHeight - 100;
-            return `+=${Math.max(0, Math.min(vh, available))}`;
-          },
-          pin: textRef.current,
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          refreshPriority: 1,
-          // markers: true,
-        });
+    // Check if we're on desktop
+    const isDesktop = window.matchMedia("(min-width: 1280px)").matches;
 
-        requestAnimationFrame(() => ScrollTrigger.refresh());
+    if (isDesktop) {
+      scrollTriggerInstance = ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top+=350",
+        end: () => {
+          const vh = window.innerHeight * 0.6;
+          const available = containerRef.current.offsetHeight - 100;
+          return `+=${Math.max(0, Math.min(vh, available))}`;
+        },
+        pin: textRef.current,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
+        id: "cta-pin"
+      });
 
-        return () => st.kill(); // cleanup
-      },
+      // Refresh ScrollTrigger after creation
+      ScrollTrigger.refresh();
+    }
 
-      // Mobile/tablet
-      "(max-width: 1023px)": () => {
-        // no pinning
-      },
-    },
-    containerRef // optional scoping for React context
-  );
-}, containerRef);
+    // Handle window resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
 
+    window.addEventListener('resize', handleResize);
 
-    return () => ctx.revert();         // safely remove only what we created
+    // Cleanup function
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
+      }
+    };
   }, []);
 
   return (

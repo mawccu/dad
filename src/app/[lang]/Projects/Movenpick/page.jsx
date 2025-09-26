@@ -49,7 +49,7 @@ export default function Movenpick() {
         </p>
       </section>
 
-      
+      <ContactCTA />
     </main>
   );
 }
