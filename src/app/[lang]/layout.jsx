@@ -13,8 +13,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { lang } = await params; // ← WICHTIG: await params
   const isEnglish = lang === 'en';
+  const base = 'https://www.newlookjo.com';
 
   return {
+    metadataBase: new URL(base),           // ← important for absolute URLs
+
     title: {
       template: isEnglish ? `%s | New Look` : `%s | New Look للتشطيبات`,
       default: isEnglish
@@ -25,6 +28,12 @@ export async function generateMetadata({ params }) {
       ? 'Led by the expertise from the Abdoun Bridge project, New Look delivers master finishing services, including protective coatings, waterproofing, and high-performance flooring solutions.'
       : 'بخبرة مستمدة من مشروع جسر عبدون، تقدم شركة New Look خدمات تشطيبات احترافية تشمل الطلاءات الواقية ، وأنظمة العزل المختلفة ، وحلول الأرضيات عالية الأداء.',
     
+    alternates: {
+      languages: {
+        en: `${base}/en`,
+        ar: `${base}/ar`,
+      },
+    },
     icons: {
       icon: [
         { url: '/favicon/favicon-32x32.png', sizes: '32x32', },

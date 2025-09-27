@@ -1,6 +1,6 @@
 // src/app/sitemap.js
 export default function sitemap() {
-  const base = 'https://newlookjo.com';
+  const base = 'https://www.newlookjo.com';
   const locales = ['en', 'ar'];
   const now = new Date();
 

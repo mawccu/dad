@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://newlookjo.com/sitemap.xml
+Sitemap: https://www.newlookjo.com/sitemap.xml
