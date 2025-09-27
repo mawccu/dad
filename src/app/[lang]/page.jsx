@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
       : 'New Look للتشطيبات | متخصصون في الطلاء والأرضيات في الأردن والمملكة العربية السعودية',
     description: isEnglish
       ? 'Led by the expertise from the Abdoun Bridge project, New Look delivers master finishing services, including protective coatings, waterproofing, and high-performance flooring solutions.'
-      : 'بفضل الخبرة المكتسبة من مشروع جسر عبدون، تقدم New Look خدمات التشطيب الرئيسية، بما في ذلك الطلاءات الواقية، والعزل المائي، وحلول الأرضيات عالية الأداء.',
+      : 'بخبرة مستمدة من مشروع جسر عبدون، تقدم شركة New Look خدمات تشطيبات احترافية تشمل الطلاءات الواقية ، وأنظمة العزل المختلفة ، وحلول الأرضيات عالية الأداء.',
   };
 }
 
