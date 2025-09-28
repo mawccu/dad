@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
   const { lang } = await params; // ← WICHTIG: await params
   const isEnglish = lang === 'en';
   const base = 'https://www.newlookjo.com';
+  const homePath = isEnglish ? '/en' : '/ar';
 
   return {
     metadataBase: new URL(base),           // ← important for absolute URLs
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }) {
       : 'بخبرة مستمدة من مشروع جسر عبدون، تقدم شركة New Look خدمات تشطيبات احترافية تشمل الطلاءات الواقية ، وأنظمة العزل المختلفة ، وحلول الأرضيات عالية الأداء.',
     
     alternates: {
+      canonical: `${base}${homePath}`,
       languages: {
         en: `${base}/en`,
         ar: `${base}/ar`,

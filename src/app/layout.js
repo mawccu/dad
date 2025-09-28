@@ -30,6 +30,40 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','${gtmId}');
           `}
         </Script>
+
+      <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NewLookJO",
+        "alternateName": ["New Look JO", "newlookjo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
+        "url": "https://www.newlookjo.com",
+        "logo": "https://www.newlookjo.com/favicon/android-chrome-192x192.png",
+        "sameAs": [
+          // add your real profiles if you have them:
+          "https://www.facebook.com/…",
+          "https://www.instagram.com/…",
+          "https://www.linkedin.com/company/…"
+        ]
+      })}
+      </Script>
+
+      <Script id="ld-site" type="application/ld+json" strategy="afterInteractive">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NewLookJO",
+        "alternateName": ["New Look JO", "newlookjo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
+        "url": "https://www.newlookjo.com",
+        "inLanguage": ["en", "ar"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.newlookjo.com/en?search={query}",
+          "query-input": "required name=query"
+        }
+      })}
+      </Script>
+
       </head>
 
       <body suppressHydrationWarning={true}>
