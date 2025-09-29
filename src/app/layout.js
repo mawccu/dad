@@ -36,24 +36,23 @@ export default function RootLayout({ children }) {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "NewLookJO",
-        "alternateName": ["New Look JO", "newlookjo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
+        "alternateName": ["New Look JO", "new look jo", "newlookjo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
         "url": "https://www.newlookjo.com",
         "logo": "https://www.newlookjo.com/favicon/android-chrome-192x192.png",
         "sameAs": [
           // add your real profiles if you have them:
-          "https://www.facebook.com/…",
-          "https://www.instagram.com/…",
-          "https://www.linkedin.com/company/…"
+          "https://www.facebook.com/profile.php?id=100064126295491",
+          "https://www.instagram.com/newlookjo911/"
         ]
       })}
       </Script>
-
+    
       <Script id="ld-site" type="application/ld+json" strategy="afterInteractive">
       {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "NewLookJO",
-        "alternateName": ["New Look JO", "newlookjo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
+        "alternateName": ["New Look JO", "newlookjo", "new look jo", "New Look", "New Look Finishing", "NewLook للتشطيبات"],
         "url": "https://www.newlookjo.com",
         "inLanguage": ["en", "ar"],
         "potentialAction": {

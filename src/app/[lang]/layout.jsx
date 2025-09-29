@@ -32,10 +32,41 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `${base}${homePath}`,
       languages: {
+        'x-default': `${base}/en`,
         en: `${base}/en`,
         ar: `${base}/ar`,
       },
     },
+
+      // Let Google show large image previews and full snippets
+    robots: {
+      index: true,
+      follow: true,
+      maxImagePreview: 'large',
+      maxSnippet: -1,
+      maxVideoPreview: -1,
+    },
+
+     openGraph: {
+      type: 'website',
+      url: `${base}${homePath}`,
+      siteName: 'New Look',
+      locale: isEnglish ? 'en' : 'ar',
+      title: isEnglish ? 'New Look — Finishing Specialists' : 'New Look للتشطيبات',
+      description: isEnglish
+        ? 'Protective coatings, waterproofing, and performance flooring.'
+        : 'طلاءات واقية، عزل، وأرضيات عالية الأداء.',
+      images: [
+        {
+          url: `${base}/icons/titlepic.png`, // your existing image in /public/icons
+          width: 1200,
+          height: 630,
+          alt: 'New Look',
+        },
+      ],
+    },
+
+
     icons: {
       icon: [
         { url: '/favicon/favicon-32x32.png', sizes: '32x32', },

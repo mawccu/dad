@@ -24,8 +24,8 @@ export default function index() {
           rel="noopener noreferrer" 
           target="_blank"
         > Facebook</Link>
-        <Link 
-          href="https://www.google.com/business/" 
+        <Link     
+          href="https://g.page/r/CX_a_Y1-8YsvEBM" 
           className="hover:underline" 
           rel="noopener noreferrer" 
           target="_blank"
