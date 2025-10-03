@@ -72,7 +72,7 @@ export default function ContactButton({ show }) {
     <AnimatePresence>
       {show && (
         <motion.div
-          className={`fixed z-[9999] ${sideClass}`}
+          className={`fixed z-[338] ${sideClass}`}
           style={{ bottom: bottomOffset }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -10,7 +10,7 @@
     mask-position: 62.9% 45%;
     mask-repeat: no-repeat;
     mask-size: 80%;
-    z-index: 9999; /* Lower z-index than navbar */
+    z-index: 9999; 
     contain: paint;
 }
 
@@ -18,7 +18,7 @@
     position: relative;
     height: 300vh;
     background-color: white;
-    z-index: 9999; /* Lower z-index than navbar */
+    z-index: 9999;
 }
 
 .stickyMask video{

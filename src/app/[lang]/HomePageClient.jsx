@@ -14,7 +14,6 @@ const Hero   = dynamic(() => import('./Hero/page.jsx'),      { ssr: false });
 const StickyFooter = dynamic(() => import('./components/StickyFooter'), { ssr: false });
 const ContactButton = dynamic(() => import('./components/ContactButton'), { ssr: false });
 
-
 function useDeviceType() {
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
@@ -70,15 +69,25 @@ function MaskLoad({ onComplete }) {
       onComplete={() => {
         if (once.current) return;
         once.current = true;
+        
+        // Reset scroll position before showing content
+        window.scrollTo(0, 0);
+        if (window.lenis) {
+          window.lenis.scrollTo(0, { immediate: true });
+        }
+        
         onComplete?.();
         window.__MASK_ACTIVE__ = false;
         window.dispatchEvent(new CustomEvent('mask:done'));
-        requestRefresh();
+        
+        // Delay refresh to allow scroll reset
+        setTimeout(() => {
+          requestRefresh();
+        }, 100);
       }}
     />
   );
 }
-
 
 function ImageLoad() {
   const { reportAsLoaded } = useProgress();
@@ -155,8 +164,6 @@ export default function HomePageClient() {
       {shouldShowLoader && (
         <Loader
           onExitStart={() => { setLoaderExitStarted(true); }}
-          // NOTE: if you don’t have setLoaderFinished defined, remove onFinish or define that state.
-          // onFinish={() => setLoaderFinished(true)}
         />
       )}
 

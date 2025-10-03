@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -26,7 +26,7 @@ export default function SmoothScrolling({ children }) {
     }
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.4,
       direction: "vertical",
       gestureDirection: "vertical",
       smooth: true,
@@ -34,6 +34,9 @@ export default function SmoothScrolling({ children }) {
       autoRaf: false, // we'll drive it from GSAP's ticker
       infinite: false,
     });
+
+    // Make Lenis globally accessible for scroll reset
+    window.lenis = lenis;
 
     // Keep ScrollTrigger in sync with Lenis
     lenis.on("scroll", ScrollTrigger.update);
@@ -57,6 +60,10 @@ export default function SmoothScrolling({ children }) {
       gsap.ticker.remove(tick);
       gsap.ticker.lagSmoothing(1000, 16);
       lenis.destroy();
+      // Clean up global reference
+      if (window.lenis === lenis) {
+        window.lenis = null;
+      }
     };
   }, [isMobile]);
 

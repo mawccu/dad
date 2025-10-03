@@ -11,7 +11,35 @@ export const metadata = {
     default: 'New Look Finishing | High Quality Interior and Exterior Finishing Services' 
   },
   description: 'Led by the expertise from the Abdoun Bridge project, New Look delivers master finishing services, including protective coatings, waterproofing, and high-performance flooring solutions.',
-  
+  metadataBase: new URL('https://www.newlookjo.com'),
+  icons: {
+    icon: [
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon.ico', rel: 'icon' },
+    ],
+    apple: '/favicon/apple-touch-icon.png',
+    other: [
+      { rel: 'icon', type: 'image/png', sizes: '192x192', url: '/favicon/android-chrome-192x192.png' },
+      { rel: 'icon', type: 'image/png', sizes: '512x512', url: '/favicon/android-chrome-512x512.png' },
+    ],
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.newlookjo.com',
+    siteName: 'New Look',
+    title: 'New Look — Finishing Specialists',
+    description: 'Protective coatings, waterproofing, and performance flooring.',
+    images: [
+      { url: '/icons/titlepic.png', width: 1200, height: 630, alt: 'New Look' },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'New Look — Finishing Specialists',
+    description: 'Protective coatings, waterproofing, and performance flooring.',
+    images: ['/icons/titlepic.png'],
+  },
 };
 
 export default function RootLayout({ children }) {

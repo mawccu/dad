@@ -11,7 +11,7 @@ export default function Movenpick() {
   const { lang } = useParams();
   
   return (
-    <main className="w-full overflow-hidden py-6 sm:py-8 lg:py-10" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <main className="w-full overflow-hidden" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <section className="px-4 sm:px-6 pt-24 sm:pt-32 lg:pt-40 pb-3 sm:pb-4">
         <h1 className={`font-450 text-start ${lang === 'ar' ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl lg:text-4xl'}`}>
           {t('projects.Movenpick.title')}
